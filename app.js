@@ -86,7 +86,12 @@
         }
     }
 
-    window.addEventListener('hashchange', route);
+    function routeAndAnimate() {
+        route();
+        setTimeout(observeCards, 50);
+    }
+
+    window.addEventListener('hashchange', routeAndAnimate);
 
     // ============ Dynamic Sidebar ============
     function renderSidebar() {
@@ -1331,7 +1336,59 @@
         localStorage.setItem('gameui-checklist', JSON.stringify(state));
     };
 
+    // ============ Glassmorphism Effects ============
+
+    // Parallax orb movement on mouse
+    const orbContainer = document.getElementById('glassBgOrbs');
+    if (orbContainer) {
+        let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        function animateOrbs() {
+            currentX += (mouseX - currentX) * 0.02;
+            currentY += (mouseY - currentY) * 0.02;
+            const orbs = orbContainer.querySelectorAll('.glass-orb');
+            orbs.forEach((orb, i) => {
+                const speed = (i + 1) * 8;
+                const tx = currentX * speed;
+                const ty = currentY * speed;
+                orb.style.transform += ''; // keep CSS animation, just adjust via margin
+                orb.style.marginLeft = tx + 'px';
+                orb.style.marginTop = ty + 'px';
+            });
+            requestAnimationFrame(animateOrbs);
+        }
+        animateOrbs();
+    }
+
+    // IntersectionObserver for card fade-in
+    function observeCards() {
+        const cards = document.querySelectorAll('.component-card, .ux-law-card, .variant-card, .checklist-item, .genre-hero');
+        if (!cards.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = Array.from(el.parentElement.children).indexOf(el) * 0.06;
+                    el.style.transitionDelay = delay + 's';
+                    el.classList.add('glass-visible');
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        cards.forEach(card => {
+            card.classList.add('glass-fade-in');
+            observer.observe(card);
+        });
+    }
+
     // ============ Init ============
     route();
+    setTimeout(observeCards, 100);
 
 })();
