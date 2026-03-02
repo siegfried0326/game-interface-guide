@@ -680,6 +680,83 @@ button {
     min-height: 280px;
 }
 
+/* Anatomy Section */
+.comp-anatomy {
+    margin-bottom: var(--space-2xl);
+}
+
+.comp-anatomy .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    color: var(--text-primary);
+}
+
+.anatomy-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.anatomy-diagram svg {
+    width: 100%;
+    max-width: 500px;
+}
+
+.anatomy-parts {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm) var(--space-xl);
+    counter-reset: anatomy;
+}
+
+.anatomy-parts li {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    font-size: 0.9rem;
+    align-items: baseline;
+}
+
+.anatomy-parts li::before {
+    counter-increment: anatomy;
+    content: counter(anatomy);
+    background: var(--text-primary);
+    color: var(--bg-card);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.anatomy-part-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.anatomy-part-desc {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .anatomy-parts {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Description Section */
 .comp-description {
     background: var(--bg-card);
@@ -2086,12 +2163,244 @@ button {
     line-height: 1.4;
 }
 
-/* ============ Responsive (Sidebar Category) ============ */
+/* ============ UX Law Detail Page ============ */
+.ux-law-hero {
+    border-radius: var(--radius-lg);
+    padding: var(--space-3xl) var(--space-2xl);
+    margin: 0 calc(var(--space-lg) * -1) var(--space-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.ux-law-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ux-law-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.ux-law-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.82rem;
+    text-decoration: none;
+    margin-bottom: var(--space-xl);
+    transition: color var(--transition-fast);
+}
+
+.ux-law-back-link:hover {
+    color: #fff;
+}
+
+.ux-law-hero-visual {
+    margin-bottom: var(--space-lg);
+    max-width: 220px;
+}
+
+.ux-law-hero-visual svg {
+    width: 100%;
+    height: auto;
+}
+
+.ux-law-hero-visual svg text {
+    fill: rgba(255,255,255,0.6) !important;
+}
+
+.ux-law-hero-visual svg circle,
+.ux-law-hero-visual svg rect,
+.ux-law-hero-visual svg path,
+.ux-law-hero-visual svg polygon,
+.ux-law-hero-visual svg line,
+.ux-law-hero-visual svg polyline {
+    stroke: rgba(255,255,255,0.5);
+}
+
+.ux-law-hero-visual svg [fill]:not([fill="none"]) {
+    fill: rgba(255,255,255,0.2);
+}
+
+.ux-law-hero-category {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.15);
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.ux-law-hero-text h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--space-xs);
+}
+
+.ux-law-hero-en {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.ux-law-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.ux-law-definition {
+    border-left: 4px solid var(--accent);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    background: var(--bg-secondary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.ux-law-definition p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.ux-law-note {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.ux-law-note-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.ux-law-note p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.ux-law-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+.ux-law-takeaways {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.ux-law-takeaway-item {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.ux-law-takeaway-item:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.ux-law-takeaway-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.ux-law-takeaway-item h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.ux-law-takeaway-item p {
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.ux-law-origin {
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--accent-subtle), transparent);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.ux-law-origin p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* ============ Responsive (Sidebar Category + UX Law Detail) ============ */
 @media (max-width: 768px) {
     .variant-grid {
         grid-template-columns: 1fr;
     }
     .game-application-box {
         flex-direction: column;
+    }
+    .ux-law-hero {
+        padding: var(--space-xl) var(--space-lg);
+        margin: 0 calc(var(--space-md) * -1) var(--space-xl);
+    }
+    .ux-law-hero-text h1 {
+        font-size: 1.5rem;
+    }
+    .ux-law-takeaways {
+        grid-template-columns: 1fr;
+    }
+    .ux-law-body {
+        padding: 0;
     }
 }

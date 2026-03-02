@@ -76,11 +76,11 @@
             }
         } else if (path === '/ux-laws') {
             renderUXLaws();
+        } else if (path.startsWith('/ux-laws/')) {
+            const lawId = path.split('/ux-laws/')[1];
+            renderUXLawDetail(lawId);
         } else if (path === '/checklist') {
             renderChecklist();
-        } else if (path.startsWith('/genre/')) {
-            const genre = path.split('/genre/')[1];
-            renderGenrePage(genre);
         } else {
             renderHome();
         }
@@ -96,13 +96,59 @@
         // 저장된 열림 상태
         const openCats = JSON.parse(localStorage.getItem('gameui-open-cats') || '["game-specific"]');
 
+        // UX 법칙 카테고리별 그룹핑
+        const uxLawCategories = {};
+        UX_LAWS.forEach(law => {
+            if (!uxLawCategories[law.category]) uxLawCategories[law.category] = [];
+            uxLawCategories[law.category].push(law);
+        });
+        const uxCatOrder = ['행동', '인지', '기억', '경험'];
+
         let html = `
             <a href="#/" class="nav-item active" data-page="home">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
                 <span>홈</span>
             </a>
-            <div class="nav-section-title">컴포넌트</div>
+
+            <div class="nav-section-title">UX 법칙</div>
+            <a href="#/ux-laws" class="nav-item" data-page="ux-laws">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                <span>UX 법칙 개요</span>
+            </a>
         `;
+
+        uxCatOrder.forEach(catName => {
+            const laws = uxLawCategories[catName] || [];
+            if (!laws.length) return;
+            const catId = 'uxlaw-' + catName;
+            const isOpen = openCats.includes(catId);
+            const catIcons = {
+                '행동': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+                '인지': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+                '기억': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+                '경험': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>'
+            };
+            html += `
+                <div class="nav-category ${isOpen ? 'open' : ''}" data-cat="${catId}">
+                    <div class="nav-category-header" onclick="toggleNavCategory('${catId}')">
+                        <span class="nav-cat-icon">${catIcons[catName] || ''}</span>
+                        <span class="nav-cat-name">${catName}</span>
+                        <span class="nav-cat-count">${laws.length}</span>
+                        <svg class="nav-cat-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                    <div class="nav-category-items">
+            `;
+            laws.forEach(law => {
+                html += `
+                    <a href="#/ux-laws/${law.id}" class="nav-item nav-sub-item" data-page="uxlaw-${law.id}">
+                        <span>${law.name}</span>
+                    </a>
+                `;
+            });
+            html += `</div></div>`;
+        });
+
+        html += `<div class="nav-section-title">컴포넌트</div>`;
 
         COMPONENT_CATEGORIES.forEach(cat => {
             const isOpen = openCats.includes(cat.id);
@@ -131,34 +177,10 @@
         });
 
         html += `
-            <div class="nav-section-title">UX 법칙</div>
-            <a href="#/ux-laws" class="nav-item" data-page="ux-laws">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-                <span>UX 법칙 개요</span>
-            </a>
-
             <div class="nav-section-title">체크리스트</div>
             <a href="#/checklist" class="nav-item" data-page="checklist">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
                 <span>UI/UX 체크리스트</span>
-            </a>
-
-            <div class="nav-section-title">장르별 가이드</div>
-            <a href="#/genre/rpg" class="nav-item" data-page="genre-rpg">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                <span>RPG</span>
-            </a>
-            <a href="#/genre/fps" class="nav-item" data-page="genre-fps">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="7" y1="12" x2="11" y2="12"/><line x1="13" y1="12" x2="17" y2="12"/></svg>
-                <span>FPS</span>
-            </a>
-            <a href="#/genre/tps" class="nav-item" data-page="genre-tps">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><path d="M12 8v8"/><path d="M8 21l4-5 4 5"/><path d="M7 13h10"/></svg>
-                <span>TPS</span>
-            </a>
-            <a href="#/genre/quarter" class="nav-item" data-page="genre-quarter">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20L12 4l8 16"/><path d="M4 20l8-4 8 4"/><line x1="12" y1="4" x2="12" y2="16"/></svg>
-                <span>쿼터뷰</span>
             </a>
         `;
 
@@ -192,7 +214,7 @@
                 <h1>Patrick's<br><span class="accent">Game UI/UX</span> Design</h1>
                 <p class="subtitle">
                     게임 인터페이스의 모든 것을 담은 포트폴리오 & 컴포넌트 라이브러리입니다.
-                    RPG, FPS, TPS, 쿼터뷰 — 네 가지 장르별 와이어프레임과 인터랙티브 데모, ${refComps.length}개 참조 컴포넌트, UI/UX 체크리스트를 탐험하세요.
+                    인터랙티브 데모, ${refComps.length}개 참조 컴포넌트, UX 법칙, UI/UX 체크리스트를 탐험하세요.
                 </p>
                 <div class="home-stats">
                     <div class="stat-item">
@@ -200,15 +222,11 @@
                         <span class="stat-label">컴포넌트</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">장르</span>
-                    </div>
-                    <div class="stat-item">
                         <span class="stat-number">${UX_LAWS.length}</span>
                         <span class="stat-label">UX 법칙</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">${fullComps.length * 4}</span>
+                        <span class="stat-number">${fullComps.length}</span>
                         <span class="stat-label">와이어프레임</span>
                     </div>
                 </div>
@@ -240,14 +258,14 @@
             <h2 class="section-title">UX 법칙</h2>
             <div class="ux-laws-grid">
                 ${UX_LAWS.slice(0, 6).map(law => `
-                    <div class="ux-law-card" onclick="window.location.hash='#/ux-laws'">
+                    <a href="#/ux-laws/${law.id}" class="ux-law-card" style="text-decoration:none;color:inherit;">
                         <div class="ux-law-visual">${law.visual}</div>
                         <div class="ux-law-content">
                             <h3>${law.name}</h3>
                             <p>${law.principle}</p>
                             <span class="ux-law-tag">${law.category}</span>
                         </div>
-                    </div>
+                    </a>
                 `).join('')}
             </div>
 
@@ -280,6 +298,22 @@
                 <p class="description">${comp.description}</p>
             </div>
 
+            ${comp.anatomy ? `
+            <div class="comp-anatomy">
+                <h2 class="section-title">Anatomy</h2>
+                <div class="anatomy-diagram">
+                    ${comp.anatomy.svg}
+                </div>
+                <ol class="anatomy-parts">
+                    ${comp.anatomy.parts.map(p => `
+                        <li>
+                            <span class="anatomy-part-name">${p.name}</span>
+                            <span class="anatomy-part-desc">${p.description}</span>
+                        </li>
+                    `).join('')}
+                </ol>
+            </div>` : ''}
+
             <div class="genre-tabs" id="genreTabs">
                 ${genres.map((g, i) => `
                     <button class="genre-tab ${i === 0 ? 'active' : ''}" data-genre="${g}">${genreNames[g]}</button>
@@ -288,6 +322,11 @@
 
             ${genres.map((g, i) => `
                 <div class="genre-content ${i === 0 ? 'active' : ''}" data-genre-content="${g}">
+                    <div class="comp-description">
+                        <h3>${comp.genres[g].title}</h3>
+                        <p>${comp.genres[g].description}</p>
+                    </div>
+
                     <div class="wireframe-demo-grid">
                         <div class="wireframe-section">
                             <div class="section-label"><span class="dot"></span> 와이어프레임</div>
@@ -308,11 +347,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="comp-description">
-                        <h3>${comp.genres[g].title}</h3>
-                        <p>${comp.genres[g].description}</p>
-                    </div>
                 </div>
             `).join('')}
 
@@ -330,7 +364,7 @@
                     ${comp.relatedLaws.map(lawId => {
                         const law = UX_LAWS.find(l => l.id === lawId);
                         if (!law) return '';
-                        return `<a href="#/ux-laws" class="related-law-card" onclick="setTimeout(()=>{const el=document.getElementById('law-${law.id}');if(el)el.scrollIntoView({behavior:'smooth',block:'center'})},200)">
+                        return `<a href="#/ux-laws/${law.id}" class="related-law-card">
                             <div class="related-law-visual">${law.visual}</div>
                             <div class="related-law-info">
                                 <div class="related-law-name">${law.name}</div>
@@ -940,6 +974,15 @@
 
     // ============ UX Laws Page ============
     function renderUXLaws() {
+        // 카테고리별 그룹핑
+        const catColors = { '행동': '#c75c3a', '인지': '#2a6496', '기억': '#7b4fa0', '경험': '#2a8a6a' };
+        const catOrder = ['행동', '인지', '기억', '경험'];
+        const grouped = {};
+        UX_LAWS.forEach(law => {
+            if (!grouped[law.category]) grouped[law.category] = [];
+            grouped[law.category].push(law);
+        });
+
         mainContent.innerHTML = `
         <div class="page-enter">
             <div class="breadcrumb">
@@ -955,108 +998,139 @@
                 </p>
             </div>
 
-            <div class="ux-laws-grid">
-                ${UX_LAWS.map(law => `
-                    <div class="ux-law-card" id="law-${law.id}" onclick="this.classList.toggle('expanded');this.querySelector('.ux-law-expanded')?.classList.toggle('active')">
-                        <div class="ux-law-visual">${law.visual}</div>
-                        <div class="ux-law-content">
-                            <h3>${law.name}</h3>
-                            <p style="font-size:0.75rem;color:var(--text-tertiary);margin-bottom:4px;">${law.nameEn}</p>
-                            <p>${law.principle}</p>
-                            <span class="ux-law-tag">${law.category}</span>
-                        </div>
-                        <div class="ux-law-expanded" style="display:none;padding:0 var(--space-lg) var(--space-lg);">
-                            <div style="color:var(--text-secondary);font-size:0.85rem;line-height:1.8;margin-bottom:var(--space-md);">${law.description}</div>
-                            <div class="game-application">
-                                <h4>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-                                    게임에서의 활용
-                                </h4>
-                                <p>${law.gameApplication}</p>
+            ${catOrder.map(catName => `
+                <h2 class="section-title" style="margin-top:var(--space-2xl);display:flex;align-items:center;gap:var(--space-sm);">
+                    <span style="width:12px;height:12px;border-radius:50%;background:${catColors[catName]};display:inline-block;"></span>
+                    ${catName}
+                </h2>
+                <div class="ux-laws-grid">
+                    ${(grouped[catName] || []).map(law => `
+                        <a href="#/ux-laws/${law.id}" class="ux-law-card" id="law-${law.id}" style="text-decoration:none;color:inherit;cursor:pointer;">
+                            <div class="ux-law-visual">${law.visual}</div>
+                            <div class="ux-law-content">
+                                <h3>${law.name}</h3>
+                                <p style="font-size:0.75rem;color:var(--text-tertiary);margin-bottom:4px;">${law.nameEn}</p>
+                                <p>${law.principle}</p>
+                                <span class="ux-law-tag" style="background:${catColors[catName]}20;color:${catColors[catName]};">${law.category}</span>
                             </div>
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
+                        </a>
+                    `).join('')}
+                </div>
+            `).join('')}
         </div>`;
-
-        // Toggle expanded
-        $$('.ux-law-card', mainContent).forEach(card => {
-            card.addEventListener('click', () => {
-                const expanded = card.querySelector('.ux-law-expanded');
-                if (expanded) {
-                    expanded.style.display = expanded.style.display === 'none' ? 'block' : 'none';
-                }
-            });
-        });
     }
 
-    // ============ Genre Page ============
-    function renderGenrePage(genre) {
-        const genreInfo = {
-            rpg: {
-                name: 'RPG',
-                color: 'var(--rpg)',
-                desc: 'RPG(Role-Playing Game)의 UI는 방대한 정보를 체계적으로 정리하는 것이 핵심입니다. 캐릭터 스탯, 인벤토리, 스킬 트리, 퀘스트 로그 등 복잡한 시스템을 직관적으로 제공해야 합니다. 판타지 세계관을 반영한 장식적 요소와 아이템 등급 시스템의 색상 코드가 중요합니다.',
-                features: ['복잡한 스탯 시스템의 시각화', '아이템 등급별 색상 코드 (일반→고급→희귀→전설)', '퀘스트 트래커와 미니맵', '스킬 트리의 계층적 표현', 'NPC 대화 시스템']
-            },
-            fps: {
-                name: 'FPS',
-                color: 'var(--fps)',
-                desc: 'FPS(First-Person Shooter)의 UI는 최소주의가 핵심입니다. 전투 중 시야를 가리지 않으면서 필수 정보(체력, 탄약, 미니맵)를 제공해야 합니다. 밀리터리/SF 테마에 맞는 각진 디자인, 모노스페이스 폰트, 높은 대비를 사용합니다.',
-                features: ['화면 중앙의 조준점(크로스헤어)', '최소한의 HUD 요소', '빠른 무기 교체 UI', '킬 피드와 점수 표시', '전술 미니맵']
-            },
-            tps: {
-                name: 'TPS',
-                color: 'var(--tps)',
-                desc: 'TPS(Third-Person Shooter)는 캐릭터가 화면에 보이므로 UI가 캐릭터와 공존해야 합니다. 반투명 글래스모피즘 스타일이 효과적이며, RPG와 FPS의 중간 정도의 정보 밀도를 가집니다. 캐릭터 중심의 능력과 장비 시스템이 중요합니다.',
-                features: ['캐릭터 주변 반투명 UI', '능력/스킬 쿨다운 표시', '3인칭 시점에 최적화된 HUD', '장비 프리뷰 시스템', '미션 목표 내비게이션']
-            },
-            quarter: {
-                name: '쿼터뷰',
-                color: 'var(--quarter)',
-                desc: '쿼터뷰(Isometric/Quarter-View) 게임은 전략과 관리가 핵심입니다. 자원 관리, 유닛 명령, 건설, 연구 등 복잡한 전략적 의사결정을 지원하는 UI가 필요합니다. 넓은 정보 패널, 커맨드 팔레트, 미니맵이 중요한 요소입니다.',
-                features: ['자원 표시 바', '유닛 선택 및 명령 패널', '건설/연구 큐 시스템', '전체 맵 미니맵', '기술 트리']
-            }
+    // ============ UX Law Detail Page ============
+    function renderUXLawDetail(lawId) {
+        const law = UX_LAWS.find(l => l.id === lawId);
+        if (!law) { renderHome(); return; }
+
+        const catColors = { '행동': '#c75c3a', '인지': '#2a6496', '기억': '#7b4fa0', '경험': '#2a8a6a' };
+        const catDescriptions = {
+            '행동': '행동 카테고리의 법칙은 사용자의 물리적 행동과 반응 속도에 관한 원칙을 다룹니다.',
+            '인지': '인지 카테고리의 법칙은 사용자가 정보를 처리하고 이해하는 방식에 관한 원칙을 다룹니다.',
+            '기억': '기억 카테고리의 법칙은 사용자가 정보를 기억하고 회상하는 패턴에 관한 원칙을 다룹니다.',
+            '경험': '경험 카테고리의 법칙은 사용자의 전반적인 경험과 기대에 관한 원칙을 다룹니다.'
         };
+        const heroColor = catColors[law.category] || '#2a6496';
 
-        const info = genreInfo[genre];
-        if (!info) { renderHome(); return; }
+        // 같은 카테고리의 다른 법칙들
+        const sameCatLaws = UX_LAWS.filter(l => l.category === law.category && l.id !== law.id);
 
-        const compEntries = Object.values(COMPONENTS).filter(c => c.type !== 'reference');
+        // 이 법칙을 사용하는 컴포넌트 찾기
+        const relatedComps = Object.values(COMPONENTS).filter(c => c.relatedLaws && c.relatedLaws.includes(law.id));
 
         mainContent.innerHTML = `
         <div class="page-enter">
-            <div class="breadcrumb">
-                <a href="#/">홈</a> <span class="sep">/</span>
-                <span>장르</span> <span class="sep">/</span>
-                <span>${info.name}</span>
-            </div>
-
-            <div class="genre-hero ${genre}">
-                <span class="genre-badge">${info.name}</span>
-                <h1>${info.name} UI 가이드</h1>
-                <p>${info.desc}</p>
-            </div>
-
-            <div class="comp-description">
-                <h3>핵심 UI 특징</h3>
-                <ul>
-                    ${info.features.map(f => `<li>${f}</li>`).join('')}
-                </ul>
-            </div>
-
-            <h2 class="section-title" style="margin-top:var(--space-2xl);">장르별 컴포넌트</h2>
-            <div class="component-grid">
-                ${compEntries.map(comp => `
-                    <a href="#/components/${comp.id}" class="component-card">
-                        <div class="component-card-icon" style="background:${genre === 'rpg' ? 'var(--rpg-bg)' : genre === 'fps' ? 'var(--fps-bg)' : genre === 'tps' ? 'var(--tps-bg)' : 'var(--quarter-bg)'}">
-                            <span style="color:${info.color}">${comp.icon}</span>
-                        </div>
-                        <h3>${comp.genres[genre].title}</h3>
-                        <p>${comp.genres[genre].description}</p>
+            <div class="ux-law-hero" style="background: linear-gradient(135deg, ${heroColor}, ${heroColor}dd);">
+                <div class="ux-law-hero-inner">
+                    <a href="#/ux-laws" class="ux-law-back-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><polyline points="15 18 9 12 15 6"/></svg>
+                        모든 법칙
                     </a>
-                `).join('')}
+                    <div class="ux-law-hero-visual">${law.visual}</div>
+                    <div class="ux-law-hero-text">
+                        <span class="ux-law-hero-category">${law.category}</span>
+                        <h1>${law.name}</h1>
+                        <p class="ux-law-hero-en">${law.nameEn}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ux-law-body">
+                <div class="ux-law-definition" style="border-left-color: ${heroColor};">
+                    <p>${law.principle}</p>
+                </div>
+
+                <div class="ux-law-note">
+                    <div class="ux-law-note-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        NOTE
+                    </div>
+                    <p>${catDescriptions[law.category] || ''} 이 법칙은 게임 UI 설계에서 플레이어의 ${law.category === '행동' ? '반응성과 인터랙션' : law.category === '인지' ? '정보 처리와 이해도' : law.category === '기억' ? '기억력과 학습 패턴' : '전체적인 만족도와 기대치'}을 최적화하는 데 핵심적인 역할을 합니다.</p>
+                </div>
+
+                <h2 class="ux-law-section-title">Takeaways</h2>
+                <div class="ux-law-takeaways">
+                    <div class="ux-law-takeaway-item">
+                        <span class="ux-law-takeaway-number" style="background:${heroColor};">1</span>
+                        <div>
+                            <h4>핵심 원리</h4>
+                            <p>${law.description}</p>
+                        </div>
+                    </div>
+                    <div class="ux-law-takeaway-item">
+                        <span class="ux-law-takeaway-number" style="background:${heroColor};">2</span>
+                        <div>
+                            <h4>게임 UI 적용</h4>
+                            <p>${law.gameApplication}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="ux-law-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                    게임에서의 활용
+                </h2>
+                <div class="ux-law-origin">
+                    <p>${law.gameApplication}</p>
+                </div>
+
+                ${relatedComps.length ? `
+                <h2 class="ux-law-section-title">관련 컴포넌트</h2>
+                <div class="component-grid" style="margin-bottom:var(--space-2xl);">
+                    ${relatedComps.map(comp => `
+                        <a href="#/components/${comp.id}" class="component-card">
+                            <div class="component-card-icon">${comp.icon}</div>
+                            <h3>${comp.name}</h3>
+                            <p>${comp.summary}</p>
+                        </a>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${sameCatLaws.length ? `
+                <h2 class="ux-law-section-title">같은 카테고리의 법칙</h2>
+                <div class="ux-laws-grid" style="margin-bottom:var(--space-2xl);">
+                    ${sameCatLaws.map(l => `
+                        <a href="#/ux-laws/${l.id}" class="ux-law-card" style="text-decoration:none;color:inherit;">
+                            <div class="ux-law-visual">${l.visual}</div>
+                            <div class="ux-law-content">
+                                <h3>${l.name}</h3>
+                                <p>${l.principle}</p>
+                                <span class="ux-law-tag" style="background:${heroColor}20;color:${heroColor};">${l.category}</span>
+                            </div>
+                        </a>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                <div style="margin-top:var(--space-xl);">
+                    <a href="#/ux-laws" class="back-btn" style="color:${heroColor};">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        모든 UX 법칙 보기
+                    </a>
+                </div>
             </div>
         </div>`;
     }
@@ -1244,7 +1318,7 @@
                     ${comp.relatedLaws.map(lawId => {
                         const law = UX_LAWS.find(l => l.id === lawId);
                         if (!law) return '';
-                        return `<a href="#/ux-laws" class="related-law-card" onclick="setTimeout(()=>{const el=document.getElementById('law-${law.id}');if(el)el.scrollIntoView({behavior:'smooth',block:'center'})},200)">
+                        return `<a href="#/ux-laws/${law.id}" class="related-law-card">
                             <div class="related-law-visual">${law.visual}</div>
                             <div class="related-law-info">
                                 <div class="related-law-name">${law.name}</div>

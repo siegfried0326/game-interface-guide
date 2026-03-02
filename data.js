@@ -18,6 +18,41 @@ const COMPONENTS = {
             '중요한 액션일수록 시각적 무게감을 높이세요 (시각적 위계)',
             '쿨다운, 비용 부족 등 비활성 상태를 명확히 구분하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Button shape -->
+                <rect x="100" y="80" width="200" height="60" rx="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Background fill -->
+                <rect x="102" y="82" width="196" height="56" rx="11" fill="#f3f4f6"/>
+                <!-- Icon area -->
+                <circle cx="145" cy="110" r="12" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+                <text x="145" y="114" text-anchor="middle" fill="#6b7280" font-size="12">★</text>
+                <!-- Label text -->
+                <text x="220" y="115" text-anchor="middle" fill="#374151" font-size="14" font-weight="600">Button Label</text>
+                <!-- Callout 1: Container -->
+                <circle cx="60" cy="60" r="14" fill="#374151"/><text x="60" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="74" y1="60" x2="100" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Label Text -->
+                <circle cx="340" cy="90" r="14" fill="#374151"/><text x="340" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="326" y1="95" x2="270" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Icon -->
+                <circle cx="100" cy="170" r="14" fill="#374151"/><text x="100" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="110" y1="157" x2="140" y2="122" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Background Fill -->
+                <circle cx="340" cy="140" r="14" fill="#374151"/><text x="340" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="326" y1="138" x2="298" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Border -->
+                <circle cx="60" cy="140" r="14" fill="#374151"/><text x="60" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="74" y1="140" x2="100" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Container', description: '외부 컨테이너' },
+                { number: 2, name: 'Label Text', description: '라벨 텍스트' },
+                { number: 3, name: 'Icon', description: '선행 아이콘' },
+                { number: 4, name: 'Background Fill', description: '배경 채움' },
+                { number: 5, name: 'Border/Outline', description: '테두리' },
+            ]
+        },
         relatedLaws: ['fitts-law', 'feedback-principle', 'aesthetic-usability', 'doherty-threshold'],
         genres: {
             rpg: {
@@ -155,6 +190,45 @@ const COMPONENTS = {
             '호버/선택 상태에 분명한 피드백을 제공하세요',
             '카드 사이 일관된 간격을 유지하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Card container -->
+                <rect x="120" y="20" width="160" height="210" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Thumbnail area -->
+                <rect x="128" y="28" width="144" height="80" rx="6" fill="#d1d5db"/>
+                <text x="200" y="72" text-anchor="middle" fill="#9ca3af" font-size="11">Image</text>
+                <!-- Title -->
+                <rect x="128" y="118" width="100" height="12" rx="2" fill="#9ca3af"/>
+                <!-- Description -->
+                <rect x="128" y="140" width="144" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="128" y="154" width="110" height="8" rx="2" fill="#d1d5db"/>
+                <!-- Action area -->
+                <rect x="128" y="180" width="60" height="28" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+                <text x="158" y="198" text-anchor="middle" fill="#6b7280" font-size="9">Action</text>
+                <!-- Callout 1: Container -->
+                <circle cx="60" cy="40" r="14" fill="#374151"/><text x="60" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="74" y1="44" x2="120" y2="60" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Thumbnail -->
+                <circle cx="340" cy="50" r="14" fill="#374151"/><text x="340" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="326" y1="55" x2="272" y2="65" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Title -->
+                <circle cx="340" cy="118" r="14" fill="#374151"/><text x="340" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="326" y1="118" x2="228" y2="118" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Description -->
+                <circle cx="340" cy="155" r="14" fill="#374151"/><text x="340" y="160" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="326" y1="152" x2="272" y2="148" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Action Area -->
+                <circle cx="60" cy="194" r="14" fill="#374151"/><text x="60" y="199" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="74" y1="194" x2="128" y2="194" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Container', description: '카드 컨테이너' },
+                { number: 2, name: 'Thumbnail/Image', description: '썸네일 영역' },
+                { number: 3, name: 'Title', description: '제목' },
+                { number: 4, name: 'Description', description: '설명 텍스트' },
+                { number: 5, name: 'Action Area', description: '액션 영역' },
+            ]
+        },
         relatedLaws: ['law-proximity', 'law-similarity', 'aesthetic-usability', 'law-pragnanz'],
         genres: {
             rpg: { title: 'RPG 카드', description: '아이템 카드, 캐릭터 카드 등 판타지 스타일의 카드 UI', wireframe: `<svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -276,6 +350,50 @@ const COMPONENTS = {
             '긍정 액션을 시각적으로 강조하세요',
             'ESC 키로 닫을 수 있게 하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Overlay background -->
+                <rect x="0" y="0" width="400" height="250" fill="#e5e7eb" opacity="0.4"/>
+                <!-- Dialog container -->
+                <rect x="80" y="35" width="240" height="180" rx="12" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Title bar -->
+                <rect x="80" y="35" width="240" height="40" rx="12" fill="#e5e7eb"/>
+                <rect x="80" y="55" width="240" height="20" fill="#e5e7eb"/>
+                <text x="200" y="60" text-anchor="middle" fill="#374151" font-size="12" font-weight="600">Dialog Title</text>
+                <!-- Close button -->
+                <text x="300" y="58" text-anchor="middle" fill="#6b7280" font-size="14">x</text>
+                <!-- Content area -->
+                <rect x="96" y="90" width="208" height="60" rx="4" fill="#f3f4f6"/>
+                <rect x="106" y="100" width="140" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="106" y="115" width="180" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="106" y="130" width="100" height="8" rx="2" fill="#d1d5db"/>
+                <!-- Action buttons -->
+                <rect x="196" y="170" width="56" height="28" rx="6" fill="#d1d5db"/><text x="224" y="188" text-anchor="middle" fill="#6b7280" font-size="9">Cancel</text>
+                <rect x="258" y="170" width="56" height="28" rx="6" fill="#9ca3af"/><text x="286" y="188" text-anchor="middle" fill="white" font-size="9">OK</text>
+                <!-- Callout 1: Overlay -->
+                <circle cx="30" cy="20" r="14" fill="#374151"/><text x="30" y="25" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="44" y1="24" x2="80" y2="40" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Container -->
+                <circle cx="370" cy="50" r="14" fill="#374151"/><text x="370" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="356" y1="55" x2="320" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Title Bar -->
+                <circle cx="30" cy="55" r="14" fill="#374151"/><text x="30" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="44" y1="55" x2="80" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Content Area -->
+                <circle cx="370" cy="120" r="14" fill="#374151"/><text x="370" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="356" y1="120" x2="304" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Action Buttons -->
+                <circle cx="370" cy="184" r="14" fill="#374151"/><text x="370" y="189" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="356" y1="184" x2="314" y2="184" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Overlay', description: '배경 오버레이' },
+                { number: 2, name: 'Container', description: '다이얼로그 컨테이너' },
+                { number: 3, name: 'Title Bar', description: '제목 바' },
+                { number: 4, name: 'Content Area', description: '콘텐츠 영역' },
+                { number: 5, name: 'Action Buttons', description: '액션 버튼' },
+            ]
+        },
         relatedLaws: ['hicks-law', 'jakobs-law', 'feedback-principle', 'consistency'],
         genres: {
             rpg: { title: 'RPG 다이얼로그', description: 'NPC 대화, 퀘스트 수락, 아이템 확인 다이얼로그', wireframe: `<svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -379,6 +497,61 @@ const COMPONENTS = {
             '가장 중요한 정보를 화면 가장자리에 배치하세요',
             '전투 중에는 핵심 정보만 표시하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Game screen frame -->
+                <rect x="20" y="10" width="360" height="230" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Health bar (top-left) -->
+                <rect x="35" y="25" width="120" height="14" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="37" y="27" width="80" height="10" rx="3" fill="#d1d5db"/>
+                <!-- Resource bar (below health) -->
+                <rect x="35" y="45" width="100" height="10" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8"/>
+                <rect x="37" y="47" width="55" height="6" rx="2" fill="#d1d5db"/>
+                <!-- Player info (top-left corner) -->
+                <circle cx="40" cy="75" r="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <text x="55" y="79" fill="#6b7280" font-size="8">Lv.42</text>
+                <!-- Minimap area (top-right) -->
+                <rect x="300" y="25" width="65" height="65" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <circle cx="332" cy="57" r="3" fill="#9ca3af"/>
+                <!-- Skill slots (bottom-center) -->
+                <rect x="130" y="205" width="140" height="28" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="135" y="208" width="22" height="22" rx="3" fill="#d1d5db"/>
+                <rect x="161" y="208" width="22" height="22" rx="3" fill="#d1d5db"/>
+                <rect x="187" y="208" width="22" height="22" rx="3" fill="#d1d5db"/>
+                <rect x="213" y="208" width="22" height="22" rx="3" fill="#d1d5db"/>
+                <rect x="239" y="208" width="22" height="22" rx="3" fill="#d1d5db"/>
+                <!-- Status icons (below minimap) -->
+                <rect x="310" y="100" width="16" height="16" rx="3" fill="#d1d5db"/>
+                <rect x="330" y="100" width="16" height="16" rx="3" fill="#d1d5db"/>
+                <rect x="350" y="100" width="16" height="16" rx="3" fill="#d1d5db"/>
+                <!-- Callout 1: Health Bar -->
+                <circle cx="195" cy="25" r="14" fill="#374151"/><text x="195" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="181" y1="28" x2="155" y2="30" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Resource Bar -->
+                <circle cx="180" cy="50" r="14" fill="#374151"/><text x="180" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="166" y1="50" x2="135" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Player Info -->
+                <circle cx="115" cy="80" r="14" fill="#374151"/><text x="115" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="101" y1="78" x2="75" y2="76" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Minimap -->
+                <circle cx="295" cy="110" r="14" fill="#374151"/><text x="295" y="115" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="302" y1="97" x2="310" y2="85" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Skill Slots -->
+                <circle cx="100" cy="218" r="14" fill="#374151"/><text x="100" y="223" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="114" y1="218" x2="130" y2="218" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 6: Status Icons -->
+                <circle cx="295" cy="145" r="14" fill="#374151"/><text x="295" y="150" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
+                <line x1="305" y1="132" x2="325" y2="116" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Health Bar', description: '체력 바' },
+                { number: 2, name: 'Resource Bar', description: '자원 바' },
+                { number: 3, name: 'Player Info', description: '플레이어 정보' },
+                { number: 4, name: 'Minimap Area', description: '미니맵 영역' },
+                { number: 5, name: 'Skill Slots', description: '스킬 슬롯' },
+                { number: 6, name: 'Status Icons', description: '상태 아이콘' },
+            ]
+        },
         relatedLaws: ['miller-law', 'law-proximity', 'progressive-disclosure', 'von-restorff'],
         genres: {
             rpg: { title: 'RPG HUD', description: 'HP/MP 바, 퀘스트 트래커, 미니맵, 경험치 바가 포함된 클래식 RPG HUD', wireframe: `<svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -504,6 +677,61 @@ const COMPONENTS = {
             '아이템 등급을 색상으로 구분하세요',
             '드래그앤드롭을 지원하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid container -->
+                <rect x="80" y="30" width="240" height="190" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Row 1 slots -->
+                <rect x="95" y="45" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="150" y="45" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="205" y="45" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="260" y="45" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Row 2 slots -->
+                <rect x="95" y="100" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="150" y="100" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="205" y="100" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="260" y="100" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Row 3 slots -->
+                <rect x="95" y="155" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="150" y="155" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="205" y="155" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="260" y="155" width="48" height="48" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Item icon in first slot -->
+                <text x="119" y="76" text-anchor="middle" fill="#6b7280" font-size="18">⚔</text>
+                <!-- Rarity border highlight on second slot -->
+                <rect x="150" y="45" width="48" height="48" rx="4" fill="none" stroke="#9ca3af" stroke-width="2.5"/>
+                <text x="174" y="76" text-anchor="middle" fill="#6b7280" font-size="18">🛡</text>
+                <!-- Quantity badge -->
+                <circle cx="290" cy="59" r="9" fill="#9ca3af"/><text x="290" y="63" text-anchor="middle" fill="white" font-size="8" font-weight="bold">5</text>
+                <text x="284" y="76" text-anchor="middle" fill="#6b7280" font-size="18">🧪</text>
+                <!-- Callout 1: Grid Container -->
+                <circle cx="38" cy="40" r="14" fill="#374151"/><text x="38" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="52" y1="44" x2="80" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Item Slot -->
+                <circle cx="38" cy="125" r="14" fill="#374151"/><text x="38" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="52" y1="125" x2="95" y2="125" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Item Icon -->
+                <circle cx="38" cy="75" r="14" fill="#374151"/><text x="38" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="52" y1="72" x2="107" y2="68" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Quantity Badge -->
+                <circle cx="362" cy="50" r="14" fill="#374151"/><text x="362" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="348" y1="53" x2="299" y2="57" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Rarity Border -->
+                <circle cx="362" cy="100" r="14" fill="#374151"/><text x="362" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="348" y1="96" x2="198" y2="60" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 6: Tooltip Trigger -->
+                <circle cx="362" cy="170" r="14" fill="#374151"/><text x="362" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
+                <line x1="348" y1="168" x2="308" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Grid Container', description: '그리드 컨테이너' },
+                { number: 2, name: 'Item Slot', description: '아이템 슬롯' },
+                { number: 3, name: 'Item Icon', description: '아이템 아이콘' },
+                { number: 4, name: 'Quantity Badge', description: '수량 뱃지' },
+                { number: 5, name: 'Rarity Border', description: '등급 테두리' },
+                { number: 6, name: 'Tooltip Trigger', description: '툴팁 트리거' },
+            ]
+        },
         relatedLaws: ['jakobs-law', 'law-proximity', 'recognition-recall', 'law-similarity'],
         genres: {
             rpg: { title: 'RPG 인벤토리', description: '그리드 기반, 장비 슬롯, 아이템 등급이 있는 클래식 인벤토리', wireframe: `<svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -621,6 +849,51 @@ const COMPONENTS = {
             '핵심 기능은 1-2번의 탭으로 접근 가능하게 하세요',
             '일관된 내비게이션 패턴을 유지하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Nav container (bottom bar style) -->
+                <rect x="40" y="150" width="320" height="60" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Nav items -->
+                <!-- Item 1 (active) -->
+                <rect x="60" y="158" width="50" height="44" rx="6" fill="#e5e7eb"/>
+                <circle cx="85" cy="172" r="8" fill="#d1d5db"/>
+                <text x="85" y="175" text-anchor="middle" fill="#6b7280" font-size="8">★</text>
+                <text x="85" y="195" text-anchor="middle" fill="#374151" font-size="8" font-weight="600">Home</text>
+                <!-- Active indicator -->
+                <rect x="72" y="155" width="26" height="3" rx="1.5" fill="#9ca3af"/>
+                <!-- Item 2 -->
+                <circle cx="155" cy="172" r="8" fill="#e5e7eb" stroke="#d1d5db" stroke-width="0.8"/>
+                <text x="155" y="195" text-anchor="middle" fill="#9ca3af" font-size="8">Quests</text>
+                <!-- Item 3 -->
+                <circle cx="225" cy="172" r="8" fill="#e5e7eb" stroke="#d1d5db" stroke-width="0.8"/>
+                <text x="225" y="195" text-anchor="middle" fill="#9ca3af" font-size="8">Map</text>
+                <!-- Item 4 -->
+                <circle cx="295" cy="172" r="8" fill="#e5e7eb" stroke="#d1d5db" stroke-width="0.8"/>
+                <text x="295" y="195" text-anchor="middle" fill="#9ca3af" font-size="8">Settings</text>
+                <!-- Callout 1: Nav Container -->
+                <circle cx="38" cy="110" r="14" fill="#374151"/><text x="38" y="115" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="44" y1="123" x2="55" y2="150" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Nav Item -->
+                <circle cx="155" cy="120" r="14" fill="#374151"/><text x="155" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="155" y1="134" x2="155" y2="158" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Active Indicator -->
+                <circle cx="85" cy="120" r="14" fill="#374151"/><text x="85" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="85" y1="134" x2="85" y2="155" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Icon -->
+                <circle cx="295" cy="120" r="14" fill="#374151"/><text x="295" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="295" y1="134" x2="295" y2="163" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Label -->
+                <circle cx="362" cy="190" r="14" fill="#374151"/><text x="362" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="348" y1="192" x2="310" y2="195" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Nav Container', description: '내비게이션 컨테이너' },
+                { number: 2, name: 'Nav Item', description: '메뉴 항목' },
+                { number: 3, name: 'Active Indicator', description: '활성 표시' },
+                { number: 4, name: 'Icon', description: '아이콘' },
+                { number: 5, name: 'Label', description: '라벨' },
+            ]
+        },
         relatedLaws: ['serial-position', 'hicks-law', 'jakobs-law', 'consistency'],
         genres: {
             rpg: { title: 'RPG 내비게이션', description: '탭 메뉴, 월드맵, 퀘스트 로그 내비게이션', wireframe: `<svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -792,6 +1065,48 @@ const COMPONENTS = {
             '수치와 그래픽을 함께 표시하세요',
             '변화에 부드러운 애니메이션을 적용하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Track background -->
+                <rect x="80" y="100" width="240" height="24" rx="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Fill bar -->
+                <rect x="82" y="102" width="156" height="20" rx="10" fill="#d1d5db"/>
+                <!-- Icon (leading) -->
+                <circle cx="55" cy="112" r="14" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <text x="55" y="116" text-anchor="middle" fill="#6b7280" font-size="10">★</text>
+                <!-- Label / Value -->
+                <text x="200" y="90" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">65%</text>
+                <!-- Segmented markers -->
+                <line x1="160" y1="100" x2="160" y2="124" stroke="#9ca3af" stroke-width="1" opacity="0.5"/>
+                <line x1="240" y1="100" x2="240" y2="124" stroke="#9ca3af" stroke-width="1" opacity="0.5"/>
+                <!-- Second progress bar (thinner, below) -->
+                <rect x="80" y="160" width="240" height="12" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8"/>
+                <rect x="82" y="162" width="100" height="8" rx="4" fill="#d1d5db"/>
+                <line x1="162" y1="160" x2="162" y2="172" stroke="#9ca3af" stroke-width="0.8" opacity="0.5"/>
+                <!-- Callout 1: Track -->
+                <circle cx="362" cy="80" r="14" fill="#374151"/><text x="362" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="348" y1="86" x2="320" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Fill -->
+                <circle cx="38" cy="100" r="14" fill="#374151"/><text x="38" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="52" y1="104" x2="82" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Label/Value -->
+                <circle cx="260" cy="60" r="14" fill="#374151"/><text x="260" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="248" y1="70" x2="215" y2="86" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Icon -->
+                <circle cx="38" cy="60" r="14" fill="#374151"/><text x="38" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="48" y1="70" x2="50" y2="98" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Segmented Markers -->
+                <circle cx="362" cy="160" r="14" fill="#374151"/><text x="362" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="348" y1="160" x2="242" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Track', description: '트랙 배경' },
+                { number: 2, name: 'Fill', description: '채움 바' },
+                { number: 3, name: 'Label/Value', description: '라벨/값' },
+                { number: 4, name: 'Icon', description: '선행 아이콘' },
+                { number: 5, name: 'Segmented Markers', description: '구간 마커' },
+            ]
+        },
         relatedLaws: ['doherty-threshold', 'feedback-principle', 'goal-gradient', 'zeigarnik-effect'],
         genres: {
             rpg: { title: 'RPG 프로그레스', description: 'HP/MP/XP 바, 캐스팅 바, 버프 타이머', wireframe: `<svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -949,6 +1264,47 @@ const COMPONENTS = {
             '화면 밖으로 넘치지 않도록 위치를 조정하세요',
             '정보를 계층적으로 구성하세요 (이름→설명→스탯)',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Trigger element (button/item) -->
+                <rect x="150" y="170" width="100" height="40" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+                <text x="200" y="195" text-anchor="middle" fill="#6b7280" font-size="11">Hover me</text>
+                <!-- Tooltip container -->
+                <rect x="110" y="30" width="180" height="110" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Arrow/pointer -->
+                <polygon points="190,140 200,155 210,140" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <line x1="192" y1="140" x2="208" y2="140" stroke="#f3f4f6" stroke-width="2"/>
+                <!-- Title -->
+                <rect x="125" y="45" width="100" height="12" rx="2" fill="#9ca3af"/>
+                <!-- Description text lines -->
+                <rect x="125" y="68" width="150" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="125" y="82" width="130" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="125" y="96" width="110" height="8" rx="2" fill="#d1d5db"/>
+                <rect x="125" y="110" width="80" height="8" rx="2" fill="#d1d5db"/>
+                <!-- Callout 1: Trigger Element -->
+                <circle cx="38" cy="190" r="14" fill="#374151"/><text x="38" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="52" y1="190" x2="150" y2="190" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Tooltip Container -->
+                <circle cx="362" cy="50" r="14" fill="#374151"/><text x="362" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="348" y1="55" x2="290" y2="65" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Arrow -->
+                <circle cx="362" cy="148" r="14" fill="#374151"/><text x="362" y="153" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="348" y1="148" x2="212" y2="148" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Title -->
+                <circle cx="38" cy="45" r="14" fill="#374151"/><text x="38" y="50" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="52" y1="48" x2="125" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Description -->
+                <circle cx="38" cy="90" r="14" fill="#374151"/><text x="38" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="52" y1="88" x2="125" y2="82" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Trigger Element', description: '트리거 요소' },
+                { number: 2, name: 'Tooltip Container', description: '툴팁 컨테이너' },
+                { number: 3, name: 'Arrow/Pointer', description: '화살표' },
+                { number: 4, name: 'Title', description: '제목' },
+                { number: 5, name: 'Description', description: '설명 텍스트' },
+            ]
+        },
         relatedLaws: ['progressive-disclosure', 'miller-law', 'doherty-threshold', 'law-pragnanz'],
         genres: {
             rpg: { title: 'RPG 툴팁', description: '아이템 등급, 스탯, 세트 효과를 보여주는 상세 툴팁', wireframe: `<svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1107,6 +1463,48 @@ const COMPONENTS = {
             '중요한 요소만 아이콘으로 표시하세요',
             '확대/축소 기능을 제공하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Border frame -->
+                <rect x="110" y="25" width="180" height="180" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+                <!-- Map container inner -->
+                <rect x="118" y="33" width="164" height="164" rx="6" fill="#e5e7eb"/>
+                <!-- Terrain features -->
+                <rect x="140" y="60" width="40" height="30" rx="3" fill="#d1d5db" opacity="0.6"/>
+                <rect x="200" y="80" width="50" height="25" rx="3" fill="#d1d5db" opacity="0.6"/>
+                <rect x="150" y="130" width="60" height="20" rx="3" fill="#d1d5db" opacity="0.4"/>
+                <!-- Fog of war (semi-transparent overlay on part of map) -->
+                <rect x="220" y="33" width="62" height="80" fill="#9ca3af" opacity="0.3"/>
+                <!-- Player marker -->
+                <circle cx="190" cy="115" r="6" fill="#374151" stroke="#f9fafb" stroke-width="2"/>
+                <!-- POI icons -->
+                <circle cx="160" cy="70" r="4" fill="#9ca3af"/>
+                <circle cx="230" cy="95" r="4" fill="#9ca3af"/>
+                <rect x="175" y="140" width="8" height="8" rx="1" fill="#9ca3af"/>
+                <!-- Callout 1: Map Container -->
+                <circle cx="55" cy="40" r="14" fill="#374151"/><text x="55" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="69" y1="44" x2="118" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Player Marker -->
+                <circle cx="55" cy="115" r="14" fill="#374151"/><text x="55" y="120" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="69" y1="115" x2="184" y2="115" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: POI Icons -->
+                <circle cx="345" cy="70" r="14" fill="#374151"/><text x="345" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="331" y1="72" x2="234" y2="95" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Fog of War -->
+                <circle cx="345" cy="45" r="14" fill="#374151"/><text x="345" y="50" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="331" y1="48" x2="282" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Border Frame -->
+                <circle cx="345" cy="150" r="14" fill="#374151"/><text x="345" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="331" y1="152" x2="290" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Map Container', description: '맵 컨테이너' },
+                { number: 2, name: 'Player Marker', description: '플레이어 마커' },
+                { number: 3, name: 'POI Icons', description: '관심지점 아이콘' },
+                { number: 4, name: 'Fog of War', description: '전쟁의 안개' },
+                { number: 5, name: 'Border Frame', description: '테두리 프레임' },
+            ]
+        },
         relatedLaws: ['law-pragnanz', 'law-similarity', 'recognition-recall', 'fitts-law'],
         genres: {
             rpg: { title: 'RPG 미니맵', description: '원형, NPC/퀘스트 마커가 있는 월드맵 스타일', wireframe: `<svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1283,6 +1681,63 @@ const COMPONENTS = {
             '쿨다운 상태를 시각적으로 표현하세요',
             '마나/자원 부족 상태를 구분하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Bar container -->
+                <rect x="40" y="120" width="320" height="60" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Skill slots -->
+                <rect x="55" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="105" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="155" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="205" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="255" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <rect x="305" y="130" width="44" height="44" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <!-- Skill icons -->
+                <text x="77" y="158" text-anchor="middle" fill="#6b7280" font-size="16">⚔</text>
+                <text x="127" y="158" text-anchor="middle" fill="#6b7280" font-size="16">🔥</text>
+                <text x="177" y="158" text-anchor="middle" fill="#6b7280" font-size="16">❄</text>
+                <text x="227" y="158" text-anchor="middle" fill="#6b7280" font-size="16">⚡</text>
+                <text x="277" y="158" text-anchor="middle" fill="#6b7280" font-size="16">🛡</text>
+                <text x="327" y="158" text-anchor="middle" fill="#6b7280" font-size="16">✦</text>
+                <!-- Cooldown overlay (on slot 3) -->
+                <rect x="155" y="130" width="44" height="28" rx="6" fill="#9ca3af" opacity="0.35"/>
+                <!-- Keybind labels -->
+                <text x="67" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">1</text>
+                <text x="117" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">2</text>
+                <text x="167" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">3</text>
+                <text x="217" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">4</text>
+                <text x="267" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">5</text>
+                <text x="317" y="170" text-anchor="middle" fill="#9ca3af" font-size="7" font-weight="bold">6</text>
+                <!-- Level indicator (small dot on slot 1) -->
+                <circle cx="93" cy="135" r="5" fill="#9ca3af"/><text x="93" y="138" text-anchor="middle" fill="white" font-size="6">3</text>
+                <!-- Callout 1: Bar Container -->
+                <circle cx="38" cy="80" r="14" fill="#374151"/><text x="38" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="44" y1="93" x2="55" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Skill Slot -->
+                <circle cx="127" cy="80" r="14" fill="#374151"/><text x="127" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="127" y1="94" x2="127" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Skill Icon -->
+                <circle cx="227" cy="80" r="14" fill="#374151"/><text x="227" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="227" y1="94" x2="227" y2="140" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Cooldown Overlay -->
+                <circle cx="177" cy="80" r="14" fill="#374151"/><text x="177" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="177" y1="94" x2="177" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Keybind Label -->
+                <circle cx="277" cy="220" r="14" fill="#374151"/><text x="277" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="272" y1="206" x2="267" y2="174" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 6: Level Indicator -->
+                <circle cx="362" cy="100" r="14" fill="#374151"/><text x="362" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
+                <line x1="348" y1="105" x2="98" y2="135" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Bar Container', description: '바 컨테이너' },
+                { number: 2, name: 'Skill Slot', description: '스킬 슬롯' },
+                { number: 3, name: 'Skill Icon', description: '스킬 아이콘' },
+                { number: 4, name: 'Cooldown Overlay', description: '쿨다운 오버레이' },
+                { number: 5, name: 'Keybind Label', description: '키바인딩 라벨' },
+                { number: 6, name: 'Level Indicator', description: '레벨 표시' },
+            ]
+        },
         relatedLaws: ['hicks-law', 'fitts-law', 'serial-position', 'recognition-recall'],
         genres: {
             rpg: { title: 'RPG 스킬바', description: '하단 중앙 배치, 다수의 슬롯, 확장 가능한 스킬바', wireframe: `<svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1474,6 +1929,57 @@ const COMPONENTS = {
             '스크롤 시 새 메시지 알림을 표시하세요',
             '게임 플레이를 방해하지 않는 크기로 유지하세요',
         ],
+        anatomy: {
+            svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Chat container -->
+                <rect x="80" y="20" width="240" height="210" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+                <!-- Channel tabs -->
+                <rect x="80" y="20" width="240" height="30" rx="10" fill="#e5e7eb"/>
+                <rect x="80" y="40" width="240" height="10" fill="#e5e7eb"/>
+                <text x="120" y="40" text-anchor="middle" fill="#374151" font-size="8" font-weight="600">All</text>
+                <text x="170" y="40" text-anchor="middle" fill="#9ca3af" font-size="8">Party</text>
+                <text x="220" y="40" text-anchor="middle" fill="#9ca3af" font-size="8">Guild</text>
+                <text x="270" y="40" text-anchor="middle" fill="#9ca3af" font-size="8">Whisper</text>
+                <!-- Message area -->
+                <rect x="90" y="58" width="220" height="130" rx="4" fill="#f9fafb"/>
+                <!-- Messages -->
+                <rect x="100" y="68" width="120" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="84" width="150" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="100" width="90" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="116" width="170" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="132" width="130" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="148" width="100" height="10" rx="2" fill="#d1d5db"/>
+                <rect x="100" y="164" width="140" height="10" rx="2" fill="#d1d5db"/>
+                <!-- Input field -->
+                <rect x="90" y="196" width="180" height="26" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                <text x="130" y="213" fill="#9ca3af" font-size="8">Type a message...</text>
+                <!-- Send button -->
+                <rect x="275" y="196" width="36" height="26" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+                <text x="293" y="213" text-anchor="middle" fill="#6b7280" font-size="10">→</text>
+                <!-- Callout 1: Chat Container -->
+                <circle cx="38" cy="35" r="14" fill="#374151"/><text x="38" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                <line x1="52" y1="38" x2="80" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 2: Message Area -->
+                <circle cx="362" cy="100" r="14" fill="#374151"/><text x="362" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                <line x1="348" y1="100" x2="310" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 3: Input Field -->
+                <circle cx="38" cy="209" r="14" fill="#374151"/><text x="38" y="214" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                <line x1="52" y1="209" x2="90" y2="209" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 4: Send Button -->
+                <circle cx="362" cy="209" r="14" fill="#374151"/><text x="362" y="214" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+                <line x1="348" y1="209" x2="311" y2="209" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <!-- Callout 5: Channel Tabs -->
+                <circle cx="362" cy="35" r="14" fill="#374151"/><text x="362" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+                <line x1="348" y1="35" x2="320" y2="35" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            </svg>`,
+            parts: [
+                { number: 1, name: 'Chat Container', description: '채팅 컨테이너' },
+                { number: 2, name: 'Message Area', description: '메시지 영역' },
+                { number: 3, name: 'Input Field', description: '입력 필드' },
+                { number: 4, name: 'Send Button', description: '전송 버튼' },
+                { number: 5, name: 'Channel Tabs', description: '채널 탭' },
+            ]
+        },
         relatedLaws: ['postel-law', 'teslers-law', 'progressive-disclosure', 'feedback-principle'],
         genres: {
             rpg: { title: 'RPG 채팅', description: '전체/파티/길드/귓속말 채널이 있는 멀티 채널 채팅', wireframe: `<svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
