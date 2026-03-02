@@ -608,6 +608,9 @@ button {
     box-shadow: 0 2px 8px var(--accent-glow);
 }
 
+.genre-tab[data-genre="pc"].active { background: #3b82f6; color: #fff; box-shadow: 0 2px 8px rgba(59,130,246,0.3); }
+.genre-tab[data-genre="mobile"].active { background: #10b981; color: #fff; box-shadow: 0 2px 8px rgba(16,185,129,0.3); }
+/* Legacy genre colors (kept for reference) */
 .genre-tab[data-genre="rpg"].active { background: var(--rpg); color: #000; box-shadow: 0 2px 8px rgba(255,215,0,0.3); }
 .genre-tab[data-genre="fps"].active { background: var(--fps); box-shadow: 0 2px 8px rgba(255,68,68,0.3); }
 .genre-tab[data-genre="tps"].active { background: var(--tps); box-shadow: 0 2px 8px rgba(68,170,255,0.3); }
@@ -670,6 +673,37 @@ button {
 .wireframe-svg {
     width: 100%;
     max-width: 400px;
+}
+
+/* Screen Wireframe (full game screen view) */
+.screen-wireframe-section {
+    margin-bottom: var(--space-2xl);
+}
+
+.screen-wireframe-section .section-title {
+    margin-bottom: var(--space-lg);
+}
+
+.screen-wireframe {
+    background: #12131a;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--space-lg);
+    min-height: 200px;
+}
+
+.screen-wireframe .wireframe-svg {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Standalone Demo */
+.standalone-demo {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-2xl);
 }
 
 .demo-area {

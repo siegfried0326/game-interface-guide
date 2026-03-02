@@ -282,8 +282,9 @@
         const comp = COMPONENTS[compId];
         if (!comp) { renderHome(); return; }
 
-        const genres = ['rpg', 'fps', 'tps', 'quarter'];
-        const genreNames = { rpg: 'RPG', fps: 'FPS', tps: 'TPS', quarter: '쿼터뷰' };
+        const platforms = ['pc', 'mobile'];
+        const platformNames = { pc: 'PC', mobile: '모바일' };
+        const platformIcons = { pc: '🖥️', mobile: '📱' };
 
         mainContent.innerHTML = `
         <div class="page-enter">
@@ -314,41 +315,39 @@
                 </ol>
             </div>` : ''}
 
+            ${comp.screenWireframe ? `
+            <div class="screen-wireframe-section">
+                <h2 class="section-title">게임 화면 배치</h2>
+                <div class="wireframe-area screen-wireframe">
+                    <div class="wireframe-svg">${comp.screenWireframe}</div>
+                </div>
+            </div>` : ''}
+
             <div class="genre-tabs" id="genreTabs">
-                ${genres.map((g, i) => `
-                    <button class="genre-tab ${i === 0 ? 'active' : ''}" data-genre="${g}">${genreNames[g]}</button>
+                ${platforms.map((p, i) => `
+                    <button class="genre-tab ${i === 0 ? 'active' : ''}" data-genre="${p}">${platformIcons[p]} ${platformNames[p]}</button>
                 `).join('')}
             </div>
 
-            ${genres.map((g, i) => `
-                <div class="genre-content ${i === 0 ? 'active' : ''}" data-genre-content="${g}">
+            ${platforms.map((p, i) => `
+                <div class="genre-content ${i === 0 ? 'active' : ''}" data-genre-content="${p}">
                     <div class="comp-description">
-                        <h3>${comp.genres[g].title}</h3>
-                        <p>${comp.genres[g].description}</p>
-                    </div>
-
-                    <div class="wireframe-demo-grid">
-                        <div class="wireframe-section">
-                            <div class="section-label"><span class="dot"></span> 와이어프레임</div>
-                            <div class="wireframe-area">
-                                ${comp.genres[g].wireframe
-                                    ? `<div class="wireframe-svg">${comp.genres[g].wireframe}</div>`
-                                    : `<div style="text-align:center;color:var(--text-tertiary);font-size:0.85rem;">
-                                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;margin:0 auto var(--space-sm);opacity:0.3;"><rect x="6" y="6" width="36" height="36" rx="4"/><line x1="6" y1="18" x2="42" y2="18"/><line x1="18" y1="18" x2="18" y2="42"/></svg>
-                                        ${genreNames[g]} ${comp.name} 와이어프레임
-                                       </div>`
-                                }
-                            </div>
-                        </div>
-                        <div class="demo-section">
-                            <div class="section-label"><span class="dot" style="background:var(--success)"></span> 인터랙티브 데모</div>
-                            <div class="demo-area" id="demo-${g}-${compId}">
-                                <!-- 동적으로 데모가 렌더링됨 -->
-                            </div>
-                        </div>
+                        <h3>${comp.platforms[p].title}</h3>
+                        <p>${comp.platforms[p].description}</p>
+                        ${comp.platforms[p].features ? `
+                        <ul>
+                            ${comp.platforms[p].features.map(f => '<li>' + f + '</li>').join('')}
+                        </ul>` : ''}
                     </div>
                 </div>
             `).join('')}
+
+            <div class="demo-section standalone-demo">
+                <div class="section-label"><span class="dot" style="background:var(--success)"></span> 인터랙티브 데모</div>
+                <div class="demo-area" id="demo-rpg-${compId}">
+                    <!-- 동적으로 데모가 렌더링됨 -->
+                </div>
+            </div>
 
             <div class="comp-description">
                 <h3>디자인 가이드라인</h3>
@@ -376,20 +375,19 @@
             </div>` : ''}
         </div>`;
 
-        // Genre tabs
+        // Platform tabs
         const tabs = $$('.genre-tab', mainContent);
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
-                const genre = tab.dataset.genre;
+                const platform = tab.dataset.genre;
                 $$('.genre-content', mainContent).forEach(c => c.classList.remove('active'));
-                $(`.genre-content[data-genre-content="${genre}"]`, mainContent).classList.add('active');
-                renderDemo(genre, compId);
+                $(`.genre-content[data-genre-content="${platform}"]`, mainContent).classList.add('active');
             });
         });
 
-        // Render first genre demo
+        // Render demo
         renderDemo('rpg', compId);
     }
 
@@ -1275,6 +1273,22 @@
                 <h1>${comp.name}</h1>
                 <p class="description">${comp.description}</p>
             </div>
+
+            ${comp.anatomy ? `
+            <div class="comp-anatomy">
+                <h2 class="section-title">Anatomy</h2>
+                <div class="anatomy-diagram">
+                    ${comp.anatomy.svg}
+                </div>
+                <ol class="anatomy-parts">
+                    ${comp.anatomy.parts.map(p => `
+                        <li>
+                            <span class="anatomy-part-name">${p.name}</span>
+                            <span class="anatomy-part-desc">${p.description}</span>
+                        </li>
+                    `).join('')}
+                </ol>
+            </div>` : ''}
 
             <div class="ref-section">
                 <h2 class="section-title">변형 (Variants)</h2>
