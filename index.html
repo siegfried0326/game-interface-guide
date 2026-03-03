@@ -5,36 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick's Game UI/UX Design</title>
 
-    <!-- OG / Social Sharing -->
+    <!-- ===== OG / 소셜 미리보기 메타 태그 ===== -->
+    <!-- 검색엔진 및 SNS 공유 시 표시되는 정보 설정 -->
     <meta name="description" content="게임 UI/UX 컴포넌트 라이브러리 — RPG, FPS, TPS, 쿼터뷰 4개 장르별 와이어프레임과 인터랙티브 데모. 20가지 UX 법칙의 게임 적용 가이드.">
     <meta property="og:title" content="Patrick's Game UI/UX Design">
     <meta property="og:description" content="게임 UI/UX 컴포넌트 라이브러리 — 35개 컴포넌트, 44개 와이어프레임, 20개 UX 법칙, 게임 UI 체크리스트">
-    <meta property="og:image" content="KakaoTalk_20251116_173655934.png">
+    <meta property="og:image" content="KakaoTalk_20251116_173655934.png">  <!-- 프로필 이미지를 OG 이미지로 사용 -->
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">               <!-- 트위터 대형 카드 -->
     <meta name="twitter:title" content="Patrick's Game UI/UX Design">
     <meta name="twitter:description" content="게임 인터페이스의 모든 것 — RPG, FPS, TPS, 쿼터뷰 컴포넌트 시스템">
 
+    <!-- ===== 파비콘 (인라인 SVG) ===== -->
+    <!-- 체크 마크가 있는 파란색 사각형 아이콘 — 별도 파일 없이 data URI 사용 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' rx='16' fill='%23ffffff' stroke='%233b82f6' stroke-width='6'/><path d='M30 50L45 65L70 35' stroke='%233b82f6' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='75' cy='25' r='10' fill='%2360a5fa'/></svg>">
+
+    <!-- ===== 웹폰트 로드 ===== -->
+    <!-- Noto Sans KR: 본문용 한글 폰트 (300~900 웨이트) -->
+    <!-- JetBrains Mono: 코드/수치 표시용 모노스페이스 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- ===== 메인 스타일시트 ===== -->
+    <!-- 라이트/다크 테마, 사이드바, 컴포넌트, 데모, 반응형 스타일 포함 -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Force light theme BEFORE render -->
+    <!-- ===== 테마 초기화 스크립트 (렌더링 전에 실행) ===== -->
+    <!-- FOUC(Flash of Unstyled Content) 방지를 위해 <head>에서 실행 -->
     <script>
+        // gameui-v3: 테마 마이그레이션 플래그
+        // 이전 버전의 테마 설정을 초기화하고 라이트 테마를 기본값으로 강제
         if (!localStorage.getItem('gameui-v3')) {
             localStorage.removeItem('gameui-theme');
             localStorage.setItem('gameui-v3', '1');
         }
+        // 저장된 다크 테마 설정이 있으면 즉시 적용 (렌더링 전)
         if (localStorage.getItem('gameui-theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
 </head>
 <body>
-    <!-- 사이드 네비게이션 -->
+    <!-- ===== 사이드 네비게이션 바 ===== -->
+    <!-- 데스크탑: 좌측 고정 260px / 모바일: 슬라이드 오버레이 -->
     <nav class="sidebar" id="sidebar">
+        <!-- 브랜드 헤더: 프로필 이미지 + 이름 -->
         <div class="sidebar-header">
             <div class="brand-profile">
                 <img src="KakaoTalk_20251116_173655934.png" alt="Patrick" class="brand-avatar"/>
@@ -45,28 +61,48 @@
             </div>
         </div>
 
+        <!-- 네비게이션 링크 영역 -->
+        <!-- app.js의 renderSidebar()에서 동적으로 생성:
+             - 홈 링크
+             - UX 법칙 (카테고리별 그룹: 행동/인지/기억/경험)
+             - 컴포넌트 (카테고리별 그룹: 게임전용/액션/입력/표시/내비게이션/피드백/구조)
+             - 체크리스트 링크 -->
         <div class="sidebar-nav" id="sidebarNav">
-            <!-- 동적으로 생성됨 (app.js) -->
+            <!-- 동적으로 생성됨 (app.js renderSidebar()) -->
         </div>
 
+        <!-- 사이드바 하단: 라이트/다크 테마 토글 버튼 -->
         <div class="sidebar-footer">
             <div class="theme-toggle" id="themeToggle">
+                <!-- 라이트 모드 아이콘 (태양) -->
                 <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <!-- 다크 모드 아이콘 (달) -->
                 <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
             </div>
         </div>
     </nav>
 
-    <!-- 모바일 햄버거 -->
+    <!-- ===== 모바일 햄버거 메뉴 버튼 ===== -->
+    <!-- 모바일 뷰에서만 표시, 클릭 시 사이드바에 .open 클래스 토글 -->
     <button class="mobile-menu-btn" id="mobileMenuBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
 
-    <!-- 메인 콘텐츠 영역 -->
+    <!-- ===== 메인 콘텐츠 영역 ===== -->
+    <!-- app.js의 라우터(route())가 URL 해시에 따라 이 영역의 innerHTML을 동적으로 교체:
+         #/              → renderHome()           : 홈페이지
+         #/components/id → renderComponentDetail() : 게임 전용 컴포넌트 상세
+                           renderReferenceComponent() : 참조 컴포넌트 상세
+         #/ux-laws       → renderUXLaws()          : UX 법칙 목록
+         #/ux-laws/id    → renderUXLawDetail()     : UX 법칙 상세
+         #/checklist     → renderChecklist()       : UI/UX 체크리스트 -->
     <main class="main-content" id="mainContent">
-        <!-- 동적으로 콘텐츠가 들어감 -->
+        <!-- 동적으로 콘텐츠가 들어감 (app.js에서 렌더링) -->
     </main>
 
+    <!-- ===== 스크립트 로드 순서 ===== -->
+    <!-- 1. data.js: 전역 상수 (COMPONENTS, UX_LAWS, COMPONENT_CATEGORIES, CHECKLIST_DATA) -->
+    <!-- 2. app.js: data.js의 전역 상수를 참조하므로 반드시 data.js 이후에 로드 -->
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>

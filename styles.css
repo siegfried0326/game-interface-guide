@@ -1,129 +1,148 @@
 /* ============================================
    Game UI/UX Component System - Global Styles
+   게임 UI/UX 컴포넌트 시스템 - 전역 스타일시트
    ============================================ */
 
+/* ──────────────────────────────────────────────
+   CSS Custom Properties (커스텀 속성 / 디자인 토큰)
+   - 라이트/다크 테마에서 사용되는 모든 색상, 간격, 반경, 전환, 폰트 변수를 정의
+   - :root에 선언하여 전역으로 사용 가능
+   ────────────────────────────────────────────── */
 :root {
     /* Colors - White Blue Light Theme (Default) */
-    --bg-primary: #f0f4ff;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #e8eeff;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f5f8ff;
-    --bg-surface: #f5f8ff;
-    --bg-overlay: rgba(0, 0, 0, 0.3);
+    /* 색상 - 화이트 블루 라이트 테마 (기본값) */
+    --bg-primary: #f0f4ff;       /* 메인 배경색 (연한 파란색) */
+    --bg-secondary: #ffffff;    /* 보조 배경색 (카드, 사이드바 등) */
+    --bg-tertiary: #e8eeff;     /* 3차 배경색 (강조 영역) */
+    --bg-card: #ffffff;          /* 카드 배경색 */
+    --bg-card-hover: #f5f8ff;    /* 카드 호버 시 배경색 */
+    --bg-surface: #f5f8ff;       /* 표면 배경색 (툴팁, 다이얼로그 등) */
+    --bg-overlay: rgba(0, 0, 0, 0.3); /* 오버레이 배경 (모달 뒤 반투명 배경) */
 
-    --text-primary: #1a2040;
-    --text-secondary: #4a5580;
-    --text-tertiary: #8892b0;
-    --text-inverse: #ffffff;
+    /* 텍스트 색상 체계 */
+    --text-primary: #1a2040;     /* 기본 텍스트 (제목, 본문) */
+    --text-secondary: #4a5580;   /* 보조 텍스트 (설명, 부제목) */
+    --text-tertiary: #8892b0;    /* 3차 텍스트 (힌트, 비활성 텍스트) */
+    --text-inverse: #ffffff;     /* 반전 텍스트 (어두운 배경 위) */
 
-    --accent: #3b82f6;
-    --accent-hover: #2563eb;
-    --accent-subtle: rgba(59, 130, 246, 0.1);
-    --accent-glow: rgba(59, 130, 246, 0.3);
+    /* 강조 색상 (파란색 계열) - 버튼, 링크, 활성 상태에 사용 */
+    --accent: #3b82f6;           /* 기본 강조 색상 */
+    --accent-hover: #2563eb;     /* 강조 호버 색상 (더 진한 파랑) */
+    --accent-subtle: rgba(59, 130, 246, 0.1);  /* 연한 강조 배경 */
+    --accent-glow: rgba(59, 130, 246, 0.3);    /* 글로우 효과용 강조색 */
 
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --info: #06b6d4;
+    /* 상태 표시 색상 (성공/경고/위험/정보) */
+    --success: #10b981;          /* 성공 상태 (초록) */
+    --warning: #f59e0b;          /* 경고 상태 (주황) */
+    --danger: #ef4444;           /* 위험 상태 (빨강) */
+    --info: #06b6d4;             /* 정보 상태 (시안) */
 
-    --border-color: rgba(59, 130, 246, 0.12);
-    --border-hover: rgba(59, 130, 246, 0.25);
+    /* 테두리 색상 */
+    --border-color: rgba(59, 130, 246, 0.12);  /* 기본 테두리 */
+    --border-hover: rgba(59, 130, 246, 0.25);  /* 호버 시 테두리 */
 
-    /* RPG Theme */
+    /* 장르별 테마 색상 - 각 게임 장르를 대표하는 고유 색상 */
+    /* RPG Theme - 판타지/중세풍 느낌의 금색 */
     --rpg: #ffd700;
     --rpg-bg: rgba(255, 215, 0, 0.1);
-    /* FPS Theme */
+    /* FPS Theme - 긴박한 전투 느낌의 빨간색 */
     --fps: #ff4444;
     --fps-bg: rgba(255, 68, 68, 0.1);
-    /* TPS Theme */
+    /* TPS Theme - 전략적/SF 느낌의 파란색 */
     --tps: #44aaff;
     --tps-bg: rgba(68, 170, 255, 0.1);
-    /* Quarter View Theme */
+    /* Quarter View Theme - 자연/전략 느낌의 초록색 */
     --quarter: #44ff88;
     --quarter-bg: rgba(68, 255, 136, 0.1);
 
-    /* Spacing */
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
+    /* Spacing - 간격 체계 (xs~3xl로 일관된 여백 관리) */
+    --space-xs: 0.25rem;   /* 4px - 최소 간격 */
+    --space-sm: 0.5rem;    /* 8px - 작은 간격 */
+    --space-md: 1rem;      /* 16px - 기본 간격 */
+    --space-lg: 1.5rem;    /* 24px - 큰 간격 */
+    --space-xl: 2rem;      /* 32px - 매우 큰 간격 */
+    --space-2xl: 3rem;     /* 48px - 섹션 간 간격 */
+    --space-3xl: 4rem;     /* 64px - 대형 섹션 간격 */
 
-    /* Sidebar */
+    /* Sidebar - 사이드바 너비 */
     --sidebar-width: 260px;
 
-    /* Radius */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    /* Radius - 모서리 둥글기 체계 */
+    --radius-sm: 6px;      /* 작은 요소 (버튼, 입력 필드) */
+    --radius-md: 10px;     /* 중간 요소 (카드, 패널) */
+    --radius-lg: 16px;     /* 큰 요소 (섹션, 모달) */
+    --radius-xl: 24px;     /* 알약형 (뱃지, 태그) */
 
-    /* Transitions */
-    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transitions - 전환 애니메이션 속도 (cubic-bezier 이징 함수 사용) */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);   /* 빠른 전환 (호버 등) */
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);   /* 기본 전환 */
+    --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);   /* 느린 전환 (페이지 전환 등) */
 
-    /* Fonts */
-    --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    /* Fonts - 글꼴 체계 */
+    --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;  /* 본문용 한글 폰트 */
+    --font-mono: 'JetBrains Mono', monospace;  /* 코드/숫자용 모노스페이스 폰트 */
 }
 
-/* Dark Theme */
+/* Dark Theme - 다크 테마 오버라이드
+   data-theme="dark" 속성이 html에 적용되면 아래 변수들이 라이트 테마 값을 덮어씀 */
 [data-theme="dark"] {
-    --bg-primary: #0c1222;
-    --bg-secondary: #111827;
-    --bg-tertiary: #1a2442;
-    --bg-card: #152038;
-    --bg-card-hover: #1e2d50;
-    --bg-surface: #1a2744;
-    --bg-overlay: rgba(0, 0, 0, 0.6);
+    --bg-primary: #0c1222;       /* 다크 메인 배경 (진한 남색) */
+    --bg-secondary: #111827;     /* 다크 보조 배경 */
+    --bg-tertiary: #1a2442;      /* 다크 3차 배경 */
+    --bg-card: #152038;          /* 다크 카드 배경 */
+    --bg-card-hover: #1e2d50;    /* 다크 카드 호버 */
+    --bg-surface: #1a2744;       /* 다크 표면 배경 */
+    --bg-overlay: rgba(0, 0, 0, 0.6);  /* 다크 오버레이 (더 진한 불투명) */
 
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --text-tertiary: #64748b;
-    --text-inverse: #0c1222;
+    --text-primary: #e2e8f0;     /* 다크 기본 텍스트 (밝은 색) */
+    --text-secondary: #94a3b8;   /* 다크 보조 텍스트 */
+    --text-tertiary: #64748b;    /* 다크 3차 텍스트 */
+    --text-inverse: #0c1222;     /* 다크 반전 텍스트 */
 
-    --border-color: rgba(59, 130, 246, 0.15);
-    --border-hover: rgba(59, 130, 246, 0.3);
+    --border-color: rgba(59, 130, 246, 0.15);  /* 다크 테두리 */
+    --border-hover: rgba(59, 130, 246, 0.3);   /* 다크 호버 테두리 */
 
-    --accent-subtle: rgba(59, 130, 246, 0.15);
-    --accent-glow: rgba(59, 130, 246, 0.4);
+    --accent-subtle: rgba(59, 130, 246, 0.15); /* 다크 연한 강조 */
+    --accent-glow: rgba(59, 130, 246, 0.4);    /* 다크 글로우 (더 강한 발광) */
 }
 
 /* ============ Reset & Base ============ */
+/* 초기화 및 기본 스타일 - 브라우저 기본 스타일을 제거하고 일관된 기반 설정 */
+
+/* 모든 요소의 margin/padding 초기화, border-box 모델 적용 */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 패딩과 테두리를 요소 크기에 포함 */
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+    scroll-behavior: smooth;  /* 앵커 링크 클릭 시 부드러운 스크롤 */
+    font-size: 16px;          /* rem 단위의 기준 크기 */
 }
 
 body {
     font-family: var(--font-body);
     background: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;                    /* 읽기 편한 줄 간격 */
+    overflow-x: hidden;                  /* 가로 스크롤 방지 */
+    -webkit-font-smoothing: antialiased; /* 폰트 렌더링 부드럽게 (macOS/iOS) */
 }
 
+/* 링크 기본 스타일 초기화 */
 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* 이미지/SVG를 블록 요소로 변환하여 하단 갭 제거 */
 img, svg {
     display: block;
     max-width: 100%;
 }
 
+/* 버튼 기본 스타일 초기화 */
 button {
     font-family: inherit;
     cursor: pointer;
@@ -132,43 +151,49 @@ button {
 }
 
 /* ============ Sidebar ============ */
+/* 사이드바 네비게이션 - 화면 왼쪽에 고정된 메인 네비게이션 패널
+   구조: 헤더(브랜드) > 네비게이션(스크롤) > 푸터(테마 토글) */
+
+/* 사이드바 컨테이너 - 뷰포트 좌측에 고정 배치 */
 .sidebar {
-    position: fixed;
+    position: fixed;       /* 스크롤해도 고정 위치 유지 */
     top: 0;
     left: 0;
-    width: var(--sidebar-width);
-    height: 100vh;
+    width: var(--sidebar-width);  /* 260px */
+    height: 100vh;         /* 뷰포트 전체 높이 */
     background: var(--bg-secondary);
     border-right: 1px solid var(--border-color);
     display: flex;
-    flex-direction: column;
-    z-index: 100;
+    flex-direction: column; /* 세로 방향 레이아웃 */
+    z-index: 100;           /* 메인 콘텐츠 위에 표시 */
     overflow: hidden;
-    transition: transform var(--transition-base);
+    transition: transform var(--transition-base); /* 모바일에서 슬라이드 애니메이션 */
 }
 
+/* 사이드바 상단 헤더 - 브랜드 로고/프로필 영역 */
 .sidebar-header {
     padding: var(--space-lg);
     border-bottom: 1px solid var(--border-color);
 }
 
-/* Brand Profile */
+/* Brand Profile - 브랜드 프로필 (아바타 + 이름/설명) */
 .brand-profile {
     display: flex;
     align-items: center;
     gap: var(--space-md);
 }
 
+/* 브랜드 아바타 이미지 - 원형 프로필 사진 + 강조 테두리/글로우 */
 .brand-avatar {
     width: 44px !important;
     height: 44px !important;
     min-width: 44px;
     min-height: 44px;
-    border-radius: 50% !important;
-    object-fit: cover;
+    border-radius: 50% !important;  /* 완전 원형 */
+    object-fit: cover;              /* 이미지 비율 유지하며 영역 채움 */
     border: 2.5px solid var(--accent);
-    box-shadow: 0 0 12px var(--accent-glow);
-    flex-shrink: 0;
+    box-shadow: 0 0 12px var(--accent-glow); /* 파란 글로우 효과 */
+    flex-shrink: 0;                 /* flex 레이아웃에서 축소 방지 */
 }
 
 .brand-info {
@@ -176,11 +201,13 @@ button {
     flex-direction: column;
 }
 
+/* 브랜드 이름 - 그래디언트 텍스트 효과 적용 */
 .brand-name {
     display: block;
     font-weight: 800;
     font-size: 1.05rem;
     letter-spacing: -0.02em;
+    /* 텍스트에 그래디언트 색상 적용 (배경을 텍스트 모양으로 클리핑) */
     background: linear-gradient(135deg, var(--accent), #60a5fa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -195,7 +222,7 @@ button {
     font-weight: 500;
 }
 
-/* Legacy logo support */
+/* Legacy logo support - 이전 버전 로고 호환을 위한 레거시 스타일 */
 .logo {
     display: flex;
     align-items: center;
@@ -223,14 +250,16 @@ button {
     letter-spacing: 0.05em;
 }
 
+/* 사이드바 네비게이션 영역 - 스크롤 가능한 메뉴 목록 */
 .sidebar-nav {
-    flex: 1;
-    overflow-y: auto;
+    flex: 1;                /* 남은 공간을 모두 차지 */
+    overflow-y: auto;       /* 콘텐츠가 넘치면 세로 스크롤 */
     padding: var(--space-md) var(--space-sm);
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) transparent;
+    scrollbar-width: thin;  /* Firefox 스크롤바 얇게 */
+    scrollbar-color: var(--border-color) transparent; /* Firefox 스크롤바 색상 */
 }
 
+/* Webkit (Chrome/Safari) 스크롤바 커스터마이징 */
 .sidebar-nav::-webkit-scrollbar {
     width: 4px;
 }
@@ -240,15 +269,17 @@ button {
     border-radius: 2px;
 }
 
+/* 네비게이션 섹션 제목 - "COMPONENTS", "UX LAWS" 등의 카테고리 레이블 */
 .nav-section-title {
     font-size: 0.65rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: uppercase;   /* 대문자 변환 */
+    letter-spacing: 0.1em;       /* 자간 넓힘 (대문자 가독성 향상) */
     color: var(--text-tertiary);
     padding: var(--space-lg) var(--space-md) var(--space-sm);
 }
 
+/* 네비게이션 항목 - 각 메뉴 아이템 (아이콘 + 텍스트) */
 .nav-item {
     display: flex;
     align-items: center;
@@ -277,6 +308,7 @@ button {
     opacity: 1;
 }
 
+/* 활성 상태 네비게이션 항목 - 현재 선택된 메뉴 */
 .nav-item.active {
     background: var(--accent-subtle);
     color: var(--accent);
@@ -288,11 +320,13 @@ button {
     color: var(--accent);
 }
 
+/* 사이드바 푸터 - 테마 전환 버튼이 위치하는 하단 영역 */
 .sidebar-footer {
     padding: var(--space-md) var(--space-lg);
     border-top: 1px solid var(--border-color);
 }
 
+/* 테마 전환 토글 버튼 (라이트/다크 모드 전환) */
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -315,19 +349,22 @@ button {
 }
 
 /* Light (default): show sun, hide moon */
+/* 라이트 모드(기본): 해 아이콘 표시, 달 아이콘 숨김 */
 .icon-moon { display: none; }
 .icon-sun { display: block; }
 /* Dark: show moon, hide sun */
+/* 다크 모드: 달 아이콘 표시, 해 아이콘 숨김 */
 [data-theme="dark"] .icon-sun { display: none; }
 [data-theme="dark"] .icon-moon { display: block; }
 
 /* ============ Mobile Menu ============ */
+/* 모바일 메뉴 버튼 - 768px 이하에서만 표시되는 햄버거 메뉴 버튼 */
 .mobile-menu-btn {
-    display: none;
-    position: fixed;
+    display: none;          /* 기본적으로 숨김 (모바일 미디어쿼리에서 flex로 변경) */
+    position: fixed;        /* 스크롤해도 고정 */
     top: var(--space-md);
     left: var(--space-md);
-    z-index: 200;
+    z-index: 200;           /* 사이드바(100)보다 위에 표시 */
     width: 44px;
     height: 44px;
     border-radius: var(--radius-sm);
@@ -344,29 +381,35 @@ button {
 }
 
 /* ============ Main Content ============ */
+/* 메인 콘텐츠 영역 - 사이드바 오른쪽의 주요 콘텐츠가 표시되는 공간 */
 .main-content {
-    margin-left: var(--sidebar-width);
-    min-height: 100vh;
+    margin-left: var(--sidebar-width); /* 사이드바 너비만큼 왼쪽 마진 */
+    min-height: 100vh;                 /* 최소 뷰포트 높이 확보 */
     padding: var(--space-3xl);
-    max-width: 1200px;
+    max-width: 1200px;                 /* 최대 너비 제한 (가독성) */
 }
 
 /* ============ Page Transitions ============ */
+/* 페이지 전환 애니메이션 - 페이지가 로드될 때 아래에서 위로 페이드인 */
 .page-enter {
     animation: pageIn 0.3s ease forwards;
 }
 
 @keyframes pageIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(12px); }  /* 시작: 투명 + 12px 아래 */
+    to { opacity: 1; transform: translateY(0); }        /* 끝: 완전 불투명 + 원래 위치 */
 }
 
 /* ============ Home Page ============ */
+/* 홈페이지 스타일 - 메인 랜딩 페이지의 히어로 섹션, 통계, 카드 그리드 */
+
+/* 홈 히어로 섹션 - 페이지 상단의 대형 소개 영역 */
 .home-hero {
     padding: var(--space-3xl) 0;
     text-align: center;
 }
 
+/* 히어로 영역의 브랜드 프로필 (아바타 + 뱃지) */
 .hero-brand {
     display: flex;
     flex-direction: column;
@@ -375,6 +418,7 @@ button {
     margin-bottom: var(--space-xl);
 }
 
+/* 히어로 아바타 - 큰 원형 프로필 이미지 + 이중 그림자(글로우 + 깊이) */
 .hero-avatar {
     width: 96px;
     height: 96px;
@@ -384,6 +428,7 @@ button {
     box-shadow: 0 0 24px var(--accent-glow), 0 8px 32px rgba(59, 130, 246, 0.15);
 }
 
+/* 히어로 뱃지 - 버전 또는 상태를 표시하는 알약형 태그 */
 .hero-badge {
     display: inline-block;
     padding: 4px 16px;
@@ -391,19 +436,21 @@ button {
     color: var(--accent);
     font-size: 0.75rem;
     font-weight: 600;
-    border-radius: 20px;
+    border-radius: 20px;       /* 알약형 모서리 */
     border: 1px solid var(--accent);
     letter-spacing: 0.05em;
 }
 
+/* 히어로 제목 - 반응형 크기 (clamp: 최소 2rem, 선호 5vw, 최대 3.2rem) */
 .home-hero h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3.2rem); /* 뷰포트에 따라 유동적 크기 조절 */
     font-weight: 900;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.03em;  /* 큰 텍스트에서 자간을 좁혀 밀도감 향상 */
     line-height: 1.2;
     margin-bottom: var(--space-md);
 }
 
+/* 히어로 제목 내 강조 텍스트 - 그래디언트 색상 적용 */
 .home-hero h1 .accent {
     background: linear-gradient(135deg, #3b82f6, #60a5fa, #93c5fd);
     -webkit-background-clip: text;
@@ -419,11 +466,12 @@ button {
     margin: 0 auto;
 }
 
+/* 홈 통계 영역 - 컴포넌트 수, UX 법칙 수 등의 수치 카운터 */
 .home-stats {
     display: flex;
     gap: var(--space-xl);
     margin-top: var(--space-2xl);
-    flex-wrap: wrap;
+    flex-wrap: wrap;          /* 작은 화면에서 줄바꿈 */
     justify-content: center;
 }
 
@@ -431,12 +479,13 @@ button {
     text-align: center;
 }
 
+/* 통계 숫자 - 모노스페이스 폰트로 숫자 강조 표시 */
 .stat-number {
     display: block;
     font-size: 2rem;
     font-weight: 900;
     color: var(--accent);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); /* 숫자에 고정폭 폰트 사용 */
 }
 
 .stat-label {
@@ -444,7 +493,9 @@ button {
     color: var(--text-tertiary);
 }
 
-/* Component Grid */
+/* Component Grid - 컴포넌트 카드 그리드 레이아웃 */
+
+/* 섹션 제목 - 왼쪽에 파란색 세로 바 장식이 있는 제목 */
 .section-title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -454,6 +505,7 @@ button {
     gap: var(--space-sm);
 }
 
+/* 섹션 제목 앞의 세로 장식 바 (::before 가상 요소) */
 .section-title::before {
     content: '';
     width: 4px;
@@ -462,13 +514,15 @@ button {
     border-radius: 2px;
 }
 
+/* 컴포넌트 그리드 - 자동 채움 반응형 그리드 (최소 260px, 최대 1fr) */
 .component-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 화면 너비에 따라 열 수 자동 조절 */
     gap: var(--space-lg);
     margin-bottom: var(--space-3xl);
 }
 
+/* 컴포넌트 카드 - 각 UI 컴포넌트를 소개하는 카드 */
 .component-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -481,6 +535,7 @@ button {
     box-shadow: 0 1px 3px rgba(59, 130, 246, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
+/* 카드 상단 강조 바 - 호버 시 왼쪽에서 오른쪽으로 확장되는 파란색 라인 */
 .component-card::before {
     content: '';
     position: absolute;
@@ -489,22 +544,25 @@ button {
     right: 0;
     height: 3px;
     background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
+    transform: scaleX(0);       /* 기본: 숨겨진 상태 (너비 0) */
+    transform-origin: left;     /* 왼쪽에서부터 확장 */
     transition: transform var(--transition-base);
 }
 
+/* 카드 호버 효과 - 위로 살짝 떠오르며 그림자 강화 */
 .component-card:hover {
     background: var(--bg-card-hover);
     border-color: var(--accent);
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* 위로 4px 이동 (부유 효과) */
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12), 0 4px 8px rgba(0, 0, 0, 0.04);
 }
 
+/* 호버 시 상단 강조 바 표시 */
 .component-card:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(1);       /* 전체 너비로 확장 */
 }
 
+/* 카드 아이콘 컨테이너 - 각 컴포넌트를 대표하는 아이콘 영역 */
 .component-card-icon {
     width: 44px;
     height: 44px;
@@ -535,10 +593,15 @@ button {
 }
 
 /* ============ Component Detail Page ============ */
+/* 컴포넌트 상세 페이지 - 개별 UI 컴포넌트의 상세 정보를 표시하는 페이지
+   구조: 브레드크럼 > 헤더(제목/설명) > 장르 탭 > 와이어프레임+데모 > 해부도 > 설명 */
+
+/* 상세 페이지 헤더 */
 .comp-detail-header {
     margin-bottom: var(--space-3xl);
 }
 
+/* 브레드크럼 네비게이션 - 현재 위치를 "홈 > 컴포넌트 > 버튼" 형태로 표시 */
 .breadcrumb {
     display: flex;
     align-items: center;
@@ -575,17 +638,19 @@ button {
     line-height: 1.8;
 }
 
-/* Genre Tabs */
+/* Genre Tabs - 장르 선택 탭 (RPG/FPS/TPS/쿼터뷰 또는 PC/모바일 전환) */
+/* 탭 그룹 컨테이너 - 세그먼트 컨트롤 스타일 */
 .genre-tabs {
     display: flex;
     gap: var(--space-xs);
     margin-bottom: var(--space-2xl);
-    background: var(--bg-tertiary);
+    background: var(--bg-tertiary);  /* 탭 그룹 배경 */
     border-radius: var(--radius-md);
     padding: 4px;
-    width: fit-content;
+    width: fit-content;              /* 내용 크기에 맞춤 */
 }
 
+/* 개별 장르 탭 버튼 */
 .genre-tab {
     padding: 0.5rem 1.2rem;
     border-radius: var(--radius-sm);
@@ -602,37 +667,43 @@ button {
     color: var(--text-primary);
 }
 
+/* 활성 탭 - 강조 배경 + 글로우 그림자 */
 .genre-tab.active {
     background: var(--accent);
     color: white;
     box-shadow: 0 2px 8px var(--accent-glow);
 }
 
+/* 플랫폼별 활성 탭 색상 (PC: 파랑, 모바일: 초록) */
 .genre-tab[data-genre="pc"].active { background: #3b82f6; color: #fff; box-shadow: 0 2px 8px rgba(59,130,246,0.3); }
 .genre-tab[data-genre="mobile"].active { background: #10b981; color: #fff; box-shadow: 0 2px 8px rgba(16,185,129,0.3); }
-/* Legacy genre colors (kept for reference) */
+/* Legacy genre colors (kept for reference) - 장르별 활성 탭 색상 (레거시) */
 .genre-tab[data-genre="rpg"].active { background: var(--rpg); color: #000; box-shadow: 0 2px 8px rgba(255,215,0,0.3); }
 .genre-tab[data-genre="fps"].active { background: var(--fps); box-shadow: 0 2px 8px rgba(255,68,68,0.3); }
 .genre-tab[data-genre="tps"].active { background: var(--tps); box-shadow: 0 2px 8px rgba(68,170,255,0.3); }
 .genre-tab[data-genre="quarter"].active { background: var(--quarter); color: #000; box-shadow: 0 2px 8px rgba(68,255,136,0.3); }
 
-/* Wireframe + Demo Area */
+/* Wireframe + Demo Area - 와이어프레임과 인터랙티브 데모 영역 */
+
+/* 장르별 콘텐츠 컨테이너 - 선택된 장르만 표시 */
 .genre-content {
-    display: none;
+    display: none;           /* 기본: 숨김 */
 }
 
 .genre-content.active {
-    display: block;
-    animation: pageIn 0.3s ease forwards;
+    display: block;          /* 활성 장르만 표시 */
+    animation: pageIn 0.3s ease forwards; /* 페이드인 애니메이션 적용 */
 }
 
+/* 와이어프레임+데모 2열 그리드 - 왼쪽: 와이어프레임, 오른쪽: 인터랙티브 데모 */
 .wireframe-demo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 동일한 2열 레이아웃 */
     gap: var(--space-xl);
     margin-bottom: var(--space-2xl);
 }
 
+/* 와이어프레임/데모 섹션 공통 카드 스타일 */
 .wireframe-section,
 .demo-section {
     background: var(--bg-card);
@@ -641,6 +712,7 @@ button {
     overflow: hidden;
 }
 
+/* 섹션 레이블 - "WIREFRAME", "DEMO" 등의 상단 라벨 바 */
 .section-label {
     padding: var(--space-md) var(--space-lg);
     border-bottom: 1px solid var(--border-color);
@@ -654,6 +726,7 @@ button {
     gap: var(--space-sm);
 }
 
+/* 레이블 앞의 작은 원형 점 장식 */
 .section-label .dot {
     width: 6px;
     height: 6px;
@@ -661,6 +734,7 @@ button {
     background: var(--accent);
 }
 
+/* 와이어프레임 표시 영역 - SVG 와이어프레임이 렌더링되는 공간 */
 .wireframe-area {
     padding: var(--space-xl);
     display: flex;
@@ -675,7 +749,8 @@ button {
     max-width: 400px;
 }
 
-/* Screen Wireframe (full game screen view) */
+/* Screen Wireframe (full game screen view) - 전체 게임 화면 와이어프레임
+   HUD 등 전체 화면 레이아웃을 보여주는 어두운 배경의 와이어프레임 */
 .screen-wireframe-section {
     margin-bottom: var(--space-2xl);
 }
@@ -697,7 +772,7 @@ button {
     margin: 0 auto;
 }
 
-/* Standalone Demo */
+/* Standalone Demo - 독립형 데모 (와이어프레임 없이 데모만 표시하는 경우) */
 .standalone-demo {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -706,6 +781,7 @@ button {
     margin-bottom: var(--space-2xl);
 }
 
+/* 데모 표시 영역 - 인터랙티브 데모가 렌더링되는 공간 */
 .demo-area {
     padding: var(--space-xl);
     display: flex;
@@ -714,7 +790,9 @@ button {
     min-height: 280px;
 }
 
-/* Anatomy Section */
+/* Anatomy Section - 컴포넌트 해부도 섹션
+   각 UI 컴포넌트의 구성 요소를 번호를 매겨 시각적으로 설명
+   구조: SVG 다이어그램 + 번호 매긴 파츠 목록 */
 .comp-anatomy {
     margin-bottom: var(--space-2xl);
 }
@@ -726,6 +804,7 @@ button {
     color: var(--text-primary);
 }
 
+/* 해부도 다이어그램 - SVG 해부도가 표시되는 카드 영역 */
 .anatomy-diagram {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -742,13 +821,14 @@ button {
     max-width: 500px;
 }
 
+/* 해부도 파츠 목록 - CSS 카운터를 이용한 자동 번호 매김 (2열 그리드) */
 .anatomy-parts {
     list-style: none;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-sm) var(--space-xl);
-    counter-reset: anatomy;
+    counter-reset: anatomy;  /* 'anatomy' 카운터 초기화 */
 }
 
 .anatomy-parts li {
@@ -759,14 +839,15 @@ button {
     align-items: baseline;
 }
 
+/* 파츠 번호 원형 뱃지 - CSS 카운터로 자동 번호 생성 */
 .anatomy-parts li::before {
-    counter-increment: anatomy;
-    content: counter(anatomy);
+    counter-increment: anatomy;    /* 카운터 1 증가 */
+    content: counter(anatomy);     /* 카운터 값을 텍스트로 표시 */
     background: var(--text-primary);
     color: var(--bg-card);
     width: 22px;
     height: 22px;
-    border-radius: 50%;
+    border-radius: 50%;            /* 원형 */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -791,7 +872,8 @@ button {
     }
 }
 
-/* Description Section */
+/* Description Section - 컴포넌트 설명 섹션
+   해당 UI 컴포넌트의 역할, 사용법, 디자인 가이드라인을 서술 */
 .comp-description {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -826,6 +908,7 @@ button {
     gap: var(--space-sm);
 }
 
+/* 설명 목록 항목 앞의 화살표 장식 */
 .comp-description ul li::before {
     content: '→';
     color: var(--accent);
@@ -834,12 +917,17 @@ button {
 }
 
 /* ============ UX Laws Page ============ */
+/* UX 법칙 페이지 - UX 법칙 카드 목록 (피츠의 법칙, 힉의 법칙 등)
+   구조: 카드 그리드 > 각 카드(비주얼 + 제목 + 설명 + 태그) */
+
+/* UX 법칙 카드 그리드 - 자동 채움 반응형 (최소 300px) */
 .ux-laws-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-lg);
 }
 
+/* UX 법칙 카드 - 개별 법칙을 소개하는 카드 */
 .ux-law-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -849,14 +937,16 @@ button {
     cursor: pointer;
 }
 
+/* 카드 호버 - 위로 떠오르는 효과 */
 .ux-law-card:hover {
     transform: translateY(-3px);
     border-color: var(--border-hover);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
+/* UX 법칙 비주얼 - 카드 상단의 시각적 일러스트 영역 (16:10 비율) */
 .ux-law-visual {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 10;  /* 와이드 비율의 비주얼 영역 */
     background: var(--bg-tertiary);
     display: flex;
     align-items: center;
@@ -888,6 +978,7 @@ button {
     line-height: 1.7;
 }
 
+/* UX 법칙 태그 - 카테고리 분류 태그 (예: "인지", "행동", "시각") */
 .ux-law-tag {
     display: inline-block;
     margin-top: var(--space-sm);
@@ -899,7 +990,7 @@ button {
     color: var(--accent);
 }
 
-/* UX Law Detail (Expanded) */
+/* UX Law Detail (Expanded) - UX 법칙 상세 설명 카드 (확장 보기) */
 .ux-law-detail {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -914,13 +1005,14 @@ button {
     margin-bottom: var(--space-md);
 }
 
+/* 법칙의 핵심 원리 - 왼쪽 파란 테두리로 인용문 스타일 강조 */
 .ux-law-detail .principle {
     font-size: 1.05rem;
     color: var(--accent);
     font-weight: 500;
     margin-bottom: var(--space-lg);
     padding-left: var(--space-md);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--accent); /* 왼쪽 강조 테두리 */
 }
 
 .ux-law-detail .explanation {
@@ -929,6 +1021,7 @@ button {
     margin-bottom: var(--space-lg);
 }
 
+/* 게임 적용 사례 - UX 법칙이 게임 UI에 어떻게 적용되는지 설명하는 박스 */
 .game-application {
     background: var(--bg-tertiary);
     border-radius: var(--radius-md);
@@ -958,6 +1051,7 @@ button {
 }
 
 /* ============ Related UX Laws Section ============ */
+/* 관련 UX 법칙 섹션 - 현재 보고 있는 법칙과 관련된 다른 법칙들을 카드로 추천 */
 .related-laws-section {
     margin-top: var(--space-2xl);
     padding: var(--space-xl);
@@ -976,6 +1070,7 @@ button {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--space-md);
 }
+/* 관련 법칙 카드 - 미니 SVG + 법칙명 + 요약을 가로로 배치 */
 .related-law-card {
     display: flex;
     align-items: center;
@@ -1009,17 +1104,22 @@ button {
     color: var(--accent);
     margin-bottom: 2px;
 }
+/* 관련 법칙 원리 요약 - 최대 2줄로 말줄임 처리 */
 .related-law-principle {
     font-size: 0.7rem;
     color: var(--text-tertiary);
     line-height: 1.4;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2;           /* 최대 2줄까지만 표시 */
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: hidden;                 /* 넘치는 텍스트 숨김 (말줄임) */
 }
 
 /* ============ Genre Guide Page ============ */
+/* 장르 가이드 페이지 - RPG/FPS/TPS/쿼터뷰 각 장르별 UI 설계 가이드
+   구조: 장르 히어로(배너) > 컴포넌트 목록(아코디언) */
+
+/* 장르 히어로 배너 - 장르를 대표하는 색상의 그래디언트 배경 */
 .genre-hero {
     padding: var(--space-2xl);
     border-radius: var(--radius-lg);
@@ -1028,6 +1128,7 @@ button {
     overflow: hidden;
 }
 
+/* 장르별 히어로 배경색 - 각 장르 테마 색상의 그래디언트 */
 .genre-hero.rpg { background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.03)); border: 1px solid rgba(255,215,0,0.15); }
 .genre-hero.fps { background: linear-gradient(135deg, rgba(255,68,68,0.1), rgba(255,68,68,0.03)); border: 1px solid rgba(255,68,68,0.15); }
 .genre-hero.tps { background: linear-gradient(135deg, rgba(68,170,255,0.1), rgba(68,170,255,0.03)); border: 1px solid rgba(68,170,255,0.15); }
@@ -1039,6 +1140,7 @@ button {
     margin-bottom: var(--space-sm);
 }
 
+/* 장르 뱃지 - 장르명을 표시하는 알약형 뱃지 */
 .genre-hero .genre-badge {
     display: inline-block;
     padding: 4px 14px;
@@ -1049,6 +1151,7 @@ button {
     margin-bottom: var(--space-md);
 }
 
+/* 장르별 뱃지 색상 - 각 장르 테마 색상에 맞는 배경/텍스트 */
 .genre-hero.rpg .genre-badge { background: var(--rpg); color: #000; }
 .genre-hero.fps .genre-badge { background: var(--fps); color: #fff; }
 .genre-hero.tps .genre-badge { background: var(--tps); color: #fff; }
@@ -1060,11 +1163,13 @@ button {
     line-height: 1.8;
 }
 
+/* 장르별 컴포넌트 목록 - 해당 장르에서 사용되는 UI 컴포넌트들의 리스트 */
 .genre-components-list {
     display: grid;
     gap: var(--space-lg);
 }
 
+/* 장르 컴포넌트 아이템 - 아코디언 스타일 (헤더 클릭 시 바디 확장) */
 .genre-comp-item {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -1095,8 +1200,11 @@ button {
 }
 
 /* ============ Interactive Demos ============ */
+/* 인터랙티브 데모 스타일 - 각 게임 UI 컴포넌트의 실제 동작을 보여주는 데모
+   포함: 버튼, HP/MP 바, 툴팁, 채팅, 미니맵, 스킬바, 인벤토리, 다이얼로그, HUD, 네비게이션 */
 
-/* Game Button Demo */
+/* Game Button Demo - 게임 버튼 데모 (장르별 4가지 스타일) */
+/* 버튼 공통 베이스 스타일 */
 .demo-btn {
     position: relative;
     display: inline-flex;
@@ -1113,10 +1221,11 @@ button {
     overflow: hidden;
 }
 
+/* 기본 강조 버튼 - 파란색 그래디언트 + 내부 하이라이트 + 외부 글로우 */
 .demo-btn-primary {
     background: linear-gradient(180deg, var(--accent-hover), var(--accent));
     color: white;
-    box-shadow: 0 4px 12px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+    box-shadow: 0 4px 12px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.15); /* 외부 글로우 + 내부 하이라이트 */
 }
 
 .demo-btn-primary:hover {
@@ -1129,48 +1238,54 @@ button {
     box-shadow: 0 2px 6px var(--accent-glow);
 }
 
+/* RPG 버튼 - 판타지/중세 느낌 (금색 테두리, 세리프 폰트, 텍스트 글로우) */
 .demo-btn-rpg {
-    background: linear-gradient(180deg, #8B6914, #6B4F0A);
+    background: linear-gradient(180deg, #8B6914, #6B4F0A); /* 갈색 가죽 느낌 */
     color: var(--rpg);
-    border: 2px solid var(--rpg);
-    text-shadow: 0 0 10px rgba(255,215,0,0.5);
-    font-family: serif;
+    border: 2px solid var(--rpg);                          /* 금색 테두리 */
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);             /* 금빛 텍스트 글로우 */
+    font-family: serif;                                     /* 판타지 세리프 글꼴 */
     letter-spacing: 0.05em;
 }
 
+/* FPS 버튼 - 밀리터리/전술 느낌 (어두운 배경, 대문자, 사선 모서리) */
 .demo-btn-fps {
-    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a); /* 금속/군사 느낌 */
     color: white;
     border: 1px solid #444;
-    text-transform: uppercase;
+    text-transform: uppercase;   /* 대문자 변환 (군사적 느낌) */
     letter-spacing: 0.1em;
     font-size: 0.8rem;
-    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); /* 사선 모서리 (폴리곤 클리핑) */
     padding: 12px 40px;
 }
 
+/* TPS 버튼 - SF/미래 느낌 (반투명 글래스, 둥근 모서리, 블러 효과) */
 .demo-btn-tps {
-    background: rgba(68, 170, 255, 0.15);
+    background: rgba(68, 170, 255, 0.15);  /* 반투명 파란 배경 */
     color: var(--tps);
     border: 1px solid rgba(68, 170, 255, 0.4);
-    border-radius: var(--radius-xl);
-    backdrop-filter: blur(8px);
+    border-radius: var(--radius-xl);        /* 완전 둥근 모서리 */
+    backdrop-filter: blur(8px);             /* 배경 블러 (글래스모피즘) */
 }
 
+/* 쿼터뷰 버튼 - 캐주얼/팝 느낌 (밝은 초록, 3D 눌림 효과) */
 .demo-btn-quarter {
     background: var(--quarter);
     color: #0a1a0f;
     border-radius: var(--radius-sm);
     font-weight: 700;
-    box-shadow: 0 3px 0 #2a9955, 0 5px 12px rgba(68,255,136,0.2);
+    box-shadow: 0 3px 0 #2a9955, 0 5px 12px rgba(68,255,136,0.2); /* 3D 입체 그림자 */
 }
 
+/* 쿼터뷰 버튼 눌림 효과 - 아래로 이동하며 그림자 제거 */
 .demo-btn-quarter:active {
-    transform: translateY(3px);
+    transform: translateY(3px);  /* 눌린 만큼 아래로 이동 */
     box-shadow: 0 0 0 #2a9955, 0 2px 6px rgba(68,255,136,0.2);
 }
 
-/* HP/MP Bar Demo */
+/* HP/MP Bar Demo - HP/MP/XP 게이지 바 데모
+   게임에서 캐릭터의 체력, 마나, 경험치 등을 시각적으로 표시 */
 .demo-bar-container {
     width: 100%;
     max-width: 300px;
@@ -1184,6 +1299,7 @@ button {
     margin-bottom: 4px;
 }
 
+/* 게이지 바 트랙 (배경) - 비어있는 바의 배경 */
 .demo-bar-track {
     width: 100%;
     height: 20px;
@@ -1194,28 +1310,33 @@ button {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* 게이지 바 채움 - 실제 값을 나타내는 채워진 부분 (width로 비율 조절) */
 .demo-bar-fill {
     height: 100%;
     border-radius: 2px;
-    transition: width 0.6s ease;
+    transition: width 0.6s ease;  /* 값 변경 시 부드러운 애니메이션 */
     position: relative;
 }
 
+/* HP 바 채움 - 빨간색 (체력) */
 .demo-bar-fill.hp {
     background: linear-gradient(180deg, #ff5555, #cc2222);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); /* 상단 내부 하이라이트 */
 }
 
+/* MP 바 채움 - 파란색 (마나/마법력) */
 .demo-bar-fill.mp {
     background: linear-gradient(180deg, #5555ff, #2222cc);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
+/* XP 바 채움 - 금색 (경험치) */
 .demo-bar-fill.xp {
     background: linear-gradient(180deg, var(--rpg), #cc9900);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
+/* 게이지 바 광택 효과 - 상단 절반에 흰색 그래디언트 오버레이 */
 .demo-bar-fill::after {
     content: '';
     position: absolute;
@@ -1226,62 +1347,71 @@ button {
     background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
 }
 
-/* Tooltip Demo */
+/* Tooltip Demo - 게임 아이템 툴팁 데모
+   마우스 호버 시 아이템 이름, 설명, 스탯을 표시하는 팝오버 */
+
+/* 툴팁 래퍼 - 상대 위치 기준점 */
 .demo-tooltip-wrapper {
     position: relative;
     display: inline-block;
 }
 
+/* 툴팁 본체 - 요소 위에 떠 있는 정보 팝오버 */
 .demo-tooltip {
     position: absolute;
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 10px);   /* 부모 요소 위로 10px 간격 */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
     background: var(--bg-surface);
     border: 1px solid var(--border-hover);
     border-radius: var(--radius-md);
     padding: var(--space-md);
     min-width: 220px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0;                   /* 기본: 투명 (숨김) */
+    pointer-events: none;         /* 마우스 이벤트 무시 */
     transition: all var(--transition-fast);
 }
 
+/* 툴팁 표시 상태 */
 .demo-tooltip.show {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* 툴팁 하단 화살표 (삼각형) - CSS 보더 트릭으로 삼각형 생성 */
 .demo-tooltip::after {
     content: '';
     position: absolute;
-    top: 100%;
+    top: 100%;                    /* 툴팁 바로 아래 */
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: var(--bg-surface);
+    border-top-color: var(--bg-surface); /* 위쪽만 색상 → 아래를 가리키는 삼각형 */
 }
 
+/* 툴팁 제목 - 아이템명 (금색으로 강조) */
 .tooltip-title {
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 4px;
-    color: var(--rpg);
+    color: var(--rpg);        /* 금색 (RPG 아이템 느낌) */
 }
 
+/* 툴팁 설명 텍스트 */
 .tooltip-desc {
     font-size: 0.78rem;
     color: var(--text-secondary);
     line-height: 1.5;
 }
 
+/* 툴팁 스탯 영역 - 공격력, 방어력 등의 수치 표시 */
 .tooltip-stats {
     display: flex;
     gap: var(--space-md);
     margin-top: var(--space-sm);
     padding-top: var(--space-sm);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color); /* 상단 구분선 */
     font-size: 0.75rem;
 }
 
@@ -1294,7 +1424,10 @@ button {
     font-weight: 600;
 }
 
-/* Chat Demo */
+/* Chat Demo - 게임 내 채팅 시스템 데모
+   구조: 헤더(채널명) > 메시지 목록(스크롤) > 입력 영역 */
+
+/* 채팅 창 컨테이너 */
 .demo-chat-window {
     width: 100%;
     max-width: 320px;
@@ -1304,6 +1437,7 @@ button {
     overflow: hidden;
 }
 
+/* 채팅 헤더 - 채널명 + 온라인 상태 표시 */
 .demo-chat-header {
     padding: var(--space-sm) var(--space-md);
     border-bottom: 1px solid var(--border-color);
@@ -1314,6 +1448,7 @@ button {
     gap: var(--space-sm);
 }
 
+/* 온라인 상태 표시 점 (초록색 원) */
 .demo-chat-header .online-dot {
     width: 6px;
     height: 6px;
@@ -1321,10 +1456,11 @@ button {
     background: var(--success);
 }
 
+/* 채팅 메시지 목록 - 스크롤 가능한 메시지 영역 */
 .demo-chat-messages {
     padding: var(--space-md);
     max-height: 180px;
-    overflow-y: auto;
+    overflow-y: auto;        /* 메시지가 많으면 세로 스크롤 */
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
@@ -1340,10 +1476,12 @@ button {
     margin-right: var(--space-xs);
 }
 
-.demo-chat-msg .name.system { color: var(--warning); }
-.demo-chat-msg .name.player { color: var(--tps); }
-.demo-chat-msg .name.party { color: var(--success); }
+/* 채팅 발신자 유형별 색상 */
+.demo-chat-msg .name.system { color: var(--warning); } /* 시스템 메시지 (주황) */
+.demo-chat-msg .name.player { color: var(--tps); }     /* 플레이어 메시지 (파랑) */
+.demo-chat-msg .name.party { color: var(--success); }  /* 파티 메시지 (초록) */
 
+/* 채팅 입력 영역 - 텍스트 입력 + 전송 버튼 */
 .demo-chat-input {
     display: flex;
     border-top: 1px solid var(--border-color);
@@ -1367,40 +1505,46 @@ button {
     font-weight: 600;
 }
 
-/* Minimap Demo */
+/* Minimap Demo - 미니맵 데모
+   게임 화면 모서리에 표시되는 소형 지도 (원형/사각형 2가지 변형) */
+
+/* 원형 미니맵 - RPG/FPS 스타일 (방사형 그래디언트 배경) */
 .demo-minimap {
     width: 160px;
     height: 160px;
-    border-radius: 50%;
+    border-radius: 50%;           /* 완전 원형 */
     border: 2px solid rgba(255,255,255,0.2);
-    background: radial-gradient(circle, #1a2a1a, #0a150a);
+    background: radial-gradient(circle, #1a2a1a, #0a150a); /* 어두운 녹색 (숲/필드 느낌) */
     position: relative;
     overflow: hidden;
 }
 
+/* 사각형 미니맵 - TPS/쿼터뷰 스타일 */
 .demo-minimap-square {
     width: 160px;
     height: 160px;
     border-radius: var(--radius-sm);
     border: 1px solid rgba(255,255,255,0.15);
-    background: linear-gradient(135deg, #1a1a2a, #0a0a15);
+    background: linear-gradient(135deg, #1a1a2a, #0a0a15); /* 어두운 남색 */
     position: relative;
     overflow: hidden;
 }
 
+/* 미니맵 플레이어 마커 - 중앙에 위치한 파란 점 (글로우 효과) */
 .minimap-player {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* 정중앙 배치 */
     width: 8px;
     height: 8px;
     background: var(--tps);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--tps);
+    box-shadow: 0 0 8px var(--tps);   /* 파란 글로우 */
     z-index: 2;
 }
 
+/* 플레이어 방향 표시 삼각형 (위를 가리키는 화살표) */
 .minimap-player::after {
     content: '';
     position: absolute;
@@ -1414,15 +1558,17 @@ button {
     border-bottom: 6px solid var(--tps);
 }
 
+/* 미니맵 적 마커 - 빨간 점으로 적 위치 표시 */
 .minimap-dot {
     position: absolute;
     width: 4px;
     height: 4px;
     border-radius: 50%;
     background: var(--danger);
-    box-shadow: 0 0 4px var(--danger);
+    box-shadow: 0 0 4px var(--danger); /* 빨간 글로우 */
 }
 
+/* 미니맵 구역 표시 - 건물, 지역 등의 영역 */
 .minimap-zone {
     position: absolute;
     border-radius: 2px;
@@ -1430,7 +1576,10 @@ button {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Skill Bar Demo */
+/* Skill Bar Demo - 스킬바 데모
+   게임 하단에 위치하는 스킬 단축키 바 (키바인드 + 쿨다운 표시) */
+
+/* 스킬바 컨테이너 - 반투명 어두운 배경 */
 .demo-skillbar {
     display: flex;
     gap: 6px;
@@ -1440,6 +1589,7 @@ button {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* 개별 스킬 슬롯 - 정사각형 아이콘 영역 */
 .skill-slot {
     width: 48px;
     height: 48px;
@@ -1460,6 +1610,7 @@ button {
     background: var(--accent-subtle);
 }
 
+/* 스킬 슬롯 키바인드 표시 - 우하단에 단축키(Q, W, E, R 등) 표시 */
 .skill-slot .keybind {
     position: absolute;
     bottom: 2px;
@@ -1470,6 +1621,7 @@ button {
     font-family: var(--font-mono);
 }
 
+/* 스킬 쿨다운 오버레이 - 스킬 사용 후 재사용 대기 시간 표시 (어두운 반투명 + 숫자) */
 .skill-slot .cooldown-overlay {
     position: absolute;
     inset: 0;
@@ -1484,7 +1636,9 @@ button {
     color: white;
 }
 
-/* Inventory Demo */
+/* Inventory Demo - 인벤토리 데모
+   아이템을 보관하는 그리드 형태의 가방/인벤토리 시스템
+   아이템 희귀도별 테두리 색상 구분 (일반/레어/에픽/전설) */
 .demo-inventory {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -1503,14 +1657,16 @@ button {
     font-weight: 600;
 }
 
+/* 인벤토리 그리드 - 5열 고정 그리드 */
 .inventory-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* 가로 5칸 */
     gap: 4px;
 }
 
+/* 인벤토리 슬롯 - 개별 아이템 칸 (정사각형) */
 .inventory-slot {
-    aspect-ratio: 1;
+    aspect-ratio: 1;           /* 1:1 정사각형 비율 */
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 4px;
@@ -1528,21 +1684,23 @@ button {
     border-color: rgba(255,255,255,0.15);
 }
 
-.inventory-slot.rare {
+/* 아이템 희귀도별 테두리 색상 + 내부 글로우 */
+.inventory-slot.rare {           /* 레어 (파랑) */
     border-color: var(--tps);
     box-shadow: inset 0 0 8px rgba(68,170,255,0.15);
 }
 
-.inventory-slot.epic {
+.inventory-slot.epic {           /* 에픽 (보라) */
     border-color: var(--accent);
     box-shadow: inset 0 0 8px rgba(108,92,231,0.2);
 }
 
-.inventory-slot.legendary {
+.inventory-slot.legendary {      /* 전설 (금색) */
     border-color: var(--rpg);
     box-shadow: inset 0 0 8px rgba(255,215,0,0.2);
 }
 
+/* 아이템 수량 표시 - 슬롯 우하단에 스택 개수 표시 */
 .inventory-slot .count {
     position: absolute;
     bottom: 1px;
@@ -1553,7 +1711,10 @@ button {
     font-family: var(--font-mono);
 }
 
-/* Dialog Demo */
+/* Dialog Demo - 게임 다이얼로그(모달) 데모
+   확인/취소 등의 사용자 선택을 요구하는 팝업 창 */
+
+/* 다이얼로그 오버레이 - 뒤 배경을 어둡게 처리 */
 .demo-dialog-overlay {
     position: relative;
     width: 100%;
@@ -1566,6 +1727,7 @@ button {
     justify-content: center;
 }
 
+/* 다이얼로그 본체 - 중앙에 떠 있는 모달 카드 */
 .demo-dialog {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -1588,13 +1750,16 @@ button {
     line-height: 1.6;
 }
 
+/* 다이얼로그 액션 버튼 영역 - 확인/취소 버튼을 오른쪽 정렬 */
 .demo-dialog-actions {
     display: flex;
     gap: var(--space-sm);
     justify-content: flex-end;
 }
 
-/* HUD Demo */
+/* HUD Demo - 헤드업 디스플레이 데모
+   게임 화면 위에 오버레이되는 정보 표시 요소 (HP, 미니맵, 탄약 등)
+   16:10 비율의 게임 화면을 시뮬레이션하여 각 HUD 요소의 위치를 보여줌 */
 .demo-hud {
     width: 100%;
     max-width: 400px;
@@ -1606,38 +1771,40 @@ button {
     border: 1px solid var(--border-color);
 }
 
-.hud-top-left {
+/* HUD 요소 위치 - 화면 네 모서리 + 하단 중앙에 절대 배치 */
+.hud-top-left {            /* 좌상단: HP/MP 바 등 */
     position: absolute;
     top: 12px;
     left: 12px;
 }
 
-.hud-top-right {
+.hud-top-right {           /* 우상단: 미니맵, 시간, 레벨 등 */
     position: absolute;
     top: 12px;
     right: 12px;
     text-align: right;
 }
 
-.hud-bottom-center {
+.hud-bottom-center {       /* 하단 중앙: 스킬바, 경험치 바 등 */
     position: absolute;
     bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.hud-bottom-left {
+.hud-bottom-left {         /* 좌하단: 채팅, 퀘스트 등 */
     position: absolute;
     bottom: 12px;
     left: 12px;
 }
 
-.hud-bottom-right {
+.hud-bottom-right {        /* 우하단: 탄약, 인벤토리 등 */
     position: absolute;
     bottom: 12px;
     right: 12px;
 }
 
+/* HUD 미니 게이지 바 - HP/MP를 간소화한 작은 바 */
 .hud-minibar {
     width: 120px;
     height: 6px;
@@ -1652,6 +1819,7 @@ button {
     border-radius: 3px;
 }
 
+/* HP(75%) 빨간색, MP(60%) 파란색 */
 .hud-minibar-fill.hp { background: var(--danger); width: 75%; }
 .hud-minibar-fill.mp { background: var(--tps); width: 60%; }
 
@@ -1669,15 +1837,17 @@ button {
     font-weight: 700;
 }
 
+/* FPS 조준점 (크로스헤어) - 화면 정중앙의 십자 표시 */
 .hud-crosshair {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* 정중앙 배치 */
     width: 24px;
     height: 24px;
 }
 
+/* 크로스헤어 십자선 - ::before(가로), ::after(세로)로 십자 구성 */
 .hud-crosshair::before,
 .hud-crosshair::after {
     content: '';
@@ -1701,6 +1871,7 @@ button {
     transform: translateX(-50%);
 }
 
+/* 탄약 표시 - FPS HUD의 우하단 탄약 카운터 */
 .hud-ammo {
     font-family: var(--font-mono);
     font-size: 1.2rem;
@@ -1708,12 +1879,14 @@ button {
     color: white;
 }
 
+/* 탄약 구분자 (현재탄 / 전체탄) */
 .hud-ammo span {
     font-size: 0.7rem;
     color: rgba(255,255,255,0.4);
 }
 
-/* Navigation Demo */
+/* Navigation Demo - 게임 내 네비게이션 바 데모
+   모바일 게임 하단이나 메뉴에서 사용되는 탭 네비게이션 */
 .demo-nav-bar {
     display: flex;
     background: rgba(0,0,0,0.4);
@@ -1722,8 +1895,9 @@ button {
     overflow: hidden;
 }
 
+/* 네비게이션 아이템 - 아이콘 + 텍스트 세로 배치 */
 .demo-nav-item {
-    flex: 1;
+    flex: 1;               /* 균등 분배 */
     padding: var(--space-md);
     text-align: center;
     font-size: 0.75rem;
@@ -1752,31 +1926,40 @@ button {
 }
 
 /* ============ Responsive ============ */
+/* 반응형 미디어 쿼리 - 화면 크기에 따라 레이아웃 조정 */
+
+/* 태블릿 (1024px 이하) - 와이어프레임+데모 그리드를 1열로 변경 */
 @media (max-width: 1024px) {
     .wireframe-demo-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 2열 → 1열 (세로 스택) */
     }
 }
 
+/* 모바일 (768px 이하) - 사이드바 숨김, 모바일 메뉴 표시, 1열 레이아웃 */
 @media (max-width: 768px) {
+    /* 사이드바를 화면 밖으로 이동 (숨김) */
     .sidebar {
         transform: translateX(-100%);
     }
 
+    /* 사이드바 열림 상태 (모바일 메뉴 버튼 클릭 시) */
     .sidebar.open {
         transform: translateX(0);
     }
 
+    /* 모바일 메뉴 버튼 표시 */
     .mobile-menu-btn {
         display: flex;
     }
 
+    /* 메인 콘텐츠 - 사이드바 마진 제거, 모바일 메뉴 버튼 공간 확보 */
     .main-content {
         margin-left: 0;
         padding: var(--space-xl) var(--space-md);
-        padding-top: 70px;
+        padding-top: 70px;    /* 고정 메뉴 버튼 높이만큼 상단 여백 */
     }
 
+    /* 모든 그리드를 1열로 변경 */
     .component-grid {
         grid-template-columns: 1fr;
     }
@@ -1785,6 +1968,7 @@ button {
         grid-template-columns: 1fr;
     }
 
+    /* 장르 탭을 줄바꿈 허용하여 전체 너비 사용 */
     .genre-tabs {
         flex-wrap: wrap;
         width: 100%;
@@ -1796,38 +1980,44 @@ button {
 }
 
 /* ============ Scrollbar Global ============ */
+/* 전역 스크롤바 커스터마이징 (Webkit 브라우저: Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 6px;              /* 스크롤바 너비 (얇게) */
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: transparent; /* 트랙(배경) 투명 */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: var(--border-color); /* 스크롤바 핸들 색상 */
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--border-hover);
+    background: var(--border-hover); /* 호버 시 더 진한 색상 */
 }
 
 /* ============ Animations ============ */
+/* 재사용 가능한 애니메이션 유틸리티 클래스 */
+
+/* 깜빡임 애니메이션 - 투명도 변화 (로딩, 알림 등에 사용) */
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
 }
 
+/* 글로우 애니메이션 - 그림자 크기 변화 (강조, 활성 상태 등에 사용) */
 @keyframes glow {
     0%, 100% { box-shadow: 0 0 5px var(--accent-glow); }
     50% { box-shadow: 0 0 20px var(--accent-glow); }
 }
 
-.animate-pulse { animation: pulse 2s infinite; }
-.animate-glow { animation: glow 2s infinite; }
+/* 애니메이션 유틸리티 클래스 */
+.animate-pulse { animation: pulse 2s infinite; }  /* 깜빡임 효과 */
+.animate-glow { animation: glow 2s infinite; }    /* 글로우 효과 */
 
-/* Back to top */
+/* Back to top - 뒤로가기/상위 페이지로 이동 버튼 */
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -1849,10 +2039,15 @@ button {
 }
 
 /* ============ Category Sidebar ============ */
+/* 카테고리형 사이드바 네비게이션 - 아코디언 방식의 접이식 메뉴
+   구조: 카테고리 헤더(아이콘 + 이름 + 개수 + 화살표) > 하위 항목 목록 */
+
+/* 카테고리 컨테이너 */
 .nav-category {
     margin-bottom: 2px;
 }
 
+/* 카테고리 헤더 - 클릭하면 하위 항목이 펼쳐지는 아코디언 트리거 */
 .nav-category-header {
     display: flex;
     align-items: center;
@@ -1887,6 +2082,7 @@ button {
     flex: 1;
 }
 
+/* 카테고리 항목 수 뱃지 - 해당 카테고리의 하위 항목 개수 표시 */
 .nav-cat-count {
     font-size: 0.65rem;
     font-weight: 500;
@@ -1898,6 +2094,7 @@ button {
     text-align: center;
 }
 
+/* 카테고리 접기/펼치기 화살표 아이콘 */
 .nav-cat-arrow {
     width: 14px;
     height: 14px;
@@ -1906,6 +2103,7 @@ button {
     flex-shrink: 0;
 }
 
+/* 펼침 상태에서 화살표 90도 회전 (▶ → ▼) */
 .nav-category.open .nav-cat-arrow {
     transform: rotate(90deg);
 }
@@ -1919,18 +2117,21 @@ button {
     color: var(--accent);
 }
 
+/* 카테고리 하위 항목 컨테이너 - max-height 애니메이션으로 아코디언 효과 구현 */
 .nav-category-items {
-    max-height: 0;
+    max-height: 0;           /* 접힌 상태: 높이 0 */
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease; /* 부드러운 펼침/접힘 */
 }
 
+/* 펼친 상태: 충분한 최대 높이 확보 */
 .nav-category.open .nav-category-items {
     max-height: 600px;
 }
 
+/* 하위 메뉴 항목 - 부모 아이콘 너비만큼 들여쓰기 */
 .nav-sub-item {
-    padding-left: calc(var(--space-md) + 22px);
+    padding-left: calc(var(--space-md) + 22px); /* 아이콘(16px) + 여백 만큼 들여쓰기 */
     font-size: 0.8rem;
 }
 
@@ -1939,11 +2140,16 @@ button {
     height: 15px;
 }
 
+/* 참조 컴포넌트용 네비게이션 항목 - 약간 투명하게 처리하여 주요 항목과 구분 */
 .nav-ref {
     opacity: 0.85;
 }
 
 /* ============ Reference Component Page ============ */
+/* 참조 컴포넌트 페이지 - 외부 게임의 실제 UI를 분석하여 소개하는 페이지
+   구조: 뱃지 > 변형(Variant) 그리드 > 게임 적용 사례 박스 > 가이드라인 목록 */
+
+/* 참조 컴포넌트 뱃지 - "Reference" 등의 레이블 표시 */
 .ref-comp-badge {
     display: inline-block;
     font-size: 0.7rem;
@@ -1960,6 +2166,7 @@ button {
     margin-top: var(--space-2xl);
 }
 
+/* 변형(Variant) 카드 그리드 - 컴포넌트의 다양한 변형을 보여주는 그리드 */
 .variant-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1967,6 +2174,7 @@ button {
     margin-top: var(--space-md);
 }
 
+/* 변형 카드 - 개별 변형의 이름, 설명을 담은 카드 */
 .variant-card {
     padding: var(--space-lg);
     background: var(--bg-secondary);
@@ -2004,12 +2212,13 @@ button {
     line-height: 1.5;
 }
 
+/* 게임 적용 사례 박스 - 그래디언트 배경의 강조 박스 (아이콘 + 설명) */
 .game-application-box {
     display: flex;
     align-items: flex-start;
     gap: var(--space-lg);
     padding: var(--space-xl);
-    background: linear-gradient(135deg, var(--accent-subtle), transparent);
+    background: linear-gradient(135deg, var(--accent-subtle), transparent); /* 왼쪽에서 오른쪽으로 페이드 */
     border: 1px solid var(--accent);
     border-radius: var(--radius-md);
     margin-top: var(--space-md);
@@ -2039,6 +2248,7 @@ button {
     color: var(--text-primary);
 }
 
+/* 가이드라인 목록 - 디자인 가이드라인 항목들의 세로 리스트 */
 .guidelines-list {
     display: flex;
     flex-direction: column;
@@ -2046,6 +2256,7 @@ button {
     margin-top: var(--space-md);
 }
 
+/* 가이드라인 항목 - 개별 가이드라인 규칙 */
 .guideline-item {
     display: flex;
     align-items: flex-start;
@@ -2058,18 +2269,23 @@ button {
     line-height: 1.5;
 }
 
-/* Home page ref card */
+/* Home page ref card - 홈페이지의 참조 컴포넌트 카드
+   일반 카드와 구분하기 위해 점선 테두리 + 약간 투명하게 표시 */
 .component-card-ref {
-    border-style: dashed;
+    border-style: dashed;  /* 점선 테두리 (참조임을 시각적으로 구분) */
     opacity: 0.9;
 }
 
 .component-card-ref:hover {
     opacity: 1;
-    border-style: solid;
+    border-style: solid;   /* 호버 시 실선으로 변경 */
 }
 
 /* ============ Checklist Page ============ */
+/* 체크리스트 페이지 - 게임 UI/UX 디자인 점검 항목을 체크할 수 있는 인터랙티브 리스트
+   구조: 진행률 바 > 카테고리별 체크리스트 그룹 > 개별 체크 항목 */
+
+/* 체크리스트 전체 진행률 바 */
 .checklist-progress-bar {
     width: 100%;
     height: 8px;
@@ -2079,11 +2295,12 @@ button {
     overflow: hidden;
 }
 
+/* 진행률 바 채움 - 체크된 항목 비율에 따라 너비가 변함 */
 .checklist-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    background: linear-gradient(90deg, var(--accent), #60a5fa); /* 가로 그래디언트 */
     border-radius: 4px;
-    transition: width 0.4s ease;
+    transition: width 0.4s ease;  /* 진행률 변경 시 부드러운 애니메이션 */
 }
 
 .checklist-progress-text {
@@ -2103,13 +2320,14 @@ button {
 .checklist-category {
 }
 
+/* 체크리스트 카테고리 제목 - 하단 파란 밑줄로 구분 */
 .checklist-cat-title {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent); /* 카테고리 구분 밑줄 */
     display: inline-block;
 }
 
@@ -2119,6 +2337,7 @@ button {
     gap: 4px;
 }
 
+/* 체크리스트 항목 - 체크박스 + 텍스트 + 우선순위 뱃지 */
 .checklist-item {
     display: flex;
     align-items: flex-start;
@@ -2136,11 +2355,13 @@ button {
     background: var(--accent-subtle);
 }
 
+/* 체크된 항목 - 투명도 낮추고 배경 변경 (완료 표시) */
 .checklist-item.checked {
     opacity: 0.6;
     background: var(--bg-primary);
 }
 
+/* 체크된 항목의 텍스트에 취소선 추가 */
 .checklist-item.checked .checklist-text {
     text-decoration: line-through;
 }
@@ -2172,19 +2393,22 @@ button {
     line-height: 1.4;
 }
 
+/* 우선순위 뱃지 - 항목의 중요도를 표시하는 작은 태그 */
 .checklist-priority {
     font-size: 0.65rem;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 10px;
-    white-space: nowrap;
+    white-space: nowrap;  /* 줄바꿈 방지 */
 }
 
+/* 필수 우선순위 (빨간색) */
 .priority-required {
     background: rgba(239, 68, 68, 0.12);
     color: #ef4444;
 }
 
+/* 권장 우선순위 (파란색) */
 .priority-recommended {
     background: rgba(59, 130, 246, 0.12);
     color: var(--accent);
@@ -2198,6 +2422,10 @@ button {
 }
 
 /* ============ UX Law Detail Page ============ */
+/* UX 법칙 상세 페이지 - 개별 UX 법칙의 상세 설명 페이지
+   구조: 히어로(배경색 + 일러스트) > 정의(인용) > 본문(설명) > 테이크어웨이 > 출처 */
+
+/* UX 법칙 히어로 배너 - 법칙별 고유 배경색의 대형 배너 */
 .ux-law-hero {
     border-radius: var(--radius-lg);
     padding: var(--space-3xl) var(--space-2xl);
@@ -2206,6 +2434,7 @@ button {
     overflow: hidden;
 }
 
+/* 히어로 장식 오버레이 - 우상단에 빛나는 원형 그래디언트 효과 */
 .ux-law-hero::before {
     content: '';
     position: absolute;
@@ -2214,7 +2443,7 @@ button {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
-    pointer-events: none;
+    pointer-events: none;  /* 클릭 이벤트 통과 (장식용) */
 }
 
 .ux-law-hero-inner {
@@ -2223,6 +2452,7 @@ button {
     max-width: 700px;
 }
 
+/* UX 법칙 목록으로 돌아가기 링크 */
 .ux-law-back-link {
     display: inline-flex;
     align-items: center;
@@ -2238,6 +2468,7 @@ button {
     color: #fff;
 }
 
+/* 히어로 비주얼 - 법칙을 설명하는 SVG 일러스트레이션 */
 .ux-law-hero-visual {
     margin-bottom: var(--space-lg);
     max-width: 220px;
@@ -2248,10 +2479,12 @@ button {
     height: auto;
 }
 
+/* SVG 일러스트를 히어로 배경에 맞게 흰색 반투명으로 변환 */
 .ux-law-hero-visual svg text {
     fill: rgba(255,255,255,0.6) !important;
 }
 
+/* SVG 도형 요소들의 stroke를 흰색 반투명으로 통일 */
 .ux-law-hero-visual svg circle,
 .ux-law-hero-visual svg rect,
 .ux-law-hero-visual svg path,
@@ -2261,16 +2494,18 @@ button {
     stroke: rgba(255,255,255,0.5);
 }
 
+/* SVG 채움이 있는 요소를 연한 흰색으로 변환 (fill="none"은 제외) */
 .ux-law-hero-visual svg [fill]:not([fill="none"]) {
     fill: rgba(255,255,255,0.2);
 }
 
+/* 히어로 카테고리 뱃지 - 법칙 분류 표시 (예: "인지", "행동") */
 .ux-law-hero-category {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 600;
     color: rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.15);  /* 반투명 흰색 배경 */
     padding: 3px 12px;
     border-radius: 12px;
     margin-bottom: var(--space-sm);
@@ -2286,24 +2521,27 @@ button {
     margin-bottom: var(--space-xs);
 }
 
+/* 법칙 영문명 표시 */
 .ux-law-hero-en {
     color: rgba(255,255,255,0.6);
     font-size: 0.9rem;
     font-weight: 400;
 }
 
+/* UX 법칙 본문 컨테이너 - 중앙 정렬, 최대 너비 제한 (가독성) */
 .ux-law-body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--space-md);
 }
 
+/* 법칙 정의 - 인용문 스타일의 정의 블록 (왼쪽 파란 테두리) */
 .ux-law-definition {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent);    /* 왼쪽 강조 테두리 */
     padding: var(--space-lg) var(--space-xl);
     margin-bottom: var(--space-2xl);
     background: var(--bg-secondary);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0; /* 오른쪽만 둥근 모서리 */
 }
 
 .ux-law-definition p {
@@ -2314,6 +2552,7 @@ button {
     margin: 0;
 }
 
+/* 법칙 참고 노트 - 추가 설명이나 주의사항을 담는 박스 */
 .ux-law-note {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -2341,6 +2580,7 @@ button {
     margin: 0;
 }
 
+/* 법칙 본문 섹션 제목 - "핵심 포인트", "게임 적용" 등의 섹션 헤더 */
 .ux-law-section-title {
     display: flex;
     align-items: center;
@@ -2352,6 +2592,7 @@ button {
     margin-top: var(--space-2xl);
 }
 
+/* 테이크어웨이 그리드 - 핵심 요점을 카드 형태로 정리 (auto-fit 반응형) */
 .ux-law-takeaways {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2359,6 +2600,7 @@ button {
     margin-bottom: var(--space-2xl);
 }
 
+/* 테이크어웨이 항목 - 번호 원 + 제목 + 설명 */
 .ux-law-takeaway-item {
     display: flex;
     gap: var(--space-md);
@@ -2374,11 +2616,12 @@ button {
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
+/* 테이크어웨이 번호 원 - 색상이 있는 원형 번호 뱃지 */
 .ux-law-takeaway-number {
     flex-shrink: 0;
     width: 32px;
     height: 32px;
-    border-radius: 50%;
+    border-radius: 50%;        /* 원형 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2401,6 +2644,7 @@ button {
     margin: 0;
 }
 
+/* 법칙 출처/기원 - 법칙의 유래와 배경을 설명하는 그래디언트 박스 */
 .ux-law-origin {
     padding: var(--space-xl);
     background: linear-gradient(135deg, var(--accent-subtle), transparent);
@@ -2417,23 +2661,30 @@ button {
 }
 
 /* ============ Responsive (Sidebar Category + UX Law Detail) ============ */
+/* 추가 모바일 반응형 - 카테고리 사이드바 및 UX 법칙 상세 페이지 전용 */
 @media (max-width: 768px) {
+    /* 변형 그리드 1열로 변경 */
     .variant-grid {
         grid-template-columns: 1fr;
     }
+    /* 게임 적용 박스 세로 방향으로 변경 */
     .game-application-box {
         flex-direction: column;
     }
+    /* UX 법칙 히어로 패딩/마진 축소 */
     .ux-law-hero {
         padding: var(--space-xl) var(--space-lg);
         margin: 0 calc(var(--space-md) * -1) var(--space-xl);
     }
+    /* 히어로 제목 크기 축소 */
     .ux-law-hero-text h1 {
         font-size: 1.5rem;
     }
+    /* 테이크어웨이 1열로 변경 */
     .ux-law-takeaways {
         grid-template-columns: 1fr;
     }
+    /* 본문 좌우 패딩 제거 */
     .ux-law-body {
         padding: 0;
     }

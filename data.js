@@ -2,23 +2,83 @@
    Game UI/UX - Component & UX Law Data
    ============================================ */
 
+/*
+ * ┌─────────────────────────────────────────────────────────────────────────┐
+ * │ 게임 UI/UX 디자인 라이브러리 — 전체 데이터 파일                           │
+ * ├─────────────────────────────────────────────────────────────────────────┤
+ * │                                                                         │
+ * │ 이 파일은 게임 UI/UX 디자인 라이브러리에서 사용하는 모든 정적 데이터를       │
+ * │ 정의합니다. SPA(Single Page Application)에서 data.js로 로드되어            │
+ * │ app.js의 라우터와 렌더링 함수에서 참조됩니다.                              │
+ * │                                                                         │
+ * │ ── 전역 상수 4개 ──                                                      │
+ * │                                                                         │
+ * │ 1. COMPONENTS (Object)  — UI 컴포넌트 34개                              │
+ * │    ├─ 게임 전용 컴포넌트 11개: buttons, cards, dialogs, hud, inventory,  │
+ * │    │   navigation, progress, tooltips, minimap, skillbar, chat          │
+ * │    │   → type 필드 없음, screenWireframe + platforms 포함               │
+ * │    └─ 참조 컴포넌트 23개: badges, toggle, checkbox, radio, dropdown,    │
+ * │       slider, inputfield, search, tabs, accordion, snackbar, loading,  │
+ * │       lists, datatable, chips, appbar, breadcrumb, pagination,         │
+ * │       stepper, menus, carousel, sheets, divider                        │
+ * │       → type:'reference', variants + gameApplication 포함              │
+ * │                                                                         │
+ * │ 2. UX_LAWS (Array)      — UX 법칙 20개                                 │
+ * │    → 피츠의 법칙, 힉의 법칙, 야콥의 법칙 등 게임 UX에 적용되는 법칙들      │
+ * │    → 카테고리: 행동, 인지, 경험, 시각                                    │
+ * │                                                                         │
+ * │ 3. COMPONENT_CATEGORIES (Array) — 사이드바 카테고리 7개                  │
+ * │    → 게임 전용, 액션, 입력, 표시, 내비게이션, 피드백, 구조                 │
+ * │    → 사이드바 메뉴 렌더링 시 컴포넌트를 그룹화하는 데 사용                 │
+ * │                                                                         │
+ * │ 4. CHECKLIST_DATA (Array) — 게임 UI 체크리스트 7개 카테고리              │
+ * │    → 정보구조, 레이아웃, 인터랙션, 시각 디자인, 콘텐츠, 접근성, 성능       │
+ * │    → 각 항목에 우선순위(필수/권고)와 설명 포함                            │
+ * │                                                                         │
+ * └─────────────────────────────────────────────────────────────────────────┘
+ */
+
+/*
+ * COMPONENTS — UI 컴포넌트 데이터 (Object, 34개 항목)
+ *
+ * 키(key)는 컴포넌트 ID 문자열이며, 값(value)은 컴포넌트 상세 정보 객체입니다.
+ * URL 해시 라우팅에서 #/components/{id} 형태로 사용됩니다.
+ *
+ * ── 게임 전용 컴포넌트 (11개) ──
+ * buttons, cards, dialogs, hud, inventory, navigation,
+ * progress, tooltips, minimap, skillbar, chat
+ * → 공통 필드: id, name, icon, summary, description, guidelines,
+ *   anatomy, relatedLaws, screenWireframe, platforms
+ *
+ * ── 참조 컴포넌트 (23개) ──
+ * badges, toggle, checkbox, ... divider
+ * → 공통 필드: id, name, type('reference'), icon, summary, description,
+ *   anatomy, variants, gameApplication, guidelines, relatedLaws
+ * → screenWireframe/platforms 없음, 대신 variants/gameApplication 포함
+ */
 const COMPONENTS = {
+
+    /* ──────────────────────────────────────────────────
+     * [게임 전용 컴포넌트 #1] 버튼 (buttons)
+     * 아래 첫 번째 항목에 각 필드의 역할을 상세히 주석으로 설명합니다.
+     * 나머지 게임 전용 컴포넌트도 동일한 구조를 따릅니다.
+     * ────────────────────────────────────────────────── */
     buttons: {
-        id: 'buttons',
-        name: '버튼',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4"/></svg>`,
-        summary: '게임에서 가장 기본적인 인터랙션 요소. 액션 실행, 메뉴 선택, 스킬 사용 등에 활용됩니다.',
+        id: 'buttons',                // 고유 식별자 — URL 라우팅 키 (#/components/buttons)
+        name: '버튼',                  // 화면에 표시되는 한국어 이름
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4"/></svg>`,  // 사이드바/목록에 표시되는 SVG 아이콘
+        summary: '게임에서 가장 기본적인 인터랙션 요소. 액션 실행, 메뉴 선택, 스킬 사용 등에 활용됩니다.',  // 목록에서 보이는 한 줄 요약
         description: `버튼은 게임 UI에서 가장 기본적이면서도 중요한 컴포넌트입니다. 플레이어의 의도를 시스템에 전달하는 핵심 인터페이스로, 명확한 시각적 피드백과 직관적인 상태 표현이 필수적입니다.
 
-게임 버튼은 일반 웹/앱 버튼과 달리 장르의 세계관을 반영해야 합니다. RPG에서는 판타지풍 장식이, FPS에서는 밀리터리 스타일이, 캐주얼 게임에서는 둥글고 친근한 형태가 적합합니다.`,
-        guidelines: [
+게임 버튼은 일반 웹/앱 버튼과 달리 장르의 세계관을 반영해야 합니다. RPG에서는 판타지풍 장식이, FPS에서는 밀리터리 스타일이, 캐주얼 게임에서는 둥글고 친근한 형태가 적합합니다.`,  // 상세 페이지에 표시되는 긴 설명 (백틱 템플릿 리터럴로 줄바꿈 포함)
+        guidelines: [                 // 디자인 가이드라인 배열 — 상세 페이지 "가이드라인" 섹션에 렌더링
             '버튼의 최소 터치 영역은 44x44px을 유지하세요 (피츠의 법칙)',
             '누를 수 있다는 것을 시각적으로 명확히 표현하세요 (어포던스)',
             'Pressed/Hover/Disabled 등 모든 상태에 피드백을 제공하세요',
             '중요한 액션일수록 시각적 무게감을 높이세요 (시각적 위계)',
             '쿨다운, 비용 부족 등 비활성 상태를 명확히 구분하세요',
         ],
-        anatomy: {
+        anatomy: {                    // 해부도(anatomy) — 컴포넌트 구성 요소를 시각적으로 분해하여 보여주는 다이어그램
             svg: `<svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- Button shape -->
                 <rect x="100" y="80" width="200" height="60" rx="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
@@ -44,16 +104,16 @@ const COMPONENTS = {
                 <!-- Callout 3: Border -->
                 <circle cx="60" cy="140" r="14" fill="#374151"/><text x="60" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
                 <line x1="74" y1="140" x2="100" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            </svg>`,
-            parts: [
-                { number: 1, name: 'Container', description: '외부 컨테이너' },
+            </svg>`,                  // svg: 해부도 SVG 마크업 — 번호 콜아웃(callout)으로 각 부위를 가리킴
+            parts: [                  // parts: 해부도 번호 콜아웃에 대응하는 부위 설명 배열
+                { number: 1, name: 'Container', description: '외부 컨테이너' },       // number: 콜아웃 번호, name: 영문 부위명, description: 한국어 설명
                 { number: 2, name: 'Label Text', description: '라벨 텍스트' },
                 { number: 3, name: 'Border/Outline', description: '테두리' },
                 { number: 4, name: 'Background Fill', description: '배경 채움' },
                 { number: 5, name: 'Icon', description: '선행 아이콘' },
             ]
         },
-        relatedLaws: ['fitts-law', 'feedback-principle', 'aesthetic-usability', 'doherty-threshold'],
+        relatedLaws: ['fitts-law', 'feedback-principle', 'aesthetic-usability', 'doherty-threshold'],  // 관련 UX 법칙 ID 배열 — UX_LAWS의 id와 매칭되어 상세 페이지에서 링크로 표시
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Button Placement</text>
@@ -86,12 +146,12 @@ const COMPONENTS = {
             <!-- Labels with lines -->
             <circle cx="430" cy="82" r="2" fill="#fbbf24"/>
             <line x1="430" y1="82" x2="418" y2="50" stroke="#fbbf2460" stroke-width="0.5" stroke-dasharray="2"/>
-        </svg>`,
-        platforms: {
-            pc: {
-                title: 'PC 버튼',
-                description: 'PC 환경에서는 마우스와 키보드를 활용한 정밀한 인터랙션이 가능합니다. 호버 상태 피드백, 키보드 단축키 바인딩, 우클릭 컨텍스트 메뉴 등 다양한 입력 방식을 지원해야 합니다.',
-                features: [
+        </svg>`,                      // screenWireframe: 게임 화면 내 해당 컴포넌트의 실제 배치를 보여주는 와이어프레임 SVG (게임 전용 컴포넌트에만 존재)
+        platforms: {                  // platforms: 플랫폼별(PC/모바일) 디자인 가이드 — 게임 전용 컴포넌트에만 존재
+            pc: {                     // pc: PC 환경 가이드
+                title: 'PC 버튼',     // title: 플랫폼별 제목
+                description: 'PC 환경에서는 마우스와 키보드를 활용한 정밀한 인터랙션이 가능합니다. 호버 상태 피드백, 키보드 단축키 바인딩, 우클릭 컨텍스트 메뉴 등 다양한 입력 방식을 지원해야 합니다.',  // description: 플랫폼별 상세 설명
+                features: [           // features: 해당 플랫폼에서의 주요 디자인 포인트 배열
                     'Hover/Focus/Active 등 세밀한 상태 피드백 필수',
                     '키보드 단축키 표시 (예: Q, W, E, R)',
                     '작은 버튼도 가능 — 최소 32x32px (마우스 정밀도 활용)',
@@ -99,7 +159,7 @@ const COMPONENTS = {
                     '툴팁을 통한 상세 정보 제공 (마우스 호버 시)'
                 ]
             },
-            mobile: {
+            mobile: {                 // mobile: 모바일 환경 가이드
                 title: '모바일 버튼',
                 description: '모바일에서는 터치 기반 인터랙션이 핵심입니다. 엄지 도달 범위(Thumb Zone)를 고려한 배치와 충분한 터치 영역이 필수적이며, 호버 상태가 없으므로 시각적 어포던스가 더욱 중요합니다.',
                 features: [
@@ -112,7 +172,9 @@ const COMPONENTS = {
             },
         }
     },
+    /* ── buttons 필드 설명 끝. 이하 cards ~ chat까지 동일 구조 (게임 전용 컴포넌트) ── */
 
+    /* [게임 전용 #2] 카드 — 아이템/캐릭터/장비 정보를 카드 형태로 표시 */
     cards: {
         id: 'cards',
         name: '카드',
@@ -222,6 +284,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #3] 다이얼로그 — 퀘스트 수락, 아이템 확인 등 모달 대화상자 */
     dialogs: {
         id: 'dialogs',
         name: '다이얼로그',
@@ -332,6 +395,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #4] HUD — HP/MP 바, 미니맵, 스킬바 등 게임 화면 오버레이 UI */
     hud: {
         id: 'hud',
         name: 'HUD',
@@ -475,6 +539,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #5] 인벤토리 — 아이템 관리 그리드, 드래그앤드롭 슬롯 시스템 */
     inventory: {
         id: 'inventory',
         name: '인벤토리',
@@ -650,6 +715,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #6] 내비게이션 — 메인 메뉴, 탭 바, 화면 전환 네비게이션 */
     navigation: {
         id: 'navigation',
         name: '내비게이션',
@@ -768,6 +834,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #7] 프로그레스 바 — HP/MP/EXP 등 게이지 바, 로딩 진행률 */
     progress: {
         id: 'progress',
         name: '프로그레스 바',
@@ -883,6 +950,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #8] 툴팁 — 아이템/스킬 호버 시 표시되는 정보 팝업 */
     tooltips: {
         id: 'tooltips',
         name: '툴팁',
@@ -995,6 +1063,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #9] 미니맵 — 게임 월드 축소 지도, 플레이어/NPC 위치 표시 */
     minimap: {
         id: 'minimap',
         name: '미니맵',
@@ -1119,6 +1188,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #10] 스킬바 — 스킬/아이템 퀵슬롯 바, 키바인딩 + 쿨다운 표시 */
     skillbar: {
         id: 'skillbar',
         name: '스킬바',
@@ -1253,6 +1323,7 @@ const COMPONENTS = {
         }
     },
 
+    /* [게임 전용 #11] 채팅 — 인게임 채팅 시스템 (전체/팀/파티/귓속말 채널) */
     chat: {
         id: 'chat',
         name: '채팅',
@@ -1375,9 +1446,36 @@ const COMPONENTS = {
     },
 
     // ============ 참조 컴포넌트 — 기본 UI (M3 + Lithium Design System 기반) ============
+    /*
+     * ┌─────────────────────────────────────────────────────────────────────────┐
+     * │ 참조 컴포넌트 (23개) — 게임 전용 컴포넌트와의 구조 차이                   │
+     * ├─────────────────────────────────────────────────────────────────────────┤
+     * │                                                                         │
+     * │ 게임 전용 컴포넌트에는 없고, 참조 컴포넌트에만 있는 필드:                  │
+     * │   - type: 'reference'    → 참조 컴포넌트 여부 식별 (필수)               │
+     * │   - variants: []         → 컴포넌트 변형(variant) 배열                  │
+     * │     └─ { name, description } 형태                                       │
+     * │   - gameApplication: ''  → 게임에서의 활용 방법 (문자열)                 │
+     * │                                                                         │
+     * │ 게임 전용 컴포넌트에는 있고, 참조 컴포넌트에는 없는 필드:                  │
+     * │   - screenWireframe      → 게임 화면 내 배치 와이어프레임 SVG            │
+     * │   - platforms: { pc, mobile } → 플랫폼별 디자인 가이드                  │
+     * │                                                                         │
+     * │ 양쪽 모두 공통으로 가지는 필드:                                           │
+     * │   id, name, icon, summary, description, anatomy, guidelines,            │
+     * │   relatedLaws                                                           │
+     * │                                                                         │
+     * │ 참조 컴포넌트는 M3(Material Design 3)과 Lithium Design System의         │
+     * │ 표준 UI 패턴을 기반으로 하며, 게임에서 어떻게 활용할 수 있는지를            │
+     * │ gameApplication 필드로 안내합니다.                                       │
+     * └─────────────────────────────────────────────────────────────────────────┘
+     */
+
+    // ── 액션/입력 컴포넌트 ──
+    // badges, toggle, checkbox, radio, dropdown, slider, inputfield, search — 사용자 입력/선택/조작용 참조 컴포넌트
 
     badges: {
-        id: 'badges', name: '뱃지', type: 'reference',
+        id: 'badges', name: '뱃지', type: 'reference',  // type: 'reference' → 참조 컴포넌트임을 나타냄 (게임 전용에는 이 필드 없음)
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="14" height="14" rx="3"/><circle cx="19" cy="5" r="4" fill="currentColor" stroke="none"/></svg>`,
         summary: '알림 수, 상태, 등급을 표시하는 소형 시각 지표.',
         description: `뱃지는 아이콘이나 요소 위에 부착되어 새로운 정보나 상태를 전달합니다. 게임에서는 새 아이템/퀘스트 알림, 미읽 메시지 카운트, 캐릭터 레벨, 아이템 등급 표시 등에 사용됩니다. 색상 코딩을 통해 긴급도나 희귀도를 즉각적으로 전달합니다.`,
@@ -1400,13 +1498,13 @@ const COMPONENTS = {
                 { number: 3, name: 'Count/Label', description: '숫자 또는 텍스트 라벨' }
             ]
         },
-                variants: [
+                variants: [           // variants: 컴포넌트 변형 목록 — 참조 컴포넌트에만 존재 (게임 전용에는 없음). { name: 변형명, description: 설명 }
             { name: '숫자 뱃지', description: '미읽 메시지 수, 새 퀘스트 수 등 카운트 표시' },
             { name: '도트 뱃지', description: '새 항목 존재 여부만 표시하는 최소 인디케이터' },
             { name: '아이콘 뱃지', description: '상태를 아이콘으로 표현 (독, 버프, 디버프)' },
             { name: '등급 뱃지', description: '아이템 희귀도 색상 구분 (일반/레어/에픽/전설)' }
         ],
-        gameApplication: '새 퀘스트에 도트 뱃지, 인벤토리의 새 아이템에 숫자 뱃지, 장비 등급에 컬러 뱃지를 사용합니다. 99+처리와 색상 차별화가 중요합니다.',
+        gameApplication: '새 퀘스트에 도트 뱃지, 인벤토리의 새 아이템에 숫자 뱃지, 장비 등급에 컬러 뱃지를 사용합니다. 99+처리와 색상 차별화가 중요합니다.',  // gameApplication: 게임에서의 구체적 활용법 (참조 컴포넌트에만 존재)
         guidelines: ['99 이상은 "99+"로 표시하세요', '중요도별 색상: 빨강(긴급), 주황(경고), 파랑(정보), 초록(완료)', '뱃지 과다 사용 방지 — 핵심 알림만 뱃지로 표시', '뱃지 크기는 부모 요소의 1/3 이내'],
         relatedLaws: ['von-restorff', 'miller-law', 'feedback-principle']
     },
@@ -1664,6 +1762,7 @@ const COMPONENTS = {
     },
 
     // ============ 표시/피드백 컴포넌트 ============
+    // tabs, accordion, snackbar, loading, lists, datatable, chips, carousel — 데이터 표시 및 사용자 피드백용 참조 컴포넌트
 
     tabs: {
         id: 'tabs', name: '탭', type: 'reference',
@@ -1937,6 +2036,7 @@ const COMPONENTS = {
     },
 
     // ============ 내비게이션/구조 컴포넌트 ============
+    // appbar, breadcrumb, pagination, stepper, menus, carousel, sheets, divider — 내비게이션 및 페이지 구조용 참조 컴포넌트
 
     appbar: {
         id: 'appbar', name: '앱 바', type: 'reference',
@@ -2250,17 +2350,36 @@ const COMPONENTS = {
     }
 };
 
+/*
+ * UX_LAWS — UX 법칙 데이터 (Array, 20개 항목)
+ *
+ * 게임 UI/UX에 적용되는 주요 UX 법칙/원칙을 정의합니다.
+ * URL 해시 라우팅에서 #/ux-laws/{id} 형태로 사용됩니다.
+ * COMPONENTS의 relatedLaws 배열에서 이 id를 참조하여 컴포넌트-법칙 간 연결을 만듭니다.
+ *
+ * 각 항목의 필드:
+ *   id            — 고유 식별자 (URL 라우팅 키, relatedLaws 참조 키)
+ *   name          — 한국어 법칙명
+ *   nameEn        — 영문 법칙명 (원문 표기)
+ *   principle     — 한 문장으로 된 핵심 원칙
+ *   description   — 법칙에 대한 상세 설명
+ *   gameApplication — 게임 UI/UX에서의 구체적 적용 방법
+ *   category      — 법칙 분류 ('행동', '인지', '경험', '시각' 중 하나)
+ *   visual        — 법칙을 시각적으로 표현하는 SVG 일러스트
+ */
 const UX_LAWS = [
+    /* ── 첫 번째 법칙: 피츠의 법칙. 각 필드 역할을 인라인 주석으로 설명합니다. ── */
     {
-        id: 'fitts-law',
-        name: '피츠의 법칙',
-        nameEn: "Fitts's Law",
-        principle: '대상까지의 이동 시간은 대상의 크기와 거리에 따라 결정됩니다.',
-        description: '타겟의 크기가 클수록, 그리고 가까울수록 빠르게 선택할 수 있습니다. 이는 게임 UI에서 중요한 버튼의 크기와 위치를 결정하는 핵심 원칙입니다.',
-        gameApplication: '중요한 액션 버튼(공격, 스킬)은 크게 만들고 접근하기 쉬운 위치에 배치하세요. FPS의 조준점은 항상 화면 중앙에 있어 이동 거리가 0입니다. 모바일 게임에서는 엄지가 닿는 영역에 핵심 버튼을 배치합니다.',
-        category: '행동',
-        visual: `<svg viewBox="0 0 200 120" fill="none"><circle cx="30" cy="60" r="8" fill="var(--accent)" opacity="0.3"/><circle cx="160" cy="60" r="28" fill="var(--accent)" opacity="0.6"/><line x1="38" y1="60" x2="132" y2="60" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4"/><text x="85" y="50" fill="var(--text-tertiary)" font-size="8" text-anchor="middle">거리</text><text x="30" y="85" fill="var(--text-tertiary)" font-size="7" text-anchor="middle">작은 타겟</text><text x="160" y="100" fill="var(--text-tertiary)" font-size="7" text-anchor="middle">큰 타겟 = 빠름</text></svg>`
+        id: 'fitts-law',              // 고유 식별자 — URL 라우팅 및 relatedLaws 참조 키
+        name: '피츠의 법칙',           // 한국어 법칙명 — 카드/목록에 표시
+        nameEn: "Fitts's Law",        // 영문 원문 명칭 — 상세 페이지에서 부제로 표시
+        principle: '대상까지의 이동 시간은 대상의 크기와 거리에 따라 결정됩니다.',  // 핵심 원칙 한 줄 요약 — 카드에 표시
+        description: '타겟의 크기가 클수록, 그리고 가까울수록 빠르게 선택할 수 있습니다. 이는 게임 UI에서 중요한 버튼의 크기와 위치를 결정하는 핵심 원칙입니다.',  // 상세 설명
+        gameApplication: '중요한 액션 버튼(공격, 스킬)은 크게 만들고 접근하기 쉬운 위치에 배치하세요. FPS의 조준점은 항상 화면 중앙에 있어 이동 거리가 0입니다. 모바일 게임에서는 엄지가 닿는 영역에 핵심 버튼을 배치합니다.',  // 게임 적용 가이드
+        category: '행동',             // 법칙 분류 카테고리 — '행동'|'인지'|'경험'|'시각'
+        visual: `<svg viewBox="0 0 200 120" fill="none"><circle cx="30" cy="60" r="8" fill="var(--accent)" opacity="0.3"/><circle cx="160" cy="60" r="28" fill="var(--accent)" opacity="0.6"/><line x1="38" y1="60" x2="132" y2="60" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4"/><text x="85" y="50" fill="var(--text-tertiary)" font-size="8" text-anchor="middle">거리</text><text x="30" y="85" fill="var(--text-tertiary)" font-size="7" text-anchor="middle">작은 타겟</text><text x="160" y="100" fill="var(--text-tertiary)" font-size="7" text-anchor="middle">큰 타겟 = 빠름</text></svg>`  // 법칙을 시각적으로 표현하는 SVG 일러스트
     },
+    /* ── 이하 나머지 19개 법칙도 동일한 구조 ── */
     {
         id: 'hicks-law',
         name: '힉의 법칙',
@@ -2454,12 +2573,34 @@ const UX_LAWS = [
 ];
 
 // ============ 컴포넌트 카테고리 (M3 + Lithium 기반 사이드바 구조) ============
+/*
+ * COMPONENT_CATEGORIES — 사이드바 카테고리 데이터 (Array, 7개 항목)
+ *
+ * 좌측 사이드바에서 컴포넌트를 기능별로 그룹화하여 보여주는 데 사용됩니다.
+ * app.js의 사이드바 렌더링 함수에서 이 배열을 순회하며 카테고리 헤더와
+ * 소속 컴포넌트 목록을 생성합니다.
+ *
+ * 각 항목의 필드:
+ *   id    — 카테고리 고유 식별자 (예: 'game-specific', 'action', 'input')
+ *   name  — 사이드바에 표시되는 한국어 카테고리명
+ *   icon  — 카테고리 아이콘 SVG
+ *   items — 해당 카테고리에 속하는 COMPONENTS의 키(id) 배열
+ *
+ * 카테고리 구성 (7개):
+ *   1. 게임 전용  — hud, inventory, minimap, skillbar, chat, progress
+ *   2. 액션      — buttons, toggle, menus
+ *   3. 입력      — inputfield, search, checkbox, radio, dropdown, slider
+ *   4. 표시      — cards, badges, chips, lists, datatable, carousel, loading
+ *   5. 내비게이션 — navigation, appbar, tabs, breadcrumb, pagination, stepper
+ *   6. 피드백    — dialogs, tooltips, snackbar, sheets
+ *   7. 구조      — accordion, divider
+ */
 const COMPONENT_CATEGORIES = [
     {
-        id: 'game-specific',
-        name: '게임 전용',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 00-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 003 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 019.828 16h4.344a2 2 0 011.414.586L17 18c.5.5 1 1 2 1a3 3 0 003-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0017.32 5z"/></svg>`,
-        items: ['hud', 'inventory', 'minimap', 'skillbar', 'chat', 'progress']
+        id: 'game-specific',          // 카테고리 고유 식별자
+        name: '게임 전용',             // 사이드바에 표시되는 카테고리명
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 00-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 003 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 019.828 16h4.344a2 2 0 011.414.586L17 18c.5.5 1 1 2 1a3 3 0 003-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0017.32 5z"/></svg>`,  // 카테고리 아이콘 SVG
+        items: ['hud', 'inventory', 'minimap', 'skillbar', 'chat', 'progress']  // 소속 컴포넌트 ID 배열 — COMPONENTS 객체의 키와 매칭
     },
     {
         id: 'action',
@@ -2500,11 +2641,34 @@ const COMPONENT_CATEGORIES = [
 ];
 
 // ============ 체크리스트 데이터 (Lithium Design System 기반 게임 UI 적용) ============
+/*
+ * CHECKLIST_DATA — 게임 UI 디자인 체크리스트 데이터 (Array, 7개 카테고리)
+ *
+ * 게임 UI/UX 디자인 시 확인해야 할 체크리스트 항목을 카테고리별로 정리합니다.
+ * #/checklist 페이지에서 체크박스 UI로 렌더링되며, 진행률을 추적합니다.
+ *
+ * 각 카테고리 객체의 필드:
+ *   category — 카테고리명 (예: '정보구조 (IA)', '레이아웃 (Layout)')
+ *   items    — 체크리스트 항목 배열
+ *     └─ { check, priority, desc } 형태
+ *        check    — 확인 항목 (질문형 문장)
+ *        priority — 우선순위 ('필수' 또는 '권고')
+ *        desc     — 구체적 설명/예시
+ *
+ * 7개 카테고리:
+ *   1. 정보구조 (IA)         — 5개 항목: 메뉴 깊이, 접근성 등
+ *   2. 레이아웃 (Layout)     — 6개 항목: HUD 배치, 해상도 대응 등
+ *   3. 인터랙션 (Interaction) — 6개 항목: 피드백, 터치 타겟 등
+ *   4. 시각 디자인 (Visual)   — 5개 항목: 테마, 가독성 등
+ *   5. 콘텐츠 (Content)      — 4개 항목: 텍스트, 오류 메시지 등
+ *   6. 접근성 (Accessibility) — 4개 항목: 스케일, 색각 이상 등
+ *   7. 성능 (Performance)    — 3개 항목: fps, 가상화, 아틀라스 등
+ */
 const CHECKLIST_DATA = [
     {
-        category: '정보구조 (IA)',
-        items: [
-            { check: '게임 콘텐츠가 논리적 계층 구조로 정리되어 있는가', priority: '필수', desc: '로비→모험→던전→보스 등 단계별 흐름' },
+        category: '정보구조 (IA)',     // 카테고리명 — 체크리스트 섹션 헤더로 표시
+        items: [                       // 체크리스트 항목 배열
+            { check: '게임 콘텐츠가 논리적 계층 구조로 정리되어 있는가', priority: '필수', desc: '로비→모험→던전→보스 등 단계별 흐름' },  // check: 확인 질문, priority: '필수'|'권고', desc: 구체적 예시
             { check: '내비게이션이 2-3 depth 이내로 유지되는가', priority: '필수', desc: '깊은 메뉴는 플레이어 이탈의 원인' },
             { check: '주요 기능에 3번 이내 터치로 접근 가능한가', priority: '필수', desc: '핵심 액션(전투, 인벤토리)의 접근성' },
             { check: '뒤로가기/홈 버튼이 항상 접근 가능한가', priority: '필수', desc: '어디서든 이전 화면이나 로비로 복귀' },
