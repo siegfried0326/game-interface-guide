@@ -381,6 +381,39 @@
         </div>`;
     }
 
+    // ============ M3 Sub-type Cards ============
+    // M3 Material Design 스타일의 하위 유형 카드 렌더링
+    // 각 컴포넌트의 m3SubTypes 배열을 SVG 일러스트 + 설명 카드로 렌더링
+
+    /**
+     * M3 하위 유형 카드 섹션을 HTML 문자열로 반환
+     * @param {Array} subTypes - m3SubTypes 배열 [{name, nameKo, description, svg, gameContext?}]
+     * @returns {string} 하위 유형 카드 그리드 HTML (비어있으면 빈 문자열)
+     */
+    function renderM3SubTypes(subTypes) {
+        if (!subTypes || !subTypes.length) return '';
+        return `
+            <div class="ref-section">
+                <h2 class="section-title">하위 유형 (Sub-types)</h2>
+                <div class="subtype-grid">
+                    ${subTypes.map(st => `
+                        <div class="subtype-card">
+                            <div class="subtype-illustration">
+                                ${st.svg}
+                            </div>
+                            <div class="subtype-info">
+                                <div class="subtype-name-en">${st.name}</div>
+                                <h4>${st.nameKo}</h4>
+                                <p>${st.description}</p>
+                                ${st.gameContext ? `<div class="subtype-game-context"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 00-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 003 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 019.828 16h4.344a2 2 0 011.414.586L17 18c.5.5 1 1 2 1a3 3 0 003-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0017.32 5z"/></svg>${st.gameContext}</div>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
     // ============ Component Detail Page ============
     // 게임 전용 컴포넌트 상세 페이지: Anatomy 다이어그램, 플랫폼별 설명, 인터랙티브 데모, 가이드라인
 
@@ -388,6 +421,7 @@
      * 게임 전용 컴포넌트의 상세 페이지를 렌더링하는 함수
      * - 브레드크럼 내비게이션
      * - Anatomy(구조 분석) 다이어그램 (SVG + 파트 설명)
+     * - M3 하위 유형 카드 (m3SubTypes 필드가 있는 경우)
      * - 게임 화면 배치 와이어프레임
      * - PC/모바일 플랫폼별 탭 전환 (특성, 설명, 기능 목록)
      * - 인터랙티브 데모 영역 (renderDemo()로 동적 생성)
@@ -433,6 +467,8 @@
                     `).join('')}
                 </ol>
             </div>` : ''}
+
+            ${comp.m3SubTypes ? renderM3SubTypes(comp.m3SubTypes) : ''}
 
             ${comp.screenWireframe ? `
             <div class="screen-wireframe-section">
@@ -1684,6 +1720,7 @@
                 </ol>
             </div>` : ''}
 
+            ${comp.m3SubTypes ? renderM3SubTypes(comp.m3SubTypes) : `
             <div class="ref-section">
                 <h2 class="section-title">변형 (Variants)</h2>
                 <div class="variant-grid">
@@ -1695,7 +1732,7 @@
                         </div>
                     `).join('')}
                 </div>
-            </div>
+            </div>`}
 
             <div class="ref-section">
                 <h2 class="section-title">게임 UI 적용</h2>

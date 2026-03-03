@@ -2212,6 +2212,81 @@ button {
     line-height: 1.5;
 }
 
+/* ── M3 하위 유형(Sub-type) 카드 그리드 ──
+   M3 Material Design 스타일의 하위 유형 카드: SVG 일러스트 + 설명
+   각 컴포넌트의 m3SubTypes 배열을 시각적 카드로 렌더링 */
+.subtype-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.subtype-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.subtype-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.12);
+    transform: translateY(-2px);
+}
+
+.subtype-illustration {
+    background: var(--bg-tertiary);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.subtype-illustration svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.subtype-info {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+}
+
+.subtype-name-en {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+.subtype-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.subtype-info p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.subtype-game-context {
+    margin-top: var(--space-sm);
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    line-height: 1.5;
+}
+
 /* 게임 적용 사례 박스 - 그래디언트 배경의 강조 박스 (아이콘 + 설명) */
 .game-application-box {
     display: flex;
@@ -2665,6 +2740,10 @@ button {
 @media (max-width: 768px) {
     /* 변형 그리드 1열로 변경 */
     .variant-grid {
+        grid-template-columns: 1fr;
+    }
+    /* M3 하위 유형 그리드 1열로 변경 */
+    .subtype-grid {
         grid-template-columns: 1fr;
     }
     /* 게임 적용 박스 세로 방향으로 변경 */

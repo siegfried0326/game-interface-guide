@@ -113,6 +113,59 @@ const COMPONENTS = {
                 { number: 5, name: 'Icon', description: '선행 아이콘' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Filled',
+                nameKo: '필드 버튼',
+                description: '배경이 채워진 주요 액션 버튼. 가장 높은 시각적 강조로 핵심 액션에 사용합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="35" width="140" height="50" rx="25" fill="#374151"/>
+                    <text x="100" y="65" text-anchor="middle" fill="white" font-size="13" font-weight="500">Button</text>
+                </svg>`,
+                gameContext: '퀘스트 수락, 전투 시작, 아이템 구매 등 핵심 CTA'
+            },
+            {
+                name: 'Outlined',
+                nameKo: '아웃라인 버튼',
+                description: '테두리만 있는 중간 강조 버튼. Filled 버튼과 함께 사용하여 보조 액션을 표현합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="35" width="140" height="50" rx="25" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="13" font-weight="500">Button</text>
+                </svg>`,
+                gameContext: '취소, 돌아가기, 건너뛰기 등 보조 액션'
+            },
+            {
+                name: 'Filled Tonal',
+                nameKo: '톤 필드 버튼',
+                description: '부드러운 배경색의 버튼. Filled보다 낮은 강조로 보조 액션이나 토글 상태에 적합합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="35" width="140" height="50" rx="25" fill="#e5e7eb"/>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="13" font-weight="500">Button</text>
+                </svg>`,
+                gameContext: '필터 선택, 장비 탭 전환, 옵션 토글'
+            },
+            {
+                name: 'Elevated',
+                nameKo: '엘리베이티드 버튼',
+                description: '그림자로 부유 효과를 주는 버튼. 배경과 분리가 필요할 때 사용합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="33" y="40" width="140" height="50" rx="25" fill="#9ca3af" opacity="0.3"/>
+                    <rect x="30" y="35" width="140" height="50" rx="25" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="13" font-weight="500">Button</text>
+                </svg>`,
+                gameContext: '맵 위 플로팅 UI, 게임 내 팝업 버튼'
+            },
+            {
+                name: 'Text',
+                nameKo: '텍스트 버튼',
+                description: '컨테이너 없이 텍스트만으로 구성된 최소 강조 버튼. 부가 기능이나 링크형 액션에 사용합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="13" font-weight="500">Button</text>
+                    <line x1="60" y1="72" x2="140" y2="72" stroke="#374151" stroke-width="0.5" opacity="0.3"/>
+                </svg>`,
+                gameContext: '"더 보기", "건너뛰기", "세부정보" 등 부가 링크'
+            }
+        ],
         relatedLaws: ['fitts-law', 'feedback-principle', 'aesthetic-usability', 'doherty-threshold'],  // 관련 UX 법칙 ID 배열 — UX_LAWS의 id와 매칭되어 상세 페이지에서 링크로 표시
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -225,6 +278,29 @@ const COMPONENTS = {
                 { number: 5, name: 'Action Area', description: '액션 영역' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Elevated',
+                nameKo: '엘리베이티드 카드',
+                description: '그림자로 부유감을 주는 카드. 배경에서 분리되어 돋보임.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="43" y="18" width="120" height="90" rx="12" fill="#9ca3af" opacity="0.2"/><rect x="40" y="15" width="120" height="90" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/><rect x="50" y="25" width="100" height="40" rx="6" fill="#e5e7eb"/><rect x="50" y="75" width="70" height="8" rx="3" fill="#e5e7eb"/><rect x="50" y="88" width="50" height="6" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '아이템 카드, 캐릭터 프로필 카드'
+            },
+            {
+                name: 'Filled',
+                nameKo: '필드 카드',
+                description: '배경색이 채워진 카드. 그림자 없이 색상으로 구분.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="15" width="120" height="90" rx="12" fill="#e5e7eb"/><rect x="50" y="25" width="100" height="40" rx="6" fill="#f9fafb"/><rect x="50" y="75" width="70" height="8" rx="3" fill="#9ca3af"/><rect x="50" y="88" width="50" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '인벤토리 슬롯, 스킬 목록 카드'
+            },
+            {
+                name: 'Outlined',
+                nameKo: '아웃라인 카드',
+                description: '테두리만 있는 카드. 가장 낮은 시각적 강조.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="15" width="120" height="90" rx="12" fill="none" stroke="#374151" stroke-width="1.5"/><rect x="50" y="25" width="100" height="40" rx="6" fill="#e5e7eb"/><rect x="50" y="75" width="70" height="8" rx="3" fill="#e5e7eb"/><rect x="50" y="88" width="50" height="6" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '장비 비교 카드, 통계 카드'
+            }
+        ],
         relatedLaws: ['law-proximity', 'law-similarity', 'aesthetic-usability', 'law-pragnanz'],
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -340,6 +416,29 @@ const COMPONENTS = {
                 { number: 5, name: 'Action Buttons', description: '액션 버튼' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Basic',
+                nameKo: '기본 다이얼로그',
+                description: '제목, 내용, 액션 버튼으로 구성된 표준 대화상자.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="15" width="150" height="90" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><text x="100" y="38" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">Title</text><text x="100" y="55" text-anchor="middle" fill="#6b7280" font-size="8">Description text here</text><rect x="45" y="72" width="48" height="20" rx="4" fill="none" stroke="#374151" stroke-width="1"/><text x="69" y="86" text-anchor="middle" fill="#374151" font-size="8">취소</text><rect x="107" y="72" width="48" height="20" rx="4" fill="#374151"/><text x="131" y="86" text-anchor="middle" fill="white" font-size="8">확인</text></svg>`,
+                gameContext: '퀘스트 수락, 아이템 구매 확인, 경고 메시지'
+            },
+            {
+                name: 'Full-screen',
+                nameKo: '전체화면 다이얼로그',
+                description: '화면 전체를 차지하는 대화상자. 복잡한 입력에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="190" height="110" rx="4" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="5" y="5" width="190" height="30" rx="4" fill="#374151"/><text x="40" y="24" fill="white" font-size="9">✕</text><text x="100" y="24" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Title</text><text x="170" y="24" fill="white" font-size="9">저장</text><rect x="20" y="50" width="160" height="12" rx="3" fill="#e5e7eb"/><rect x="20" y="70" width="120" height="10" rx="3" fill="#e5e7eb"/><rect x="20" y="88" width="140" height="10" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '캐릭터 생성, 상세 설정, 길드 가입 양식'
+            },
+            {
+                name: 'List',
+                nameKo: '리스트 다이얼로그',
+                description: '목록에서 항목을 선택하는 다이얼로그.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="10" width="140" height="100" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><text x="100" y="30" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">선택하세요</text><line x1="30" y1="36" x2="170" y2="36" stroke="#e5e7eb" stroke-width="1"/><circle cx="52" cy="52" r="6" fill="none" stroke="#374151" stroke-width="1.5"/><circle cx="52" cy="52" r="3" fill="#374151"/><text x="66" y="56" fill="#374151" font-size="9">옵션 A</text><circle cx="52" cy="72" r="6" fill="none" stroke="#9ca3af" stroke-width="1.5"/><text x="66" y="76" fill="#6b7280" font-size="9">옵션 B</text><circle cx="52" cy="92" r="6" fill="none" stroke="#9ca3af" stroke-width="1.5"/><text x="66" y="96" fill="#6b7280" font-size="9">옵션 C</text></svg>`,
+                gameContext: '서버 선택, 난이도 선택, 채널 선택'
+            }
+        ],
         relatedLaws: ['hicks-law', 'jakobs-law', 'feedback-principle', 'consistency'],
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -772,6 +871,29 @@ const COMPONENTS = {
                 { number: 5, name: 'Label', description: '라벨' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Tab-based',
+                nameKo: '탭 기반',
+                description: '상단/하단 탭으로 메인 섹션을 전환하는 내비게이션.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="90" width="180" height="24" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1"/><rect x="10" y="90" width="45" height="24" rx="0" fill="#374151"/><text x="32" y="106" text-anchor="middle" fill="white" font-size="7">홈</text><text x="77" y="106" text-anchor="middle" fill="#6b7280" font-size="7">상점</text><text x="122" y="106" text-anchor="middle" fill="#6b7280" font-size="7">가방</text><text x="167" y="106" text-anchor="middle" fill="#6b7280" font-size="7">설정</text></svg>`,
+                gameContext: '모바일 게임 하단 탭 바'
+            },
+            {
+                name: 'Sidebar',
+                nameKo: '사이드바',
+                description: '좌측 고정 사이드바로 섹션 이동.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="50" height="100" rx="4" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="16" y="20" width="38" height="10" rx="3" fill="#374151"/><rect x="16" y="38" width="38" height="8" rx="3" fill="#e5e7eb"/><rect x="16" y="52" width="38" height="8" rx="3" fill="#e5e7eb"/><rect x="16" y="66" width="38" height="8" rx="3" fill="#e5e7eb"/><rect x="70" y="10" width="120" height="100" rx="4" fill="#e5e7eb" opacity="0.3"/></svg>`,
+                gameContext: 'PC 게임 메뉴, 설정 카테고리'
+            },
+            {
+                name: 'Bottom Bar',
+                nameKo: '바텀 바',
+                description: '화면 하단에 고정된 아이콘 내비게이션 바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="180" height="80" rx="4" fill="#e5e7eb" opacity="0.2"/><rect x="10" y="90" width="180" height="24" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1"/><circle cx="40" cy="102" r="6" fill="#374151"/><circle cx="80" cy="102" r="6" fill="#e5e7eb"/><circle cx="120" cy="102" r="6" fill="#e5e7eb"/><circle cx="160" cy="102" r="6" fill="#e5e7eb"/></svg>`,
+                gameContext: '모바일 RPG 메인 네비게이션'
+            }
+        ],
         relatedLaws: ['serial-position', 'hicks-law', 'jakobs-law', 'consistency'],
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -888,6 +1010,36 @@ const COMPONENTS = {
                 { number: 5, name: 'Segmented Markers', description: '구간 마커' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Linear Determinate',
+                nameKo: '선형 확정',
+                description: '진행률이 확정된 수평 바. 0~100%로 진행 상태 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="55" width="160" height="10" rx="5" fill="#e5e7eb"/><rect x="20" y="55" width="96" height="10" rx="5" fill="#374151"/><text x="100" y="80" text-anchor="middle" fill="#6b7280" font-size="9">60%</text></svg>`,
+                gameContext: 'HP/MP/EXP 바, 퀘스트 진행률, 다운로드 진행'
+            },
+            {
+                name: 'Linear Indeterminate',
+                nameKo: '선형 불확정',
+                description: '진행률을 알 수 없는 수평 바. 로딩 중 애니메이션.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="55" width="160" height="10" rx="5" fill="#e5e7eb"/><rect x="60" y="55" width="60" height="10" rx="5" fill="#374151"/></svg>`,
+                gameContext: '서버 연결 중, 매칭 대기 중'
+            },
+            {
+                name: 'Circular Determinate',
+                nameKo: '원형 확정',
+                description: '원형으로 진행률을 표시. 쿨다운 타이머에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="60" r="30" fill="none" stroke="#e5e7eb" stroke-width="6"/><circle cx="100" cy="60" r="30" fill="none" stroke="#374151" stroke-width="6" stroke-dasharray="113" stroke-dashoffset="45" transform="rotate(-90 100 60)"/><text x="100" y="65" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">60%</text></svg>`,
+                gameContext: '스킬 쿨다운, 부활 타이머, 버프 잔여 시간'
+            },
+            {
+                name: 'Circular Indeterminate',
+                nameKo: '원형 불확정',
+                description: '계속 회전하는 원형 인디케이터. 불확정 로딩 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="60" r="30" fill="none" stroke="#e5e7eb" stroke-width="6"/><path d="M100 30a30 30 0 0 1 30 30" fill="none" stroke="#374151" stroke-width="6" stroke-linecap="round"/></svg>`,
+                gameContext: '데이터 동기화 중, 검색 중'
+            }
+        ],
         relatedLaws: ['doherty-threshold', 'feedback-principle', 'goal-gradient', 'zeigarnik-effect'],
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -1003,6 +1155,22 @@ const COMPONENTS = {
                 { number: 5, name: 'Trigger Element', description: '트리거 요소' },
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Plain',
+                nameKo: '기본 툴팁',
+                description: '짧은 텍스트만 표시하는 간단한 툴팁.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="55" y="30" width="90" height="32" rx="4" fill="#374151"/><text x="100" y="50" text-anchor="middle" fill="white" font-size="10">Tooltip text</text><polygon points="100,62 94,68 106,68" fill="#374151"/><rect x="80" y="80" width="40" height="24" rx="4" fill="#e5e7eb"/></svg>`,
+                gameContext: 'UI 버튼 호버 시 기능 설명, 스킬 이름 표시'
+            },
+            {
+                name: 'Rich',
+                nameKo: '리치 툴팁',
+                description: '제목, 설명, 액션 버튼을 포함하는 풍부한 툴팁.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="10" width="140" height="80" rx="8" fill="#374151"/><text x="50" y="30" fill="white" font-size="10" font-weight="bold">전설의 검</text><text x="50" y="46" fill="#9ca3af" font-size="8">공격력 +250</text><text x="50" y="58" fill="#9ca3af" font-size="8">치명타 +15%</text><rect x="50" y="66" width="50" height="16" rx="3" fill="#60a5fa"/><text x="75" y="78" text-anchor="middle" fill="white" font-size="7">장착하기</text><polygon points="100,90 94,96 106,96" fill="#374151"/><rect x="85" y="100" width="30" height="14" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '아이템 호버 시 스탯+비교+장착 버튼 표시'
+            }
+        ],
         relatedLaws: ['progressive-disclosure', 'miller-law', 'doherty-threshold', 'law-pragnanz'],
         screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
@@ -1498,6 +1666,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Count/Label', description: '숫자 또는 텍스트 라벨' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Small',
+                nameKo: '소형 (도트)',
+                description: '숫자 없는 최소 인디케이터. 새 항목 존재 여부만 알림.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="70" y="35" width="50" height="50" rx="8" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/><circle cx="115" cy="40" r="6" fill="#ef4444"/></svg>`,
+                gameContext: '새 메일 도착, 새 아이템 획득 알림'
+            },
+            {
+                name: 'Large',
+                nameKo: '대형 (숫자)',
+                description: '숫자를 포함하는 카운트 뱃지. 미읽 항목 수를 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="70" y="35" width="50" height="50" rx="8" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/><circle cx="117" cy="38" r="12" fill="#ef4444"/><text x="117" y="43" text-anchor="middle" fill="white" font-size="10" font-weight="bold">5</text></svg>`,
+                gameContext: '미읽 메시지 수, 새 퀘스트 수, 인벤토리 알림'
+            }
+        ],
                 variants: [           // variants: 컴포넌트 변형 목록 — 참조 컴포넌트에만 존재 (게임 전용에는 없음). { name: 변형명, description: 설명 }
             { name: '숫자 뱃지', description: '미읽 메시지 수, 새 퀘스트 수 등 카운트 표시' },
             { name: '도트 뱃지', description: '새 항목 존재 여부만 표시하는 최소 인디케이터' },
@@ -1532,6 +1716,39 @@ const COMPONENTS = {
                 { number: 3, name: 'Label', description: '상태 라벨 텍스트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Selected',
+                nameKo: '선택됨 (ON)',
+                description: 'ON 상태의 스위치. 핸들이 오른쪽으로 이동하고 트랙이 채워집니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="40" width="120" height="40" rx="20" fill="#374151"/>
+                    <circle cx="140" cy="60" r="16" fill="#f9fafb"/>
+                </svg>`,
+                gameContext: '사운드 ON, 자동 전투 활성화, HUD 표시'
+            },
+            {
+                name: 'Unselected',
+                nameKo: '미선택 (OFF)',
+                description: 'OFF 상태의 스위치. 핸들이 왼쪽에 위치하고 트랙이 비어 있습니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="40" width="120" height="40" rx="20" fill="none" stroke="#9ca3af" stroke-width="2"/>
+                    <circle cx="60" cy="60" r="12" fill="#9ca3af"/>
+                </svg>`,
+                gameContext: '사운드 OFF, 알림 비활성화'
+            },
+            {
+                name: 'With Icon',
+                nameKo: '아이콘 포함',
+                description: '핸들 내부에 아이콘이 포함된 스위치. 현재 상태를 아이콘으로 보강합니다.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="40" width="120" height="40" rx="20" fill="#374151"/>
+                    <circle cx="140" cy="60" r="16" fill="#f9fafb"/>
+                    <path d="M135 60l3 3 6-6" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`,
+                gameContext: '설정에서 체크 아이콘으로 ON/OFF 시각 강화'
+            }
+        ],
                 variants: [
             { name: '기본 토글', description: 'ON/OFF 텍스트 라벨이 포함된 표준 스위치' },
             { name: '아이콘 토글', description: '🔊/🔇 등 아이콘으로 상태 표현' },
@@ -1565,6 +1782,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Label', description: '라벨 텍스트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Checked',
+                nameKo: '체크됨',
+                description: '선택 완료 상태. 체크 표시가 있는 채워진 사각형.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="80" y="40" width="40" height="40" rx="4" fill="#374151"/><path d="M92 60l4 4 12-12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+                gameContext: '퀘스트 완료 체크, 설정 옵션 활성화'
+            },
+            {
+                name: 'Unchecked',
+                nameKo: '미체크',
+                description: '미선택 상태. 빈 사각형 테두리만 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="80" y="40" width="40" height="40" rx="4" fill="none" stroke="#9ca3af" stroke-width="2"/></svg>`,
+                gameContext: '미완료 퀘스트, 비활성 옵션'
+            },
+            {
+                name: 'Indeterminate',
+                nameKo: '불확정',
+                description: '부분 선택 상태. 대시(-) 표시로 일부만 선택됨을 나타냄.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="80" y="40" width="40" height="40" rx="4" fill="#374151"/><line x1="90" y1="60" x2="110" y2="60" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+                gameContext: '전체 선택 중 일부만 체크된 상위 항목'
+            },
+            {
+                name: 'Error',
+                nameKo: '에러',
+                description: '유효성 검사 실패 상태. 빨간 테두리로 오류 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="80" y="40" width="40" height="40" rx="4" fill="none" stroke="#ef4444" stroke-width="2"/><text x="100" y="85" text-anchor="middle" fill="#ef4444" font-size="9">필수 항목</text></svg>`,
+                gameContext: '필수 동의 체크 누락 시'
+            }
+        ],
                 variants: [
             { name: '기본 체크박스', description: '선택/비선택 상태의 표준 체크박스' },
             { name: '불확정 체크박스', description: '하위 항목이 부분 선택된 부모 체크박스' },
@@ -1598,6 +1845,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Label', description: '라벨 텍스트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Selected',
+                nameKo: '선택됨',
+                description: '선택된 라디오 버튼. 내부에 채워진 원이 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="60" r="18" fill="none" stroke="#374151" stroke-width="2"/><circle cx="100" cy="60" r="9" fill="#374151"/></svg>`,
+                gameContext: '난이도 선택, 서버 선택, 캐릭터 클래스 선택'
+            },
+            {
+                name: 'Unselected',
+                nameKo: '미선택',
+                description: '미선택 라디오 버튼. 빈 원만 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="60" r="18" fill="none" stroke="#9ca3af" stroke-width="2"/></svg>`,
+                gameContext: '미선택 옵션 상태'
+            }
+        ],
                 variants: [
             { name: '기본 라디오', description: '원형 인디케이터가 있는 표준 라디오 버튼' },
             { name: '카드형 라디오', description: '각 옵션이 카드 형태로 표시되는 확장형' },
@@ -1639,6 +1902,22 @@ const COMPONENTS = {
                 { number: 4, name: 'Selected Item', description: '선택된 항목 하이라이트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Standard',
+                nameKo: '스탠다드',
+                description: '기본 드롭다운. 클릭하면 옵션 목록이 펼쳐지는 표준형.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="40" width="140" height="40" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="50" y="65" fill="#374151" font-size="11">Select</text><path d="M150 55l5 6 5-6" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+                gameContext: '서버 선택, 언어 설정, 해상도 선택'
+            },
+            {
+                name: 'Compact',
+                nameKo: '컴팩트',
+                description: '공간 효율적인 소형 드롭다운. 필터나 정렬에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="50" y="44" width="100" height="32" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="70" y="64" fill="#374151" font-size="10">Filter</text><path d="M132 56l4 5 4-5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+                gameContext: '아이템 정렬(이름순/등급순), 채팅 채널 선택'
+            }
+        ],
                 variants: [
             { name: '기본 드롭다운', description: '텍스트 목록에서 하나를 선택' },
             { name: '검색형 드롭다운', description: '타이핑으로 선택지 필터링 가능' },
@@ -1676,6 +1955,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Value Label', description: '현재 값 표시 라벨' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Continuous',
+                nameKo: '연속형',
+                description: '자유로운 값 선택이 가능한 기본 슬라이더.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="60" x2="170" y2="60" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="60" x2="110" y2="60" stroke="#374151" stroke-width="4" stroke-linecap="round"/><circle cx="110" cy="60" r="10" fill="#374151"/></svg>`,
+                gameContext: '볼륨 조절, 마우스 감도, 밝기 조절'
+            },
+            {
+                name: 'Discrete',
+                nameKo: '단계형',
+                description: '정해진 단계 값에서만 선택 가능. 눈금 표시가 있음.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="60" x2="170" y2="60" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="60" x2="100" y2="60" stroke="#374151" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="60" r="10" fill="#374151"/><circle cx="30" cy="60" r="3" fill="#374151"/><circle cx="65" cy="60" r="3" fill="#374151"/><circle cx="100" cy="60" r="3" fill="white"/><circle cx="135" cy="60" r="3" fill="#e5e7eb"/><circle cx="170" cy="60" r="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '그래픽 품질 (낮음/중간/높음/울트라)'
+            },
+            {
+                name: 'Range',
+                nameKo: '범위형',
+                description: '두 개의 핸들로 최소~최대 범위를 설정.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="60" x2="170" y2="60" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/><line x1="70" y1="60" x2="130" y2="60" stroke="#374151" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="60" r="10" fill="#374151"/><circle cx="130" cy="60" r="10" fill="#374151"/></svg>`,
+                gameContext: '거래소 가격 범위 필터, 레벨 범위 매칭'
+            },
+            {
+                name: 'Centered',
+                nameKo: '중앙 기준형',
+                description: '중앙을 기준으로 양쪽으로 조절하는 슬라이더.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="60" x2="170" y2="60" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/><line x1="100" y1="60" x2="130" y2="60" stroke="#374151" stroke-width="4" stroke-linecap="round"/><circle cx="130" cy="60" r="10" fill="#374151"/><line x1="100" y1="50" x2="100" y2="70" stroke="#9ca3af" stroke-width="1.5"/></svg>`,
+                gameContext: '카메라 좌우 반전 조절, 오디오 밸런스(L/R)'
+            }
+        ],
                 variants: [
             { name: '연속 슬라이더', description: '범위 내 모든 값을 자유 선택' },
             { name: '단계 슬라이더', description: '정해진 단계(Low/Mid/High)로 스냅' },
@@ -1714,6 +2023,22 @@ const COMPONENTS = {
                 { number: 4, name: 'Helper Text', description: '도움말/에러 텍스트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Filled',
+                nameKo: '필드형',
+                description: '배경이 채워지고 하단에 밑줄이 있는 텍스트 입력.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="35" width="160" height="50" rx="4" fill="#e5e7eb"/><line x1="20" y1="85" x2="180" y2="85" stroke="#374151" stroke-width="2"/><text x="35" y="65" fill="#6b7280" font-size="11">Label</text></svg>`,
+                gameContext: '캐릭터 이름 입력, 채팅 입력창'
+            },
+            {
+                name: 'Outlined',
+                nameKo: '아웃라인형',
+                description: '전체 테두리가 있는 텍스트 입력. 명확한 경계 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="35" width="160" height="50" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="65" fill="#6b7280" font-size="11">Label</text></svg>`,
+                gameContext: '로그인 폼, 거래소 검색, 매크로 설정'
+            }
+        ],
                 variants: [
             { name: '기본 입력', description: '한 줄 텍스트 입력 (이름, 코드)' },
             { name: '비밀번호 입력', description: '마스킹 처리 + 보기 토글' },
@@ -1750,6 +2075,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Clear Button', description: '입력 초기화 버튼' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Search Bar',
+                nameKo: '검색 바',
+                description: '항상 표시되는 검색 입력 필드. 즉시 검색 가능.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="38" width="160" height="44" rx="22" fill="#e5e7eb"/><circle cx="52" cy="60" r="10" fill="none" stroke="#6b7280" stroke-width="1.5"/><line x1="59" y1="67" x2="65" y2="73" stroke="#6b7280" stroke-width="1.5"/><text x="78" y="65" fill="#9ca3af" font-size="11">Search</text></svg>`,
+                gameContext: '아이템 검색, 플레이어 검색'
+            },
+            {
+                name: 'Search View',
+                nameKo: '검색 뷰',
+                description: '클릭 시 전체 화면으로 확장되는 검색. 검색 기록과 추천 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="180" height="100" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="20" y="18" width="160" height="32" rx="16" fill="#e5e7eb"/><circle cx="42" cy="34" r="8" fill="none" stroke="#6b7280" stroke-width="1.5"/><line x1="47" y1="39" x2="52" y2="44" stroke="#6b7280" stroke-width="1.5"/><text x="60" y="38" fill="#9ca3af" font-size="9">Search</text><line x1="20" y1="60" x2="180" y2="60" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="76" fill="#9ca3af" font-size="8">최근 검색</text><text x="30" y="92" fill="#6b7280" font-size="8">아이템명...</text></svg>`,
+                gameContext: '거래소 검색, 도감 검색 (검색 기록+추천 포함)'
+            }
+        ],
                 variants: [
             { name: '인라인 검색', description: '현재 목록을 실시간 필터링' },
             { name: '전체 검색', description: '게임 전체 콘텐츠 대상 검색' },
@@ -1798,6 +2139,22 @@ const COMPONENTS = {
                 { number: 4, name: 'Content Area', description: '탭 콘텐츠 영역' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Primary',
+                nameKo: '프라이머리 탭',
+                description: '최상위 콘텐츠 전환에 사용하는 주요 탭.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="70" x2="190" y2="70" stroke="#e5e7eb" stroke-width="1"/><text x="50" y="60" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">Tab 1</text><line x1="25" y1="70" x2="75" y2="70" stroke="#374151" stroke-width="3"/><text x="110" y="60" text-anchor="middle" fill="#9ca3af" font-size="10">Tab 2</text><text x="165" y="60" text-anchor="middle" fill="#9ca3af" font-size="10">Tab 3</text></svg>`,
+                gameContext: '메인 메뉴 (캐릭터/장비/스킬 탭 전환)'
+            },
+            {
+                name: 'Secondary',
+                nameKo: '세컨더리 탭',
+                description: '하위 콘텐츠 전환에 사용하는 보조 탭.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="70" x2="190" y2="70" stroke="#e5e7eb" stroke-width="1"/><text x="50" y="60" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">Tab A</text><line x1="30" y1="70" x2="70" y2="70" stroke="#374151" stroke-width="2"/><text x="110" y="60" text-anchor="middle" fill="#9ca3af" font-size="10">Tab B</text><text x="165" y="60" text-anchor="middle" fill="#9ca3af" font-size="10">Tab C</text></svg>`,
+                gameContext: '인벤토리 하위 탭 (무기/방어구/소비/재료)'
+            }
+        ],
                 variants: [
             { name: '고정 탭', description: '화면 너비에 균등 배분되는 고정 탭' },
             { name: '스크롤 탭', description: '좌우 스크롤 가능한 다수의 탭' },
@@ -1837,6 +2194,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Content Panel', description: '콘텐츠 패널' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Single-expand',
+                nameKo: '단일 확장',
+                description: '한 번에 하나의 패널만 열리는 아코디언.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="10" width="160" height="24" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="26" fill="#374151" font-size="9">Section A</text><text x="168" y="26" fill="#374151" font-size="10">▸</text><rect x="20" y="38" width="160" height="50" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="54" fill="#374151" font-size="9" font-weight="bold">Section B</text><text x="168" y="54" fill="#374151" font-size="10">▾</text><rect x="30" y="62" width="100" height="6" rx="2" fill="#9ca3af"/><rect x="30" y="72" width="80" height="6" rx="2" fill="#9ca3af"/><rect x="20" y="92" width="160" height="24" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="108" fill="#374151" font-size="9">Section C</text><text x="168" y="108" fill="#374151" font-size="10">▸</text></svg>`,
+                gameContext: 'FAQ 목록, 설정 카테고리 (한 번에 하나만 펼침)'
+            },
+            {
+                name: 'Multi-expand',
+                nameKo: '다중 확장',
+                description: '여러 패널을 동시에 열 수 있는 아코디언.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="5" width="160" height="36" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="18" fill="#374151" font-size="9" font-weight="bold">Section A</text><text x="168" y="18" fill="#374151" font-size="10">▾</text><rect x="30" y="25" width="80" height="5" rx="2" fill="#9ca3af"/><rect x="30" y="32" width="60" height="5" rx="2" fill="#9ca3af"/><rect x="20" y="45" width="160" height="24" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="61" fill="#374151" font-size="9">Section B</text><text x="168" y="61" fill="#374151" font-size="10">▸</text><rect x="20" y="73" width="160" height="42" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="35" y="86" fill="#374151" font-size="9" font-weight="bold">Section C</text><text x="168" y="86" fill="#374151" font-size="10">▾</text><rect x="30" y="93" width="100" height="5" rx="2" fill="#9ca3af"/><rect x="30" y="102" width="70" height="5" rx="2" fill="#9ca3af"/></svg>`,
+                gameContext: '캐릭터 스탯 (여러 카테고리 동시 보기), 도움말'
+            }
+        ],
                 variants: [
             { name: '단일 확장', description: '한 번에 하나의 섹션만 열림' },
             { name: '다중 확장', description: '여러 섹션을 동시에 열 수 있음' },
@@ -1871,6 +2244,29 @@ const COMPONENTS = {
                 { number: 3, name: 'Action', description: '액션 버튼' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Single-line',
+                nameKo: '단일 행',
+                description: '한 줄 메시지만 표시하는 간결한 스낵바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="75" width="180" height="36" rx="4" fill="#374151"/><text x="24" y="97" fill="white" font-size="10">아이템이 저장되었습니다</text></svg>`,
+                gameContext: '아이템 획득/저장 알림, 설정 변경 확인'
+            },
+            {
+                name: 'Two-line',
+                nameKo: '두 줄',
+                description: '제목과 부가 설명이 있는 두 줄 스낵바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="65" width="180" height="48" rx="4" fill="#374151"/><text x="24" y="83" fill="white" font-size="10">연결이 끊어졌습니다</text><text x="24" y="100" fill="#9ca3af" font-size="8">네트워크를 확인해 주세요</text></svg>`,
+                gameContext: '네트워크 오류, 서버 점검 안내'
+            },
+            {
+                name: 'With Action',
+                nameKo: '액션 포함',
+                description: '실행취소 등 액션 버튼이 포함된 스낵바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="75" width="180" height="36" rx="4" fill="#374151"/><text x="24" y="97" fill="white" font-size="10">아이템 삭제됨</text><text x="172" y="97" text-anchor="end" fill="#60a5fa" font-size="10" font-weight="bold">실행취소</text></svg>`,
+                gameContext: '아이템 판매 취소, 장비 해제 실행취소'
+            }
+        ],
                 variants: [
             { name: '기본 토스트', description: '일정 시간 후 자동 사라지는 알림' },
             { name: '액션 토스트', description: '"되돌리기" 등 액션 버튼 포함' },
@@ -1905,6 +2301,29 @@ const COMPONENTS = {
                 { number: 3, name: 'Label', description: '로딩 메시지 라벨' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Spinner',
+                nameKo: '스피너',
+                description: '회전하는 원형 인디케이터. 불확정 로딩 상태 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="60" r="24" fill="none" stroke="#e5e7eb" stroke-width="4"/><path d="M100 36a24 24 0 0 1 24 24" stroke="#374151" stroke-width="4" stroke-linecap="round"/></svg>`,
+                gameContext: '서버 연결 중, 데이터 로딩 중'
+            },
+            {
+                name: 'Skeleton',
+                nameKo: '스켈레톤',
+                description: '콘텐츠 형태의 플레이스홀더. 레이아웃을 미리 보여줌.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="60" height="60" rx="8" fill="#e5e7eb"/><rect x="90" y="20" width="90" height="12" rx="4" fill="#e5e7eb"/><rect x="90" y="40" width="70" height="10" rx="4" fill="#e5e7eb"/><rect x="90" y="58" width="50" height="10" rx="4" fill="#e5e7eb"/><rect x="20" y="90" width="160" height="10" rx="4" fill="#e5e7eb"/></svg>`,
+                gameContext: '인벤토리 아이템 목록 로딩, 상점 목록 로딩'
+            },
+            {
+                name: 'Shimmer',
+                nameKo: '쉬머',
+                description: '반짝이는 애니메이션이 있는 스켈레톤. 로딩 중임을 강조.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="60" height="60" rx="8" fill="#e5e7eb"/><rect x="20" y="20" width="30" height="60" rx="8" fill="#f3f4f6" opacity="0.7"/><rect x="90" y="20" width="90" height="12" rx="4" fill="#e5e7eb"/><rect x="90" y="20" width="45" height="12" rx="4" fill="#f3f4f6" opacity="0.7"/><rect x="90" y="40" width="70" height="10" rx="4" fill="#e5e7eb"/><rect x="20" y="90" width="160" height="10" rx="4" fill="#e5e7eb"/></svg>`,
+                gameContext: '프로필 카드 로딩, 랭킹 목록 로딩'
+            }
+        ],
                 variants: [
             { name: '스피너', description: '회전하는 원형 인디케이터' },
             { name: '프로그레스 바', description: '진행률을 퍼센트로 표시' },
@@ -1946,6 +2365,29 @@ const COMPONENTS = {
                 { number: 4, name: 'Divider', description: '항목 구분선' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'One-line',
+                nameKo: '단일 행',
+                description: '텍스트 한 줄만 표시하는 가장 간결한 리스트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="25" width="160" height="24" rx="0" fill="none"/><rect x="20" y="27" width="80" height="8" rx="3" fill="#374151"/><line x1="20" y1="49" x2="180" y2="49" stroke="#e5e7eb" stroke-width="1"/><rect x="20" y="55" width="90" height="8" rx="3" fill="#374151"/><line x1="20" y1="73" x2="180" y2="73" stroke="#e5e7eb" stroke-width="1"/><rect x="20" y="79" width="70" height="8" rx="3" fill="#374151"/></svg>`,
+                gameContext: '간단한 메뉴 목록, 채팅 채널 목록'
+            },
+            {
+                name: 'Two-line',
+                nameKo: '두 줄',
+                description: '제목과 부가 텍스트가 있는 리스트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="36" cy="35" r="14" fill="#e5e7eb"/><rect x="58" y="26" width="70" height="8" rx="3" fill="#374151"/><rect x="58" y="38" width="50" height="6" rx="3" fill="#9ca3af"/><line x1="20" y1="56" x2="180" y2="56" stroke="#e5e7eb" stroke-width="1"/><circle cx="36" cy="75" r="14" fill="#e5e7eb"/><rect x="58" y="66" width="80" height="8" rx="3" fill="#374151"/><rect x="58" y="78" width="60" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '친구 목록 (이름+상태), 장비 목록 (이름+스탯)'
+            },
+            {
+                name: 'Three-line',
+                nameKo: '세 줄',
+                description: '제목, 설명, 추가 정보가 있는 상세 리스트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="12" width="40" height="40" rx="6" fill="#e5e7eb"/><rect x="68" y="14" width="80" height="8" rx="3" fill="#374151"/><rect x="68" y="26" width="100" height="6" rx="3" fill="#9ca3af"/><rect x="68" y="36" width="60" height="6" rx="3" fill="#9ca3af"/><line x1="20" y1="58" x2="180" y2="58" stroke="#e5e7eb" stroke-width="1"/><rect x="20" y="64" width="40" height="40" rx="6" fill="#e5e7eb"/><rect x="68" y="66" width="90" height="8" rx="3" fill="#374151"/><rect x="68" y="78" width="70" height="6" rx="3" fill="#9ca3af"/><rect x="68" y="88" width="50" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '퀘스트 목록 (이름+설명+보상), 거래소 아이템 목록'
+            }
+        ],
                 variants: [
             { name: '기본 리스트', description: '텍스트 위주의 단순 목록' },
             { name: '아바타 리스트', description: '프로필 이미지+이름+상태 표시' },
@@ -1986,6 +2428,29 @@ const COMPONENTS = {
                 { number: 3, name: 'Data Row', description: '데이터 행' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Basic',
+                nameKo: '기본형',
+                description: '행과 열로 구성된 기본 데이터 테이블.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="170" height="90" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><rect x="15" y="15" width="170" height="22" rx="4" fill="#374151"/><text x="40" y="30" fill="white" font-size="8">이름</text><text x="90" y="30" fill="white" font-size="8">레벨</text><text x="140" y="30" fill="white" font-size="8">등급</text><line x1="15" y1="55" x2="185" y2="55" stroke="#e5e7eb" stroke-width="1"/><line x1="15" y1="77" x2="185" y2="77" stroke="#e5e7eb" stroke-width="1"/></svg>`,
+                gameContext: '랭킹 테이블, 길드원 목록'
+            },
+            {
+                name: 'Sortable',
+                nameKo: '정렬형',
+                description: '열 헤더 클릭으로 정렬 가능한 테이블.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="170" height="90" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><rect x="15" y="15" width="170" height="22" rx="4" fill="#374151"/><text x="40" y="30" fill="white" font-size="8">이름</text><path d="M60 24l3 4h-6z" fill="white"/><text x="100" y="30" fill="white" font-size="8">레벨 ↓</text><line x1="15" y1="55" x2="185" y2="55" stroke="#e5e7eb" stroke-width="1"/><line x1="15" y1="77" x2="185" y2="77" stroke="#e5e7eb" stroke-width="1"/></svg>`,
+                gameContext: '거래소 아이템 가격순/등급순 정렬'
+            },
+            {
+                name: 'Paginated',
+                nameKo: '페이지형',
+                description: '페이지 네비게이션이 포함된 테이블.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="10" width="170" height="80" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><rect x="15" y="10" width="170" height="20" rx="4" fill="#374151"/><line x1="15" y1="48" x2="185" y2="48" stroke="#e5e7eb" stroke-width="1"/><line x1="15" y1="68" x2="185" y2="68" stroke="#e5e7eb" stroke-width="1"/><text x="100" y="105" text-anchor="middle" fill="#6b7280" font-size="8">< 1 2 3 ... 10 ></text></svg>`,
+                gameContext: '전적 기록, 거래 히스토리'
+            }
+        ],
                 variants: [
             { name: '기본 테이블', description: '정적 행/열 데이터 표시' },
             { name: '정렬 테이블', description: '열 헤더 클릭으로 정렬 전환' },
@@ -2024,6 +2489,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Remove Button', description: '삭제 버튼' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Assist',
+                nameKo: '어시스트 칩',
+                description: '추천 액션을 제안하는 칩. 클릭하면 관련 작업이 실행됨.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="44" width="120" height="32" rx="16" fill="none" stroke="#374151" stroke-width="1.5"/><circle cx="62" cy="60" r="8" fill="#e5e7eb"/><text x="112" y="65" text-anchor="middle" fill="#374151" font-size="10">Assist</text></svg>`,
+                gameContext: '추천 퀘스트, 자동 장비 장착'
+            },
+            {
+                name: 'Filter',
+                nameKo: '필터 칩',
+                description: '선택하면 콘텐츠를 필터링하는 토글형 칩.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="44" width="120" height="32" rx="16" fill="#374151"/><path d="M58 60l3 3 7-7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><text x="112" y="65" text-anchor="middle" fill="white" font-size="10">Filter</text></svg>`,
+                gameContext: '인벤토리 등급 필터, 스킬 속성 필터'
+            },
+            {
+                name: 'Input',
+                nameKo: '입력 칩',
+                description: '사용자가 입력한 내용을 칩으로 표시. 삭제(X) 가능.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="44" width="120" height="32" rx="16" fill="none" stroke="#374151" stroke-width="1.5"/><text x="90" y="65" text-anchor="middle" fill="#374151" font-size="10">Input</text><circle cx="140" cy="60" r="8" fill="#e5e7eb"/><line x1="136" y1="56" x2="144" y2="64" stroke="#6b7280" stroke-width="1.5"/><line x1="144" y1="56" x2="136" y2="64" stroke="#6b7280" stroke-width="1.5"/></svg>`,
+                gameContext: '거래소 검색 태그, 파티 조건 태그'
+            },
+            {
+                name: 'Suggestion',
+                nameKo: '제안 칩',
+                description: '시스템이 제안하는 옵션. 동적으로 생성됨.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="44" width="120" height="32" rx="16" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4"/><text x="100" y="65" text-anchor="middle" fill="#6b7280" font-size="10">Suggestion</text></svg>`,
+                gameContext: '최근 거래 아이템, 추천 검색어'
+            }
+        ],
                 variants: [
             { name: '필터 칩', description: '검색/정렬 필터로 사용되는 토글형' },
             { name: '입력 칩', description: '사용자 입력을 칩으로 변환 (태그 입력)' },
@@ -2033,6 +2528,52 @@ const COMPONENTS = {
         gameApplication: '아이템 속성 태그(화염+3, 빙결+5), 거래소 검색 필터, 캐릭터 특성 표시, 파티 모집 조건, 업적 카테고리에 사용합니다.',
         guidelines: ['색상으로 카테고리/속성 구분', '칩 내용은 간결하게 (2-4글자)', '선택/비선택 상태 명확히 구분', '관련 칩끼리 그룹핑'],
         relatedLaws: ['law-similarity', 'recognition-recall', 'law-pragnanz']
+    },
+
+    'date-pickers': {
+        id: 'date-pickers', name: '날짜 선택기', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+        summary: '날짜 또는 날짜 범위를 선택하는 컴포넌트.',
+        description: '날짜 선택기는 달력 UI를 통해 특정 날짜 또는 날짜 범위를 선택할 수 있는 컴포넌트입니다. 게임에서는 이벤트 기간 확인, 출석 체크, 거래소 히스토리 필터, 길드 일정 관리 등에 사용됩니다.',
+        m3SubTypes: [
+            {
+                name: 'Docked',
+                nameKo: '도킹형',
+                description: '인라인으로 표시되는 달력. 별도 모달 없이 페이지 내에 배치.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="10" width="140" height="100" rx="8" fill="none" stroke="#374151" stroke-width="1.5"/><text x="100" y="28" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">3월 2026</text><line x1="30" y1="34" x2="170" y2="34" stroke="#e5e7eb" stroke-width="1"/><text x="50" y="50" fill="#6b7280" font-size="8">일</text><text x="70" y="50" fill="#6b7280" font-size="8">월</text><text x="90" y="50" fill="#6b7280" font-size="8">화</text><text x="110" y="50" fill="#6b7280" font-size="8">수</text><text x="130" y="50" fill="#6b7280" font-size="8">목</text><text x="150" y="50" fill="#6b7280" font-size="8">금</text><circle cx="110" cy="70" r="10" fill="#374151"/><text x="110" y="74" text-anchor="middle" fill="white" font-size="8">3</text><text x="50" y="74" fill="#6b7280" font-size="8">1</text><text x="70" y="74" fill="#6b7280" font-size="8">2</text></svg>`,
+                gameContext: '출석 체크 캘린더, 이벤트 일정 표시'
+            },
+            {
+                name: 'Modal',
+                nameKo: '모달형',
+                description: '오버레이로 표시되는 달력 팝업. 단일 날짜 선택.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="180" height="110" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="20" y="15" width="160" height="30" rx="4" fill="#e5e7eb"/><text x="100" y="35" text-anchor="middle" fill="#374151" font-size="10">2026년 3월</text><line x1="20" y1="50" x2="180" y2="50" stroke="#e5e7eb" stroke-width="1"/><circle cx="100" cy="75" r="12" fill="#374151"/><text x="100" y="79" text-anchor="middle" fill="white" font-size="9">15</text><text x="60" y="79" fill="#6b7280" font-size="9">14</text><text x="140" y="79" fill="#6b7280" font-size="9">16</text><rect x="50" y="95" width="40" height="16" rx="4" fill="none" stroke="#9ca3af" stroke-width="1"/><text x="70" y="106" text-anchor="middle" fill="#9ca3af" font-size="7">취소</text><rect x="110" y="95" width="40" height="16" rx="4" fill="#374151"/><text x="130" y="106" text-anchor="middle" fill="white" font-size="7">확인</text></svg>`,
+                gameContext: '거래소 기간 필터, 전적 검색 날짜 선택'
+            },
+            {
+                name: 'Modal (Input)',
+                nameKo: '모달 입력형',
+                description: '텍스트 입력과 달력을 결합한 모달. 키보드 직접 입력 지원.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="10" width="160" height="100" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><text x="100" y="30" text-anchor="middle" fill="#374151" font-size="9" font-weight="bold">날짜 입력</text><rect x="35" y="40" width="130" height="30" rx="4" fill="none" stroke="#374151" stroke-width="1.5"/><text x="50" y="60" fill="#374151" font-size="10">2026/03/15</text><rect x="140" y="46" width="18" height="18" rx="2" fill="#e5e7eb"/><text x="149" y="58" text-anchor="middle" fill="#6b7280" font-size="9">📅</text></svg>`,
+                gameContext: '정확한 날짜를 알 때 직접 입력'
+            },
+            {
+                name: 'Modal (Range)',
+                nameKo: '모달 범위형',
+                description: '시작~종료 날짜 범위를 선택하는 모달. 기간 필터에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="180" height="100" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><text x="100" y="28" text-anchor="middle" fill="#374151" font-size="9" font-weight="bold">기간 선택</text><circle cx="60" cy="60" r="12" fill="#374151"/><text x="60" y="64" text-anchor="middle" fill="white" font-size="8">5</text><rect x="72" y="52" width="56" height="16" rx="0" fill="#e5e7eb"/><circle cx="140" cy="60" r="12" fill="#374151"/><text x="140" y="64" text-anchor="middle" fill="white" font-size="8">12</text><text x="100" y="90" text-anchor="middle" fill="#6b7280" font-size="8">3월 5일 ~ 3월 12일</text></svg>`,
+                gameContext: '이벤트 기간, 거래소 기간별 검색'
+            }
+        ],
+        variants: [
+            { name: '도킹형', description: '인라인 달력으로 별도 모달 없이 표시' },
+            { name: '모달형', description: '오버레이 팝업으로 날짜 선택' },
+            { name: '모달 입력형', description: '텍스트 입력 + 달력 결합' },
+            { name: '모달 범위형', description: '시작~종료 기간 범위 선택' }
+        ],
+        gameApplication: '출석 체크 시스템, 이벤트 기간 확인, 거래소 거래 히스토리 필터, 길드 일정 관리, 시즌 기간 표시에 사용합니다.',
+        guidelines: ['현재 날짜를 항상 명확히 표시', '선택 불가능한 날짜는 시각적으로 비활성화', '오늘 날짜로 빠르게 돌아가는 버튼 제공', '날짜 형식은 지역화 고려 (YYYY-MM-DD vs MM/DD/YYYY)'],
+        relatedLaws: ['recognition-recall', 'hicks-law', 'tesler-law']
     },
 
     // ============ 내비게이션/구조 컴포넌트 ============
@@ -2063,6 +2604,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Action Icons', description: '액션 아이콘들' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Small',
+                nameKo: '소형',
+                description: '기본 높이의 앱 바. 제목과 액션 아이콘 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="30" width="180" height="36" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><text x="30" y="53" fill="#374151" font-size="11" font-weight="bold">Title</text><circle cx="170" cy="48" r="8" fill="#e5e7eb"/></svg>`,
+                gameContext: '인게임 설정 화면 상단'
+            },
+            {
+                name: 'Medium',
+                nameKo: '중형',
+                description: '제목이 아래로 내려간 중간 높이 앱 바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="180" height="56" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><circle cx="30" cy="36" r="8" fill="#e5e7eb"/><circle cx="170" cy="36" r="8" fill="#e5e7eb"/><text x="24" y="66" fill="#374151" font-size="13" font-weight="bold">Title</text></svg>`,
+                gameContext: '컬렉션 화면, 도감 화면'
+            },
+            {
+                name: 'Large',
+                nameKo: '대형',
+                description: '넓은 제목 영역의 대형 앱 바. 스크롤 시 축소.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="180" height="70" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><circle cx="30" cy="28" r="8" fill="#e5e7eb"/><circle cx="170" cy="28" r="8" fill="#e5e7eb"/><text x="24" y="68" fill="#374151" font-size="16" font-weight="bold">Title</text></svg>`,
+                gameContext: '메인 로비, 프로필 화면'
+            },
+            {
+                name: 'Bottom',
+                nameKo: '바텀 앱 바',
+                description: '화면 하단에 위치하는 앱 바. FAB와 함께 사용.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="180" height="70" rx="4" fill="#e5e7eb" opacity="0.2"/><rect x="10" y="80" width="180" height="30" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><circle cx="35" cy="95" r="8" fill="#e5e7eb"/><circle cx="60" cy="95" r="8" fill="#e5e7eb"/><circle cx="85" cy="95" r="8" fill="#e5e7eb"/><rect x="140" y="70" width="40" height="40" rx="12" fill="#374151"/><line x1="153" y1="90" x2="167" y2="90" stroke="white" stroke-width="2"/><line x1="160" y1="83" x2="160" y2="97" stroke="white" stroke-width="2"/></svg>`,
+                gameContext: '모바일 게임 하단 도구 바 + FAB 조합'
+            }
+        ],
                 variants: [
             { name: '상단 앱 바', description: '제목 + 뒤로가기 + 액션 아이콘' },
             { name: '하단 앱 바', description: '주요 내비게이션 탭 (홈/상점/캐릭터 등)' },
@@ -2099,6 +2670,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Current Page', description: '현재 페이지 (비활성)' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Standard',
+                nameKo: '표준형',
+                description: '전체 경로가 텍스트로 표시되는 기본 브레드크럼.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="20" y="62" fill="#9ca3af" font-size="10">홈</text><text x="43" y="62" fill="#9ca3af" font-size="10">/</text><text x="54" y="62" fill="#9ca3af" font-size="10">상점</text><text x="82" y="62" fill="#9ca3af" font-size="10">/</text><text x="93" y="62" fill="#374151" font-size="10" font-weight="bold">무기</text></svg>`,
+                gameContext: '상점 > 무기 > 검 등 경로 표시'
+            },
+            {
+                name: 'Collapsed',
+                nameKo: '축소형',
+                description: '중간 경로가 "..."으로 축소된 브레드크럼.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="20" y="62" fill="#9ca3af" font-size="10">홈</text><text x="43" y="62" fill="#9ca3af" font-size="10">/</text><text x="54" y="62" fill="#9ca3af" font-size="10">...</text><text x="72" y="62" fill="#9ca3af" font-size="10">/</text><text x="83" y="62" fill="#374151" font-size="10" font-weight="bold">아이템</text></svg>`,
+                gameContext: '깊은 메뉴 구조에서 공간 절약'
+            }
+        ],
                 variants: [
             { name: '텍스트 브레드크럼', description: '경로를 텍스트 링크로 표시' },
             { name: '아이콘 브레드크럼', description: '홈 아이콘 + 텍스트 조합' },
@@ -2139,6 +2726,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Page Number', description: '페이지 번호' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Number',
+                nameKo: '번호형',
+                description: '페이지 번호로 이동하는 전통적 페이지네이션.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="40" y="65" text-anchor="middle" fill="#9ca3af" font-size="12">&#x2039;</text><rect x="55" y="48" width="24" height="24" rx="4" fill="#374151"/><text x="67" y="65" text-anchor="middle" fill="white" font-size="10">1</text><text x="97" y="65" text-anchor="middle" fill="#374151" font-size="10">2</text><text x="122" y="65" text-anchor="middle" fill="#374151" font-size="10">3</text><text x="147" y="65" text-anchor="middle" fill="#9ca3af" font-size="10">...</text><text x="167" y="65" text-anchor="middle" fill="#9ca3af" font-size="12">&#x203a;</text></svg>`,
+                gameContext: '랭킹 목록, 거래소 검색 결과'
+            },
+            {
+                name: 'Infinite Scroll',
+                nameKo: '무한 스크롤',
+                description: '스크롤 시 자동으로 추가 콘텐츠를 로드.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="10" width="120" height="18" rx="4" fill="#e5e7eb"/><rect x="40" y="32" width="120" height="18" rx="4" fill="#e5e7eb"/><rect x="40" y="54" width="120" height="18" rx="4" fill="#e5e7eb"/><rect x="40" y="76" width="120" height="18" rx="4" fill="#e5e7eb" opacity="0.5"/><circle cx="100" cy="106" r="6" fill="none" stroke="#374151" stroke-width="2"/><path d="M100 100a6 6 0 0 1 6 6" stroke="#374151" stroke-width="2" stroke-linecap="round"/></svg>`,
+                gameContext: '채팅 히스토리, SNS 피드, 아이템 목록'
+            }
+        ],
                 variants: [
             { name: '숫자 페이지', description: '페이지 번호를 직접 클릭' },
             { name: '이전/다음', description: '단순 이전/다음 화살표' },
@@ -2181,6 +2784,22 @@ const COMPONENTS = {
                 { number: 3, name: 'Step Label', description: '단계 라벨 텍스트' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Horizontal',
+                nameKo: '수평형',
+                description: '수평으로 단계를 표시하는 스테퍼.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="55" r="14" fill="#374151"/><text x="40" y="60" text-anchor="middle" fill="white" font-size="10">&#x2713;</text><line x1="54" y1="55" x2="86" y2="55" stroke="#374151" stroke-width="2"/><circle cx="100" cy="55" r="14" fill="#374151"/><text x="100" y="60" text-anchor="middle" fill="white" font-size="10">2</text><line x1="114" y1="55" x2="146" y2="55" stroke="#e5e7eb" stroke-width="2"/><circle cx="160" cy="55" r="14" fill="none" stroke="#9ca3af" stroke-width="1.5"/><text x="160" y="60" text-anchor="middle" fill="#9ca3af" font-size="10">3</text><text x="40" y="82" text-anchor="middle" fill="#6b7280" font-size="7">완료</text><text x="100" y="82" text-anchor="middle" fill="#374151" font-size="7">진행중</text><text x="160" y="82" text-anchor="middle" fill="#9ca3af" font-size="7">대기</text></svg>`,
+                gameContext: '캐릭터 생성 단계, 튜토리얼 진행'
+            },
+            {
+                name: 'Vertical',
+                nameKo: '수직형',
+                description: '수직으로 단계를 표시하는 스테퍼. 상세 설명 포함.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="20" r="10" fill="#374151"/><text x="40" y="24" text-anchor="middle" fill="white" font-size="8">&#x2713;</text><text x="60" y="24" fill="#374151" font-size="9">Step 1</text><line x1="40" y1="30" x2="40" y2="48" stroke="#374151" stroke-width="2"/><circle cx="40" cy="58" r="10" fill="#374151"/><text x="40" y="62" text-anchor="middle" fill="white" font-size="8">2</text><text x="60" y="62" fill="#374151" font-size="9" font-weight="bold">Step 2</text><rect x="60" y="68" width="80" height="6" rx="2" fill="#9ca3af"/><line x1="40" y1="68" x2="40" y2="86" stroke="#e5e7eb" stroke-width="2"/><circle cx="40" cy="96" r="10" fill="none" stroke="#9ca3af" stroke-width="1.5"/><text x="40" y="100" text-anchor="middle" fill="#9ca3af" font-size="8">3</text><text x="60" y="100" fill="#9ca3af" font-size="9">Step 3</text></svg>`,
+                gameContext: '퀘스트 체인 진행도, 업적 달성 단계'
+            }
+        ],
                 variants: [
             { name: '수평 스테퍼', description: '단계를 가로로 나열' },
             { name: '수직 스테퍼', description: '단계를 세로로 나열 (상세 설명 포함)' },
@@ -2226,6 +2845,22 @@ const COMPONENTS = {
                 { number: 4, name: 'Submenu Arrow', description: '서브메뉴 화살표' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Menu',
+                nameKo: '기본 메뉴',
+                description: '단일 레벨 메뉴. 클릭/우클릭 시 옵션 목록 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="50" y="10" width="100" height="100" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="60" y="22" width="60" height="8" rx="3" fill="#374151"/><line x1="50" y1="40" x2="150" y2="40" stroke="#e5e7eb" stroke-width="1"/><rect x="60" y="48" width="50" height="8" rx="3" fill="#6b7280"/><line x1="50" y1="66" x2="150" y2="66" stroke="#e5e7eb" stroke-width="1"/><rect x="60" y="74" width="70" height="8" rx="3" fill="#6b7280"/><line x1="50" y1="92" x2="150" y2="92" stroke="#e5e7eb" stroke-width="1"/><rect x="60" y="96" width="40" height="8" rx="3" fill="#ef4444"/></svg>`,
+                gameContext: '우클릭 컨텍스트 메뉴, 아이템 옵션 (사용/버리기/장착)'
+            },
+            {
+                name: 'Submenu',
+                nameKo: '서브메뉴',
+                description: '메뉴 항목에 하위 메뉴가 펼쳐지는 계층형.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="15" width="80" height="90" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="30" y="27" width="50" height="8" rx="3" fill="#6b7280"/><rect x="30" y="45" width="40" height="8" rx="3" fill="#374151"/><text x="88" y="53" fill="#374151" font-size="8">▸</text><rect x="30" y="63" width="55" height="8" rx="3" fill="#6b7280"/><rect x="100" y="35" width="80" height="60" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="110" y="47" width="50" height="8" rx="3" fill="#6b7280"/><rect x="110" y="63" width="40" height="8" rx="3" fill="#6b7280"/><rect x="110" y="79" width="55" height="8" rx="3" fill="#6b7280"/></svg>`,
+                gameContext: '설정 메뉴 하위 카테고리, 스킬 트리 하위 옵션'
+            }
+        ],
                 variants: [
             { name: '컨텍스트 메뉴', description: '우클릭/길게 누르기로 열리는 상황별 메뉴' },
             { name: '드롭다운 메뉴', description: '버튼 클릭으로 아래에 펼쳐지는 메뉴' },
@@ -2267,6 +2902,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Page Indicator', description: '페이지 인디케이터 (점)' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Multi-browse',
+                nameKo: '멀티 브라우즈',
+                description: '여러 아이템이 동시에 보이는 캐러셀.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="55" height="80" rx="6" fill="#374151"/><rect x="72" y="20" width="55" height="80" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="134" y="20" width="55" height="80" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/></svg>`,
+                gameContext: '상점 추천 아이템, 신규 스킨 목록'
+            },
+            {
+                name: 'Hero',
+                nameKo: '히어로',
+                description: '하나의 대형 아이템이 중앙에 표시되고 양쪽에 미리보기.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="30" width="30" height="60" rx="4" fill="#e5e7eb" opacity="0.5"/><rect x="45" y="15" width="110" height="90" rx="8" fill="#374151"/><rect x="160" y="30" width="30" height="60" rx="4" fill="#e5e7eb" opacity="0.5"/></svg>`,
+                gameContext: '이벤트 배너, 게임 업데이트 하이라이트'
+            },
+            {
+                name: 'Full-screen',
+                nameKo: '풀스크린',
+                description: '화면 전체를 차지하는 단일 아이템 캐러셀.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="190" height="110" rx="4" fill="#374151"/><circle cx="90" cy="105" r="4" fill="white"/><circle cx="100" cy="105" r="3" fill="white" opacity="0.4"/><circle cx="110" cy="105" r="3" fill="white" opacity="0.4"/></svg>`,
+                gameContext: '게임 소개 온보딩 슬라이드'
+            },
+            {
+                name: 'Uncontained',
+                nameKo: '비포함형',
+                description: '컨테이너 가장자리를 넘어서 표시되는 캐러셀.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="-10" y="25" width="70" height="70" rx="6" fill="#9ca3af" opacity="0.3"/><rect x="65" y="25" width="70" height="70" rx="6" fill="#374151"/><rect x="140" y="25" width="70" height="70" rx="6" fill="#9ca3af" opacity="0.3"/></svg>`,
+                gameContext: '캐릭터 선택 화면, 월드 선택'
+            }
+        ],
                 variants: [
             { name: '풀 캐러셀', description: '한 번에 하나의 콘텐츠를 전체 표시' },
             { name: '멀티 캐러셀', description: '여러 카드를 동시에 표시하고 슬라이드' },
@@ -2304,6 +2969,36 @@ const COMPONENTS = {
                 { number: 3, name: 'Content', description: '시트 콘텐츠 영역' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Standard Bottom',
+                nameKo: '표준 바텀 시트',
+                description: '화면 하단에서 올라오는 표준 시트. 콘텐츠와 함께 표시.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="180" height="110" rx="4" fill="#e5e7eb" opacity="0.3"/><rect x="10" y="45" width="180" height="70" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="85" y="50" width="30" height="4" rx="2" fill="#9ca3af"/><rect x="25" y="65" width="100" height="8" rx="3" fill="#374151"/><rect x="25" y="80" width="80" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '아이템 상세 정보, 플레이어 프로필'
+            },
+            {
+                name: 'Modal Bottom',
+                nameKo: '모달 바텀 시트',
+                description: '오버레이와 함께 표시되는 모달 바텀 시트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="180" height="110" rx="4" fill="#374151" opacity="0.3"/><rect x="10" y="40" width="180" height="75" rx="12" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="85" y="46" width="30" height="4" rx="2" fill="#9ca3af"/><rect x="25" y="60" width="100" height="8" rx="3" fill="#374151"/><rect x="25" y="74" width="80" height="6" rx="3" fill="#9ca3af"/><rect x="25" y="90" width="60" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '아이템 옵션 메뉴, 공유 옵션'
+            },
+            {
+                name: 'Standard Side',
+                nameKo: '표준 사이드 시트',
+                description: '화면 옆에서 슬라이드하는 표준 사이드 시트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="120" height="110" rx="4" fill="#e5e7eb" opacity="0.3"/><rect x="130" y="5" width="60" height="110" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="138" y="15" width="45" height="8" rx="3" fill="#374151"/><rect x="138" y="30" width="40" height="6" rx="3" fill="#9ca3af"/><rect x="138" y="42" width="35" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '장비 스탯 비교, 필터 패널'
+            },
+            {
+                name: 'Modal Side',
+                nameKo: '모달 사이드 시트',
+                description: '오버레이와 함께 표시되는 모달 사이드 시트.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="180" height="110" rx="4" fill="#374151" opacity="0.3"/><rect x="110" y="5" width="80" height="110" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="118" y="15" width="60" height="8" rx="3" fill="#374151"/><rect x="118" y="30" width="50" height="6" rx="3" fill="#9ca3af"/><rect x="118" y="42" width="45" height="6" rx="3" fill="#9ca3af"/><rect x="118" y="54" width="55" height="6" rx="3" fill="#9ca3af"/></svg>`,
+                gameContext: '상세 설정 패널, 채팅 사용자 정보'
+            }
+        ],
                 variants: [
             { name: '하단 시트', description: '화면 아래에서 올라오는 패널' },
             { name: '사이드 시트', description: '화면 옆에서 밀려나오는 패널' },
@@ -2338,6 +3033,29 @@ const COMPONENTS = {
                 { number: 2, name: 'Inset with Text', description: '텍스트 포함 구분선' }
             ]
         },
+        m3SubTypes: [
+            {
+                name: 'Full-width',
+                nameKo: '전체 너비',
+                description: '컨테이너 전체 너비를 차지하는 구분선.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="160" height="8" rx="3" fill="#e5e7eb"/><line x1="20" y1="55" x2="180" y2="55" stroke="#374151" stroke-width="1"/><rect x="20" y="70" width="160" height="8" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '설정 카테고리 구분, 목록 항목 구분'
+            },
+            {
+                name: 'Inset',
+                nameKo: '인셋',
+                description: '좌측에 여백을 둔 구분선. 아이콘/아바타 영역을 유지.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="36" cy="35" r="12" fill="#e5e7eb"/><rect x="56" y="30" width="80" height="8" rx="3" fill="#e5e7eb"/><line x1="56" y1="55" x2="180" y2="55" stroke="#374151" stroke-width="1"/><circle cx="36" cy="75" r="12" fill="#e5e7eb"/><rect x="56" y="70" width="90" height="8" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '친구 목록 구분 (아바타 정렬 유지)'
+            },
+            {
+                name: 'Middle Inset',
+                nameKo: '중앙 인셋',
+                description: '좌우 양쪽에 여백을 둔 구분선.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="160" height="8" rx="3" fill="#e5e7eb"/><line x1="40" y1="55" x2="160" y2="55" stroke="#374151" stroke-width="1"/><rect x="20" y="70" width="160" height="8" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '카드 내부 섹션 구분'
+            }
+        ],
                 variants: [
             { name: '전체 너비 디바이더', description: '영역 전체를 가로지르는 선' },
             { name: '인셋 디바이더', description: '여백을 두고 들여쓴 구분선' },
@@ -2347,6 +3065,379 @@ const COMPONENTS = {
         gameApplication: '설정 메뉴 카테고리 구분, 인벤토리 장비/소비/재료 섹션 분리, 채팅 날짜 구분선, 캐릭터 스탯 그룹 분리에 사용합니다.',
         guidelines: ['디바이더보다 여백(spacing)을 먼저 고려', '색상은 배경과 미묘한 차이로', '과도한 사용은 시각적 잡음 — 꼭 필요한 곳만', '의미있는 구분에만 사용 (장식용 남용 금지)'],
         relatedLaws: ['law-proximity', 'law-pragnanz', 'law-similarity']
+    },
+
+    /* ── M3 신규 컴포넌트: 액션 카테고리 ── */
+
+    'icon-buttons': {
+        id: 'icon-buttons', name: '아이콘 버튼', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
+        summary: '아이콘만으로 구성된 컴팩트한 액션 버튼.',
+        description: '아이콘 버튼은 텍스트 라벨 없이 아이콘만으로 액션을 표현하는 컴팩트한 버튼입니다. 공간이 제한된 게임 UI에서 빠른 액세스 기능(설정, 닫기, 즐겨찾기 등)에 적합합니다. 반드시 접근성을 위한 aria-label이 필요합니다.',
+        m3SubTypes: [
+            {
+                name: 'Standard',
+                nameKo: '스탠다드',
+                description: '컨테이너 없이 아이콘만 표시되는 기본형. 가장 적은 시각적 강조.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="60" r="20" fill="none"/>
+                    <line x1="92" y1="60" x2="108" y2="60" stroke="#374151" stroke-width="2.5"/>
+                    <line x1="100" y1="52" x2="100" y2="68" stroke="#374151" stroke-width="2.5"/>
+                </svg>`,
+                gameContext: '인벤토리 정렬, 필터 토글'
+            },
+            {
+                name: 'Filled',
+                nameKo: '필드',
+                description: '배경이 채워진 아이콘 버튼. 높은 강조가 필요한 액션에 사용.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="60" r="24" fill="#374151"/>
+                    <line x1="92" y1="60" x2="108" y2="60" stroke="white" stroke-width="2.5"/>
+                    <line x1="100" y1="52" x2="100" y2="68" stroke="white" stroke-width="2.5"/>
+                </svg>`,
+                gameContext: '메인 액션 (닫기, 뒤로가기)'
+            },
+            {
+                name: 'Filled Tonal',
+                nameKo: '톤 필드',
+                description: '부드러운 배경색의 아이콘 버튼. 중간 수준의 강조.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="60" r="24" fill="#e5e7eb"/>
+                    <line x1="92" y1="60" x2="108" y2="60" stroke="#374151" stroke-width="2.5"/>
+                    <line x1="100" y1="52" x2="100" y2="68" stroke="#374151" stroke-width="2.5"/>
+                </svg>`,
+                gameContext: '즐겨찾기, 북마크, 공유'
+            },
+            {
+                name: 'Outlined',
+                nameKo: '아웃라인',
+                description: '테두리가 있는 아이콘 버튼. 중간~낮은 강조.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="60" r="24" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <line x1="92" y1="60" x2="108" y2="60" stroke="#374151" stroke-width="2.5"/>
+                    <line x1="100" y1="52" x2="100" y2="68" stroke="#374151" stroke-width="2.5"/>
+                </svg>`,
+                gameContext: '보조 기능 (설정, 도움말)'
+            }
+        ],
+        variants: [
+            { name: '스탠다드 아이콘 버튼', description: '배경 없이 아이콘만 표시' },
+            { name: '필드 아이콘 버튼', description: '채워진 원형 배경 위 아이콘' },
+            { name: '톤 필드 아이콘 버튼', description: '부드러운 배경색 아이콘' },
+            { name: '아웃라인 아이콘 버튼', description: '테두리가 있는 아이콘 버튼' }
+        ],
+        gameApplication: '인벤토리 닫기(X), 설정 톱니바퀴, 즐겨찾기 별, 정렬 아이콘 등 게임 UI 곳곳에서 공간 절약형 액션에 사용합니다.',
+        guidelines: ['아이콘만으로 의미 전달이 어려우면 라벨을 추가하세요', '터치 영역은 최소 48x48dp 유지', '호버/포커스 시 툴팁으로 기능 설명 제공', '관련 액션끼리 시각적으로 그룹핑'],
+        relatedLaws: ['fitts-law', 'tesler-law', 'recognition-recall']
+    },
+
+    fab: {
+        id: 'fab', name: '플로팅 액션 버튼', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
+        summary: '화면 위에 떠 있는 주요 액션 버튼.',
+        description: '플로팅 액션 버튼(FAB)은 화면에서 가장 중요한 단일 액션을 나타내는 버튼입니다. 게임에서는 퀵 액세스 메뉴, 빠른 아이템 사용, 메인 공격 버튼 등 즉각적인 액션 트리거에 사용됩니다. 항상 다른 콘텐츠 위에 떠 있어 접근성이 높습니다.',
+        m3SubTypes: [
+            {
+                name: 'FAB',
+                nameKo: 'FAB (기본)',
+                description: '56dp 크기의 기본 플로팅 액션 버튼. 아이콘 하나로 주요 액션을 표현.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="72" y="32" width="56" height="56" rx="16" fill="#374151"/>
+                    <line x1="92" y1="60" x2="108" y2="60" stroke="white" stroke-width="2.5"/>
+                    <line x1="100" y1="52" x2="100" y2="68" stroke="white" stroke-width="2.5"/>
+                </svg>`,
+                gameContext: '메인 공격, 빠른 아이템 사용'
+            },
+            {
+                name: 'Small FAB',
+                nameKo: '소형 FAB',
+                description: '40dp 크기의 작은 FAB. 보조 액션이나 제한된 공간에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="80" y="40" width="40" height="40" rx="12" fill="#374151"/>
+                    <line x1="93" y1="60" x2="107" y2="60" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="53" x2="100" y2="67" stroke="white" stroke-width="2"/>
+                </svg>`,
+                gameContext: '미니맵 줌, 채팅 열기'
+            },
+            {
+                name: 'Large FAB',
+                nameKo: '대형 FAB',
+                description: '96dp 크기의 대형 FAB. 화면의 핵심 액션을 강조할 때 사용.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="52" y="12" width="96" height="96" rx="28" fill="#374151"/>
+                    <line x1="88" y1="60" x2="112" y2="60" stroke="white" stroke-width="3"/>
+                    <line x1="100" y1="48" x2="100" y2="72" stroke="white" stroke-width="3"/>
+                </svg>`,
+                gameContext: '전투 시작, 매칭 찾기'
+            }
+        ],
+        variants: [
+            { name: 'FAB (기본)', description: '56dp 원형/모서리둥근 사각형 플로팅 버튼' },
+            { name: '소형 FAB', description: '40dp 작은 보조 플로팅 버튼' },
+            { name: '대형 FAB', description: '96dp 화면 주요 액션 강조 버튼' }
+        ],
+        gameApplication: '모바일 게임에서 화면 하단 우측의 메인 공격 버튼, 길드 채팅 열기 버튼, 퀵 메뉴 버튼으로 활용됩니다. PC에서는 미니맵 위 줌 버튼이나 빠른 이동 버튼에 사용합니다.',
+        guidelines: ['화면에 FAB는 1개만 사용하세요', '가장 중요한 단일 액션에만 사용', '스크롤 시 축소/숨김 고려', 'FAB는 항상 다른 UI 위에 떠 있어야 합니다'],
+        relatedLaws: ['fitts-law', 'hicks-law', 'feedback-principle']
+    },
+
+    'extended-fab': {
+        id: 'extended-fab', name: '확장 FAB', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"/><line x1="9" y1="12" x2="15" y2="12"/></svg>`,
+        summary: '아이콘과 텍스트가 결합된 확장형 플로팅 버튼.',
+        description: '확장 FAB는 아이콘과 텍스트 라벨을 함께 표시하여 액션의 의미를 더 명확하게 전달합니다. 게임에서 액션의 맥락이 명확해야 할 때(예: "파티 생성", "퀘스트 수락") 기본 FAB보다 적합합니다.',
+        m3SubTypes: [
+            {
+                name: 'Extended FAB',
+                nameKo: '확장 FAB',
+                description: '아이콘 + 텍스트 라벨이 함께 표시되는 넓은 FAB. 액션 의미를 명확히 전달.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="38" width="140" height="44" rx="16" fill="#374151"/>
+                    <line x1="58" y1="60" x2="72" y2="60" stroke="white" stroke-width="2"/>
+                    <line x1="65" y1="53" x2="65" y2="67" stroke="white" stroke-width="2"/>
+                    <text x="118" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="500">Label</text>
+                </svg>`,
+                gameContext: '"파티 생성", "퀘스트 수락", "캐릭터 생성" 등'
+            }
+        ],
+        variants: [
+            { name: '확장 FAB', description: '아이콘 + 텍스트로 명확한 액션 표현' }
+        ],
+        gameApplication: '파티 생성, 길드 가입, 매칭 시작 등 중요하면서도 맥락 설명이 필요한 액션에 사용합니다. 스크롤 시 아이콘만 남는 축소 애니메이션도 흔히 적용됩니다.',
+        guidelines: ['텍스트는 간결하게 1-2단어', '스크롤 시 아이콘만 남는 축소 패턴 고려', '화면당 하나만 사용', 'FAB와 동일한 z-index 규칙 적용'],
+        relatedLaws: ['fitts-law', 'tesler-law', 'feedback-principle']
+    },
+
+    'button-groups': {
+        id: 'button-groups', name: '버튼 그룹', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="8" height="8" rx="2"/><rect x="10" y="8" width="4" height="8"/><rect x="14" y="8" width="8" height="8" rx="2"/></svg>`,
+        summary: '관련된 버튼들을 하나의 그룹으로 묶어 표시.',
+        description: '버튼 그룹은 관련된 옵션이나 액션을 시각적으로 연결하여 하나의 컨트롤로 표현합니다. 게임에서는 난이도 선택(쉬움/보통/어려움), 뷰 모드 전환, 정렬 옵션 등 상호 배타적이거나 관련된 선택지에 사용됩니다.',
+        m3SubTypes: [
+            {
+                name: 'Connected',
+                nameKo: '연결형',
+                description: '버튼들이 테두리를 공유하며 하나로 연결된 형태.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="40" width="52" height="40" rx="8" fill="#374151"/>
+                    <rect x="72" y="40" width="56" height="40" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <rect x="128" y="40" width="52" height="40" rx="8" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <text x="46" y="65" text-anchor="middle" fill="white" font-size="10">A</text>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="10">B</text>
+                    <text x="154" y="65" text-anchor="middle" fill="#374151" font-size="10">C</text>
+                </svg>`,
+                gameContext: '난이도 선택, 뷰 모드(1인칭/3인칭) 전환'
+            },
+            {
+                name: 'Split',
+                nameKo: '분할형',
+                description: '메인 액션 + 드롭다운 화살표로 구성된 분할 버튼.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="40" width="100" height="40" rx="8" fill="#374151"/>
+                    <text x="80" y="65" text-anchor="middle" fill="white" font-size="11">Action</text>
+                    <line x1="130" y1="44" x2="130" y2="76" stroke="#9ca3af" stroke-width="1"/>
+                    <rect x="130" y="40" width="40" height="40" rx="8" fill="#374151"/>
+                    <path d="M145 56l5 5 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>`,
+                gameContext: '공격+스킬 선택, 아이템 사용+옵션'
+            }
+        ],
+        variants: [
+            { name: '연결형', description: '테두리를 공유하는 연결된 버튼 그룹' },
+            { name: '분할형', description: '메인 액션 + 추가 옵션 드롭다운' }
+        ],
+        gameApplication: '전투에서 공격 유형 선택(근접/원거리/마법), 인벤토리 정렬 옵션(이름순/등급순/최신순), 미니맵 줌 레벨 선택에 활용합니다.',
+        guidelines: ['2~5개 옵션이 적절 (6개 이상이면 드롭다운 고려)', '현재 선택을 시각적으로 명확히 표시', '순서가 있으면 논리적 순서 유지', '터치 영역 충분히 확보'],
+        relatedLaws: ['hicks-law', 'law-proximity', 'law-similarity']
+    },
+
+    'segmented-buttons': {
+        id: 'segmented-buttons', name: '세그먼트 버튼', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="3"/><line x1="9" y1="7" x2="9" y2="17"/><line x1="15" y1="7" x2="15" y2="17"/></svg>`,
+        summary: '여러 옵션 중 하나 또는 여러 개를 선택하는 토글 그룹.',
+        description: '세그먼트 버튼은 2~5개의 옵션을 수평으로 나열하여 선택할 수 있는 컨트롤입니다. 단일 선택(라디오)과 다중 선택(체크박스) 모드를 모두 지원합니다. 게임에서는 필터, 모드 선택, 카테고리 전환에 사용됩니다.',
+        m3SubTypes: [
+            {
+                name: 'Single-select',
+                nameKo: '단일 선택',
+                description: '한 번에 하나의 옵션만 선택 가능. 라디오 버튼의 시각적 대안.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="40" width="170" height="40" rx="20" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <line x1="72" y1="44" x2="72" y2="76" stroke="#374151" stroke-width="1"/>
+                    <line x1="128" y1="44" x2="128" y2="76" stroke="#374151" stroke-width="1"/>
+                    <rect x="15" y="40" width="57" height="40" rx="20" fill="#374151"/>
+                    <path d="M38 60l4 4 8-8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="10">B</text>
+                    <text x="156" y="65" text-anchor="middle" fill="#374151" font-size="10">C</text>
+                </svg>`,
+                gameContext: '인벤토리 카테고리(무기/방어구/소비), 채팅 채널 선택'
+            },
+            {
+                name: 'Multi-select',
+                nameKo: '다중 선택',
+                description: '여러 옵션을 동시에 선택 가능. 필터링에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="40" width="170" height="40" rx="20" fill="none" stroke="#374151" stroke-width="1.5"/>
+                    <line x1="72" y1="44" x2="72" y2="76" stroke="#374151" stroke-width="1"/>
+                    <line x1="128" y1="44" x2="128" y2="76" stroke="#374151" stroke-width="1"/>
+                    <rect x="15" y="40" width="57" height="40" rx="20" fill="#374151"/>
+                    <path d="M38 60l4 4 8-8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="128" y="40" width="57" height="40" rx="20" fill="#374151"/>
+                    <path d="M150 60l4 4 8-8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="100" y="65" text-anchor="middle" fill="#374151" font-size="10">B</text>
+                </svg>`,
+                gameContext: '아이템 필터(레어+에픽), 맵 레이어 토글(NPC+퀘스트)'
+            }
+        ],
+        variants: [
+            { name: '단일 선택', description: '한 번에 하나만 선택 (라디오 대안)' },
+            { name: '다중 선택', description: '여러 개 동시 선택 (필터링용)' }
+        ],
+        gameApplication: '인벤토리 카테고리 필터(무기/방어구/소비/재료), 전투 모드 선택(공격/방어/회피), 채팅 채널 선택(전체/길드/파티)에 사용합니다.',
+        guidelines: ['2~5개 세그먼트가 적절', '라벨은 짧게 (1-2단어)', '선택된 상태를 시각적으로 명확히 표시 (채움+체크)', '터치 영역 최소 48dp 확보'],
+        relatedLaws: ['hicks-law', 'law-proximity', 'miller-law']
+    },
+
+    'nav-bar': {
+        id: 'nav-bar', name: '내비게이션 바', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="16" width="20" height="6" rx="2"/><circle cx="6" cy="19" r="1" fill="currentColor"/><circle cx="12" cy="19" r="1" fill="currentColor"/><circle cx="18" cy="19" r="1" fill="currentColor"/></svg>`,
+        summary: '하단에 고정된 3~5개 아이콘 탭 내비게이션.',
+        description: '내비게이션 바는 모바일 화면 하단에 고정되어 앱의 주요 섹션 간 빠른 이동을 제공합니다. 게임에서는 홈/상점/가방/소셜/설정 등 메인 카테고리를 3~5개 아이콘으로 표현합니다.',
+        m3SubTypes: [
+            {
+                name: 'With Label',
+                nameKo: '라벨 포함',
+                description: '아이콘 아래에 텍스트 라벨이 있는 내비게이션 바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="70" width="180" height="44" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><circle cx="46" cy="84" r="8" fill="#374151"/><text x="46" y="103" text-anchor="middle" fill="#374151" font-size="7" font-weight="bold">홈</text><circle cx="100" cy="84" r="8" fill="#e5e7eb"/><text x="100" y="103" text-anchor="middle" fill="#9ca3af" font-size="7">상점</text><circle cx="154" cy="84" r="8" fill="#e5e7eb"/><text x="154" y="103" text-anchor="middle" fill="#9ca3af" font-size="7">가방</text></svg>`,
+                gameContext: '모바일 RPG 하단 탭 (홈/상점/가방/소셜)'
+            },
+            {
+                name: 'Without Label',
+                nameKo: '라벨 없음',
+                description: '아이콘만으로 구성된 미니멀 내비게이션 바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="76" width="180" height="34" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><circle cx="46" cy="93" r="10" fill="#374151"/><circle cx="100" cy="93" r="10" fill="#e5e7eb"/><circle cx="154" cy="93" r="10" fill="#e5e7eb"/></svg>`,
+                gameContext: '미니멀 UI 게임, 화면 공간 최대화'
+            }
+        ],
+        variants: [
+            { name: '라벨 포함', description: '아이콘 + 텍스트 라벨' },
+            { name: '라벨 없음', description: '아이콘만 표시' }
+        ],
+        gameApplication: '모바일 게임의 메인 화면 하단에 3~5개 핵심 섹션 탭으로 사용합니다. 홈/상점/인벤토리/소셜/설정이 대표적 구성입니다.',
+        guidelines: ['3~5개 항목이 적절', '현재 위치를 색상/크기로 명확히 표시', '아이콘은 직관적으로, 라벨은 간결하게', '뱃지로 새 알림 표시'],
+        relatedLaws: ['hicks-law', 'fitts-law', 'recognition-recall']
+    },
+
+    'nav-drawer': {
+        id: 'nav-drawer', name: '내비게이션 드로어', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="8" height="18" rx="2"/><line x1="14" y1="6" x2="22" y2="6"/><line x1="14" y1="12" x2="22" y2="12"/><line x1="14" y1="18" x2="22" y2="18"/></svg>`,
+        summary: '측면에서 슬라이드하는 내비게이션 패널.',
+        description: '내비게이션 드로어는 화면 측면에서 슬라이드하여 나타나는 메뉴 패널입니다. 많은 수의 메뉴 항목을 계층적으로 구성할 수 있어, 복잡한 게임 설정이나 메뉴 구조에 적합합니다.',
+        m3SubTypes: [
+            {
+                name: 'Standard',
+                nameKo: '표준형',
+                description: '항상 표시되는 고정 드로어. 데스크탑에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="60" height="110" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="18" y="16" width="44" height="10" rx="3" fill="#374151"/><rect x="18" y="34" width="44" height="8" rx="3" fill="#e5e7eb"/><rect x="18" y="48" width="44" height="8" rx="3" fill="#e5e7eb"/><rect x="18" y="62" width="44" height="8" rx="3" fill="#e5e7eb"/><rect x="78" y="5" width="112" height="110" rx="4" fill="#e5e7eb" opacity="0.2"/></svg>`,
+                gameContext: 'PC 게임 좌측 고정 메뉴, 관리자 패널'
+            },
+            {
+                name: 'Modal',
+                nameKo: '모달형',
+                description: '오버레이와 함께 열리는 드로어. 모바일에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="180" height="110" rx="4" fill="#374151" opacity="0.3"/><rect x="10" y="5" width="70" height="110" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="18" y="16" width="50" height="10" rx="3" fill="#374151"/><rect x="18" y="34" width="50" height="8" rx="3" fill="#e5e7eb"/><rect x="18" y="48" width="50" height="8" rx="3" fill="#e5e7eb"/><rect x="18" y="62" width="50" height="8" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '모바일 게임 햄버거 메뉴, 설정 드로어'
+            }
+        ],
+        variants: [
+            { name: '표준형', description: '항상 표시되는 고정 드로어' },
+            { name: '모달형', description: '오버레이와 함께 열리는 드로어' }
+        ],
+        gameApplication: 'PC 게임의 좌측 고정 메뉴(캐릭터/장비/스킬/퀘스트 등), 모바일 게임의 햄버거 메뉴에서 설정/프로필/도움말 등 보조 메뉴에 사용합니다.',
+        guidelines: ['최대 2 depth까지만 계층화', '현재 위치를 시각적으로 강조', '모달은 바깥 클릭으로 닫기 지원', '스와이프 제스처로 열기/닫기 지원 (모바일)'],
+        relatedLaws: ['hicks-law', 'recognition-recall', 'law-proximity']
+    },
+
+    'nav-rail': {
+        id: 'nav-rail', name: '내비게이션 레일', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="6" height="20" rx="2"/><circle cx="5" cy="7" r="1.5" fill="currentColor"/><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="5" cy="17" r="1.5" fill="currentColor"/></svg>`,
+        summary: '좌측에 고정된 좁은 아이콘 내비게이션.',
+        description: '내비게이션 레일은 태블릿/데스크탑에서 좌측에 고정되는 좁은 수직 내비게이션입니다. 내비게이션 바의 수직 변형으로, 3~7개 아이콘을 수직 배치하여 화면 공간을 효율적으로 사용합니다.',
+        m3SubTypes: [
+            {
+                name: 'Standard',
+                nameKo: '표준형',
+                description: '아이콘 + 라벨이 수직 배치된 기본 레일.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="5" width="48" height="110" rx="0" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="22" y="15" width="24" height="24" rx="12" fill="#374151"/><text x="34" y="50" text-anchor="middle" fill="#374151" font-size="6" font-weight="bold">홈</text><circle cx="34" cy="65" r="10" fill="#e5e7eb"/><text x="34" y="86" text-anchor="middle" fill="#9ca3af" font-size="6">상점</text><circle cx="34" cy="98" r="10" fill="#e5e7eb"/><rect x="66" y="5" width="124" height="110" rx="4" fill="#e5e7eb" opacity="0.2"/></svg>`,
+                gameContext: 'PC/태블릿 게임 좌측 메뉴 레일'
+            }
+        ],
+        variants: [
+            { name: '표준형', description: '아이콘 + 라벨 수직 배치 레일' }
+        ],
+        gameApplication: 'PC/태블릿 게임에서 좌측에 고정된 메인 메뉴(홈/캐릭터/장비/상점/설정)로 사용합니다. 드로어보다 콤팩트하면서 바텀바보다 많은 항목을 표시할 수 있습니다.',
+        guidelines: ['3~7개 항목이 적절', 'FAB를 상단에 배치 가능', '선택된 항목에 인디케이터 표시', '스크롤 가능한 경우 overflow 처리'],
+        relatedLaws: ['fitts-law', 'hicks-law', 'recognition-recall']
+    },
+
+    'fab-menu': {
+        id: 'fab-menu', name: 'FAB 메뉴', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
+        summary: 'FAB를 누르면 펼쳐지는 액션 메뉴.',
+        description: 'FAB 메뉴는 플로팅 액션 버튼을 클릭하면 관련 액션들이 부채꼴 또는 수직으로 펼쳐지는 메뉴입니다. 게임에서는 빠른 액션 선택(스킬, 아이템, 이모지 등)에 사용됩니다.',
+        m3SubTypes: [
+            {
+                name: 'FAB Menu',
+                nameKo: 'FAB 메뉴',
+                description: 'FAB를 누르면 위로 액션 목록이 펼쳐지는 메뉴.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="20" fill="#374151"/><line x1="143" y1="100" x2="157" y2="100" stroke="white" stroke-width="2.5"/><line x1="150" y1="93" x2="150" y2="107" stroke="white" stroke-width="2.5"/><rect x="118" y="14" width="64" height="24" rx="12" fill="#e5e7eb"/><text x="150" y="30" text-anchor="middle" fill="#374151" font-size="8">액션 1</text><rect x="118" y="44" width="64" height="24" rx="12" fill="#e5e7eb"/><text x="150" y="60" text-anchor="middle" fill="#374151" font-size="8">액션 2</text></svg>`,
+                gameContext: '퀵 스킬 선택, 이모지 메뉴, 빠른 아이템 사용'
+            }
+        ],
+        variants: [
+            { name: 'FAB 메뉴', description: 'FAB 클릭 시 액션 목록 펼침' }
+        ],
+        gameApplication: '모바일 게임에서 메인 FAB를 누르면 스킬/아이템/이모지 등의 퀵 액션이 펼쳐지는 패턴입니다. PC 게임에서는 미니맵 위 옵션 메뉴에 활용됩니다.',
+        guidelines: ['3~6개 액션이 적절', '가장 자주 쓰는 액션을 FAB 가까이 배치', '펼침/접힘 애니메이션 제공', 'ESC 또는 바깥 클릭으로 닫기'],
+        relatedLaws: ['fitts-law', 'hicks-law', 'feedback-principle']
+    },
+
+    toolbars: {
+        id: 'toolbars', name: '툴바', type: 'reference',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="6" rx="2"/><rect x="4" y="6" width="3" height="2" rx="0.5"/><rect x="9" y="6" width="3" height="2" rx="0.5"/><rect x="14" y="6" width="3" height="2" rx="0.5"/></svg>`,
+        summary: '도구나 액션을 수평으로 배열하는 바.',
+        description: '툴바는 관련 도구나 액션 버튼을 수평으로 배열한 컨테이너입니다. 게임에서는 에디터 도구, 포맷팅 옵션, 빠른 액션 모음 등에 사용됩니다. M3에서는 Compressed, Standard, Expanded 3가지 밀도를 제공합니다.',
+        m3SubTypes: [
+            {
+                name: 'Compressed',
+                nameKo: '압축형',
+                description: '최소 높이의 밀집된 툴바. 공간이 제한된 환경에 적합.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="48" width="180" height="24" rx="4" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="18" y="53" width="14" height="14" rx="3" fill="#e5e7eb"/><rect x="38" y="53" width="14" height="14" rx="3" fill="#e5e7eb"/><rect x="58" y="53" width="14" height="14" rx="3" fill="#e5e7eb"/><line x1="80" y1="52" x2="80" y2="66" stroke="#e5e7eb" stroke-width="1"/><rect x="88" y="53" width="14" height="14" rx="3" fill="#e5e7eb"/></svg>`,
+                gameContext: '채팅 텍스트 포맷 바, 미니 에디터 도구'
+            },
+            {
+                name: 'Standard',
+                nameKo: '표준형',
+                description: '기본 높이의 표준 툴바. 일반적인 도구 배치에 사용.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="40" width="180" height="40" rx="4" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="20" y="50" width="20" height="20" rx="4" fill="#e5e7eb"/><rect x="48" y="50" width="20" height="20" rx="4" fill="#e5e7eb"/><rect x="76" y="50" width="20" height="20" rx="4" fill="#e5e7eb"/><line x1="106" y1="46" x2="106" y2="74" stroke="#e5e7eb" stroke-width="1"/><rect x="116" y="50" width="20" height="20" rx="4" fill="#374151"/><rect x="144" y="50" width="20" height="20" rx="4" fill="#e5e7eb"/></svg>`,
+                gameContext: '게임 에디터 도구 바, 인벤토리 관리 도구'
+            },
+            {
+                name: 'Expanded',
+                nameKo: '확장형',
+                description: '넉넉한 높이로 라벨이 포함된 툴바.',
+                svg: `<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="25" width="180" height="70" rx="4" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/><rect x="22" y="38" width="24" height="24" rx="6" fill="#e5e7eb"/><text x="34" y="78" text-anchor="middle" fill="#6b7280" font-size="7">도구1</text><rect x="58" y="38" width="24" height="24" rx="6" fill="#e5e7eb"/><text x="70" y="78" text-anchor="middle" fill="#6b7280" font-size="7">도구2</text><rect x="94" y="38" width="24" height="24" rx="6" fill="#374151"/><text x="106" y="78" text-anchor="middle" fill="#374151" font-size="7" font-weight="bold">도구3</text><rect x="130" y="38" width="24" height="24" rx="6" fill="#e5e7eb"/><text x="142" y="78" text-anchor="middle" fill="#6b7280" font-size="7">도구4</text></svg>`,
+                gameContext: '맵 에디터, 캐릭터 커스터마이징 도구 모음'
+            }
+        ],
+        variants: [
+            { name: '압축형', description: '최소 높이 밀집 배치' },
+            { name: '표준형', description: '기본 높이 도구 배치' },
+            { name: '확장형', description: '라벨 포함 넉넉한 배치' }
+        ],
+        gameApplication: '맵 에디터에서 지형/오브젝트/NPC 배치 도구, 캐릭터 외형 커스터마이징 도구, 채팅 텍스트 포맷팅(굵게/기울임/색상) 바에 사용합니다.',
+        guidelines: ['자주 쓰는 도구를 왼쪽에 배치', '관련 도구끼리 구분선으로 그룹화', '현재 선택된 도구를 명확히 표시', '오버플로우 시 더보기(···) 메뉴 제공'],
+        relatedLaws: ['hicks-law', 'fitts-law', 'law-proximity']
     }
 };
 
@@ -2606,13 +3697,13 @@ const COMPONENT_CATEGORIES = [
         id: 'action',
         name: '액션',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>`,
-        items: ['buttons', 'toggle', 'menus']
+        items: ['buttons', 'icon-buttons', 'fab', 'extended-fab', 'button-groups', 'segmented-buttons', 'toggle', 'menus']
     },
     {
         id: 'input',
         name: '입력',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><line x1="7" y1="10" x2="7" y2="14"/></svg>`,
-        items: ['inputfield', 'search', 'checkbox', 'radio', 'dropdown', 'slider']
+        items: ['inputfield', 'search', 'checkbox', 'radio', 'dropdown', 'slider', 'date-pickers']
     },
     {
         id: 'display',
@@ -2624,7 +3715,7 @@ const COMPONENT_CATEGORIES = [
         id: 'navigation',
         name: '내비게이션',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>`,
-        items: ['navigation', 'appbar', 'tabs', 'breadcrumb', 'pagination', 'stepper']
+        items: ['navigation', 'appbar', 'nav-bar', 'nav-drawer', 'nav-rail', 'tabs', 'breadcrumb', 'pagination', 'stepper', 'fab-menu']
     },
     {
         id: 'feedback',
@@ -2636,7 +3727,7 @@ const COMPONENT_CATEGORIES = [
         id: 'structure',
         name: '구조',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>`,
-        items: ['accordion', 'divider']
+        items: ['accordion', 'divider', 'toolbars']
     }
 ];
 
