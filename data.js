@@ -90,20 +90,15 @@ const COMPONENTS = {
                 <!-- Label text -->
                 <text x="220" y="115" text-anchor="middle" fill="#374151" font-size="14" font-weight="600">Button Label</text>
                 <!-- Callout 1: Container -->
-                <circle cx="60" cy="60" r="14" fill="#374151"/><text x="60" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="74" y1="60" x2="100" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="60" cy="60" r="6" fill="#374151"/><text x="60" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 2: Label Text -->
-                <circle cx="340" cy="90" r="14" fill="#374151"/><text x="340" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="326" y1="95" x2="270" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="340" cy="90" r="6" fill="#374151"/><text x="340" y="92" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 5: Icon -->
-                <circle cx="100" cy="170" r="14" fill="#374151"/><text x="100" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="110" y1="157" x2="140" y2="122" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="100" cy="170" r="6" fill="#374151"/><text x="100" y="172" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
                 <!-- Callout 4: Background Fill -->
-                <circle cx="340" cy="140" r="14" fill="#374151"/><text x="340" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="326" y1="138" x2="298" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="340" cy="140" r="6" fill="#374151"/><text x="340" y="142" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 3: Border -->
-                <circle cx="60" cy="140" r="14" fill="#374151"/><text x="60" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="74" y1="140" x2="100" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="60" cy="140" r="6" fill="#374151"/><text x="60" y="142" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
             </svg>`,                  // svg: 해부도 SVG 마크업 — 번호 콜아웃(callout)으로 각 부위를 가리킴
             parts: [                  // parts: 해부도 번호 콜아웃에 대응하는 부위 설명 배열
                 { number: 1, name: 'Container', description: '외부 컨테이너' },       // number: 콜아웃 번호, name: 영문 부위명, description: 한국어 설명
@@ -305,20 +300,15 @@ const COMPONENTS = {
                 <rect x="128" y="180" width="60" height="28" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
                 <text x="158" y="198" text-anchor="middle" fill="#6b7280" font-size="9">Action</text>
                 <!-- Callout 1: Container -->
-                <circle cx="60" cy="40" r="14" fill="#374151"/><text x="60" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="74" y1="44" x2="120" y2="60" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="60" cy="40" r="6" fill="#374151"/><text x="60" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 2: Thumbnail -->
-                <circle cx="340" cy="50" r="14" fill="#374151"/><text x="340" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="326" y1="55" x2="272" y2="65" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="340" cy="50" r="6" fill="#374151"/><text x="340" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 3: Title -->
-                <circle cx="340" cy="118" r="14" fill="#374151"/><text x="340" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="326" y1="118" x2="228" y2="118" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="340" cy="118" r="6" fill="#374151"/><text x="340" y="120" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 4: Description -->
-                <circle cx="340" cy="155" r="14" fill="#374151"/><text x="340" y="160" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="326" y1="152" x2="272" y2="148" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="340" cy="155" r="6" fill="#374151"/><text x="340" y="157" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 5: Action Area -->
-                <circle cx="60" cy="194" r="14" fill="#374151"/><text x="60" y="199" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="74" y1="194" x2="128" y2="194" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="60" cy="194" r="6" fill="#374151"/><text x="60" y="196" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Container', description: '카드 컨테이너' },
@@ -503,20 +493,15 @@ const COMPONENTS = {
                 <rect x="196" y="170" width="56" height="28" rx="6" fill="#d1d5db"/><text x="224" y="188" text-anchor="middle" fill="#6b7280" font-size="9">Cancel</text>
                 <rect x="258" y="170" width="56" height="28" rx="6" fill="#9ca3af"/><text x="286" y="188" text-anchor="middle" fill="white" font-size="9">OK</text>
                 <!-- Callout 1: Overlay -->
-                <circle cx="30" cy="20" r="14" fill="#374151"/><text x="30" y="25" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="44" y1="24" x2="80" y2="40" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="30" cy="20" r="6" fill="#374151"/><text x="30" y="22" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 2: Container -->
-                <circle cx="370" cy="50" r="14" fill="#374151"/><text x="370" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="356" y1="55" x2="320" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="370" cy="50" r="6" fill="#374151"/><text x="370" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 3: Title Bar -->
-                <circle cx="30" cy="55" r="14" fill="#374151"/><text x="30" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="44" y1="55" x2="80" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="30" cy="55" r="6" fill="#374151"/><text x="30" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 4: Content Area -->
-                <circle cx="370" cy="120" r="14" fill="#374151"/><text x="370" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="356" y1="120" x2="304" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="370" cy="120" r="6" fill="#374151"/><text x="370" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 5: Action Buttons -->
-                <circle cx="370" cy="184" r="14" fill="#374151"/><text x="370" y="189" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="356" y1="184" x2="314" y2="184" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="370" cy="184" r="6" fill="#374151"/><text x="370" y="186" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Overlay', description: '배경 오버레이' },
@@ -696,23 +681,17 @@ const COMPONENTS = {
                 <rect x="350" y="100" width="16" height="16" rx="3" fill="#d1d5db"/>
                 <!-- 수정: 마커#1과 #2 간격을 넓혀 겹침 방지 (최소 30px 간격 확보) -->
                 <!-- Callout 1: Health Bar -->
-                <circle cx="210" cy="18" r="14" fill="#374151"/><text x="210" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="196" y1="22" x2="155" y2="30" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="210" cy="18" r="6" fill="#374151"/><text x="210" y="20" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 2: Resource Bar -->
-                <circle cx="175" cy="58" r="14" fill="#374151"/><text x="175" y="63" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="161" y1="56" x2="135" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="175" cy="58" r="6" fill="#374151"/><text x="175" y="60" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 3: Player Info -->
-                <circle cx="115" cy="80" r="14" fill="#374151"/><text x="115" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="101" y1="78" x2="75" y2="76" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="115" cy="80" r="6" fill="#374151"/><text x="115" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 4: Minimap -->
-                <circle cx="295" cy="110" r="14" fill="#374151"/><text x="295" y="115" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="302" y1="97" x2="310" y2="85" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="295" cy="110" r="6" fill="#374151"/><text x="295" y="112" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 6: Skill Slots -->
-                <circle cx="100" cy="218" r="14" fill="#374151"/><text x="100" y="223" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
-                <line x1="114" y1="218" x2="130" y2="218" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="100" cy="218" r="6" fill="#374151"/><text x="100" y="220" text-anchor="middle" fill="white" font-size="5" font-weight="bold">6</text>
                 <!-- Callout 5: Status Icons -->
-                <circle cx="295" cy="145" r="14" fill="#374151"/><text x="295" y="150" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="305" y1="132" x2="325" y2="116" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="295" cy="145" r="6" fill="#374151"/><text x="295" y="147" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Health Bar', description: '체력 바' },
@@ -915,23 +894,17 @@ const COMPONENTS = {
                 <circle cx="290" cy="59" r="9" fill="#9ca3af"/><text x="290" y="63" text-anchor="middle" fill="white" font-size="8" font-weight="bold">5</text>
                 <text x="284" y="76" text-anchor="middle" fill="#6b7280" font-size="18">🧪</text>
                 <!-- Callout 1: Grid Container -->
-                <circle cx="38" cy="40" r="14" fill="#374151"/><text x="38" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="52" y1="44" x2="80" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="40" r="6" fill="#374151"/><text x="38" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 5: Item Slot -->
-                <circle cx="38" cy="125" r="14" fill="#374151"/><text x="38" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="52" y1="125" x2="95" y2="125" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="125" r="6" fill="#374151"/><text x="38" y="127" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
                 <!-- Callout 3: Item Icon -->
-                <circle cx="38" cy="75" r="14" fill="#374151"/><text x="38" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="52" y1="72" x2="107" y2="68" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="75" r="6" fill="#374151"/><text x="38" y="77" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 2: Quantity Badge — 오른쪽 상단, 수량 뱃지(290,59)를 가리킴 -->
-                <circle cx="362" cy="40" r="14" fill="#374151"/><text x="362" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="348" y1="44" x2="299" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="40" r="6" fill="#374151"/><text x="362" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 4: Rarity Border — 오른쪽 하단으로 이동하여 마커#2와 겹침 방지 (최소 60px 간격) -->
-                <circle cx="362" cy="105" r="14" fill="#374151"/><text x="362" y="110" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="348" y1="100" x2="200" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="105" r="6" fill="#374151"/><text x="362" y="107" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 6: Tooltip Trigger -->
-                <circle cx="362" cy="170" r="14" fill="#374151"/><text x="362" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
-                <line x1="348" y1="168" x2="308" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="170" r="6" fill="#374151"/><text x="362" y="172" text-anchor="middle" fill="white" font-size="5" font-weight="bold">6</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Grid Container', description: '그리드 컨테이너' },
@@ -1166,21 +1139,16 @@ const COMPONENTS = {
                 <circle cx="295" cy="172" r="8" fill="#e5e7eb" stroke="#d1d5db" stroke-width="0.8"/>
                 <text x="295" y="195" text-anchor="middle" fill="#9ca3af" font-size="8">Settings</text>
                 <!-- Callout 1: Nav Container -->
-                <circle cx="38" cy="110" r="14" fill="#374151"/><text x="38" y="115" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="44" y1="123" x2="55" y2="150" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="110" r="6" fill="#374151"/><text x="38" y="112" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 3: Nav Item -->
-                <circle cx="155" cy="120" r="14" fill="#374151"/><text x="155" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="155" y1="134" x2="155" y2="158" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="155" cy="120" r="6" fill="#374151"/><text x="155" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 2: Active Indicator -->
-                <circle cx="85" cy="120" r="14" fill="#374151"/><text x="85" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="85" y1="134" x2="85" y2="155" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="85" cy="120" r="6" fill="#374151"/><text x="85" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 4: Icon -->
-                <circle cx="295" cy="120" r="14" fill="#374151"/><text x="295" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="295" y1="134" x2="295" y2="163" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="295" cy="120" r="6" fill="#374151"/><text x="295" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- 수정: 마커#5를 내비게이션 바 가장자리에서 벗어나도록 이동 -->
                 <!-- Callout 5: Label -->
-                <circle cx="375" cy="190" r="14" fill="#374151"/><text x="375" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="361" y1="192" x2="310" y2="195" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="375" cy="190" r="6" fill="#374151"/><text x="375" y="192" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Nav Container', description: '내비게이션 컨테이너' },
@@ -1368,20 +1336,15 @@ const COMPONENTS = {
                 <rect x="82" y="162" width="100" height="8" rx="4" fill="#d1d5db"/>
                 <line x1="162" y1="160" x2="162" y2="172" stroke="#9ca3af" stroke-width="0.8" opacity="0.5"/>
                 <!-- Callout 3: Track -->
-                <circle cx="362" cy="80" r="14" fill="#374151"/><text x="362" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="348" y1="86" x2="320" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="80" r="6" fill="#374151"/><text x="362" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 4: Fill -->
-                <circle cx="38" cy="100" r="14" fill="#374151"/><text x="38" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="52" y1="104" x2="82" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="100" r="6" fill="#374151"/><text x="38" y="102" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 2: Label/Value -->
-                <circle cx="260" cy="60" r="14" fill="#374151"/><text x="260" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="248" y1="70" x2="215" y2="86" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="260" cy="60" r="6" fill="#374151"/><text x="260" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 1: Icon -->
-                <circle cx="38" cy="60" r="14" fill="#374151"/><text x="38" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="48" y1="70" x2="50" y2="98" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="60" r="6" fill="#374151"/><text x="38" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 5: Segmented Markers -->
-                <circle cx="362" cy="160" r="14" fill="#374151"/><text x="362" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="348" y1="160" x2="242" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="160" r="6" fill="#374151"/><text x="362" y="162" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Icon', description: '선행 아이콘' },
@@ -1570,20 +1533,15 @@ const COMPONENTS = {
                 <rect x="125" y="96" width="110" height="8" rx="2" fill="#d1d5db"/>
                 <rect x="125" y="110" width="80" height="8" rx="2" fill="#d1d5db"/>
                 <!-- Callout 5: Trigger Element -->
-                <circle cx="38" cy="190" r="14" fill="#374151"/><text x="38" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="52" y1="190" x2="150" y2="190" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="190" r="6" fill="#374151"/><text x="38" y="192" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
                 <!-- Callout 2: Tooltip Container -->
-                <circle cx="362" cy="50" r="14" fill="#374151"/><text x="362" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="348" y1="55" x2="290" y2="65" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="50" r="6" fill="#374151"/><text x="362" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 4: Arrow -->
-                <circle cx="362" cy="148" r="14" fill="#374151"/><text x="362" y="153" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="348" y1="148" x2="212" y2="148" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="148" r="6" fill="#374151"/><text x="362" y="150" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 1: Title -->
-                <circle cx="38" cy="45" r="14" fill="#374151"/><text x="38" y="50" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="52" y1="48" x2="125" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="45" r="6" fill="#374151"/><text x="38" y="47" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 3: Description -->
-                <circle cx="38" cy="90" r="14" fill="#374151"/><text x="38" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="52" y1="88" x2="125" y2="82" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="90" r="6" fill="#374151"/><text x="38" y="92" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Title', description: '제목' },
@@ -1751,22 +1709,17 @@ const COMPONENTS = {
                 <circle cx="230" cy="95" r="4" fill="#9ca3af"/>
                 <rect x="175" y="140" width="8" height="8" rx="1" fill="#9ca3af"/>
                 <!-- Callout 1: Map Container -->
-                <circle cx="55" cy="40" r="14" fill="#374151"/><text x="55" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="69" y1="44" x2="118" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="55" cy="40" r="6" fill="#374151"/><text x="55" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- 수정: 마커#4 라인을 맵 테두리(x=118)에서 멈추도록 수정 -->
                 <!-- Callout 4: Player Marker -->
-                <circle cx="55" cy="115" r="14" fill="#374151"/><text x="55" y="120" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="69" y1="115" x2="118" y2="115" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="55" cy="115" r="6" fill="#374151"/><text x="55" y="117" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- 수정: 마커#3을 아래로, 마커#2를 위로 이동하여 겹침 방지 (최소 30px 간격) -->
                 <!-- Callout 3: POI Icons -->
-                <circle cx="350" cy="80" r="14" fill="#374151"/><text x="350" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="336" y1="82" x2="234" y2="95" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="350" cy="80" r="6" fill="#374151"/><text x="350" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 2: Fog of War -->
-                <circle cx="350" cy="35" r="14" fill="#374151"/><text x="350" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="336" y1="38" x2="282" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="350" cy="35" r="6" fill="#374151"/><text x="350" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 5: Border Frame -->
-                <circle cx="345" cy="150" r="14" fill="#374151"/><text x="345" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="331" y1="152" x2="290" y2="160" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="345" cy="150" r="6" fill="#374151"/><text x="345" y="152" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Map Container', description: '맵 컨테이너' },
@@ -1957,23 +1910,17 @@ const COMPONENTS = {
                 <!-- Level indicator (small dot on slot 1) -->
                 <circle cx="93" cy="135" r="5" fill="#9ca3af"/><text x="93" y="138" text-anchor="middle" fill="white" font-size="6">3</text>
                 <!-- Callout 1: Bar Container -->
-                <circle cx="38" cy="80" r="14" fill="#374151"/><text x="38" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="44" y1="93" x2="55" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="80" r="6" fill="#374151"/><text x="38" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 2: Skill Slot -->
-                <circle cx="127" cy="80" r="14" fill="#374151"/><text x="127" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="127" y1="94" x2="127" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="127" cy="80" r="6" fill="#374151"/><text x="127" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
                 <!-- Callout 4: Skill Icon -->
-                <circle cx="227" cy="80" r="14" fill="#374151"/><text x="227" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="227" y1="94" x2="227" y2="140" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="227" cy="80" r="6" fill="#374151"/><text x="227" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 3: Cooldown Overlay -->
-                <circle cx="177" cy="80" r="14" fill="#374151"/><text x="177" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="177" y1="94" x2="177" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="177" cy="80" r="6" fill="#374151"/><text x="177" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 6: Keybind Label -->
-                <circle cx="277" cy="220" r="14" fill="#374151"/><text x="277" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
-                <line x1="272" y1="206" x2="267" y2="174" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="277" cy="220" r="6" fill="#374151"/><text x="277" y="222" text-anchor="middle" fill="white" font-size="5" font-weight="bold">6</text>
                 <!-- Callout 5: Level Indicator — 스킬바 아래(y=210)로 이동하여 슬롯과 겹치지 않도록 배치 -->
-                <circle cx="55" cy="210" r="14" fill="#374151"/><text x="55" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="68" y1="198" x2="90" y2="140" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="55" cy="210" r="6" fill="#374151"/><text x="55" y="212" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Bar Container', description: '바 컨테이너' },
@@ -2148,20 +2095,15 @@ const COMPONENTS = {
                 <rect x="275" y="196" width="36" height="26" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
                 <text x="293" y="213" text-anchor="middle" fill="#6b7280" font-size="10">→</text>
                 <!-- Callout 1: Chat Container -->
-                <circle cx="38" cy="35" r="14" fill="#374151"/><text x="38" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-                <line x1="52" y1="38" x2="80" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="35" r="6" fill="#374151"/><text x="38" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
                 <!-- Callout 3: Message Area -->
-                <circle cx="362" cy="100" r="14" fill="#374151"/><text x="362" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-                <line x1="348" y1="100" x2="310" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="100" r="6" fill="#374151"/><text x="362" y="102" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
                 <!-- Callout 4: Input Field -->
-                <circle cx="38" cy="209" r="14" fill="#374151"/><text x="38" y="214" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-                <line x1="52" y1="209" x2="90" y2="209" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="38" cy="209" r="6" fill="#374151"/><text x="38" y="211" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
                 <!-- Callout 5: Send Button -->
-                <circle cx="362" cy="209" r="14" fill="#374151"/><text x="362" y="214" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
-                <line x1="348" y1="209" x2="311" y2="209" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="209" r="6" fill="#374151"/><text x="362" y="211" text-anchor="middle" fill="white" font-size="5" font-weight="bold">5</text>
                 <!-- Callout 2: Channel Tabs -->
-                <circle cx="362" cy="35" r="14" fill="#374151"/><text x="362" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-                <line x1="348" y1="35" x2="320" y2="35" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+                <circle cx="362" cy="35" r="6" fill="#374151"/><text x="362" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             </svg>`,
             parts: [
                 { number: 1, name: 'Chat Container', description: '채팅 컨테이너' },
@@ -2327,12 +2269,9 @@ const COMPONENTS = {
             <text x="180" y="98" text-anchor="middle" fill="#6b7280" font-size="24">🔔</text>
             <circle cx="208" cy="58" r="14" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
             <text x="208" y="63" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">5</text>
-            <circle cx="100" cy="50" r="14" fill="#374151"/><text x="100" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="114" y1="50" x2="140" y2="60" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="260" cy="50" r="14" fill="#374151"/><text x="260" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="246" y1="55" x2="222" y2="58" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="260" cy="100" r="14" fill="#374151"/><text x="260" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="246" y1="98" x2="220" y2="90" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="100" cy="50" r="6" fill="#374151"/><text x="100" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="260" cy="50" r="6" fill="#374151"/><text x="260" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="260" cy="100" r="6" fill="#374151"/><text x="260" y="102" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Host Element', description: '뱃지가 부착되는 호스트 요소' },
@@ -2377,13 +2316,10 @@ const COMPONENTS = {
             <rect x="120" y="60" width="100" height="50" rx="25" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
             <circle cx="195" cy="85" r="20" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
             <text x="270" y="90" fill="#6b7280" font-size="13">ON / OFF</text>
-            <circle cx="80" cy="60" r="14" fill="#374151"/><text x="80" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="94" y1="62" x2="120" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="195" cy="140" r="14" fill="#374151"/><text x="195" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="195" y1="126" x2="195" y2="105" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="80" cy="60" r="6" fill="#374151"/><text x="80" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="195" cy="140" r="6" fill="#374151"/><text x="195" y="142" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- 수정: 마커#3을 오른쪽으로 이동하여 ON/OFF 라벨 텍스트와 겹치지 않도록 수정 -->
-            <circle cx="345" cy="55" r="14" fill="#374151"/><text x="345" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="331" y1="62" x2="310" y2="85" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="345" cy="55" r="6" fill="#374151"/><text x="345" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Track', description: '배경 트랙' },
@@ -2444,12 +2380,9 @@ const COMPONENTS = {
             <rect x="120" y="70" width="36" height="36" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
             <path d="M128 88 L134 94 L148 80" stroke="#374151" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <text x="172" y="95" fill="#374151" font-size="14">옵션 라벨</text>
-            <circle cx="80" cy="70" r="14" fill="#374151"/><text x="80" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="94" y1="74" x2="120" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="138" cy="140" r="14" fill="#374151"/><text x="138" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="138" y1="126" x2="138" y2="106" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="260" cy="80" r="14" fill="#374151"/><text x="260" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="246" y1="82" x2="210" y2="88" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="80" cy="70" r="6" fill="#374151"/><text x="80" y="72" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="138" cy="140" r="6" fill="#374151"/><text x="138" y="142" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="260" cy="80" r="6" fill="#374151"/><text x="260" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Container', description: '체크박스 컨테이너' },
@@ -2507,12 +2440,9 @@ const COMPONENTS = {
             <circle cx="140" cy="88" r="18" fill="none" stroke="#9ca3af" stroke-width="2"/>
             <circle cx="140" cy="88" r="8" fill="#374151"/>
             <text x="175" y="93" fill="#374151" font-size="14">선택 옵션</text>
-            <circle cx="80" cy="65" r="14" fill="#374151"/><text x="80" y="70" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="94" y1="70" x2="122" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="140" cy="140" r="14" fill="#374151"/><text x="140" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="140" y1="126" x2="140" y2="106" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="260" cy="80" r="14" fill="#374151"/><text x="260" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="246" y1="82" x2="210" y2="88" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="80" cy="65" r="6" fill="#374151"/><text x="80" y="67" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="140" cy="140" r="6" fill="#374151"/><text x="140" y="142" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="260" cy="80" r="6" fill="#374151"/><text x="260" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Outer Circle', description: '외부 원 (선택 영역)' },
@@ -2561,14 +2491,10 @@ const COMPONENTS = {
             <text x="120" y="116" fill="#374151" font-size="11">옵션 A (선택됨)</text>
             <text x="120" y="144" fill="#6b7280" font-size="11">옵션 B</text>
             <text x="120" y="172" fill="#6b7280" font-size="11">옵션 C</text>
-            <circle cx="60" cy="40" r="14" fill="#374151"/><text x="60" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="74" y1="44" x2="100" y2="52" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="340" cy="52" r="14" fill="#374151"/><text x="340" y="57" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="326" y1="55" x2="292" y2="60" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="60" cy="130" r="14" fill="#374151"/><text x="60" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="74" y1="130" x2="100" y2="130" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="340" cy="110" r="14" fill="#374151"/><text x="340" y="115" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-            <line x1="326" y1="110" x2="292" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="60" cy="40" r="6" fill="#374151"/><text x="60" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="340" cy="52" r="6" fill="#374151"/><text x="340" y="54" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="60" cy="130" r="6" fill="#374151"/><text x="60" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
+            <circle cx="340" cy="110" r="6" fill="#374151"/><text x="340" y="112" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Trigger Button', description: '드롭다운 트리거 버튼' },
@@ -2617,12 +2543,9 @@ const COMPONENTS = {
             <text x="220" y="55" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">75</text>
             <rect x="205" y="42" width="30" height="20" rx="4" fill="#374151"/>
             <text x="220" y="56" text-anchor="middle" fill="white" font-size="10">75</text>
-            <circle cx="55" cy="72" r="14" fill="#374151"/><text x="55" y="77" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="69" y1="76" x2="80" y2="82" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="220" cy="130" r="14" fill="#374151"/><text x="220" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="220" y1="116" x2="220" y2="99" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="345" cy="72" r="14" fill="#374151"/><text x="345" y="77" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="331" y1="76" x2="320" y2="82" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="55" cy="72" r="6" fill="#374151"/><text x="55" y="74" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="220" cy="130" r="6" fill="#374151"/><text x="220" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="345" cy="72" r="6" fill="#374151"/><text x="345" y="74" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Track', description: '슬라이더 트랙 (전체 범위)' },
@@ -2682,14 +2605,10 @@ const COMPONENTS = {
             <rect x="100" y="55" width="220" height="48" rx="8" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
             <text x="120" y="85" fill="#9ca3af" font-size="12">플레이어 이름 입력</text>
             <text x="110" y="125" fill="#ef4444" font-size="10">* 2~12자 이내로 입력하세요</text>
-            <circle cx="65" cy="40" r="14" fill="#374151"/><text x="65" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="79" y1="43" x2="108" y2="45" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="355" cy="70" r="14" fill="#374151"/><text x="355" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="341" y1="72" x2="320" y2="75" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="65" cy="80" r="14" fill="#374151"/><text x="65" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="79" y1="80" x2="100" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="65" cy="120" r="14" fill="#374151"/><text x="65" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-            <line x1="79" y1="120" x2="108" y2="120" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="65" cy="40" r="6" fill="#374151"/><text x="65" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="355" cy="70" r="6" fill="#374151"/><text x="355" y="72" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="65" cy="80" r="6" fill="#374151"/><text x="65" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
+            <circle cx="65" cy="120" r="6" fill="#374151"/><text x="65" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Label', description: '입력 필드 라벨' },
@@ -2737,13 +2656,10 @@ const COMPONENTS = {
             <line x1="120" y1="86" x2="126" y2="92" stroke="#6b7280" stroke-width="1.5"/>
             <text x="140" y="84" fill="#9ca3af" font-size="12">아이템 검색...</text>
             <text x="320" y="84" fill="#6b7280" font-size="16">✕</text>
-            <circle cx="55" cy="55" r="14" fill="#374151"/><text x="55" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="69" y1="58" x2="98" y2="68" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="112" cy="130" r="14" fill="#374151"/><text x="112" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="112" y1="116" x2="112" y2="92" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="55" cy="55" r="6" fill="#374151"/><text x="55" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="112" cy="130" r="6" fill="#374151"/><text x="112" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- 수정: 마커#3을 오른쪽으로 이동하여 검색 컨테이너(x=340)와 겹치지 않도록 수정 -->
-            <circle cx="365" cy="55" r="14" fill="#374151"/><text x="365" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="351" y1="60" x2="340" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="365" cy="55" r="6" fill="#374151"/><text x="365" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Container', description: '검색 필드 컨테이너' },
@@ -2800,17 +2716,13 @@ const COMPONENTS = {
             <rect x="60" y="92" width="280" height="60" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
             <text x="200" y="128" text-anchor="middle" fill="#9ca3af" font-size="11">탭 콘텐츠 영역</text>
             <!-- Callout 1: Tab Item — 왼쪽, 탭 항목(60,50)을 가리킴, 리더라인 15px+ 확보 -->
-            <circle cx="30" cy="45" r="14" fill="#374151"/><text x="30" y="50" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="44" y1="50" x2="60" y2="58" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="30" cy="45" r="6" fill="#374151"/><text x="30" y="47" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Active Indicator — 위쪽 중앙, 활성 인디케이터(60,84)를 가리킴 -->
-            <circle cx="160" cy="35" r="14" fill="#374151"/><text x="160" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="130" y1="42" x2="100" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="160" cy="35" r="6" fill="#374151"/><text x="160" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Divider — 오른쪽, 구분선(340,86)을 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="370" cy="86" r="14" fill="#374151"/><text x="370" y="91" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="356" y1="86" x2="328" y2="86" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="370" cy="86" r="6" fill="#374151"/><text x="370" y="88" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
             <!-- Callout 4: Content Area — 오른쪽 아래, 콘텐츠 영역(340,120)을 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="370" cy="120" r="14" fill="#374151"/><text x="370" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-            <line x1="356" y1="120" x2="328" y2="118" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="370" cy="120" r="6" fill="#374151"/><text x="370" y="122" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Tab Item', description: '탭 항목' },
@@ -2861,12 +2773,9 @@ const COMPONENTS = {
             <rect x="80" y="134" width="240" height="44" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
             <text x="100" y="162" fill="#374151" font-size="12">닫힌 섹션</text>
             <text x="298" y="162" fill="#6b7280" font-size="14">▶</text>
-            <circle cx="50" cy="40" r="14" fill="#374151"/><text x="50" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="64" y1="42" x2="80" y2="46" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="350" cy="46" r="14" fill="#374151"/><text x="350" y="51" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="336" y1="50" x2="310" y2="52" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="350" cy="100" r="14" fill="#374151"/><text x="350" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="336" y1="100" x2="320" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="50" cy="40" r="6" fill="#374151"/><text x="50" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="350" cy="46" r="6" fill="#374151"/><text x="350" y="48" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="350" cy="100" r="6" fill="#374151"/><text x="350" y="102" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Header', description: '아코디언 헤더 (제목)' },
@@ -2911,14 +2820,12 @@ const COMPONENTS = {
             <text x="82" y="103" fill="white" font-size="12">아이템이 저장되었습니다</text>
             <rect x="280" y="82" width="48" height="28" rx="4" fill="none"/>
             <text x="304" y="101" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="600">실행취소</text>
-            <!-- Callout 1: Container — 왼쪽 위, 스낵바 컨테이너를 가리킴, 리더라인 충분히 길게 -->
-            <circle cx="30" cy="50" r="14" fill="#374151" stroke="white" stroke-width="1"/><text x="30" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="40" y1="60" x2="70" y2="72" stroke="white" stroke-width="1" stroke-dasharray="3"/>
-            <!-- Callout 2: Message — 아래 중앙, 메시지 텍스트(82~280,103)를 가리킴, 리더라인 충분히 길게 -->
-            <circle cx="200" cy="150" r="14" fill="#374151" stroke="white" stroke-width="1"/><text x="200" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="200" y1="136" x2="200" y2="126" stroke="white" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="360" cy="90" r="14" fill="#374151" stroke="white" stroke-width="1"/><text x="360" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="346" y1="92" x2="330" y2="95" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+            <!-- Callout 1: Container -->
+            <circle cx="30" cy="50" r="6" fill="#374151"/><text x="30" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <!-- Callout 2: Message -->
+            <circle cx="200" cy="150" r="6" fill="#374151"/><text x="200" y="152" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <!-- Callout 3: Action -->
+            <circle cx="360" cy="90" r="6" fill="#374151"/><text x="360" y="92" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Container', description: '스낵바 컨테이너' },
@@ -2970,12 +2877,9 @@ const COMPONENTS = {
             <circle cx="200" cy="80" r="24" stroke="#e5e7eb" stroke-width="4"/>
             <path d="M200 56 A24 24 0 0 1 224 80" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
             <text x="200" y="130" text-anchor="middle" fill="#6b7280" font-size="12">로딩 중...</text>
-            <circle cx="130" cy="60" r="14" fill="#374151"/><text x="130" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="144" y1="64" x2="176" y2="72" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="270" cy="72" r="14" fill="#374151"/><text x="270" y="77" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="256" y1="76" x2="225" y2="80" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="270" cy="125" r="14" fill="#374151"/><text x="270" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="256" y1="126" x2="240" y2="128" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="130" cy="60" r="6" fill="#374151"/><text x="130" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="270" cy="72" r="6" fill="#374151"/><text x="270" y="74" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="270" cy="125" r="6" fill="#374151"/><text x="270" y="127" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Track', description: '배경 트랙 (전체 원)' },
@@ -3031,17 +2935,13 @@ const COMPONENTS = {
             <text x="300" y="58" fill="#9ca3af" font-size="14">›</text>
             <rect x="80" y="82" width="240" height="1" fill="#e5e7eb"/>
             <rect x="80" y="83" width="240" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
-            <circle cx="50" cy="35" r="14" fill="#374151"/><text x="50" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="64" y1="40" x2="94" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="50" cy="35" r="6" fill="#374151"/><text x="50" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- 수정: 마커#2를 위로 이동하여 리스트 항목과 겹침 방지 -->
-            <circle cx="135" cy="10" r="14" fill="#374151"/><text x="135" y="15" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="135" y1="24" x2="135" y2="40" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="135" cy="10" r="6" fill="#374151"/><text x="135" y="12" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Trailing Element — 오른쪽 상단, 화살표(300,58)를 가리킴 -->
-            <circle cx="350" cy="35" r="14" fill="#374151"/><text x="350" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="336" y1="40" x2="310" y2="52" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="350" cy="35" r="6" fill="#374151"/><text x="350" y="37" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
             <!-- Callout 4: Divider — 오른쪽 하단, 구분선(80,82)을 가리킴, 마커#3과 최소 60px 간격 -->
-            <circle cx="350" cy="100" r="14" fill="#374151"/><text x="350" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-            <line x1="336" y1="98" x2="270" y2="84" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="350" cy="100" r="6" fill="#374151"/><text x="350" y="102" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Leading Icon', description: '선행 아이콘/아바타' },
@@ -3101,14 +3001,11 @@ const COMPONENTS = {
             <text x="260" y="81" fill="#6b7280" font-size="10">전사</text>
             <rect x="50" y="90" width="300" height="28" fill="white" stroke="#e5e7eb" stroke-width="0.5"/>
             <!-- Callout 1: Header Row — 왼쪽, 헤더 행(50,30)을 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="20" cy="28" r="14" fill="#374151"/><text x="20" y="33" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="34" y1="33" x2="50" y2="38" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="20" cy="28" r="6" fill="#374151"/><text x="20" y="30" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Sort Indicator — 오른쪽 위, 정렬 표시를 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="380" cy="38" r="14" fill="#374151"/><text x="380" y="43" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="366" y1="42" x2="340" y2="48" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="380" cy="38" r="6" fill="#374151"/><text x="380" y="40" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Data Row — 오른쪽 아래, 데이터 행(350,75)을 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="380" cy="80" r="14" fill="#374151"/><text x="380" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="366" y1="80" x2="340" y2="78" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="380" cy="80" r="6" fill="#374151"/><text x="380" y="82" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Header Row', description: '헤더 행 (정렬 가능)' },
@@ -3164,12 +3061,9 @@ const COMPONENTS = {
             <text x="170" y="92" fill="#6366f1" font-size="10">✕</text>
             <rect x="195" y="70" width="80" height="36" rx="18" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
             <text x="235" y="93" text-anchor="middle" fill="#6b7280" font-size="11">마법사</text>
-            <circle cx="55" cy="68" r="14" fill="#374151"/><text x="55" y="73" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="69" y1="72" x2="80" y2="78" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="100" cy="130" r="14" fill="#374151"/><text x="100" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="100" y1="116" x2="100" y2="100" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="170" cy="130" r="14" fill="#374151"/><text x="170" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="170" y1="116" x2="170" y2="106" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="55" cy="68" r="6" fill="#374151"/><text x="55" y="70" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="100" cy="130" r="6" fill="#374151"/><text x="100" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="170" cy="130" r="6" fill="#374151"/><text x="170" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Container', description: '칩 컨테이너 (필)' },
@@ -3279,13 +3173,10 @@ const COMPONENTS = {
             <text x="190" y="82" text-anchor="middle" fill="#374151" font-size="14" font-weight="600">페이지 제목</text>
             <text x="320" y="81" fill="#6b7280" font-size="16">⚙</text>
             <text x="340" y="81" fill="#6b7280" font-size="16">🔔</text>
-            <circle cx="20" cy="60" r="14" fill="#374151"/><text x="20" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="34" y1="64" x2="56" y2="72" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="20" cy="60" r="6" fill="#374151"/><text x="20" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- 수정: 마커#2를 앱바 상단(y=50)과 겹치지 않도록 위로 이동 -->
-            <circle cx="190" cy="30" r="14" fill="#374151"/><text x="190" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="190" y1="44" x2="190" y2="62" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="380" cy="68" r="14" fill="#374151"/><text x="380" y="73" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="366" y1="70" x2="350" y2="74" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="190" cy="30" r="6" fill="#374151"/><text x="190" y="32" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="380" cy="68" r="6" fill="#374151"/><text x="380" y="70" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Navigation Icon', description: '내비게이션 아이콘 (메뉴/뒤로)' },
@@ -3347,14 +3238,11 @@ const COMPONENTS = {
             <text x="156" y="80" fill="#9ca3af" font-size="12">/</text>
             <text x="170" y="80" fill="#374151" font-size="12" font-weight="600">무기</text>
             <!-- Callout 1: Link Item — 위쪽, "홈" 링크(80,80)를 가리킴, 리더라인 15px+ 확보 -->
-            <circle cx="80" cy="40" r="14" fill="#374151"/><text x="80" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="80" y1="54" x2="80" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="80" cy="40" r="6" fill="#374151"/><text x="80" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Separator — 위쪽, 구분자 "/"(108,80)를 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="135" cy="40" r="14" fill="#374151"/><text x="135" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="126" y1="52" x2="112" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="135" cy="40" r="6" fill="#374151"/><text x="135" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Current Page — 위쪽, "무기" 텍스트(170,80)를 가리킴, 리더라인 15px+ 확보 -->
-            <circle cx="190" cy="40" r="14" fill="#374151"/><text x="190" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="184" y1="53" x2="176" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="190" cy="40" r="6" fill="#374151"/><text x="190" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Link Item', description: '클릭 가능한 경로 링크' },
@@ -3405,14 +3293,11 @@ const COMPONENTS = {
             <text x="230" y="79" text-anchor="middle" fill="#6b7280" font-size="12">3</text>
             <rect x="260" y="55" width="36" height="36" rx="6" fill="none" stroke="#9ca3af" stroke-width="1"/>
             <text x="278" y="78" text-anchor="middle" fill="#6b7280" font-size="14">›</text>
-            <circle cx="60" cy="55" r="14" fill="#374151"/><text x="60" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="70" y1="64" x2="82" y2="68" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="60" cy="55" r="6" fill="#374151"/><text x="60" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Active Page — 위쪽 중앙, 활성 페이지(142,55)를 가리킴, 리더라인 15px+ 확보 -->
-            <circle cx="142" cy="30" r="14" fill="#374151"/><text x="142" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="142" y1="44" x2="142" y2="55" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="142" cy="30" r="6" fill="#374151"/><text x="142" y="32" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Page Number — 오른쪽, 페이지 번호(296,72)를 가리킴, 리더라인 20px+ 확보 -->
-            <circle cx="330" cy="65" r="14" fill="#374151"/><text x="330" y="70" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="316" y1="68" x2="296" y2="72" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="330" cy="65" r="6" fill="#374151"/><text x="330" y="67" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Navigation Arrow', description: '이전/다음 화살표' },
@@ -3467,14 +3352,11 @@ const COMPONENTS = {
             <text x="200" y="105" text-anchor="middle" fill="#374151" font-size="9">캐릭터</text>
             <text x="300" y="105" text-anchor="middle" fill="#9ca3af" font-size="9">완료</text>
             <!-- Callout 1: Step Indicator — 왼쪽 위, 첫 번째 스텝(100,70)을 가리킴 -->
-            <circle cx="60" cy="30" r="14" fill="#374151"/><text x="60" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="72" y1="38" x2="88" y2="58" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="60" cy="30" r="6" fill="#374151"/><text x="60" y="32" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Connector — 중간 위, 연결선(150,70)을 가리킴 -->
-            <circle cx="150" cy="30" r="14" fill="#374151"/><text x="150" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="150" y1="44" x2="150" y2="68" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="150" cy="30" r="6" fill="#374151"/><text x="150" y="32" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Step Label — 아래쪽, "캐릭터" 라벨(200,105)과 겹치지 않게 충분히 아래로 배치 -->
-            <circle cx="200" cy="145" r="14" fill="#374151"/><text x="200" y="150" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="200" y1="131" x2="200" y2="110" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="200" cy="145" r="6" fill="#374151"/><text x="200" y="147" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Step Indicator', description: '단계 인디케이터 (완료/현재/대기)' },
@@ -3527,14 +3409,10 @@ const COMPONENTS = {
             <text x="130" y="145" fill="#ef4444" font-size="11">🗑️ 삭제</text>
             <rect x="108" y="160" width="184" height="30" rx="4"/>
             <text x="130" y="180" fill="#374151" font-size="11">📦 이동 ▸</text>
-            <circle cx="70" cy="42" r="14" fill="#374151"/><text x="70" y="47" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="84" y1="46" x2="100" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="340" cy="56" r="14" fill="#374151"/><text x="340" y="61" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="326" y1="59" x2="292" y2="62" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="340" cy="122" r="14" fill="#374151"/><text x="340" y="127" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="326" y1="122" x2="284" y2="122" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
-            <circle cx="340" cy="175" r="14" fill="#374151"/><text x="340" y="180" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
-            <line x1="326" y1="175" x2="292" y2="175" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="70" cy="42" r="6" fill="#374151"/><text x="70" y="44" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
+            <circle cx="340" cy="56" r="6" fill="#374151"/><text x="340" y="58" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
+            <circle cx="340" cy="122" r="6" fill="#374151"/><text x="340" y="124" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
+            <circle cx="340" cy="175" r="6" fill="#374151"/><text x="340" y="177" text-anchor="middle" fill="white" font-size="5" font-weight="bold">4</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Menu Container', description: '메뉴 컨테이너' },
@@ -3587,14 +3465,11 @@ const COMPONENTS = {
             <circle cx="185" cy="165" r="4" fill="#374151"/>
             <circle cx="200" cy="165" r="4" fill="#d1d5db"/>
             <circle cx="215" cy="165" r="4" fill="#d1d5db"/>
-            <circle cx="40" cy="40" r="14" fill="#374151"/><text x="40" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="54" y1="44" x2="80" y2="50" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="40" cy="40" r="6" fill="#374151"/><text x="40" y="42" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Navigation Arrow — 오른쪽, 화살표 버튼(340,90)을 가리킴, 리더라인 충분히 길게 -->
-            <circle cx="380" cy="55" r="14" fill="#374151"/><text x="380" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="370" y1="67" x2="352" y2="82" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="380" cy="55" r="6" fill="#374151"/><text x="380" y="57" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Page Indicator — 하단 중앙, 인디케이터 점(200,165)을 가리킴 -->
-            <circle cx="120" cy="178" r="14" fill="#374151"/><text x="120" y="183" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="134" y1="173" x2="181" y2="166" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="120" cy="178" r="6" fill="#374151"/><text x="120" y="180" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Content Area', description: '슬라이드 콘텐츠 영역' },
@@ -3656,14 +3531,11 @@ const COMPONENTS = {
             <text x="200" y="140" text-anchor="middle" fill="#374151" font-size="13" font-weight="600">시트 제목</text>
             <rect x="60" y="155" width="280" height="1" fill="#e5e7eb"/>
             <text x="200" y="185" text-anchor="middle" fill="#6b7280" font-size="11">시트 콘텐츠 영역</text>
-            <circle cx="20" cy="60" r="14" fill="#374151"/><text x="20" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="34" y1="64" x2="50" y2="70" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="20" cy="60" r="6" fill="#374151"/><text x="20" y="62" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Drag Handle — 오른쪽 상단, 핸들 바(180,108)를 가리킴 -->
-            <circle cx="380" cy="108" r="14" fill="#374151"/><text x="380" y="113" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="366" y1="108" x2="220" y2="108" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="380" cy="108" r="6" fill="#374151"/><text x="380" y="110" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
             <!-- Callout 3: Content — 마커#2와 최소 45px 간격 확보, 콘텐츠 영역(200,185)을 가리킴 -->
-            <circle cx="380" cy="185" r="14" fill="#374151"/><text x="380" y="190" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
-            <line x1="366" y1="185" x2="260" y2="185" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="380" cy="185" r="6" fill="#374151"/><text x="380" y="187" text-anchor="middle" fill="white" font-size="5" font-weight="bold">3</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Scrim', description: '배경 딤 오버레이' },
@@ -3726,11 +3598,9 @@ const COMPONENTS = {
             <text x="195" y="124" fill="#9ca3af" font-size="9">또는</text>
             <rect x="215" y="120" width="125" height="1.5" fill="#e5e7eb"/>
             <!-- Callout 1: Full Divider — 왼쪽, 전체 너비 구분선(60,65)을 가리킴 -->
-            <circle cx="30" cy="50" r="14" fill="#374151"/><text x="30" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
-            <line x1="44" y1="55" x2="60" y2="63" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="30" cy="50" r="6" fill="#374151"/><text x="30" y="52" text-anchor="middle" fill="white" font-size="5" font-weight="bold">1</text>
             <!-- Callout 2: Inset with Text — 아래쪽, "또는" 텍스트 구분선(195,120)을 가리킴, 리더라인 충분히 길게 -->
-            <circle cx="350" cy="130" r="14" fill="#374151"/><text x="350" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
-            <line x1="336" y1="128" x2="220" y2="122" stroke="#374151" stroke-width="1" stroke-dasharray="3"/>
+            <circle cx="350" cy="130" r="6" fill="#374151"/><text x="350" y="132" text-anchor="middle" fill="white" font-size="5" font-weight="bold">2</text>
         </svg>`,
             parts: [
                 { number: 1, name: 'Full Divider', description: '전체 너비 구분선' },
