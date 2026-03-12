@@ -201,62 +201,53 @@ const COMPONENTS = {
             <circle cx="430" cy="82" r="2" fill="#fbbf24"/>
             <line x1="430" y1="82" x2="418" y2="50" stroke="#fbbf2460" stroke-width="0.5" stroke-dasharray="2"/>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Buttons</text>
-            <!-- Top-right: Menu/Settings buttons (32x32, outlined with X) -->
-            <rect x="220" y="58" width="32" height="32" rx="4" stroke="#6b7280" stroke-width="1.5"/>
-            <line x1="226" y1="64" x2="246" y2="84" stroke="#6b7280" stroke-width="0.8"/>
-            <line x1="246" y1="64" x2="226" y2="84" stroke="#6b7280" stroke-width="0.8"/>
-            <text x="236" y="100" fill="#9ca3af" font-size="6" text-anchor="middle">설정</text>
-            <rect x="182" y="58" width="32" height="32" rx="4" stroke="#6b7280" stroke-width="1.5"/>
-            <line x1="188" y1="64" x2="208" y2="84" stroke="#6b7280" stroke-width="0.8"/>
-            <line x1="208" y1="64" x2="188" y2="84" stroke="#6b7280" stroke-width="0.8"/>
-            <text x="198" y="100" fill="#9ca3af" font-size="6" text-anchor="middle">메뉴</text>
-            <!-- Center: Game view area (mostly empty) -->
-            <rect x="60" y="170" width="150" height="100" rx="4" stroke="#2a2b3540" stroke-width="0.5" stroke-dasharray="6"/>
-            <text x="135" y="225" fill="#2a2b35" font-size="8" text-anchor="middle">게임 플레이 영역</text>
-            <!-- Right side: Vertical quick action FABs (42x42 circles) -->
-            <circle cx="237" cy="210" r="21" stroke="#60a5fa" stroke-width="1.5" fill="none"/>
-            <text x="237" y="215" fill="#60a5fa" font-size="14" text-anchor="middle">⟳</text>
-            <circle cx="237" cy="262" r="21" stroke="#60a5fa" stroke-width="1.5" fill="none"/>
-            <text x="237" y="267" fill="#60a5fa" font-size="12" text-anchor="middle">▶</text>
-            <text x="237" y="292" fill="#60a5fa" font-size="6" text-anchor="middle">퀵 액션</text>
-            <!-- Thumb zone label -->
-            <text x="135" y="365" fill="#fbbf24" font-size="7" text-anchor="middle">▲ 엄지 영역 — 액션 버튼</text>
-            <!-- Thumb zone: Action buttons (y=370-450) -->
-            <rect x="16" y="372" width="238" height="86" rx="8" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4"/>
-            <!-- Secondary: Skill (left, 60x44) -->
-            <rect x="22" y="393" width="60" height="44" rx="6" fill="#fbbf2410" stroke="#fbbf2480" stroke-width="1"/>
-            <text x="52" y="420" fill="#fbbf24" font-size="9" text-anchor="middle">스킬</text>
-            <!-- Primary action: Attack (large center, 100x50, filled) -->
-            <rect x="90" y="385" width="100" height="50" rx="8" fill="#fbbf2420" stroke="#fbbf24" stroke-width="1.5"/>
-            <text x="140" y="415" fill="#fbbf24" font-size="13" font-weight="bold" text-anchor="middle">공격</text>
-            <!-- Tertiary: Item (right, 60x44) -->
-            <rect x="198" y="393" width="60" height="44" rx="6" fill="none" stroke="#fbbf2460" stroke-width="1"/>
-            <text x="228" y="420" fill="#fbbf2499" font-size="9" text-anchor="middle">아이템</text>
-            <!-- Touch target label -->
-            <text x="140" y="450" fill="#fbbf24" font-size="5" text-anchor="middle">48px+ 터치 타겟</text>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Button Placement</text>
+            <!-- Left: Virtual joystick area -->
+            <circle cx="95" cy="148" r="36" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
+            <circle cx="95" cy="148" r="14" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <text x="95" y="194" fill="#ffffff30" font-size="5" text-anchor="middle">이동 조이스틱</text>
+            <!-- Top-left: Menu hamburger button -->
+            <rect x="38" y="28" width="26" height="26" rx="6" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <line x1="44" y1="36" x2="58" y2="36" stroke="#ffffff50" stroke-width="1.5"/>
+            <line x1="44" y1="41" x2="58" y2="41" stroke="#ffffff50" stroke-width="1.5"/>
+            <line x1="44" y1="46" x2="58" y2="46" stroke="#ffffff50" stroke-width="1.5"/>
+            <text x="51" y="64" fill="#ffffff40" font-size="5" text-anchor="middle">메뉴</text>
+            <!-- Right: Main action button (Attack) — large circle -->
+            <circle cx="418" cy="142" r="28" fill="#ef444420" stroke="#ef4444" stroke-width="1.5"/>
+            <text x="418" y="146" fill="#ef4444" font-size="10" text-anchor="middle" font-weight="bold">공격</text>
+            <text x="418" y="178" fill="#ef4444" font-size="5" text-anchor="middle">메인 액션</text>
+            <!-- Right: Secondary action buttons -->
+            <circle cx="375" cy="174" r="18" fill="#3b82f620" stroke="#3b82f6" stroke-width="1"/>
+            <text x="375" y="178" fill="#3b82f6" font-size="7" text-anchor="middle">회피</text>
+            <circle cx="452" cy="104" r="18" fill="#34d39920" stroke="#34d399" stroke-width="1"/>
+            <text x="452" y="108" fill="#34d399" font-size="7" text-anchor="middle">상호</text>
+            <!-- Center: Confirm/Cancel dialog example -->
+            <rect x="155" y="55" width="170" height="100" rx="8" fill="#1a1b2690" stroke="#ffffff20" stroke-width="1"/>
+            <text x="240" y="76" fill="#ffffff80" font-size="8" text-anchor="middle">아이템을 사용하시겠습니까?</text>
+            <rect x="170" y="95" width="72" height="26" rx="6" fill="#3b82f6"/>
+            <text x="206" y="112" fill="#fff" font-size="8" text-anchor="middle">확인</text>
+            <rect x="248" y="95" width="64" height="26" rx="6" fill="none" stroke="#ffffff40" stroke-width="1"/>
+            <text x="280" y="112" fill="#ffffff80" font-size="8" text-anchor="middle">취소</text>
+            <text x="240" y="148" fill="#ffffff30" font-size="5" text-anchor="middle">버튼 계층 구조</text>
         </svg>`,
         },                      // screenWireframe: 게임 화면 내 해당 컴포넌트의 실제 배치를 보여주는 와이어프레임 SVG (게임 전용 컴포넌트에만 존재)
         platforms: {                  // platforms: 플랫폼별(PC/모바일) 디자인 가이드 — 게임 전용 컴포넌트에만 존재
@@ -394,65 +385,63 @@ const COMPONENTS = {
             <text x="42" y="226" fill="#6b7280" font-size="7" text-anchor="middle">덱</text>
             <text x="42" y="236" fill="#6b728080" font-size="6" text-anchor="middle">23장</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Cards</text>
-            <!-- Top area: Selected card detail (220x130) -->
-            <rect x="25" y="60" width="220" height="130" rx="6" stroke="#f472b6" stroke-width="1.5"/>
-            <!-- Card front with art placeholder -->
-            <rect x="35" y="70" width="200" height="70" rx="3" fill="#f472b618" stroke="#f472b660" stroke-width="0.5"/>
-            <line x1="35" y1="70" x2="235" y2="140" stroke="#f472b630" stroke-width="0.5"/>
-            <line x1="235" y1="70" x2="35" y2="140" stroke="#f472b630" stroke-width="0.5"/>
-            <!-- Card name and stats -->
-            <text x="135" y="158" fill="#f472b6" font-size="9" text-anchor="middle">카드 이름</text>
-            <rect x="35" y="165" width="80" height="5" rx="2" fill="#f472b620"/>
-            <rect x="125" y="165" width="50" height="5" rx="2" fill="#f472b615"/>
-            <text x="225" y="170" fill="#f472b690" font-size="6" text-anchor="middle">◆◆◆</text>
-            <text x="135" y="182" fill="#f472b680" font-size="6" text-anchor="middle">ATK:8  DEF:3  SPD:5</text>
-            <!-- Middle area: Deck and Discard piles -->
-            <rect x="40" y="210" width="45" height="60" rx="3" stroke="#6b728080" stroke-width="1" stroke-dasharray="3"/>
-            <rect x="42" y="208" width="45" height="60" rx="3" stroke="#6b728050" stroke-width="0.5" stroke-dasharray="3"/>
-            <text x="63" y="244" fill="#6b7280" font-size="7" text-anchor="middle">덱</text>
-            <text x="63" y="258" fill="#6b728080" font-size="6" text-anchor="middle">23장</text>
-            <rect x="185" y="210" width="45" height="60" rx="3" stroke="#6b728080" stroke-width="1" stroke-dasharray="3"/>
-            <text x="208" y="244" fill="#6b7280" font-size="7" text-anchor="middle">버림</text>
-            <text x="208" y="258" fill="#6b728080" font-size="6" text-anchor="middle">5장</text>
-            <!-- Center: Turn/phase indicator -->
-            <text x="135" y="245" fill="#fbbf2480" font-size="7" text-anchor="middle">턴 3</text>
-            <!-- Bottom area: Card hand in fan layout (y=340) -->
-            <text x="135" y="332" fill="#a78bfa" font-size="7" text-anchor="middle">▼ 카드 핸드 (스와이프)</text>
-            <rect x="12" y="340" width="246" height="108" rx="8" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4"/>
-            <!-- Cards fanned — 5 overlapping cards -->
-            <rect x="16" y="352" width="52" height="78" rx="4" fill="#a78bfa12" stroke="#a78bfa80" stroke-width="0.8" transform="rotate(-6,42,391)"/>
-            <rect x="56" y="348" width="52" height="78" rx="4" fill="#a78bfa18" stroke="#a78bfa90" stroke-width="0.8" transform="rotate(-3,82,387)"/>
-            <rect x="96" y="346" width="52" height="78" rx="4" fill="#a78bfa25" stroke="#a78bfa" stroke-width="1.2"/>
-            <rect x="148" y="348" width="52" height="78" rx="4" fill="#a78bfa18" stroke="#a78bfa90" stroke-width="0.8" transform="rotate(3,174,387)"/>
-            <rect x="200" y="352" width="52" height="78" rx="4" fill="#a78bfa12" stroke="#a78bfa80" stroke-width="0.8" transform="rotate(6,226,391)"/>
-            <!-- Swipe dots indicator -->
-            <circle cx="115" cy="456" r="3" fill="#a78bfa"/>
-            <circle cx="130" cy="456" r="3" fill="#a78bfa40"/>
-            <circle cx="145" cy="456" r="3" fill="#a78bfa40"/>
-            <text x="135" y="464" fill="#a78bfa" font-size="5" text-anchor="middle">좌우 스와이프로 카드 선택</text>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Card UI</text>
+            <!-- Left: Character info card -->
+            <rect x="40" y="32" width="110" height="164" rx="6" fill="#1a1b26" stroke="#a78bfa" stroke-width="1.5"/>
+            <rect x="46" y="38" width="98" height="50" rx="4" fill="#a78bfa15"/>
+            <text x="95" y="68" fill="#a78bfa" font-size="14" text-anchor="middle">⚔</text>
+            <text x="95" y="102" fill="#ffffff90" font-size="8" text-anchor="middle">전사 Lv.45</text>
+            <rect x="52" y="112" width="88" height="5" rx="2" fill="#ef444430"/>
+            <rect x="52" y="112" width="60" height="5" rx="2" fill="#ef444490"/>
+            <text x="52" y="108" fill="#ef4444" font-size="5">HP</text>
+            <rect x="52" y="124" width="88" height="5" rx="2" fill="#3b82f630"/>
+            <rect x="52" y="124" width="35" height="5" rx="2" fill="#3b82f690"/>
+            <text x="52" y="120" fill="#3b82f6" font-size="5">MP</text>
+            <text x="95" y="148" fill="#fbbf24" font-size="7" text-anchor="middle">★★★★</text>
+            <text x="95" y="170" fill="#fbbf24" font-size="5" text-anchor="middle">ATK 245 · DEF 180</text>
+            <text x="95" y="204" fill="#a78bfa" font-size="5" text-anchor="middle">캐릭터 카드</text>
+            <!-- Center: Item reward card -->
+            <rect x="168" y="36" width="110" height="140" rx="6" fill="#1a1b26" stroke="#fbbf24" stroke-width="1.5"/>
+            <rect x="174" y="42" width="98" height="44" rx="4" fill="#fbbf2415"/>
+            <text x="223" y="70" fill="#fbbf24" font-size="14" text-anchor="middle">🗡</text>
+            <text x="223" y="96" fill="#ffffff90" font-size="7" text-anchor="middle">전설의 검</text>
+            <text x="223" y="110" fill="#fbbf24" font-size="6" text-anchor="middle">ATK +120</text>
+            <rect x="183" y="120" width="80" height="22" rx="5" fill="#fbbf2430" stroke="#fbbf24" stroke-width="0.5"/>
+            <text x="223" y="135" fill="#fbbf24" font-size="7" text-anchor="middle">장착하기</text>
+            <text x="223" y="186" fill="#fbbf24" font-size="5" text-anchor="middle">아이템 카드</text>
+            <!-- Right: Quest card + Warning card -->
+            <rect x="296" y="32" width="148" height="68" rx="6" fill="#1a1b26" stroke="#f59e0b60" stroke-width="1"/>
+            <text x="370" y="50" fill="#f59e0b" font-size="7" text-anchor="middle" font-weight="bold">새 퀘스트!</text>
+            <text x="370" y="64" fill="#ffffff60" font-size="6" text-anchor="middle">드래곤 처치 (0/1)</text>
+            <rect x="310" y="72" width="120" height="4" rx="2" fill="#f59e0b20"/>
+            <rect x="310" y="72" width="12" height="4" rx="2" fill="#f59e0b60"/>
+            <text x="370" y="90" fill="#f59e0b80" font-size="5" text-anchor="middle">보상: 5000 골드</text>
+            <rect x="296" y="114" width="148" height="50" rx="6" fill="#1a1b26" stroke="#ef444460" stroke-width="1"/>
+            <text x="370" y="134" fill="#ffffff60" font-size="6" text-anchor="middle">⚠ 체력이 낮습니다!</text>
+            <rect x="310" y="142" width="120" height="4" rx="2" fill="#ef444430"/>
+            <rect x="310" y="142" width="24" height="4" rx="2" fill="#ef444490"/>
+            <text x="370" y="158" fill="#ef4444" font-size="5" text-anchor="middle">경고 카드</text>
+            <rect x="296" y="178" width="148" height="24" rx="6" fill="#34d39910" stroke="#34d39960" stroke-width="1"/>
+            <text x="370" y="194" fill="#34d399" font-size="6" text-anchor="middle">✓ 업적 달성: 첫 번째 승리</text>
         </svg>`,
         },
         platforms: {
@@ -590,55 +579,54 @@ const COMPONENTS = {
             <!-- Labels -->
             <text x="240" y="235" fill="#f59e0b90" font-size="7" text-anchor="middle">모달 다이얼로그 — 배경 딤 처리 + 포커스 트랩</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Dialogs</text>
-            <!-- Background: Dimmed game view -->
-            <rect x="12" y="56" width="246" height="180" rx="2" fill="#ffffff06"/>
-            <rect x="40" y="80" width="190" height="60" rx="4" stroke="#2a2b3530" stroke-width="0.5" stroke-dasharray="6"/>
-            <text x="135" y="115" fill="#2a2b3540" font-size="7" text-anchor="middle">게임 화면 (흐림)</text>
-            <!-- Dimmed overlay -->
-            <rect x="8" y="36" width="254" height="432" rx="2" fill="#00000060"/>
-            <!-- Label -->
-            <text x="135" y="238" fill="#f59e0b90" font-size="7" text-anchor="middle">바텀 시트 다이얼로그</text>
-            <!-- Bottom sheet (y=248, ~210px height) -->
-            <rect x="10" y="248" width="250" height="210" rx="14" fill="#1e1f2e" stroke="#f59e0b" stroke-width="1.5"/>
-            <!-- Drag handle bar (50x4, centered) -->
-            <rect x="110" y="256" width="50" height="4" rx="2" fill="#555"/>
-            <!-- Title text area -->
-            <text x="135" y="282" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">다이얼로그 제목</text>
-            <!-- Content text area -->
-            <rect x="26" y="296" width="218" height="70" rx="4" stroke="#ffffff10" stroke-width="1"/>
-            <rect x="36" y="310" width="180" height="5" rx="2" fill="#ffffff15"/>
-            <rect x="36" y="322" width="160" height="5" rx="2" fill="#ffffff10"/>
-            <rect x="36" y="334" width="190" height="5" rx="2" fill="#ffffff10"/>
-            <text x="135" y="358" fill="#6b728060" font-size="5" text-anchor="middle">콘텐츠 영역</text>
-            <!-- Primary button: 확인 (230x48, #fbbf24 stroke) -->
-            <rect x="20" y="372" width="230" height="48" rx="8" fill="#fbbf2415" stroke="#fbbf24" stroke-width="1.5"/>
-            <text x="135" y="401" fill="#fbbf24" font-size="12" text-anchor="middle">확인</text>
-            <!-- Secondary button: 취소 (230x48, #6b7280 stroke, 16px gap) -->
-            <rect x="20" y="404" width="230" height="48" rx="8" fill="none" stroke="#6b7280" stroke-width="1"/>
-            <text x="135" y="433" fill="#6b7280" font-size="12" text-anchor="middle">취소</text>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Dialog</text>
+            <!-- Darkened game background overlay -->
+            <rect x="32" y="8" width="436" height="200" fill="#00000050"/>
+            <!-- Center dialog box -->
+            <rect x="100" y="30" width="280" height="160" rx="10" fill="#1a1b2e" stroke="#ffffff20" stroke-width="1"/>
+            <!-- Dialog header -->
+            <rect x="100" y="30" width="280" height="32" rx="10" fill="#3b82f620"/>
+            <rect x="100" y="52" width="280" height="10" fill="#3b82f620"/>
+            <text x="240" y="52" fill="#ffffff90" font-size="9" text-anchor="middle" font-weight="bold">상점 — 아이템 구매</text>
+            <!-- Close button -->
+            <circle cx="366" cy="46" r="10" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="366" y="50" fill="#ffffff60" font-size="10" text-anchor="middle">×</text>
+            <!-- Dialog content -->
+            <text x="240" y="78" fill="#ffffff70" font-size="7" text-anchor="middle">치유의 물약을 구매하시겠습니까?</text>
+            <!-- Item preview -->
+            <rect x="195" y="86" width="90" height="40" rx="4" fill="#ffffff08" stroke="#ffffff15" stroke-width="0.5"/>
+            <text x="240" y="106" fill="#34d399" font-size="14" text-anchor="middle">🧪</text>
+            <text x="240" y="122" fill="#fbbf24" font-size="7" text-anchor="middle">💰 150G</text>
+            <!-- Quantity selector -->
+            <rect x="165" y="132" width="28" height="22" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="179" y="147" fill="#ffffff80" font-size="10" text-anchor="middle">−</text>
+            <text x="240" y="147" fill="#ffffff" font-size="10" text-anchor="middle">3</text>
+            <rect x="287" y="132" width="28" height="22" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="301" y="147" fill="#ffffff80" font-size="10" text-anchor="middle">+</text>
+            <!-- Action buttons -->
+            <rect x="125" y="162" width="100" height="24" rx="6" fill="#3b82f6"/>
+            <text x="175" y="178" fill="#fff" font-size="8" text-anchor="middle">구매 (450G)</text>
+            <rect x="255" y="162" width="100" height="24" rx="6" fill="none" stroke="#ffffff40" stroke-width="1"/>
+            <text x="305" y="178" fill="#ffffff80" font-size="8" text-anchor="middle">취소</text>
         </svg>`,
         },
         platforms: {
@@ -786,82 +774,78 @@ const COMPONENTS = {
             <rect x="10" y="256" width="460" height="4" rx="2" fill="#a78bfa20"/>
             <rect x="10" y="256" width="180" height="4" rx="2" fill="#a78bfa60"/>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — HUD</text>
-            <!-- Top-Left (y=60): HP bar (100x10, red) -->
-            <text x="18" y="66" fill="#ef4444" font-size="7">HP</text>
-            <rect x="34" y="58" width="100" height="10" rx="4" fill="#ef444430"/>
-            <rect x="34" y="58" width="70" height="10" rx="4" fill="#ef444490"/>
-            <text x="84" y="66" fill="#fff" font-size="5" text-anchor="middle">350/500</text>
-            <!-- MP bar below (80x8, blue) -->
-            <text x="18" y="80" fill="#3b82f6" font-size="7">MP</text>
-            <rect x="34" y="73" width="80" height="8" rx="3" fill="#3b82f630"/>
-            <rect x="34" y="73" width="40" height="8" rx="3" fill="#3b82f690"/>
-            <text x="74" y="80" fill="#fff" font-size="4" text-anchor="middle">120/240</text>
-            <!-- Top-Right (y=60): Mini minimap circle (50x50) -->
-            <circle cx="232" cy="82" r="25" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
-            <circle cx="232" cy="82" r="23" fill="#0a0b1060"/>
-            <circle cx="232" cy="82" r="3" fill="#60a5fa"/>
-            <circle cx="240" cy="74" r="2" fill="#ef4444"/>
-            <circle cx="224" cy="90" r="2" fill="#34d399"/>
-            <text x="232" y="112" fill="#fbbf24" font-size="5" text-anchor="middle">미니맵</text>
-            <!-- Top-center: Notification area -->
-            <rect x="100" y="58" width="80" height="16" rx="3" fill="#f59e0b15" stroke="#f59e0b40" stroke-width="0.5"/>
-            <text x="140" y="69" fill="#f59e0b80" font-size="6" text-anchor="middle">보스 등장!</text>
-            <!-- Center: Crosshair (+) in white -->
-            <line x1="125" y1="220" x2="145" y2="220" stroke="#ffffff60" stroke-width="1.5"/>
-            <line x1="135" y1="210" x2="135" y2="230" stroke="#ffffff60" stroke-width="1.5"/>
-            <circle cx="135" cy="220" r="8" stroke="#ffffff30" stroke-width="0.5"/>
-            <!-- Right side (y=180): Quest tracker box (60x44, dashed) -->
-            <rect x="192" y="136" width="60" height="44" rx="3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3"/>
-            <rect x="198" y="142" width="48" height="5" rx="1" fill="#fbbf2430"/>
-            <rect x="198" y="151" width="40" height="4" rx="1" fill="#ffffff10"/>
-            <rect x="198" y="159" width="44" height="4" rx="1" fill="#ffffff10"/>
-            <text x="222" y="176" fill="#fbbf2480" font-size="4" text-anchor="middle">퀘스트</text>
-            <!-- Label -->
-            <text x="135" y="340" fill="#ffffff30" font-size="6" text-anchor="middle">엄지 조작 영역</text>
-            <!-- Bottom-left (y=350): Virtual joystick (80px outer, 30px inner) -->
-            <circle cx="60" cy="390" r="40" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
-            <circle cx="60" cy="390" r="15" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
-            <text x="60" y="440" fill="#ffffff30" font-size="5" text-anchor="middle">조이스틱</text>
-            <!-- Bottom-right (y=350): 2x2 skill grid (each 44x44, #a78bfa) -->
-            <rect x="160" y="354" width="44" height="44" rx="8" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
-            <text x="182" y="380" fill="#a78bfa" font-size="9" text-anchor="middle">Q</text>
-            <rect x="208" y="354" width="44" height="44" rx="8" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
-            <text x="230" y="380" fill="#a78bfa" font-size="9" text-anchor="middle">W</text>
-            <rect x="160" y="402" width="44" height="44" rx="8" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
-            <text x="182" y="428" fill="#a78bfa" font-size="9" text-anchor="middle">E</text>
-            <rect x="208" y="402" width="44" height="44" rx="8" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
-            <text x="230" y="428" fill="#a78bfa" font-size="9" text-anchor="middle">R</text>
-            <!-- Very bottom (y=440): Quick item slots (3 slots, 30x30, #34d399) -->
-            <rect x="90" y="444" width="30" height="30" rx="3" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
-            <rect x="124" y="444" width="30" height="30" rx="3" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
-            <rect x="158" y="444" width="30" height="30" rx="3" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
-            <text x="135" y="442" fill="#34d399" font-size="5" text-anchor="middle">퀵 아이템</text>
-            <!-- XP bar (full width, y=452) -->
-            <rect x="12" y="456" width="246" height="4" rx="2" fill="#a78bfa20"/>
-            <rect x="12" y="456" width="100" height="4" rx="2" fill="#a78bfa60"/>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — HUD Layout</text>
+            <!-- Top-Left: HP/MP bars -->
+            <text x="38" y="38" fill="#ef4444" font-size="7">HP</text>
+            <rect x="54" y="30" width="100" height="10" rx="4" fill="#ef444430"/>
+            <rect x="54" y="30" width="70" height="10" rx="4" fill="#ef444490"/>
+            <text x="104" y="38" fill="#fff" font-size="5" text-anchor="middle">350/500</text>
+            <text x="38" y="52" fill="#3b82f6" font-size="7">MP</text>
+            <rect x="54" y="44" width="80" height="8" rx="3" fill="#3b82f630"/>
+            <rect x="54" y="44" width="40" height="8" rx="3" fill="#3b82f690"/>
+            <text x="94" y="51" fill="#fff" font-size="4" text-anchor="middle">120/240</text>
+            <!-- Top-Right: Mini minimap -->
+            <circle cx="432" cy="50" r="24" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+            <circle cx="432" cy="50" r="22" fill="#0a0b1060"/>
+            <circle cx="432" cy="50" r="3" fill="#60a5fa"/>
+            <circle cx="440" cy="42" r="2" fill="#ef4444"/>
+            <circle cx="424" cy="58" r="2" fill="#34d399"/>
+            <text x="432" y="80" fill="#fbbf24" font-size="5" text-anchor="middle">미니맵</text>
+            <!-- Top-center: Notification -->
+            <rect x="185" y="28" width="110" height="18" rx="4" fill="#f59e0b15" stroke="#f59e0b40" stroke-width="0.5"/>
+            <text x="240" y="40" fill="#f59e0b80" font-size="6" text-anchor="middle">보스 등장!</text>
+            <!-- Center: Crosshair -->
+            <line x1="238" y1="104" x2="252" y2="104" stroke="#ffffff60" stroke-width="1.5"/>
+            <line x1="245" y1="97" x2="245" y2="111" stroke="#ffffff60" stroke-width="1.5"/>
+            <circle cx="245" cy="104" r="8" stroke="#ffffff30" stroke-width="0.5"/>
+            <!-- Right side: Quest tracker -->
+            <rect x="372" y="86" width="80" height="48" rx="3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3"/>
+            <rect x="378" y="92" width="60" height="5" rx="1" fill="#fbbf2430"/>
+            <rect x="378" y="101" width="50" height="4" rx="1" fill="#ffffff10"/>
+            <rect x="378" y="109" width="55" height="4" rx="1" fill="#ffffff10"/>
+            <text x="412" y="130" fill="#fbbf2480" font-size="4" text-anchor="middle">퀘스트</text>
+            <!-- Thumb zone label -->
+            <text x="245" y="150" fill="#ffffff20" font-size="5" text-anchor="middle">엄지 조작 영역</text>
+            <!-- Bottom-left: Virtual joystick -->
+            <circle cx="92" cy="162" r="32" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
+            <circle cx="92" cy="162" r="12" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <text x="92" y="200" fill="#ffffff30" font-size="5" text-anchor="middle">조이스틱</text>
+            <!-- Bottom-right: 2x2 skill buttons -->
+            <rect x="372" y="142" width="30" height="30" rx="7" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="387" y="161" fill="#a78bfa" font-size="8" text-anchor="middle">Q</text>
+            <rect x="406" y="142" width="30" height="30" rx="7" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="421" y="161" fill="#a78bfa" font-size="8" text-anchor="middle">W</text>
+            <rect x="372" y="176" width="30" height="30" rx="7" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="387" y="195" fill="#a78bfa" font-size="8" text-anchor="middle">E</text>
+            <rect x="406" y="176" width="30" height="30" rx="7" fill="#a78bfa18" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="421" y="195" fill="#a78bfa" font-size="8" text-anchor="middle">R</text>
+            <!-- Bottom-center: Quick item slots -->
+            <rect x="180" y="180" width="28" height="28" rx="4" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
+            <rect x="212" y="180" width="28" height="28" rx="4" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
+            <rect x="244" y="180" width="28" height="28" rx="4" fill="#34d39920" stroke="#34d39960" stroke-width="0.5"/>
+            <text x="226" y="176" fill="#34d399" font-size="5" text-anchor="middle">퀵 아이템</text>
+            <!-- XP bar (very bottom of game area) -->
+            <rect x="36" y="200" width="408" height="4" rx="2" fill="#a78bfa20"/>
+            <rect x="36" y="200" width="160" height="4" rx="2" fill="#a78bfa60"/>
         </svg>`,
         },
         platforms: {
@@ -1041,93 +1025,84 @@ const COMPONENTS = {
             <!-- Sort/Filter -->
             <text x="425" y="58" fill="#fbbf2480" font-size="6">정렬 ▼</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Inventory</text>
-            <!-- Top (y=60): Character silhouette (centered, 50x70) -->
-            <rect x="110" y="58" width="50" height="70" rx="4" stroke="#60a5fa40" stroke-width="1" stroke-dasharray="3"/>
-            <line x1="110" y1="58" x2="160" y2="128" stroke="#60a5fa20" stroke-width="0.5"/>
-            <line x1="160" y1="58" x2="110" y2="128" stroke="#60a5fa20" stroke-width="0.5"/>
-            <!-- 6 equipment slots around character (24x24 each) -->
-            <rect x="80" y="60" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="92" y="76" fill="#60a5fa50" font-size="5" text-anchor="middle">머리</text>
-            <rect x="80" y="90" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="92" y="106" fill="#60a5fa50" font-size="5" text-anchor="middle">몸</text>
-            <rect x="80" y="120" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="92" y="136" fill="#60a5fa50" font-size="5" text-anchor="middle">다리</text>
-            <rect x="166" y="60" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="178" y="76" fill="#60a5fa50" font-size="5" text-anchor="middle">무기</text>
-            <rect x="166" y="90" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="178" y="106" fill="#60a5fa50" font-size="5" text-anchor="middle">방패</text>
-            <rect x="166" y="120" width="24" height="24" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
-            <text x="178" y="136" fill="#60a5fa50" font-size="5" text-anchor="middle">장신</text>
-            <!-- Stats summary below character -->
-            <text x="135" y="156" fill="#60a5fa80" font-size="6" text-anchor="middle">ATK:142  DEF:89  SPD:35  LUK:12</text>
-            <!-- Middle (y=170): Horizontal scrollable category tabs (6 tabs, each 40x22) -->
-            <rect x="12" y="168" width="246" height="26" rx="4" fill="#1a1b2e"/>
-            <rect x="16" y="171" width="40" height="20" rx="10" fill="#fbbf2430" stroke="#fbbf24" stroke-width="0.5"/>
-            <text x="36" y="184" fill="#fbbf24" font-size="6" text-anchor="middle">전체</text>
-            <rect x="60" y="171" width="40" height="20" rx="10" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
-            <text x="80" y="184" fill="#fbbf2480" font-size="6" text-anchor="middle">무기</text>
-            <rect x="104" y="171" width="40" height="20" rx="10" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
-            <text x="124" y="184" fill="#fbbf2480" font-size="6" text-anchor="middle">방어</text>
-            <rect x="148" y="171" width="40" height="20" rx="10" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
-            <text x="168" y="184" fill="#fbbf2480" font-size="6" text-anchor="middle">소비</text>
-            <rect x="192" y="171" width="40" height="20" rx="10" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
-            <text x="212" y="184" fill="#fbbf2480" font-size="6" text-anchor="middle">재료</text>
-            <text x="248" y="184" fill="#fbbf2460" font-size="6" text-anchor="middle">▶</text>
-            <!-- Bottom grid (y=210): 5-column item grid -->
-            <!-- Row 0 -->
-            <rect x="16" y="202" width="44" height="44" rx="4" fill="#fbbf2425" stroke="#fbbf24" stroke-width="0.8"/>
-            <rect x="64" y="202" width="44" height="44" rx="4" fill="#fbbf2425" stroke="#fbbf24" stroke-width="0.8"/>
-            <rect x="112" y="202" width="44" height="44" rx="4" fill="#a78bfa25" stroke="#a78bfa" stroke-width="0.8"/>
-            <rect x="160" y="202" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="208" y="202" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <!-- Row 1 -->
-            <rect x="16" y="250" width="44" height="44" rx="4" fill="#ef444425" stroke="#ef4444" stroke-width="0.8"/>
-            <rect x="64" y="250" width="44" height="44" rx="4" fill="#fbbf2415" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="112" y="250" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="160" y="250" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="208" y="250" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <!-- Row 2 -->
-            <rect x="16" y="298" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="64" y="298" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="112" y="298" width="44" height="44" rx="4" fill="#34d39925" stroke="#34d399" stroke-width="0.8"/>
-            <rect x="160" y="298" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="208" y="298" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <!-- Row 3 -->
-            <rect x="16" y="346" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="64" y="346" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="112" y="346" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="160" y="346" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <rect x="208" y="346" width="44" height="44" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
-            <!-- Scroll hint -->
-            <text x="135" y="404" fill="#fbbf2460" font-size="6" text-anchor="middle">스크롤하여 더보기 ↓</text>
-            <!-- Bottom action bar (y=440): 장착 and 버리기 buttons (48px tall) -->
-            <rect x="16" y="412" width="118" height="44" rx="6" fill="#60a5fa15" stroke="#60a5fa" stroke-width="1"/>
-            <text x="75" y="438" fill="#60a5fa" font-size="10" text-anchor="middle">장착</text>
-            <rect x="140" y="412" width="118" height="44" rx="6" fill="none" stroke="#6b7280" stroke-width="1"/>
-            <text x="199" y="438" fill="#6b7280" font-size="10" text-anchor="middle">버리기</text>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Inventory</text>
+            <!-- Semi-transparent overlay -->
+            <rect x="32" y="8" width="436" height="200" fill="#00000050"/>
+            <!-- Left panel: Character equipment -->
+            <rect x="40" y="28" width="120" height="176" rx="6" fill="#1a1b26" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="100" y="44" fill="#a78bfa" font-size="7" text-anchor="middle">장비</text>
+            <!-- Character silhouette -->
+            <rect x="66" y="52" width="68" height="80" rx="4" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
+            <text x="100" y="98" fill="#a78bfa40" font-size="20" text-anchor="middle">👤</text>
+            <!-- Equipment slots (3x2) -->
+            <rect x="48" y="140" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="62" y="158" fill="#ffffff30" font-size="8" text-anchor="middle">🗡</text>
+            <rect x="80" y="140" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="94" y="158" fill="#ffffff30" font-size="8" text-anchor="middle">🛡</text>
+            <rect x="112" y="140" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="126" y="158" fill="#ffffff30" font-size="8" text-anchor="middle">🎩</text>
+            <rect x="48" y="172" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <rect x="80" y="172" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <rect x="112" y="172" width="28" height="28" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <!-- Right panel: Inventory grid -->
+            <rect x="170" y="28" width="280" height="176" rx="6" fill="#1a1b26" stroke="#fbbf2460" stroke-width="1"/>
+            <text x="310" y="44" fill="#fbbf24" font-size="7" text-anchor="middle">인벤토리 (24/40)</text>
+            <!-- 6x3 grid -->
+            <rect x="180" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="216" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="252" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="288" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="324" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="360" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="396" y="52" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="180" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="216" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="252" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="288" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="324" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="360" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="396" y="88" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="180" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="216" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="252" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="288" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="324" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="360" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <rect x="396" y="124" width="32" height="32" rx="4" fill="#fbbf2410" stroke="#fbbf2440" stroke-width="0.5"/>
+            <!-- Sample items in slots -->
+            <text x="196" y="74" fill="#ef4444" font-size="10" text-anchor="middle">⚔</text>
+            <text x="232" y="74" fill="#a78bfa" font-size="10" text-anchor="middle">🧪</text>
+            <text x="268" y="74" fill="#fbbf24" font-size="10" text-anchor="middle">🗡</text>
+            <!-- Bottom: Sort/Filter tabs -->
+            <rect x="180" y="164" width="50" height="18" rx="4" fill="#3b82f630" stroke="#3b82f6" stroke-width="0.5"/>
+            <text x="205" y="176" fill="#3b82f6" font-size="6" text-anchor="middle">전체</text>
+            <rect x="234" y="164" width="50" height="18" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="259" y="176" fill="#ffffff60" font-size="6" text-anchor="middle">무기</text>
+            <rect x="288" y="164" width="50" height="18" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="313" y="176" fill="#ffffff60" font-size="6" text-anchor="middle">방어구</text>
+            <rect x="342" y="164" width="50" height="18" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="367" y="176" fill="#ffffff60" font-size="6" text-anchor="middle">소비</text>
+            <!-- Gold display -->
+            <text x="420" y="176" fill="#fbbf24" font-size="7" text-anchor="middle">💰 12,450</text>
         </svg>`,
         },
         platforms: {
@@ -1273,91 +1248,65 @@ const COMPONENTS = {
             <text x="370" y="248" fill="#6b728090" font-size="8" text-anchor="middle">⚙️ 설정</text>
             <text x="275" y="222" fill="#34d399" font-size="6" text-anchor="middle">▼ 하단 탭 바</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone body -->
-            <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-            <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
             <!-- Status bar -->
-            <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-            <!-- Dynamic Island (notch) -->
-            <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-            <!-- Signal bars -->
-            <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-            <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-            <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-            <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-            <!-- Battery -->
-            <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-            <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-            <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
             <!-- Home indicator -->
-            <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
             <!-- Game area border -->
-            <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-            <!-- Title -->
-            <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Navigation</text>
-            <!-- Top (y=60): App bar with hamburger, title, bell -->
-            <rect x="12" y="56" width="246" height="36" rx="4" fill="#1a1b2e" stroke="#60a5fa" stroke-width="1"/>
-            <!-- Hamburger menu (left) -->
-            <line x1="22" y1="67" x2="38" y2="67" stroke="#60a5fa" stroke-width="1.5"/>
-            <line x1="22" y1="72" x2="38" y2="72" stroke="#60a5fa" stroke-width="1.5"/>
-            <line x1="22" y1="77" x2="38" y2="77" stroke="#60a5fa" stroke-width="1.5"/>
-            <!-- Title center -->
-            <text x="135" y="79" fill="#60a5fa" font-size="10" text-anchor="middle">모험</text>
-            <!-- Bell icon (right) -->
-            <text x="236" y="79" fill="#60a5fa" font-size="10" text-anchor="middle">🔔</text>
-            <circle cx="244" cy="62" r="4" fill="#ef4444"/>
-            <text x="244" y="64" fill="#fff" font-size="4" text-anchor="middle">3</text>
-            <!-- Below (y=100): Horizontal scroll tabs -->
-            <rect x="12" y="96" width="246" height="28" rx="4" fill="#1a1b2e"/>
-            <rect x="16" y="100" width="46" height="20" rx="10" fill="#60a5fa30" stroke="#60a5fa" stroke-width="1"/>
-            <text x="39" y="113" fill="#60a5fa" font-size="7" text-anchor="middle">홈</text>
-            <rect x="66" y="100" width="46" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
-            <text x="89" y="113" fill="#60a5fa80" font-size="7" text-anchor="middle">상점</text>
-            <rect x="116" y="100" width="46" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
-            <text x="139" y="113" fill="#60a5fa80" font-size="7" text-anchor="middle">가방</text>
-            <rect x="166" y="100" width="46" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
-            <text x="189" y="113" fill="#60a5fa80" font-size="7" text-anchor="middle">소셜</text>
-            <rect x="216" y="100" width="38" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
-            <text x="235" y="113" fill="#60a5fa80" font-size="6" text-anchor="middle">설정</text>
-            <!-- Content area (y=140): Vertically scrolling cards (3 visible, each 230x56) -->
-            <rect x="20" y="136" width="230" height="56" rx="6" fill="#1a1b2e" stroke="#f59e0b40" stroke-width="1"/>
-            <rect x="28" y="148" width="32" height="32" rx="4" fill="#f59e0b15"/>
-            <text x="44" y="169" fill="#f59e0b" font-size="12" text-anchor="middle">🗺️</text>
-            <text x="80" y="162" fill="#f59e0b" font-size="8">월드맵</text>
-            <rect x="180" y="154" width="50" height="18" rx="9" fill="#f59e0b20" stroke="#f59e0b60" stroke-width="0.5"/>
-            <text x="205" y="166" fill="#f59e0b" font-size="6" text-anchor="middle">이동 →</text>
-            <rect x="20" y="198" width="230" height="56" rx="6" fill="#1a1b2e" stroke="#6b728040" stroke-width="1"/>
-            <rect x="28" y="210" width="32" height="32" rx="4" fill="#6b728015"/>
-            <text x="44" y="231" fill="#6b7280" font-size="12" text-anchor="middle">⚔️</text>
-            <text x="80" y="224" fill="#6b7280" font-size="8">던전</text>
-            <rect x="20" y="260" width="230" height="56" rx="6" fill="#1a1b2e" stroke="#6b728040" stroke-width="1"/>
-            <rect x="28" y="272" width="32" height="32" rx="4" fill="#6b728015"/>
-            <text x="44" y="293" fill="#6b7280" font-size="12" text-anchor="middle">🏆</text>
-            <text x="80" y="286" fill="#6b7280" font-size="8">업적</text>
-            <!-- Scroll indicator -->
-            <text x="135" y="330" fill="#6b728050" font-size="6" text-anchor="middle">스크롤 ↓</text>
-            <!-- FAB button (y=350, right side): Circular + button (#60a5fa) -->
-            <circle cx="234" cy="360" r="22" fill="#60a5fa20" stroke="#60a5fa" stroke-width="1.5"/>
-            <text x="234" y="367" fill="#60a5fa" font-size="18" text-anchor="middle">+</text>
-            <!-- Label -->
-            <text x="135" y="404" fill="#34d399" font-size="6" text-anchor="middle">하단 탭 내비게이션</text>
-            <!-- Bottom (y=410): Tab bar navigation with 4 icons (각각 ~50px wide) -->
-            <rect x="12" y="410" width="246" height="48" rx="6" fill="#1a1b2e" stroke="#34d399" stroke-width="1.5"/>
-            <!-- Home (active, highlighted) -->
-            <rect x="18" y="414" width="54" height="40" rx="4" fill="#34d39915"/>
-            <text x="45" y="434" fill="#34d399" font-size="12" text-anchor="middle">🏠</text>
-            <text x="45" y="448" fill="#34d399" font-size="6" text-anchor="middle">홈</text>
-            <rect x="30" y="412" width="30" height="2" rx="1" fill="#34d399"/>
-            <!-- Shop -->
-            <text x="106" y="434" fill="#6b728090" font-size="12" text-anchor="middle">🛒</text>
-            <text x="106" y="448" fill="#6b728090" font-size="6" text-anchor="middle">상점</text>
-            <!-- Bag -->
-            <text x="168" y="434" fill="#6b728090" font-size="12" text-anchor="middle">🎒</text>
-            <text x="168" y="448" fill="#6b728090" font-size="6" text-anchor="middle">가방</text>
-            <!-- Settings -->
-            <text x="228" y="434" fill="#6b728090" font-size="12" text-anchor="middle">⚙️</text>
-            <text x="228" y="448" fill="#6b728090" font-size="6" text-anchor="middle">설정</text>
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Navigation</text>
+            <!-- Bottom tab bar (primary navigation) -->
+            <rect x="36" y="176" width="408" height="28" rx="6" fill="#1a1b26" stroke="#ffffff15" stroke-width="1"/>
+            <text x="92" y="194" fill="#3b82f6" font-size="6" text-anchor="middle">🏠 홈</text>
+            <text x="170" y="194" fill="#ffffff50" font-size="6" text-anchor="middle">⚔ 전투</text>
+            <text x="250" y="194" fill="#ffffff50" font-size="6" text-anchor="middle">🎒 인벤</text>
+            <text x="330" y="194" fill="#ffffff50" font-size="6" text-anchor="middle">👥 길드</text>
+            <text x="404" y="194" fill="#ffffff50" font-size="6" text-anchor="middle">⚙ 설정</text>
+            <!-- Active indicator -->
+            <rect x="72" y="174" width="40" height="3" rx="1.5" fill="#3b82f6"/>
+            <text x="250" y="170" fill="#ffffff30" font-size="5" text-anchor="middle">하단 탭 바</text>
+            <!-- Left: Side drawer (partially visible) -->
+            <rect x="36" y="28" width="140" height="140" rx="6" fill="#1a1b26" stroke="#ffffff15" stroke-width="1"/>
+            <text x="106" y="46" fill="#ffffff80" font-size="8" text-anchor="middle">메인 메뉴</text>
+            <rect x="44" y="54" width="120" height="18" rx="4" fill="#3b82f620"/>
+            <text x="104" y="67" fill="#3b82f6" font-size="7" text-anchor="middle">캐릭터 정보</text>
+            <rect x="44" y="76" width="120" height="18" rx="4" fill="#ffffff08"/>
+            <text x="104" y="89" fill="#ffffff60" font-size="7" text-anchor="middle">스킬 트리</text>
+            <rect x="44" y="98" width="120" height="18" rx="4" fill="#ffffff08"/>
+            <text x="104" y="111" fill="#ffffff60" font-size="7" text-anchor="middle">업적</text>
+            <rect x="44" y="120" width="120" height="18" rx="4" fill="#ffffff08"/>
+            <text x="104" y="133" fill="#ffffff60" font-size="7" text-anchor="middle">상점</text>
+            <rect x="44" y="142" width="120" height="18" rx="4" fill="#ffffff08"/>
+            <text x="104" y="155" fill="#ffffff60" font-size="7" text-anchor="middle">설정</text>
+            <!-- Right: Mini world map -->
+            <rect x="200" y="28" width="250" height="134" rx="6" fill="#1a1b26" stroke="#34d39960" stroke-width="1"/>
+            <text x="325" y="46" fill="#34d399" font-size="7" text-anchor="middle">월드 맵</text>
+            <!-- Map areas -->
+            <circle cx="260" cy="80" r="14" fill="#34d39920" stroke="#34d399" stroke-width="1"/>
+            <text x="260" y="84" fill="#34d399" font-size="6" text-anchor="middle">마을</text>
+            <circle cx="320" cy="100" r="14" fill="#ef444420" stroke="#ef4444" stroke-width="1"/>
+            <text x="320" y="104" fill="#ef4444" font-size="6" text-anchor="middle">던전</text>
+            <circle cx="380" cy="70" r="14" fill="#fbbf2420" stroke="#fbbf24" stroke-width="1"/>
+            <text x="380" y="74" fill="#fbbf24" font-size="6" text-anchor="middle">보스</text>
+            <!-- Path lines -->
+            <line x1="274" y1="80" x2="306" y2="100" stroke="#ffffff20" stroke-width="1" stroke-dasharray="3"/>
+            <line x1="334" y1="100" x2="366" y2="70" stroke="#ffffff20" stroke-width="1" stroke-dasharray="3"/>
+            <!-- Player position -->
+            <circle cx="260" cy="80" r="4" fill="#60a5fa"/>
+            <text x="325" y="130" fill="#ffffff30" font-size="5" text-anchor="middle">이동 네비게이션</text>
         </svg>`,
         },
         platforms: {
@@ -1507,61 +1456,60 @@ const COMPONENTS = {
             <text x="425" y="129" fill="#34d399" font-size="10" text-anchor="middle">3s</text>
             <text x="425" y="160" fill="#34d399" font-size="6" text-anchor="middle">쿨다운</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Phone body -->
-    <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-    <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
-    <!-- Status bar -->
-    <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-    <!-- Dynamic Island (notch) -->
-    <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-    <!-- Signal bars -->
-    <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-    <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-    <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-    <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-    <!-- Battery -->
-    <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-    <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-    <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
-    <!-- Home indicator -->
-    <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
-    <!-- Game area border -->
-    <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-    <!-- Title -->
-    <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Progress Bar</text>
-    <!-- HP Bar (top-left, status zone) -->
-    <text x="16" y="68" fill="#ef4444" font-size="6">HP</text>
-    <rect x="30" y="60" width="100" height="10" rx="5" fill="#ef444420" stroke="#ef4444" stroke-width="1"/>
-    <rect x="32" y="62" width="68" height="6" rx="3" fill="#ef4444a0"/>
-    <text x="90" y="68" fill="#fff" font-size="5" text-anchor="middle">680/1000</text>
-    <!-- MP Bar (below HP) -->
-    <text x="16" y="82" fill="#3b82f6" font-size="5">MP</text>
-    <rect x="30" y="76" width="80" height="8" rx="4" fill="#3b82f620" stroke="#3b82f6" stroke-width="0.8"/>
-    <rect x="32" y="78" width="38" height="4" rx="2" fill="#3b82f690"/>
-    <!-- Boss HP Bar (center, full width) -->
-    <text x="135" y="120" fill="#f97316" font-size="6" text-anchor="middle">Dragon Lord</text>
-    <rect x="20" y="126" width="230" height="12" rx="6" fill="#f9731620" stroke="#f97316" stroke-width="1.5"/>
-    <rect x="22" y="128" width="178" height="8" rx="4" fill="#f97316a0"/>
-    <text x="135" y="135" fill="#fff" font-size="5" text-anchor="middle">78%</text>
-    <!-- Loading screen example (content zone) -->
-    <rect x="25" y="190" width="220" height="80" rx="6" stroke="#fbbf24" stroke-width="1.5"/>
-    <text x="135" y="214" fill="#fbbf2480" font-size="8" text-anchor="middle">Loading...</text>
-    <rect x="45" y="226" width="180" height="12" rx="6" fill="#fbbf2420"/>
-    <rect x="47" y="228" width="117" height="8" rx="4" fill="#fbbf24a0"/>
-    <text x="135" y="252" fill="#fbbf24" font-size="8" text-anchor="middle">65%</text>
-    <!-- Cooldown circle indicator (thumb zone, bottom-right) -->
-    <rect x="196" y="350" width="56" height="56" rx="6" stroke="#34d39980" stroke-width="1"/>
-    <circle cx="224" cy="378" r="22" stroke="#34d39960" stroke-width="2" stroke-dasharray="6 3"/>
-    <circle cx="224" cy="378" r="22" stroke="#34d399" stroke-width="2" stroke-dasharray="20 100" stroke-dashoffset="-10"/>
-    <text x="224" y="383" fill="#34d399" font-size="12" text-anchor="middle" font-weight="bold">3s</text>
-    <text x="224" y="418" fill="#34d399" font-size="5" text-anchor="middle">쿨다운</text>
-    <!-- XP Bar (bottom, full width) -->
-    <rect x="12" y="448" width="246" height="6" rx="3" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="0.5"/>
-    <rect x="14" y="450" width="93" height="2" rx="1" fill="#a78bfa80"/>
-    <text x="135" y="444" fill="#a78bfa" font-size="5" text-anchor="middle">XP — Lv.42 (38%)</text>
-    <!-- Label -->
-    <text x="135" y="300" fill="#555" font-size="6" text-anchor="middle">프로그레스 표시 요소</text>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
+            <!-- Status bar -->
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
+            <!-- Home indicator -->
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
+            <!-- Game area border -->
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Progress Bars</text>
+            <!-- Top-Left: HP Bar -->
+            <rect x="38" y="30" width="130" height="12" rx="6" fill="#ef444420" stroke="#ef4444" stroke-width="1"/>
+            <rect x="40" y="32" width="84" height="8" rx="4" fill="#ef4444a0"/>
+            <text x="103" y="39" fill="#fff" font-size="5" text-anchor="middle">680/1000</text>
+            <text x="103" y="52" fill="#ef4444" font-size="5" text-anchor="middle">체력 바</text>
+            <!-- MP Bar -->
+            <rect x="38" y="56" width="100" height="9" rx="4" fill="#3b82f620" stroke="#3b82f6" stroke-width="0.8"/>
+            <rect x="40" y="58" width="48" height="5" rx="2" fill="#3b82f690"/>
+            <text x="88" y="74" fill="#3b82f6" font-size="5" text-anchor="middle">마나 바</text>
+            <!-- Top-Center: Boss HP bar -->
+            <rect x="150" y="30" width="200" height="14" rx="4" fill="#dc262620" stroke="#dc2626" stroke-width="1.5"/>
+            <rect x="152" y="32" width="150" height="10" rx="3" fill="#dc2626a0"/>
+            <text x="250" y="40" fill="#fff" font-size="6" text-anchor="middle">🔥 월드 보스 — 78%</text>
+            <text x="250" y="54" fill="#dc2626" font-size="5" text-anchor="middle">보스 체력 바</text>
+            <!-- Center: Loading screen example -->
+            <rect x="130" y="72" width="220" height="70" rx="6" stroke="#fbbf24" stroke-width="1.5"/>
+            <text x="240" y="92" fill="#fbbf2480" font-size="8" text-anchor="middle">로딩 중...</text>
+            <rect x="155" y="100" width="170" height="10" rx="5" fill="#fbbf2420"/>
+            <rect x="157" y="102" width="100" height="6" rx="3" fill="#fbbf24a0"/>
+            <text x="240" y="122" fill="#fbbf24" font-size="7" text-anchor="middle">60%</text>
+            <text x="240" y="148" fill="#fbbf2480" font-size="5" text-anchor="middle">로딩 프로그레스</text>
+            <!-- Right: Cooldown indicator -->
+            <rect x="400" y="60" width="44" height="44" rx="8" stroke="#34d39980" stroke-width="1"/>
+            <circle cx="422" cy="82" r="16" stroke="#34d39960" stroke-width="1.5" stroke-dasharray="4"/>
+            <text x="422" y="86" fill="#34d399" font-size="9" text-anchor="middle">3s</text>
+            <text x="422" y="114" fill="#34d399" font-size="5" text-anchor="middle">쿨다운</text>
+            <!-- Bottom: XP Bar (full width) -->
+            <rect x="38" y="192" width="404" height="8" rx="4" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="0.5"/>
+            <rect x="40" y="194" width="158" height="4" rx="2" fill="#a78bfa80"/>
+            <text x="245" y="188" fill="#a78bfa" font-size="5" text-anchor="middle">경험치 바 — Lv.42 (38%)</text>
+            <!-- Bottom-left: Stamina circular -->
+            <circle cx="70" cy="170" r="18" stroke="#34d399" stroke-width="2" stroke-dasharray="80 33" fill="none"/>
+            <text x="70" y="174" fill="#34d399" font-size="7" text-anchor="middle">72%</text>
+            <text x="70" y="160" fill="#34d39980" font-size="4" text-anchor="middle">스태미나</text>
         </svg>`,
         },
         platforms: {
@@ -1694,67 +1642,54 @@ const COMPONENTS = {
             <text x="90" y="200" fill="#6b7280" font-size="6" text-anchor="middle">🔨 장비 강화 · 수리</text>
             <text x="240" y="248" fill="#6b728090" font-size="7" text-anchor="middle">아이템 / 스킬 / NPC 툴팁 — 맥락에 따라 다른 레이아웃</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Phone body -->
-    <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-    <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
-    <!-- Status bar -->
-    <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-    <!-- Dynamic Island (notch) -->
-    <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-    <!-- Signal bars -->
-    <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-    <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-    <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-    <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-    <!-- Battery -->
-    <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-    <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-    <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
-    <!-- Home indicator -->
-    <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
-    <!-- Game area border -->
-    <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-    <!-- Title -->
-    <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Tooltips</text>
-    <!-- Item grid (4x2 slots, status zone) -->
-    <rect x="24" y="66" width="44" height="44" rx="6" fill="#a78bfa20" stroke="#fbbf24" stroke-width="1.5"/>
-    <text x="46" y="94" fill="#a78bfa" font-size="14" text-anchor="middle">⚔</text>
-    <rect x="74" y="66" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="124" y="66" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="174" y="66" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="24" y="116" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="74" y="116" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="124" y="116" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <rect x="174" y="116" width="44" height="44" rx="6" fill="#a78bfa10" stroke="#a78bfa30" stroke-width="0.5"/>
-    <!-- Long press indicator on highlighted slot -->
-    <circle cx="46" cy="58" r="4" fill="#fbbf24" opacity="0.6"/>
-    <text x="46" y="176" fill="#a78bfa60" font-size="6" text-anchor="middle">길게 눌러 정보 표시</text>
-    <!-- Bottom sheet tooltip -->
-    <rect x="8" y="220" width="254" height="240" rx="12" fill="#1e1f2e" stroke="#a78bfa" stroke-width="1.5"/>
-    <!-- Drag handle -->
-    <rect x="115" y="228" width="40" height="4" rx="2" fill="#555"/>
-    <!-- Item icon + name + rarity -->
-    <rect x="20" y="244" width="40" height="40" rx="8" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1"/>
-    <text x="40" y="270" fill="#a78bfa" font-size="14" text-anchor="middle">⚔</text>
-    <text x="70" y="258" fill="#a78bfa" font-size="9" font-weight="bold">전설의 검</text>
-    <text x="70" y="272" fill="#fbbf24" font-size="6">★★★★★</text>
-    <!-- Stats section (two columns) -->
-    <text x="20" y="302" fill="#ef4444" font-size="7">ATK: +15</text>
-    <text x="130" y="302" fill="#3b82f6" font-size="7">DEF: +8</text>
-    <!-- Divider -->
-    <rect x="20" y="314" width="222" height="1" fill="#a78bfa20"/>
-    <!-- Equipment comparison -->
-    <text x="135" y="330" fill="#6b7280" font-size="6" text-anchor="middle">게임 컨텍스트</text>
-    <text x="20" y="346" fill="#6b7280" font-size="6">현재 장비: 강철 검</text>
-    <text x="200" y="346" fill="#34d399" font-size="6" text-anchor="end">이 아이템: +7</text>
-    <!-- Action buttons -->
-    <rect x="20" y="366" width="110" height="44" rx="8" stroke="#34d399" stroke-width="1.5" fill="none"/>
-    <text x="75" y="393" fill="#34d399" font-size="8" text-anchor="middle">장착하기</text>
-    <rect x="140" y="366" width="110" height="44" rx="8" stroke="#ef4444" stroke-width="1.5" fill="none"/>
-    <text x="195" y="393" fill="#ef4444" font-size="8" text-anchor="middle">버리기</text>
-    <!-- Label -->
-    <text x="135" y="200" fill="#555" font-size="6" text-anchor="middle">바텀 시트 툴팁</text>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
+            <!-- Status bar -->
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
+            <!-- Home indicator -->
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
+            <!-- Game area border -->
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Tooltips</text>
+            <!-- Skill bar at bottom-right -->
+            <rect x="340" y="154" width="36" height="36" rx="6" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="358" y="176" fill="#a78bfa" font-size="10" text-anchor="middle">⚡</text>
+            <!-- Tooltip above the skill (long-press tooltip) -->
+            <rect x="260" y="60" width="180" height="82" rx="6" fill="#1a1b2e" stroke="#a78bfa" stroke-width="1"/>
+            <!-- Tooltip arrow -->
+            <polygon points="358,142 352,150 364,150" fill="#1a1b2e" stroke="#a78bfa" stroke-width="1"/>
+            <line x1="352" y1="149" x2="364" y2="149" stroke="#1a1b2e" stroke-width="2"/>
+            <text x="350" y="78" fill="#a78bfa" font-size="8" text-anchor="middle" font-weight="bold">번개 강타</text>
+            <text x="350" y="92" fill="#ffffff70" font-size="6" text-anchor="middle">전방 적에게 250 번개 데미지</text>
+            <text x="350" y="104" fill="#3b82f6" font-size="6" text-anchor="middle">MP 40 · 쿨다운 8초</text>
+            <rect x="270" y="112" width="70" height="18" rx="4" fill="#a78bfa30"/>
+            <text x="305" y="124" fill="#a78bfa" font-size="6" text-anchor="middle">사용하기</text>
+            <rect x="346" y="112" width="70" height="18" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="381" y="124" fill="#ffffff60" font-size="6" text-anchor="middle">강화</text>
+            <!-- Left: Item with tooltip -->
+            <rect x="60" y="120" width="36" height="36" rx="4" fill="#fbbf2420" stroke="#fbbf24" stroke-width="1"/>
+            <text x="78" y="142" fill="#fbbf24" font-size="12" text-anchor="middle">🗡</text>
+            <!-- Item tooltip -->
+            <rect x="40" y="36" width="140" height="72" rx="6" fill="#1a1b2e" stroke="#fbbf24" stroke-width="1"/>
+            <polygon points="78,108 72,116 84,116" fill="#1a1b2e" stroke="#fbbf24" stroke-width="1"/>
+            <line x1="72" y1="115" x2="84" y2="115" stroke="#1a1b2e" stroke-width="2"/>
+            <text x="110" y="52" fill="#fbbf24" font-size="7" text-anchor="middle" font-weight="bold">전설의 검</text>
+            <text x="110" y="66" fill="#ffffff70" font-size="6" text-anchor="middle">ATK +120 · CRT +15%</text>
+            <text x="110" y="80" fill="#34d399" font-size="6" text-anchor="middle">세트 효과: 공격력 +20%</text>
+            <text x="110" y="96" fill="#ffffff40" font-size="5" text-anchor="middle">길게 눌러 상세 보기</text>
+            <!-- Touch hint -->
+            <text x="245" y="198" fill="#ffffff20" font-size="5" text-anchor="middle">길게 누르기(long-press)로 툴팁 활성화</text>
         </svg>`,
         },
         platforms: {
@@ -1883,76 +1818,71 @@ const COMPONENTS = {
             <!-- Skill bar context -->
             <rect x="150" y="230" width="180" height="22" rx="3" stroke="#ffffff15" stroke-width="0.5"/>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Phone body -->
-    <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-    <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
-    <!-- Status bar -->
-    <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-    <!-- Dynamic Island (notch) -->
-    <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-    <!-- Signal bars -->
-    <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-    <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-    <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-    <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-    <!-- Battery -->
-    <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-    <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-    <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
-    <!-- Home indicator -->
-    <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
-    <!-- Game area border -->
-    <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-    <!-- Title -->
-    <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Minimap</text>
-    <!-- Small minimap circle (top-right, status zone) -->
-    <circle cx="224" cy="90" r="30" fill="#0a1520" stroke="#fbbf24" stroke-width="2"/>
-    <!-- N compass -->
-    <text x="224" y="68" fill="#fbbf24" font-size="6" text-anchor="middle" font-weight="bold">N</text>
-    <!-- Player dot (blue) -->
-    <circle cx="224" cy="90" r="3" fill="#60a5fa"/>
-    <!-- Enemy dots (red) -->
-    <circle cx="214" cy="80" r="2" fill="#ef4444"/>
-    <circle cx="236" cy="86" r="2" fill="#ef4444"/>
-    <!-- Quest marker (gold star) -->
-    <text x="230" y="104" fill="#fbbf24" font-size="7" text-anchor="middle">★</text>
-    <!-- Tap to expand -->
-    <text x="224" y="130" fill="#fbbf24" font-size="5" text-anchor="middle">탭하여 확대</text>
-    <!-- Full map overlay (center, content zone) -->
-    <rect x="25" y="160" width="220" height="220" rx="8" fill="#0a152080" stroke="#fbbf24" stroke-width="1.5"/>
-    <!-- Terrain color blocks -->
-    <rect x="45" y="185" width="60" height="40" rx="3" fill="#2a4a2a40"/>
-    <rect x="125" y="200" width="50" height="35" rx="3" fill="#2a4a2a40"/>
-    <rect x="65" y="260" width="80" height="25" rx="3" fill="#4a4a2a30"/>
-    <!-- Fog of war (dashed area) -->
-    <rect x="170" y="180" width="60" height="60" rx="3" stroke="#ffffff15" stroke-width="1" stroke-dasharray="3" fill="#ffffff08"/>
-    <!-- Player position (blue, larger) -->
-    <circle cx="135" cy="270" r="6" fill="#60a5fa"/>
-    <polygon points="135,261 131,270 139,270" fill="#60a5fa"/>
-    <!-- Enemy positions (red) -->
-    <circle cx="95" cy="210" r="3.5" fill="#ef4444"/>
-    <circle cx="165" cy="240" r="3.5" fill="#ef4444"/>
-    <!-- Quest destination (gold diamond) -->
-    <rect x="151" y="296" width="8" height="8" rx="1" fill="#fbbf24" transform="rotate(45 155 300)"/>
-    <!-- Party member (green) -->
-    <circle cx="120" cy="280" r="3" fill="#34d399"/>
-    <!-- Compass rose -->
-    <text x="135" y="172" fill="#fbbf24" font-size="6" text-anchor="middle" font-weight="bold">N</text>
-    <text x="135" y="378" fill="#fbbf2460" font-size="6" text-anchor="middle">S</text>
-    <text x="30" y="274" fill="#fbbf2460" font-size="6" text-anchor="middle">W</text>
-    <text x="240" y="274" fill="#fbbf2460" font-size="6" text-anchor="middle">E</text>
-    <!-- Legend box (bottom) -->
-    <rect x="25" y="400" width="220" height="44" rx="4" stroke="#fbbf2430" stroke-width="0.5"/>
-    <circle cx="40" cy="414" r="3" fill="#60a5fa"/>
-    <text x="50" y="417" fill="#9ca3af" font-size="5">플레이어</text>
-    <circle cx="100" cy="414" r="3" fill="#ef4444"/>
-    <text x="110" y="417" fill="#9ca3af" font-size="5">적</text>
-    <circle cx="150" cy="414" r="3" fill="#fbbf24"/>
-    <text x="160" y="417" fill="#9ca3af" font-size="5">퀘스트</text>
-    <circle cx="205" cy="414" r="3" fill="#34d399"/>
-    <text x="215" y="417" fill="#9ca3af" font-size="5">파티</text>
-    <text x="135" y="436" fill="#fbbf2450" font-size="5" text-anchor="middle">핀치 줌 지원</text>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
+            <!-- Status bar -->
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
+            <!-- Home indicator -->
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
+            <!-- Game area border -->
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Minimap</text>
+            <!-- Main minimap (top-right, circular) -->
+            <circle cx="410" cy="68" r="42" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+            <circle cx="410" cy="68" r="40" fill="#0a0b1080"/>
+            <!-- Minimap content -->
+            <circle cx="410" cy="68" r="4" fill="#60a5fa"/>
+            <circle cx="425" cy="55" r="2.5" fill="#ef4444"/>
+            <circle cx="395" cy="80" r="2.5" fill="#ef4444"/>
+            <circle cx="430" cy="78" r="2.5" fill="#34d399"/>
+            <circle cx="390" cy="55" r="2" fill="#fbbf24"/>
+            <!-- Direction indicator -->
+            <polygon points="410,32 406,40 414,40" fill="#60a5fa80"/>
+            <!-- Compass labels -->
+            <text x="410" y="30" fill="#ffffff40" font-size="5" text-anchor="middle">N</text>
+            <text x="448" y="72" fill="#ffffff30" font-size="5" text-anchor="middle">E</text>
+            <text x="410" y="114" fill="#ffffff30" font-size="5" text-anchor="middle">S</text>
+            <text x="372" y="72" fill="#ffffff30" font-size="5" text-anchor="middle">W</text>
+            <text x="410" y="120" fill="#fbbf24" font-size="5" text-anchor="middle">미니맵</text>
+            <!-- Expanded map (center, shown on tap) -->
+            <rect x="80" y="30" width="240" height="160" rx="8" fill="#0a0b10e0" stroke="#fbbf2460" stroke-width="1"/>
+            <text x="200" y="46" fill="#fbbf24" font-size="7" text-anchor="middle">월드 맵 (탭하여 확장)</text>
+            <!-- Map terrain -->
+            <rect x="100" y="56" width="60" height="40" rx="4" fill="#34d39920" stroke="#34d39940" stroke-width="0.5"/>
+            <text x="130" y="80" fill="#34d399" font-size="6" text-anchor="middle">초원</text>
+            <rect x="170" y="56" width="60" height="40" rx="4" fill="#ef444420" stroke="#ef444440" stroke-width="0.5"/>
+            <text x="200" y="80" fill="#ef4444" font-size="6" text-anchor="middle">화산</text>
+            <rect x="240" y="56" width="60" height="40" rx="4" fill="#3b82f620" stroke="#3b82f640" stroke-width="0.5"/>
+            <text x="270" y="80" fill="#3b82f6" font-size="6" text-anchor="middle">호수</text>
+            <rect x="100" y="104" width="90" height="40" rx="4" fill="#a78bfa20" stroke="#a78bfa40" stroke-width="0.5"/>
+            <text x="145" y="128" fill="#a78bfa" font-size="6" text-anchor="middle">마을</text>
+            <rect x="200" y="104" width="100" height="40" rx="4" fill="#fbbf2420" stroke="#fbbf2440" stroke-width="0.5"/>
+            <text x="250" y="128" fill="#fbbf24" font-size="6" text-anchor="middle">보스 지역</text>
+            <!-- Player position on map -->
+            <circle cx="145" cy="118" r="5" fill="#60a5fa" stroke="#fff" stroke-width="1"/>
+            <!-- Quest markers -->
+            <text x="250" y="120" fill="#f59e0b" font-size="8" text-anchor="middle">!</text>
+            <!-- Legend -->
+            <circle cx="100" y="164" r="3" fill="#60a5fa"/><text x="114" y="167" fill="#ffffff50" font-size="5">플레이어</text>
+            <circle cx="160" y="164" r="3" fill="#ef4444"/><text x="174" y="167" fill="#ffffff50" font-size="5">적</text>
+            <circle cx="200" y="164" r="3" fill="#34d399"/><text x="214" y="167" fill="#ffffff50" font-size="5">NPC</text>
+            <text x="260" y="167" fill="#f59e0b" font-size="7">!</text><text x="274" y="167" fill="#ffffff50" font-size="5">퀘스트</text>
+            <!-- Zoom controls -->
+            <rect x="290" y="152" width="18" height="18" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="299" y="164" fill="#ffffff60" font-size="10" text-anchor="middle">+</text>
+            <rect x="290" y="172" width="18" height="18" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="299" y="184" fill="#ffffff60" font-size="10" text-anchor="middle">−</text>
         </svg>`,
         },
         platforms: {
@@ -2091,70 +2021,61 @@ const COMPONENTS = {
             <text x="354" y="198" fill="#34d399" font-size="6" text-anchor="middle">소모품</text>
             <text x="240" y="264" fill="#a78bfa80" font-size="6" text-anchor="middle">▲ 스킬바 — 단축키 표시 + 쿨다운 오버레이 + 궁극기 분리</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Phone body -->
-    <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-    <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
-    <!-- Status bar -->
-    <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-    <!-- Dynamic Island (notch) -->
-    <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-    <!-- Signal bars -->
-    <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-    <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-    <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-    <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-    <!-- Battery -->
-    <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-    <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-    <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
-    <!-- Home indicator -->
-    <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
-    <!-- Game area border -->
-    <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-    <!-- Title -->
-    <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Skill Bar</text>
-    <!-- HP bar (top-left, status zone) -->
-    <rect x="16" y="60" width="90" height="8" rx="4" fill="#ef444420" stroke="#ef4444" stroke-width="0.8"/>
-    <rect x="18" y="62" width="58" height="4" rx="2" fill="#ef4444a0"/>
-    <!-- MP bar (below HP) -->
-    <rect x="16" y="72" width="70" height="6" rx="3" fill="#3b82f620" stroke="#3b82f6" stroke-width="0.6"/>
-    <rect x="18" y="74" width="32" height="2" rx="1" fill="#3b82f690"/>
-    <!-- Crosshair (center game view) -->
-    <line x1="131" y1="190" x2="139" y2="190" stroke="#ffffff30" stroke-width="1"/>
-    <line x1="135" y1="186" x2="135" y2="194" stroke="#ffffff30" stroke-width="1"/>
-    <!-- Virtual joystick (bottom-left, thumb zone) -->
-    <circle cx="60" cy="400" r="40" stroke="#ffffff30" stroke-width="1.5" stroke-dasharray="4"/>
-    <circle cx="60" cy="400" r="16" fill="#ffffff10" stroke="#ffffff40" stroke-width="1.5"/>
-    <text x="60" y="450" fill="#ffffff30" font-size="5" text-anchor="middle">이동</text>
-    <!-- Skill buttons 2x2 grid (bottom-right, thumb zone) -->
-    <!-- Q skill (purple) -->
-    <rect x="168" y="350" width="48" height="48" rx="12" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
-    <text x="192" y="370" fill="#a78bfa" font-size="6" text-anchor="middle" font-weight="bold">Q</text>
-    <text x="192" y="386" fill="#a78bfa" font-size="12" text-anchor="middle">⚔</text>
-    <!-- W skill (red) with cooldown overlay -->
-    <rect x="220" y="350" width="48" height="48" rx="12" fill="#ef444420" stroke="#ef4444" stroke-width="1.5"/>
-    <rect x="220" y="350" width="48" height="32" rx="12" fill="#00000080"/>
-    <text x="244" y="376" fill="#fff" font-size="10" text-anchor="middle">3s</text>
-    <text x="244" y="370" fill="#ef4444" font-size="6" text-anchor="middle" font-weight="bold">W</text>
-    <!-- E skill (blue) -->
-    <rect x="168" y="402" width="48" height="48" rx="12" fill="#3b82f620" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="192" y="422" fill="#3b82f6" font-size="6" text-anchor="middle" font-weight="bold">E</text>
-    <text x="192" y="438" fill="#3b82f6" font-size="12" text-anchor="middle">🛡</text>
-    <!-- R skill (green) -->
-    <rect x="220" y="402" width="48" height="48" rx="12" fill="#34d39920" stroke="#34d399" stroke-width="1.5"/>
-    <text x="244" y="422" fill="#34d399" font-size="6" text-anchor="middle" font-weight="bold">R</text>
-    <text x="244" y="438" fill="#34d399" font-size="12" text-anchor="middle">💫</text>
-    <text x="220" y="340" fill="#a78bfa" font-size="5" text-anchor="middle">스킬</text>
-    <!-- Ultimate button (above skill grid) -->
-    <rect x="120" y="310" width="48" height="48" rx="12" fill="#fbbf2420" stroke="#fbbf24" stroke-width="2"/>
-    <text x="144" y="330" fill="#fbbf24" font-size="6" text-anchor="middle" font-weight="bold">ULT</text>
-    <text x="144" y="346" fill="#fbbf24" font-size="14" text-anchor="middle">⚡</text>
-    <!-- Consumable slot (far right) -->
-    <rect x="222" y="290" width="36" height="36" rx="8" stroke="#34d399" stroke-width="1" stroke-dasharray="3" fill="none"/>
-    <text x="240" y="312" fill="#34d399" font-size="10" text-anchor="middle">🧪</text>
-    <!-- Label -->
-    <text x="135" y="456" fill="#555" font-size="5" text-anchor="middle">조이스틱(이동) + 스킬버튼(액션)</text>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
+            <!-- Status bar -->
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
+            <!-- Home indicator -->
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
+            <!-- Game area border -->
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Skill Bar</text>
+            <!-- Right side: Main skill cluster (thumb-friendly) -->
+            <!-- Primary skill (large) -->
+            <circle cx="418" cy="130" r="28" fill="#ef444418" stroke="#ef4444" stroke-width="1.5"/>
+            <text x="418" y="126" fill="#ef4444" font-size="10" text-anchor="middle">⚔</text>
+            <text x="418" y="140" fill="#ef4444" font-size="5" text-anchor="middle">기본공격</text>
+            <!-- Secondary skills (smaller, around primary) -->
+            <circle cx="370" cy="100" r="20" fill="#a78bfa18" stroke="#a78bfa" stroke-width="1"/>
+            <text x="370" y="96" fill="#a78bfa" font-size="8" text-anchor="middle">⚡</text>
+            <text x="370" y="108" fill="#a78bfa" font-size="4" text-anchor="middle">번개</text>
+            <circle cx="450" cy="86" r="20" fill="#3b82f618" stroke="#3b82f6" stroke-width="1"/>
+            <text x="450" y="82" fill="#3b82f6" font-size="8" text-anchor="middle">🛡</text>
+            <text x="450" y="94" fill="#3b82f6" font-size="4" text-anchor="middle">방어</text>
+            <circle cx="372" cy="168" r="20" fill="#34d39918" stroke="#34d399" stroke-width="1"/>
+            <text x="372" y="164" fill="#34d399" font-size="8" text-anchor="middle">✚</text>
+            <text x="372" y="176" fill="#34d399" font-size="4" text-anchor="middle">힐</text>
+            <circle cx="450" cy="168" r="16" fill="#fbbf2418" stroke="#fbbf24" stroke-width="1"/>
+            <text x="450" y="164" fill="#fbbf24" font-size="7" text-anchor="middle">💥</text>
+            <text x="450" y="176" fill="#fbbf24" font-size="4" text-anchor="middle">궁극기</text>
+            <!-- Cooldown overlay example on one skill -->
+            <circle cx="450" cy="86" r="20" fill="#00000060"/>
+            <text x="450" y="90" fill="#fff" font-size="9" text-anchor="middle">5s</text>
+            <!-- Left side: Virtual joystick -->
+            <circle cx="95" cy="148" r="36" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
+            <circle cx="95" cy="148" r="14" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <text x="95" y="196" fill="#ffffff30" font-size="5" text-anchor="middle">이동</text>
+            <!-- Top: HP/MP minimal -->
+            <rect x="38" y="30" width="100" height="8" rx="4" fill="#ef444430"/>
+            <rect x="38" y="30" width="70" height="8" rx="4" fill="#ef444490"/>
+            <rect x="38" y="42" width="80" height="6" rx="3" fill="#3b82f630"/>
+            <rect x="38" y="42" width="40" height="6" rx="3" fill="#3b82f690"/>
+            <!-- Ultimate gauge (bottom center) -->
+            <rect x="160" y="186" width="160" height="12" rx="6" fill="#fbbf2420" stroke="#fbbf24" stroke-width="0.8"/>
+            <rect x="162" y="188" width="112" height="8" rx="4" fill="#fbbf2480"/>
+            <text x="240" y="194" fill="#fff" font-size="5" text-anchor="middle">궁극기 70%</text>
+            <text x="240" y="180" fill="#fbbf24" font-size="5" text-anchor="middle">궁극기 게이지</text>
         </svg>`,
         },
         platforms: {
@@ -2280,72 +2201,60 @@ const COMPONENTS = {
             <text x="198" y="240" fill="#34d399" font-size="10" text-anchor="middle">↵</text>
             <text x="107" y="116" fill="#34d399" font-size="6" text-anchor="middle">▼ 채팅 창</text>
         </svg>`,
-            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Phone body -->
-    <rect width="270" height="480" rx="20" fill="#0a0b10"/>
-    <rect x="4" y="4" width="262" height="472" rx="18" fill="#12131a"/>
-    <!-- Status bar -->
-    <text x="24" y="24" fill="#888" font-size="9" font-family="monospace">9:41</text>
-    <!-- Dynamic Island (notch) -->
-    <rect x="100" y="8" width="70" height="22" rx="11" fill="#000"/>
-    <!-- Signal bars -->
-    <rect x="218" y="20" width="2" height="4" rx="0.5" fill="#888"/>
-    <rect x="222" y="18" width="2" height="6" rx="0.5" fill="#888"/>
-    <rect x="226" y="16" width="2" height="8" rx="0.5" fill="#888"/>
-    <rect x="230" y="14" width="2" height="10" rx="0.5" fill="#888"/>
-    <!-- Battery -->
-    <rect x="236" y="16" width="16" height="9" rx="2" stroke="#888" stroke-width="0.8" fill="none"/>
-    <rect x="252" y="19" width="2" height="3" rx="0.5" fill="#888"/>
-    <rect x="238" y="18" width="10" height="5" rx="1" fill="#888"/>
-    <!-- Home indicator -->
-    <rect x="100" y="468" width="70" height="4" rx="2" fill="#555"/>
-    <!-- Game area border -->
-    <rect x="8" y="36" width="254" height="432" rx="2" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
-    <!-- Title -->
-    <text x="135" y="50" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Chat</text>
-    <!-- Game view area (faded, top) -->
-    <rect x="16" y="60" width="80" height="8" rx="4" fill="#ef444420"/>
-    <rect x="200" y="60" width="52" height="52" rx="4" stroke="#ffffff10" stroke-width="0.5"/>
-    <text x="135" y="140" fill="#ffffff10" font-size="8" text-anchor="middle">Game View</text>
-    <!-- Chat sheet (bottom sheet) -->
-    <rect x="8" y="200" width="254" height="260" rx="12" fill="#0a0b14e0" stroke="#34d399" stroke-width="1.5"/>
-    <!-- Drag handle -->
-    <rect x="115" y="206" width="40" height="4" rx="2" fill="#555"/>
-    <!-- Channel tabs (horizontal, scrollable) -->
-    <rect x="14" y="218" width="50" height="20" rx="4" fill="#60a5fa"/>
-    <text x="39" y="232" fill="#fff" font-size="6" text-anchor="middle">전체</text>
-    <rect x="68" y="218" width="50" height="20" rx="4" fill="#ffffff08"/>
-    <text x="93" y="232" fill="#6b7280" font-size="6" text-anchor="middle">파티</text>
-    <rect x="122" y="218" width="50" height="20" rx="4" fill="#ffffff08"/>
-    <text x="147" y="232" fill="#6b7280" font-size="6" text-anchor="middle">길드</text>
-    <rect x="176" y="218" width="56" height="20" rx="4" fill="#ffffff08"/>
-    <text x="204" y="232" fill="#6b7280" font-size="6" text-anchor="middle">귓속말</text>
-    <!-- Messages area (220x120) -->
-    <text x="18" y="258" fill="#ffffff" font-size="6">[전체] 용사A: 파티 구합니다</text>
-    <text x="18" y="274" fill="#34d399" font-size="6">[파티] 마법사B: 힐 부탁드려요</text>
-    <text x="18" y="290" fill="#a78bfa" font-size="6">[길드] 길마D: 공성전 20시 집합!</text>
-    <text x="18" y="306" fill="#f472b6" font-size="6">[귓속말] 궁수E: 거래하실?</text>
-    <text x="18" y="322" fill="#ffffff" font-size="6">[전체] 전사C: 보스 어디인가요?</text>
-    <text x="18" y="338" fill="#34d399" font-size="6">[파티] 힐러F: 지금 갑니다!</text>
-    <!-- Quick preset buttons row -->
-    <rect x="14" y="352" width="36" height="18" rx="9" fill="#34d39920"/>
-    <text x="32" y="364" fill="#34d399" font-size="5" text-anchor="middle">gg</text>
-    <rect x="54" y="352" width="60" height="18" rx="9" fill="#34d39920"/>
-    <text x="84" y="364" fill="#34d399" font-size="5" text-anchor="middle">파티 구해요</text>
-    <rect x="118" y="352" width="48" height="18" rx="9" fill="#34d39920"/>
-    <text x="142" y="364" fill="#34d399" font-size="5" text-anchor="middle">힐 부탁</text>
-    <rect x="170" y="352" width="30" height="18" rx="9" fill="#34d39920"/>
-    <text x="185" y="364" fill="#34d399" font-size="5" text-anchor="middle">ㄳ</text>
-    <!-- Input area -->
-    <rect x="14" y="378" width="180" height="36" rx="8" fill="#2a2b35"/>
-    <text x="28" y="400" fill="#6b728060" font-size="7">메시지 입력...</text>
-    <rect x="200" y="378" width="44" height="36" rx="8" fill="#60a5fa"/>
-    <text x="222" y="400" fill="#fff" font-size="10" text-anchor="middle">↵</text>
-    <!-- Virtual keyboard zone indicator -->
-    <rect x="8" y="424" width="254" height="44" rx="3" fill="#0a0b1080"/>
-    <text x="135" y="450" fill="#ffffff15" font-size="6" text-anchor="middle">가상 키보드 영역</text>
-    <!-- Label -->
-    <text x="135" y="190" fill="#555" font-size="6" text-anchor="middle">하단 채팅 시트</text>
+            mobile: `<svg viewBox="0 0 480 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- iPhone 17 landscape phone body -->
+            <rect width="480" height="224" rx="20" fill="#0a0b10"/>
+            <rect x="3" y="3" width="474" height="218" rx="18" fill="#12131a"/>
+            <!-- Dynamic Island (left side in landscape) -->
+            <rect x="6" y="82" width="20" height="60" rx="10" fill="#000"/>
+            <!-- Status bar -->
+            <text x="38" y="16" fill="#888" font-size="7" font-family="monospace">9:41</text>
+            <rect x="440" y="8" width="2" height="4" rx="0.5" fill="#888"/>
+            <rect x="444" y="6" width="2" height="6" rx="0.5" fill="#888"/>
+            <rect x="448" y="4" width="2" height="8" rx="0.5" fill="#888"/>
+            <rect x="452" y="3" width="2" height="10" rx="0.5" fill="#888"/>
+            <rect x="458" y="5" width="14" height="8" rx="2" stroke="#888" stroke-width="0.7" fill="none"/>
+            <rect x="472" y="7" width="1.5" height="4" rx="0.5" fill="#888"/>
+            <rect x="460" y="7" width="8" height="4" rx="1" fill="#888"/>
+            <!-- Home indicator -->
+            <rect x="205" y="214" width="70" height="4" rx="2" fill="#555"/>
+            <!-- Game area border -->
+            <rect x="32" y="8" width="436" height="200" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <text x="250" y="22" fill="#555" font-size="7" text-anchor="middle" font-family="monospace">MOBILE — Chat</text>
+            <!-- Chat panel (left side, semi-transparent) -->
+            <rect x="36" y="28" width="200" height="140" rx="6" fill="#0a0b1090" stroke="#ffffff15" stroke-width="1"/>
+            <!-- Chat header with tabs -->
+            <rect x="36" y="28" width="200" height="20" rx="6" fill="#ffffff08"/>
+            <rect x="36" y="42" width="200" height="6" fill="#ffffff08"/>
+            <text x="68" y="42" fill="#3b82f6" font-size="6" text-anchor="middle">전체</text>
+            <text x="108" y="42" fill="#ffffff50" font-size="6" text-anchor="middle">파티</text>
+            <text x="148" y="42" fill="#ffffff50" font-size="6" text-anchor="middle">길드</text>
+            <text x="188" y="42" fill="#ffffff50" font-size="6" text-anchor="middle">귓말</text>
+            <rect x="48" y="46" width="40" height="2" rx="1" fill="#3b82f6"/>
+            <!-- Chat messages -->
+            <text x="44" y="64" fill="#3b82f6" font-size="5">[전사] 파티 구합니다</text>
+            <text x="44" y="76" fill="#34d399" font-size="5">[힐러] 저 참가할게요!</text>
+            <text x="44" y="88" fill="#fbbf24" font-size="5">[시스템] 보스 레이드 시작</text>
+            <text x="44" y="100" fill="#a78bfa" font-size="5">[마법사] 버프 넣어드릴게요</text>
+            <text x="44" y="112" fill="#ef4444" font-size="5">[경고] 10분 후 서버 점검</text>
+            <text x="44" y="124" fill="#3b82f6" font-size="5">[전사] ㄱㄱㄱ</text>
+            <text x="44" y="136" fill="#34d399" font-size="5">[힐러] 힐 준비 완료!</text>
+            <!-- Chat input -->
+            <rect x="36" y="152" width="160" height="20" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="48" y="166" fill="#ffffff30" font-size="6">메시지 입력...</text>
+            <rect x="200" y="152" width="36" height="20" rx="4" fill="#3b82f630" stroke="#3b82f6" stroke-width="0.5"/>
+            <text x="218" y="166" fill="#3b82f6" font-size="6" text-anchor="middle">전송</text>
+            <!-- Right: Game area (dimmed to show chat overlay) -->
+            <text x="360" y="110" fill="#ffffff15" font-size="8" text-anchor="middle">게임 화면 영역</text>
+            <!-- Chat toggle button -->
+            <rect x="36" y="176" width="36" height="20" rx="4" fill="#ffffff10" stroke="#ffffff30" stroke-width="0.5"/>
+            <text x="54" y="190" fill="#ffffff50" font-size="7" text-anchor="middle">💬</text>
+            <!-- Quick chat (emoji/preset) -->
+            <rect x="80" y="176" width="80" height="20" rx="4" fill="#ffffff08" stroke="#ffffff20" stroke-width="0.5"/>
+            <text x="120" y="190" fill="#ffffff40" font-size="6" text-anchor="middle">빠른 채팅 ▸</text>
+            <!-- Notification badge -->
+            <circle cx="68" cy="176" r="6" fill="#ef4444"/>
+            <text x="68" y="179" fill="#fff" font-size="5" text-anchor="middle">3</text>
         </svg>`,
         },
         platforms: {

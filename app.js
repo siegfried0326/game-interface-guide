@@ -474,9 +474,10 @@
                  screenWireframe가 있는 게임 전용 컴포넌트(11개)에만 표시.
                  구조: [PC][모바일] 탭 → 각 탭 안에 해당 플랫폼 와이어프레임 SVG + 설명.
                  - PC 와이어프레임: 480×270 가로(16:9), 마우스/키보드 기반 레이아웃
-                 - 모바일 와이어프레임: 270×480 세로(9:16), 노치/상태바/홈 인디케이터 포함
+                 - 모바일 와이어프레임: 480×224 가로(≈19.5:9), iPhone 17 landscape 폰 프레임
+                   (Dynamic Island 좌측, 상태바, 홈 인디케이터 포함)
                  - typeof 체크: 구버전 string 호환을 위한 폴백 (현재는 모두 객체)
-                 - .mobile-wireframe 클래스: max-width 320px로 세로 비율 유지 -->
+                 - .mobile-wireframe 클래스: landscape 전환으로 별도 width 제한 불필요 -->
             ${comp.screenWireframe ? `
             <div class="screen-wireframe-section">
                 <h2 class="section-title">게임 화면 배치</h2>

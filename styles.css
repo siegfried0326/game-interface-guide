@@ -772,13 +772,11 @@ button {
     margin: 0 auto;
 }
 
-/* Mobile Wireframe — 모바일 와이어프레임 세로 비율 제한
-   모바일 SVG는 270×480 세로(9:16) viewBox를 사용하며,
-   화면에서 너무 넓게 표시되지 않도록 max-width를 제한합니다.
-   폰 프레임(노치/상태바/홈 인디케이터)이 포함된 SVG 특성상
-   320px 이하에서 가장 자연스러운 비율을 유지합니다. */
+/* Mobile Wireframe — 모바일 와이어프레임 가로(landscape) 레이아웃
+   모바일 SVG는 480×224 가로(≈19.5:9) viewBox를 사용하며,
+   iPhone 17 가로 모드 기준 폰 프레임(Dynamic Island/상태바/홈 인디케이터)을 포함합니다.
+   PC 와이어프레임(480×270)과 동일한 너비를 사용하므로 별도의 max-width 제한이 불필요합니다. */
 .screen-wireframe.mobile-wireframe .wireframe-svg {
-    max-width: 320px;
     margin: 0 auto;
 }
 
