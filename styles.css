@@ -772,6 +772,11 @@ button {
     margin: 0 auto;
 }
 
+.screen-wireframe.mobile-wireframe .wireframe-svg {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
 /* Standalone Demo - 독립형 데모 (와이어프레임 없이 데모만 표시하는 경우) */
 .standalone-demo {
     background: var(--bg-card);

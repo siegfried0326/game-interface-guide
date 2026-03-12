@@ -167,7 +167,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['fitts-law', 'feedback-principle', 'aesthetic-usability', 'doherty-threshold'],  // 관련 UX 법칙 ID 배열 — UX_LAWS의 id와 매칭되어 상세 페이지에서 링크로 표시
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Button Placement</text>
             <!-- Game view placeholder -->
@@ -199,7 +200,44 @@ const COMPONENTS = {
             <!-- Labels with lines -->
             <circle cx="430" cy="82" r="2" fill="#fbbf24"/>
             <line x1="430" y1="82" x2="418" y2="50" stroke="#fbbf2460" stroke-width="0.5" stroke-dasharray="2"/>
-        </svg>`,                      // screenWireframe: 게임 화면 내 해당 컴포넌트의 실제 배치를 보여주는 와이어프레임 SVG (게임 전용 컴포넌트에만 존재)
+        </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Buttons</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Top-right: Menu/Settings buttons (smaller, compact) -->
+            <rect x="214" y="32" width="36" height="36" rx="4" stroke="#6b7280" stroke-width="1.5"/>
+            <line x1="218" y1="36" x2="246" y2="64" stroke="#6b7280" stroke-width="0.5"/>
+            <line x1="246" y1="36" x2="218" y2="64" stroke="#6b7280" stroke-width="0.5"/>
+            <text x="232" y="80" fill="#9ca3af" font-size="6" text-anchor="middle">설정</text>
+            <rect x="170" y="32" width="36" height="36" rx="4" stroke="#6b7280" stroke-width="1.5"/>
+            <line x1="174" y1="36" x2="202" y2="64" stroke="#6b7280" stroke-width="0.5"/>
+            <line x1="202" y1="36" x2="174" y2="64" stroke="#6b7280" stroke-width="0.5"/>
+            <text x="188" y="80" fill="#9ca3af" font-size="6" text-anchor="middle">메뉴</text>
+            <!-- Thumb zone: Action buttons (bottom area, large touch targets) -->
+            <rect x="20" y="370" width="230" height="90" rx="8" stroke="#fbbf24" stroke-width="2"/>
+            <text x="135" y="365" fill="#fbbf24" font-size="7" text-anchor="middle">▼ 엄지 영역 — 액션 버튼</text>
+            <!-- Primary action: Attack (large, center) -->
+            <rect x="90" y="385" width="90" height="48" rx="8" fill="#fbbf2418" stroke="#fbbf24" stroke-width="1.5"/>
+            <text x="135" y="414" fill="#fbbf24" font-size="12" text-anchor="middle">공격</text>
+            <!-- Secondary: Skill (left) -->
+            <rect x="28" y="390" width="52" height="42" rx="6" fill="#fbbf2410" stroke="#fbbf2480" stroke-width="1"/>
+            <text x="54" y="416" fill="#fbbf24" font-size="9" text-anchor="middle">스킬</text>
+            <!-- Tertiary: Item (right) -->
+            <rect x="190" y="390" width="52" height="42" rx="6" fill="none" stroke="#fbbf2460" stroke-width="1"/>
+            <text x="216" y="416" fill="#fbbf2499" font-size="9" text-anchor="middle">아이템</text>
+            <text x="135" y="468" fill="#fbbf24" font-size="6" text-anchor="middle">▲ 48px+ 터치 타겟</text>
+            <!-- Right side: Quick action FABs (stacked vertically) -->
+            <rect x="214" y="260" width="42" height="42" rx="21" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="235" y="286" fill="#60a5fa" font-size="14" text-anchor="middle">⟳</text>
+            <rect x="214" y="310" width="42" height="42" rx="21" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="235" y="336" fill="#60a5fa" font-size="12" text-anchor="middle">▶</text>
+            <text x="235" y="362" fill="#60a5fa" font-size="6" text-anchor="middle">퀵 액션</text>
+        </svg>`,
+        },                      // screenWireframe: 게임 화면 내 해당 컴포넌트의 실제 배치를 보여주는 와이어프레임 SVG (게임 전용 컴포넌트에만 존재)
         platforms: {                  // platforms: 플랫폼별(PC/모바일) 디자인 가이드 — 게임 전용 컴포넌트에만 존재
             pc: {                     // pc: PC 환경 가이드
                 title: 'PC 버튼',     // title: 플랫폼별 제목
@@ -302,7 +340,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['law-proximity', 'law-similarity', 'aesthetic-usability', 'law-pragnanz'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Card UI Layout</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -334,6 +373,48 @@ const COMPONENTS = {
             <text x="42" y="226" fill="#6b7280" font-size="7" text-anchor="middle">덱</text>
             <text x="42" y="236" fill="#6b728080" font-size="6" text-anchor="middle">23장</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Cards</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Card detail panel (top, full width) -->
+            <rect x="20" y="36" width="230" height="150" rx="6" stroke="#f472b6" stroke-width="1.5"/>
+            <rect x="30" y="46" width="210" height="70" rx="3" fill="#f472b618" stroke="#f472b660" stroke-width="0.5"/>
+            <line x1="30" y1="46" x2="240" y2="116" stroke="#f472b630" stroke-width="0.5"/>
+            <line x1="240" y1="46" x2="30" y2="116" stroke="#f472b630" stroke-width="0.5"/>
+            <text x="135" y="134" fill="#f472b6" font-size="9" text-anchor="middle">카드 이름</text>
+            <rect x="30" y="142" width="160" height="6" rx="2" fill="#f472b620"/>
+            <rect x="30" y="152" width="120" height="6" rx="2" fill="#f472b615"/>
+            <rect x="30" y="162" width="140" height="6" rx="2" fill="#f472b615"/>
+            <text x="135" y="180" fill="#f472b690" font-size="6" text-anchor="middle">코스트: ◆◆◆</text>
+            <!-- Deck/Discard (middle area) -->
+            <rect x="20" y="200" width="50" height="60" rx="3" stroke="#6b728080" stroke-width="1" stroke-dasharray="3"/>
+            <text x="45" y="234" fill="#6b7280" font-size="7" text-anchor="middle">덱</text>
+            <text x="45" y="246" fill="#6b728080" font-size="6" text-anchor="middle">23장</text>
+            <rect x="200" y="200" width="50" height="60" rx="3" stroke="#6b728080" stroke-width="1" stroke-dasharray="3"/>
+            <text x="225" y="234" fill="#6b7280" font-size="7" text-anchor="middle">버림</text>
+            <text x="225" y="246" fill="#6b728080" font-size="6" text-anchor="middle">5장</text>
+            <!-- Card hand area (bottom thumb zone — swipeable carousel) -->
+            <rect x="12" y="350" width="246" height="110" rx="8" stroke="#a78bfa" stroke-width="2"/>
+            <text x="135" y="344" fill="#a78bfa" font-size="7" text-anchor="middle">▼ 카드 핸드 (스와이프)</text>
+            <!-- Cards fanned at bottom -->
+            <rect x="20" y="360" width="60" height="86" rx="4" fill="#a78bfa18" stroke="#a78bfa" stroke-width="1"/>
+            <line x1="24" y1="364" x2="76" y2="442" stroke="#a78bfa40" stroke-width="0.5"/>
+            <line x1="76" y1="364" x2="24" y2="442" stroke="#a78bfa40" stroke-width="0.5"/>
+            <rect x="86" y="357" width="60" height="86" rx="4" fill="#a78bfa25" stroke="#a78bfa" stroke-width="1.2"/>
+            <line x1="90" y1="361" x2="142" y2="439" stroke="#a78bfa40" stroke-width="0.5"/>
+            <line x1="142" y1="361" x2="90" y2="439" stroke="#a78bfa40" stroke-width="0.5"/>
+            <rect x="152" y="360" width="60" height="86" rx="4" fill="#a78bfa18" stroke="#a78bfa" stroke-width="1"/>
+            <!-- Scroll hint dots -->
+            <circle cx="115" cy="466" r="3" fill="#a78bfa"/>
+            <circle cx="130" cy="466" r="3" fill="#a78bfa40"/>
+            <circle cx="145" cy="466" r="3" fill="#a78bfa40"/>
+            <text x="135" y="478" fill="#a78bfa" font-size="5" text-anchor="middle">좌우 스와이프로 카드 탐색</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 카드',
@@ -440,7 +521,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['hicks-law', 'jakobs-law', 'feedback-principle', 'consistency'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Dialog Overlay</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -468,6 +550,40 @@ const COMPONENTS = {
             <!-- Labels -->
             <text x="240" y="235" fill="#f59e0b90" font-size="7" text-anchor="middle">모달 다이얼로그 — 배경 딤 처리 + 포커스 트랩</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Dialogs</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Dimmed overlay -->
+            <rect x="8" y="24" width="254" height="446" rx="3" fill="#00000060"/>
+            <!-- Bottom sheet dialog (slides up from bottom — thumb-friendly) -->
+            <rect x="8" y="240" width="254" height="230" rx="12" fill="#1e1f2e" stroke="#f59e0b" stroke-width="2"/>
+            <!-- Drag handle -->
+            <rect x="110" y="248" width="50" height="4" rx="2" fill="#6b728060"/>
+            <!-- Close button -->
+            <circle cx="240" cy="270" r="12" stroke="#6b7280" stroke-width="1"/>
+            <text x="240" y="274" fill="#6b7280" font-size="10" text-anchor="middle">✕</text>
+            <!-- Title area -->
+            <rect x="30" y="270" width="180" height="14" rx="2" fill="#f59e0b30"/>
+            <text x="120" y="281" fill="#f59e0b" font-size="10" text-anchor="middle">다이얼로그 제목</text>
+            <!-- Content area -->
+            <rect x="24" y="296" width="222" height="80" rx="4" stroke="#ffffff15" stroke-width="1"/>
+            <rect x="34" y="310" width="180" height="6" rx="2" fill="#ffffff15"/>
+            <rect x="34" y="324" width="160" height="6" rx="2" fill="#ffffff10"/>
+            <rect x="34" y="338" width="190" height="6" rx="2" fill="#ffffff10"/>
+            <text x="135" y="368" fill="#6b728080" font-size="6" text-anchor="middle">콘텐츠 영역</text>
+            <!-- Action buttons (stacked vertically, full width for mobile) -->
+            <rect x="24" y="390" width="222" height="48" rx="8" fill="#f59e0b30" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="135" y="420" fill="#f59e0b" font-size="12" text-anchor="middle">확인</text>
+            <rect x="24" y="446" width="222" height="48" rx="8" fill="none" stroke="#6b728060" stroke-width="1"/>
+            <text x="135" y="476" fill="#6b7280" font-size="12" text-anchor="middle">취소</text>
+            <!-- Label -->
+            <text x="135" y="232" fill="#f59e0b90" font-size="7" text-anchor="middle">바텀 시트 — 스와이프 다운으로 닫기</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 다이얼로그',
@@ -562,7 +678,8 @@ const COMPONENTS = {
             ]
         },
         relatedLaws: ['miller-law', 'law-proximity', 'progressive-disclosure', 'von-restorff'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — HUD Layout</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -612,6 +729,65 @@ const COMPONENTS = {
             <rect x="10" y="256" width="460" height="4" rx="2" fill="#a78bfa20"/>
             <rect x="10" y="256" width="180" height="4" rx="2" fill="#a78bfa60"/>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — HUD</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Top-Left: HP/MP (compact horizontal bars) -->
+            <rect x="14" y="32" width="130" height="44" rx="4" stroke="#ef4444" stroke-width="1.5"/>
+            <rect x="40" y="38" width="96" height="10" rx="4" fill="#ef444440"/>
+            <rect x="40" y="38" width="67" height="10" rx="4" fill="#ef444490"/>
+            <text x="20" y="47" fill="#ef4444" font-size="8">HP</text>
+            <rect x="40" y="54" width="96" height="10" rx="4" fill="#3b82f640"/>
+            <rect x="40" y="54" width="48" height="10" rx="4" fill="#3b82f690"/>
+            <text x="20" y="63" fill="#3b82f6" font-size="8">MP</text>
+            <text x="79" y="84" fill="#ef4444" font-size="6" text-anchor="middle">체력/자원 바</text>
+            <!-- Top-Right: Minimap (smaller for mobile) -->
+            <rect x="196" y="32" width="60" height="60" rx="30" stroke="#fbbf24" stroke-width="1.5"/>
+            <circle cx="226" cy="62" r="3" fill="#60a5fa"/>
+            <circle cx="234" cy="54" r="2" fill="#ef4444"/>
+            <text x="226" y="102" fill="#fbbf24" font-size="6" text-anchor="middle">미니맵</text>
+            <!-- Center: Crosshair -->
+            <line x1="130" y1="230" x2="140" y2="230" stroke="#ffffff40" stroke-width="1"/>
+            <line x1="135" y1="225" x2="135" y2="235" stroke="#ffffff40" stroke-width="1"/>
+            <!-- Quest tracker (top area, collapsible) -->
+            <rect x="14" y="96" width="130" height="44" rx="3" stroke="#fbbf2460" stroke-width="1"/>
+            <rect x="20" y="102" width="80" height="5" rx="1" fill="#fbbf2430"/>
+            <rect x="20" y="111" width="70" height="4" rx="1" fill="#ffffff10"/>
+            <rect x="20" y="119" width="75" height="4" rx="1" fill="#ffffff10"/>
+            <text x="79" y="136" fill="#fbbf2480" font-size="5" text-anchor="middle">퀘스트 (탭하여 접기)</text>
+            <!-- Virtual Joystick area (bottom-left) -->
+            <circle cx="65" cy="390" r="45" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
+            <circle cx="65" cy="390" r="20" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <text x="65" y="445" fill="#ffffff40" font-size="6" text-anchor="middle">가상 조이스틱</text>
+            <!-- Skill buttons (bottom-right, large touch targets) -->
+            <rect x="160" y="355" width="96" height="96" rx="6" stroke="#a78bfa" stroke-width="1.5"/>
+            <rect x="168" y="360" width="40" height="40" rx="8" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="188" y="384" fill="#a78bfa" font-size="8" text-anchor="middle">Q</text>
+            <rect x="212" y="360" width="40" height="40" rx="8" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="232" y="384" fill="#a78bfa" font-size="8" text-anchor="middle">W</text>
+            <rect x="168" y="404" width="40" height="40" rx="8" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="188" y="428" fill="#a78bfa" font-size="8" text-anchor="middle">E</text>
+            <rect x="212" y="404" width="40" height="40" rx="8" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="1"/>
+            <text x="232" y="428" fill="#a78bfa" font-size="8" text-anchor="middle">R</text>
+            <text x="208" y="460" fill="#a78bfa" font-size="6" text-anchor="middle">스킬 버튼</text>
+            <!-- Bottom: Quick Items (horizontal strip) -->
+            <rect x="14" y="454" width="120" height="34" rx="4" stroke="#34d399" stroke-width="1"/>
+            <rect x="20" y="458" width="26" height="26" rx="3" fill="#34d39920"/>
+            <rect x="50" y="458" width="26" height="26" rx="3" fill="#34d39920"/>
+            <rect x="80" y="458" width="26" height="26" rx="3" fill="#34d39920"/>
+            <text x="110" y="462" fill="#34d399" font-size="5">퀵</text>
+            <!-- Weapon/Ammo indicator (top-right below minimap) -->
+            <rect x="180" y="108" width="76" height="28" rx="4" stroke="#f97316" stroke-width="1"/>
+            <text x="218" y="126" fill="#f97316" font-size="9" text-anchor="middle">30/120</text>
+            <!-- XP bar (very bottom) -->
+            <rect x="8" y="470" width="254" height="4" rx="2" fill="#a78bfa20"/>
+            <rect x="8" y="470" width="100" height="4" rx="2" fill="#a78bfa60"/>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC HUD',
@@ -706,7 +882,8 @@ const COMPONENTS = {
             ]
         },
         relatedLaws: ['jakobs-law', 'law-proximity', 'recognition-recall', 'law-similarity'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Inventory Panel</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -788,6 +965,79 @@ const COMPONENTS = {
             <!-- Sort/Filter -->
             <text x="425" y="58" fill="#fbbf2480" font-size="6">정렬 ▼</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Inventory</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Semi-transparent overlay -->
+            <rect x="8" y="24" width="254" height="446" rx="3" fill="#00000040"/>
+            <!-- Top: Character equipment (horizontal, compact) -->
+            <rect x="14" y="32" width="242" height="120" rx="6" fill="#1a1b2e" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="135" y="48" fill="#60a5fa" font-size="8" text-anchor="middle">장비 장착</text>
+            <!-- Character silhouette (center) -->
+            <rect x="90" y="55" width="60" height="80" rx="4" stroke="#60a5fa40" stroke-width="1" stroke-dasharray="3"/>
+            <line x1="90" y1="55" x2="150" y2="135" stroke="#60a5fa20" stroke-width="0.5"/>
+            <line x1="150" y1="55" x2="90" y2="135" stroke="#60a5fa20" stroke-width="0.5"/>
+            <!-- Equip slots (around character) -->
+            <rect x="30" y="60" width="28" height="28" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
+            <text x="44" y="78" fill="#60a5fa60" font-size="6" text-anchor="middle">머리</text>
+            <rect x="30" y="96" width="28" height="28" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
+            <text x="44" y="114" fill="#60a5fa60" font-size="6" text-anchor="middle">몸</text>
+            <rect x="182" y="60" width="28" height="28" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
+            <text x="196" y="78" fill="#60a5fa60" font-size="6" text-anchor="middle">무기</text>
+            <rect x="182" y="96" width="28" height="28" rx="4" fill="#60a5fa15" stroke="#60a5fa60" stroke-width="0.5"/>
+            <text x="196" y="114" fill="#60a5fa60" font-size="6" text-anchor="middle">방패</text>
+            <!-- Stats (compact, below character) -->
+            <text x="135" y="146" fill="#60a5fa80" font-size="6" text-anchor="middle">ATK:142 DEF:89 SPD:35 LUK:12</text>
+            <!-- Category tabs (swipeable) -->
+            <rect x="14" y="160" width="242" height="24" rx="4" fill="#1a1b2e"/>
+            <rect x="18" y="164" width="46" height="16" rx="8" fill="#fbbf2430" stroke="#fbbf24" stroke-width="0.5"/>
+            <text x="41" y="175" fill="#fbbf24" font-size="6" text-anchor="middle">전체</text>
+            <rect x="70" y="164" width="46" height="16" rx="8" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
+            <text x="93" y="175" fill="#fbbf2480" font-size="6" text-anchor="middle">무기</text>
+            <rect x="122" y="164" width="46" height="16" rx="8" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
+            <text x="145" y="175" fill="#fbbf2480" font-size="6" text-anchor="middle">방어구</text>
+            <rect x="174" y="164" width="46" height="16" rx="8" fill="none" stroke="#fbbf2440" stroke-width="0.5"/>
+            <text x="197" y="175" fill="#fbbf2480" font-size="6" text-anchor="middle">소비</text>
+            <text x="240" y="175" fill="#fbbf2480" font-size="6" text-anchor="middle">정렬▼</text>
+            <!-- Inventory Grid (4 columns, touch-friendly) -->
+            <rect x="14" y="190" width="242" height="270" rx="6" fill="#1a1b2e" stroke="#fbbf24" stroke-width="1.5"/>
+            <text x="135" y="206" fill="#fbbf24" font-size="7" text-anchor="middle">인벤토리 (24/30)</text>
+            <!-- Grid Row 0 -->
+            <rect x="24" y="214" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="78" y="214" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="132" y="214" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="186" y="214" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <!-- Grid Row 1 -->
+            <rect x="24" y="268" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="78" y="268" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="132" y="268" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="186" y="268" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <!-- Grid Row 2 -->
+            <rect x="24" y="322" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="78" y="322" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="132" y="322" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="186" y="322" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <!-- Grid Row 3 -->
+            <rect x="24" y="376" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="78" y="376" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="132" y="376" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <rect x="186" y="376" width="48" height="48" rx="4" fill="#fbbf2408" stroke="#fbbf2430" stroke-width="0.5"/>
+            <!-- Some filled slots -->
+            <rect x="24" y="214" width="48" height="48" rx="4" fill="#fbbf2425"/>
+            <rect x="78" y="214" width="48" height="48" rx="4" fill="#fbbf2425"/>
+            <rect x="132" y="214" width="48" height="48" rx="4" fill="#a78bfa25"/>
+            <rect x="24" y="268" width="48" height="48" rx="4" fill="#fbbf2415"/>
+            <!-- Scroll hint -->
+            <text x="135" y="444" fill="#fbbf2460" font-size="6" text-anchor="middle">스크롤하여 더보기 ↓</text>
+            <!-- Bottom quick slot bar -->
+            <rect x="14" y="462" width="242" height="28" rx="4" stroke="#34d39960" stroke-width="1"/>
+            <text x="135" y="479" fill="#34d399" font-size="6" text-anchor="middle">길게 눌러 퀵슬롯 등록</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 인벤토리',
@@ -895,7 +1145,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['serial-position', 'hicks-law', 'jakobs-law', 'consistency'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Navigation UI</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -930,6 +1181,70 @@ const COMPONENTS = {
             <text x="370" y="248" fill="#6b728090" font-size="8" text-anchor="middle">⚙️ 설정</text>
             <text x="275" y="222" fill="#34d399" font-size="6" text-anchor="middle">▼ 하단 탭 바</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Navigation</text>
+            <!-- Status bar / notch area -->
+            <rect x="100" y="4" width="70" height="14" rx="7" fill="#1a1b2e"/>
+            <!-- Game view area -->
+            <rect x="8" y="24" width="254" height="446" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Top: Hamburger menu + title bar -->
+            <rect x="8" y="24" width="254" height="40" rx="3" fill="#1a1b2e" stroke="#60a5fa" stroke-width="1.5"/>
+            <rect x="16" y="34" width="24" height="20" rx="3" stroke="#60a5fa" stroke-width="1"/>
+            <line x1="20" y1="39" x2="36" y2="39" stroke="#60a5fa" stroke-width="1.5"/>
+            <line x1="20" y1="44" x2="36" y2="44" stroke="#60a5fa" stroke-width="1.5"/>
+            <line x1="20" y1="49" x2="36" y2="49" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="135" y="48" fill="#60a5fa" font-size="9" text-anchor="middle">모험</text>
+            <!-- Notification bell -->
+            <rect x="224" y="34" width="24" height="20" rx="3" stroke="#60a5fa60" stroke-width="1"/>
+            <text x="236" y="48" fill="#60a5fa" font-size="10" text-anchor="middle">🔔</text>
+            <circle cx="244" cy="36" r="4" fill="#ef4444"/>
+            <text x="244" y="38" fill="#fff" font-size="4" text-anchor="middle">3</text>
+            <!-- Scrollable horizontal sub-tabs -->
+            <rect x="8" y="66" width="254" height="28" rx="3" fill="#1a1b2e"/>
+            <rect x="14" y="70" width="54" height="20" rx="10" fill="#60a5fa30" stroke="#60a5fa" stroke-width="1"/>
+            <text x="41" y="84" fill="#60a5fa" font-size="7" text-anchor="middle">모험</text>
+            <rect x="74" y="70" width="54" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
+            <text x="101" y="84" fill="#60a5fa80" font-size="7" text-anchor="middle">상점</text>
+            <rect x="134" y="70" width="54" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
+            <text x="161" y="84" fill="#60a5fa80" font-size="7" text-anchor="middle">PvP</text>
+            <rect x="194" y="70" width="54" height="20" rx="10" fill="none" stroke="#60a5fa40" stroke-width="0.5"/>
+            <text x="221" y="84" fill="#60a5fa80" font-size="7" text-anchor="middle">길드</text>
+            <text x="135" y="104" fill="#60a5fa" font-size="6" text-anchor="middle">◀ 스와이프 가능 탭 ▶</text>
+            <!-- Main content area -->
+            <rect x="16" y="116" width="238" height="280" rx="4" stroke="#2a2b3580" stroke-width="0.5" stroke-dasharray="3"/>
+            <!-- Content cards (vertical scroll) -->
+            <rect x="24" y="126" width="222" height="60" rx="6" fill="#1a1b2e" stroke="#f59e0b40" stroke-width="1"/>
+            <text x="50" y="150" fill="#f59e0b" font-size="12">🗺️</text>
+            <text x="80" y="150" fill="#f59e0b" font-size="8">월드맵</text>
+            <rect x="180" y="142" width="50" height="18" rx="9" fill="#f59e0b20" stroke="#f59e0b60" stroke-width="0.5"/>
+            <text x="205" y="154" fill="#f59e0b" font-size="6" text-anchor="middle">이동 →</text>
+            <rect x="24" y="194" width="222" height="60" rx="6" fill="#1a1b2e" stroke="#6b728040" stroke-width="1"/>
+            <text x="50" y="218" fill="#6b7280" font-size="12">⚔️</text>
+            <text x="80" y="218" fill="#6b7280" font-size="8">던전</text>
+            <rect x="24" y="262" width="222" height="60" rx="6" fill="#1a1b2e" stroke="#6b728040" stroke-width="1"/>
+            <text x="50" y="286" fill="#6b7280" font-size="12">🏆</text>
+            <text x="80" y="286" fill="#6b7280" font-size="8">업적</text>
+            <rect x="24" y="330" width="222" height="60" rx="6" fill="#1a1b2e" stroke="#6b728040" stroke-width="1"/>
+            <text x="50" y="354" fill="#6b7280" font-size="12">📦</text>
+            <text x="80" y="354" fill="#6b7280" font-size="8">우편함</text>
+            <!-- Floating Action Button -->
+            <circle cx="230" cy="408" r="22" fill="#f59e0b30" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="230" y="414" fill="#f59e0b" font-size="16" text-anchor="middle">+</text>
+            <text x="230" y="436" fill="#f59e0b" font-size="5" text-anchor="middle">FAB</text>
+            <!-- Bottom Tab Bar (primary nav — thumb zone) -->
+            <rect x="8" y="430" width="254" height="40" rx="4" fill="#1a1b2e" stroke="#34d399" stroke-width="1.5"/>
+            <text x="40" y="454" fill="#34d399" font-size="10" text-anchor="middle">🏠</text>
+            <text x="40" y="465" fill="#34d399" font-size="5" text-anchor="middle">홈</text>
+            <text x="100" y="454" fill="#6b728090" font-size="10" text-anchor="middle">👤</text>
+            <text x="100" y="465" fill="#6b728090" font-size="5" text-anchor="middle">캐릭터</text>
+            <text x="160" y="454" fill="#6b728090" font-size="10" text-anchor="middle">🎒</text>
+            <text x="160" y="465" fill="#6b728090" font-size="5" text-anchor="middle">가방</text>
+            <text x="220" y="454" fill="#6b728090" font-size="10" text-anchor="middle">⚙️</text>
+            <text x="220" y="465" fill="#6b728090" font-size="5" text-anchor="middle">설정</text>
+            <text x="135" y="426" fill="#34d399" font-size="6" text-anchor="middle">▼ 하단 탭 바 (엄지 영역)</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 내비게이션',
@@ -1041,7 +1356,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['doherty-threshold', 'feedback-principle', 'goal-gradient', 'zeigarnik-effect'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Progress Bar Placement</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -1076,6 +1392,44 @@ const COMPONENTS = {
             <text x="425" y="129" fill="#34d399" font-size="10" text-anchor="middle">3s</text>
             <text x="425" y="160" fill="#34d399" font-size="6" text-anchor="middle">쿨다운</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Progress Bar</text>
+            <rect x="8" y="24" width="254" height="448" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Status bar area (top notch) -->
+            <rect x="100" y="4" width="70" height="12" rx="6" fill="#1e1f2e"/>
+            <!-- HP Bar (top-left, compact) -->
+            <rect x="16" y="34" width="120" height="12" rx="6" fill="#ef444420" stroke="#ef4444" stroke-width="1.5"/>
+            <rect x="18" y="36" width="80" height="8" rx="4" fill="#ef4444a0"/>
+            <text x="76" y="43" fill="#fff" font-size="5" text-anchor="middle">680/1000</text>
+            <text x="76" y="56" fill="#ef4444" font-size="5" text-anchor="middle">체력 바</text>
+            <!-- MP Bar (below HP, compact) -->
+            <rect x="16" y="60" width="100" height="8" rx="4" fill="#3b82f620" stroke="#3b82f6" stroke-width="1"/>
+            <rect x="18" y="62" width="48" height="4" rx="2" fill="#3b82f690"/>
+            <text x="66" y="78" fill="#3b82f6" font-size="5" text-anchor="middle">마나 바</text>
+            <!-- Boss HP (top center, full width) -->
+            <rect x="16" y="88" width="238" height="14" rx="4" fill="#dc262620" stroke="#dc2626" stroke-width="1.5"/>
+            <rect x="18" y="90" width="184" height="10" rx="3" fill="#dc2626a0"/>
+            <text x="135" y="98" fill="#fff" font-size="6" text-anchor="middle">🔥 월드 보스 — 78%</text>
+            <text x="135" y="112" fill="#dc2626" font-size="5" text-anchor="middle">보스 체력 바</text>
+            <!-- Loading screen example (center) -->
+            <rect x="30" y="180" width="210" height="90" rx="6" stroke="#fbbf24" stroke-width="1.5"/>
+            <text x="135" y="208" fill="#fbbf2480" font-size="8" text-anchor="middle">로딩 중...</text>
+            <rect x="50" y="220" width="170" height="10" rx="5" fill="#fbbf2420"/>
+            <rect x="52" y="222" width="102" height="6" rx="3" fill="#fbbf24a0"/>
+            <text x="135" y="248" fill="#fbbf24" font-size="7" text-anchor="middle">60%</text>
+            <text x="135" y="264" fill="#fbbf2480" font-size="6" text-anchor="middle">▲ 로딩 프로그레스</text>
+            <!-- Cooldown indicator (thumb zone, bottom-right) -->
+            <rect x="190" y="370" width="56" height="56" rx="6" stroke="#34d39980" stroke-width="1"/>
+            <circle cx="218" cy="398" r="20" stroke="#34d39960" stroke-width="1.5" stroke-dasharray="4"/>
+            <text x="218" y="403" fill="#34d399" font-size="11" text-anchor="middle">3s</text>
+            <text x="218" y="438" fill="#34d399" font-size="6" text-anchor="middle">쿨다운</text>
+            <!-- XP Bar (bottom, full width) -->
+            <rect x="8" y="456" width="254" height="8" rx="4" fill="#a78bfa20" stroke="#a78bfa60" stroke-width="0.5"/>
+            <rect x="10" y="458" width="100" height="4" rx="2" fill="#a78bfa80"/>
+            <text x="135" y="452" fill="#a78bfa" font-size="5" text-anchor="middle">경험치 바 — Lv.42 (38%)</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 프로그레스',
@@ -1172,7 +1526,8 @@ const COMPONENTS = {
             }
         ],
         relatedLaws: ['progressive-disclosure', 'miller-law', 'doherty-threshold', 'law-pragnanz'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Tooltip Examples</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -1205,6 +1560,52 @@ const COMPONENTS = {
             <text x="90" y="200" fill="#6b7280" font-size="6" text-anchor="middle">🔨 장비 강화 · 수리</text>
             <text x="240" y="248" fill="#6b728090" font-size="7" text-anchor="middle">아이템 / 스킬 / NPC 툴팁 — 맥락에 따라 다른 레이아웃</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Tooltips</text>
+            <rect x="8" y="24" width="254" height="448" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Status bar area (top notch) -->
+            <rect x="100" y="4" width="70" height="12" rx="6" fill="#1e1f2e"/>
+            <!-- Game area (top portion) -->
+            <rect x="16" y="34" width="80" height="10" rx="4" fill="#ef444430"/>
+            <!-- Item grid (center, representing inventory) -->
+            <rect x="30" y="80" width="48" height="48" rx="6" fill="#a78bfa15" stroke="#a78bfa60" stroke-width="0.5"/>
+            <text x="54" y="110" fill="#a78bfa" font-size="14" text-anchor="middle">⚔</text>
+            <rect x="84" y="80" width="48" height="48" rx="6" fill="#ffffff08" stroke="#ffffff15" stroke-width="0.5"/>
+            <rect x="138" y="80" width="48" height="48" rx="6" fill="#ffffff08" stroke="#ffffff15" stroke-width="0.5"/>
+            <rect x="192" y="80" width="48" height="48" rx="6" fill="#ffffff08" stroke="#ffffff15" stroke-width="0.5"/>
+            <!-- Long-press indicator (finger icon) -->
+            <text x="54" y="146" fill="#a78bfa60" font-size="6" text-anchor="middle">길게 누르기</text>
+            <!-- Bottom sheet tooltip (mobile pattern: slides up from bottom) -->
+            <rect x="8" y="180" width="254" height="200" rx="12" fill="#1e1f2e" stroke="#a78bfa" stroke-width="1.5"/>
+            <!-- Drag handle -->
+            <rect x="115" y="186" width="40" height="4" rx="2" fill="#a78bfa40"/>
+            <!-- Item header -->
+            <rect x="20" y="200" width="48" height="48" rx="8" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1"/>
+            <text x="44" y="230" fill="#a78bfa" font-size="16" text-anchor="middle">⚔</text>
+            <text x="80" y="216" fill="#a78bfa" font-size="10" font-weight="bold">전설의 검</text>
+            <text x="80" y="230" fill="#6b7280" font-size="6">전설 등급 · 양손 무기</text>
+            <text x="80" y="242" fill="#a78bfa60" font-size="5">세트: 불사조 2/4</text>
+            <!-- Divider -->
+            <rect x="20" y="256" width="222" height="1" fill="#a78bfa20"/>
+            <!-- Stats -->
+            <text x="20" y="272" fill="#ef4444" font-size="7">공격력 +142</text>
+            <text x="120" y="272" fill="#34d399" font-size="7">치명타 +15%</text>
+            <text x="20" y="288" fill="#fbbf24" font-size="7">세트 효과: 2/4</text>
+            <text x="120" y="288" fill="#60a5fa" font-size="7">내구도 85/100</text>
+            <!-- Compare indicator -->
+            <rect x="20" y="300" width="222" height="1" fill="#a78bfa20"/>
+            <text x="135" y="316" fill="#6b7280" font-size="6" text-anchor="middle">현재 장착: 강철 검 (공격력 +80)</text>
+            <text x="135" y="330" fill="#34d399" font-size="6" text-anchor="middle">+62 공격력 상승</text>
+            <!-- Action buttons (large touch targets) -->
+            <rect x="20" y="344" width="106" height="28" rx="6" fill="#a78bfa" />
+            <text x="73" y="362" fill="#fff" font-size="7" text-anchor="middle">장착하기</text>
+            <rect x="136" y="344" width="106" height="28" rx="6" fill="#ffffff10" stroke="#a78bfa60" stroke-width="0.5"/>
+            <text x="189" y="362" fill="#a78bfa" font-size="7" text-anchor="middle">버리기</text>
+            <text x="135" y="168" fill="#a78bfa" font-size="6" text-anchor="middle">▼ 아이템 상세 (하단 시트)</text>
+            <text x="135" y="460" fill="#6b728060" font-size="5" text-anchor="middle">길게 누르기 → 하단 시트 툴팁 · 탭 바깥 터치로 닫기</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 툴팁',
@@ -1286,7 +1687,8 @@ const COMPONENTS = {
             ]
         },
         relatedLaws: ['law-pragnanz', 'law-similarity', 'recognition-recall', 'fitts-law'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Minimap Placement</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -1330,6 +1732,67 @@ const COMPONENTS = {
             <!-- Skill bar context -->
             <rect x="150" y="230" width="180" height="22" rx="3" stroke="#ffffff15" stroke-width="0.5"/>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Minimap</text>
+            <rect x="8" y="24" width="254" height="448" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Status bar area (top notch) -->
+            <rect x="100" y="4" width="70" height="12" rx="6" fill="#1e1f2e"/>
+            <!-- HUD context (top-left) -->
+            <rect x="16" y="34" width="90" height="10" rx="4" fill="#ef444430"/>
+            <rect x="16" y="48" width="70" height="6" rx="3" fill="#3b82f625"/>
+            <!-- Minimap (top-right corner, small for mobile) -->
+            <rect x="178" y="30" width="78" height="78" rx="6" fill="#0a1520" stroke="#fbbf24" stroke-width="2"/>
+            <text x="217" y="42" fill="#fbbf24" font-size="6" text-anchor="middle">N</text>
+            <!-- Terrain in minimap -->
+            <rect x="186" y="46" width="24" height="14" rx="2" fill="#2a4a2a40"/>
+            <rect x="218" y="54" width="20" height="12" rx="2" fill="#2a4a2a40"/>
+            <rect x="192" y="68" width="32" height="10" rx="2" fill="#4a4a2a30"/>
+            <!-- Player marker -->
+            <circle cx="217" cy="64" r="4" fill="#60a5fa"/>
+            <polygon points="217,58 214,64 220,64" fill="#60a5fa"/>
+            <!-- Enemy markers -->
+            <circle cx="204" cy="50" r="2.5" fill="#ef4444"/>
+            <circle cx="236" cy="60" r="2.5" fill="#ef4444"/>
+            <!-- Quest marker -->
+            <circle cx="228" cy="76" r="3" fill="#fbbf24"/>
+            <text x="228" y="79" fill="#12131a" font-size="4" text-anchor="middle" font-weight="bold">!</text>
+            <!-- Party -->
+            <circle cx="212" cy="68" r="2" fill="#34d399"/>
+            <!-- Tap to expand indicator -->
+            <rect x="178" y="112" width="78" height="18" rx="3" fill="#fbbf2415"/>
+            <text x="217" y="124" fill="#fbbf24" font-size="5" text-anchor="middle">탭하여 전체 맵 열기</text>
+            <!-- Full map overlay preview (center, shows what tapping opens) -->
+            <rect x="30" y="160" width="210" height="210" rx="8" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4"/>
+            <text x="135" y="180" fill="#fbbf2460" font-size="7" text-anchor="middle">전체 맵 오버레이</text>
+            <!-- Terrain blocks in full map -->
+            <rect x="50" y="195" width="60" height="40" rx="3" fill="#2a4a2a30"/>
+            <rect x="130" y="210" width="50" height="35" rx="3" fill="#2a4a2a30"/>
+            <rect x="70" y="270" width="80" height="25" rx="3" fill="#4a4a2a20"/>
+            <!-- Player marker in full map -->
+            <circle cx="135" cy="265" r="6" fill="#60a5fa"/>
+            <polygon points="135,256 131,265 139,265" fill="#60a5fa"/>
+            <!-- Enemy markers in full map -->
+            <circle cx="100" cy="220" r="3.5" fill="#ef4444"/>
+            <circle cx="170" cy="240" r="3.5" fill="#ef4444"/>
+            <!-- Quest marker in full map -->
+            <circle cx="155" cy="300" r="4" fill="#fbbf24"/>
+            <text x="155" y="303" fill="#12131a" font-size="5" text-anchor="middle" font-weight="bold">!</text>
+            <!-- Legend (bottom of full map) -->
+            <circle cx="50" cy="350" r="3" fill="#60a5fa"/>
+            <text x="60" y="353" fill="#9ca3af" font-size="5">플레이어</text>
+            <circle cx="110" cy="350" r="3" fill="#ef4444"/>
+            <text x="120" y="353" fill="#9ca3af" font-size="5">적</text>
+            <circle cx="155" cy="350" r="3" fill="#fbbf24"/>
+            <text x="165" y="353" fill="#9ca3af" font-size="5">퀘스트</text>
+            <circle cx="205" cy="350" r="3" fill="#34d399"/>
+            <text x="215" y="353" fill="#9ca3af" font-size="5">파티</text>
+            <!-- Pinch zoom hint -->
+            <text x="135" y="380" fill="#fbbf2450" font-size="5" text-anchor="middle">핀치 줌으로 확대/축소</text>
+            <text x="135" y="148" fill="#fbbf24" font-size="6" text-anchor="middle">▼ 전체 맵 (탭 시 확장)</text>
+            <text x="217" y="140" fill="#fbbf24" font-size="5" text-anchor="middle">▲ 미니맵</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 미니맵',
@@ -1426,7 +1889,8 @@ const COMPONENTS = {
             ]
         },
         relatedLaws: ['hicks-law', 'fitts-law', 'serial-position', 'recognition-recall'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Skill Bar Layout</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -1465,6 +1929,44 @@ const COMPONENTS = {
             <text x="354" y="198" fill="#34d399" font-size="6" text-anchor="middle">소모품</text>
             <text x="240" y="264" fill="#a78bfa80" font-size="6" text-anchor="middle">▲ 스킬바 — 단축키 표시 + 쿨다운 오버레이 + 궁극기 분리</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Skill Bar</text>
+            <rect x="8" y="24" width="254" height="448" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Status bar area (top notch) -->
+            <rect x="100" y="4" width="70" height="12" rx="6" fill="#1e1f2e"/>
+            <!-- HUD context (top) -->
+            <rect x="16" y="34" width="100" height="10" rx="4" fill="#ef444430"/>
+            <!-- Virtual joystick (bottom-left) -->
+            <circle cx="60" cy="400" r="40" stroke="#ffffff20" stroke-width="1.5" stroke-dasharray="4"/>
+            <circle cx="60" cy="400" r="16" fill="#ffffff10" stroke="#ffffff30" stroke-width="1"/>
+            <text x="60" y="450" fill="#ffffff30" font-size="5" text-anchor="middle">이동 조이스틱</text>
+            <!-- Skill buttons (bottom-right, thumb zone, arc layout) -->
+            <rect x="160" y="355" width="48" height="48" rx="12" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="184" y="384" fill="#a78bfa" font-size="14" text-anchor="middle">⚔</text>
+            <text x="184" y="398" fill="#a78bfa60" font-size="5" text-anchor="middle">기본 공격</text>
+            <rect x="214" y="355" width="48" height="48" rx="12" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="238" y="384" fill="#a78bfa" font-size="14" text-anchor="middle">🔥</text>
+            <!-- Cooldown overlay -->
+            <rect x="214" y="355" width="48" height="32" rx="12" fill="#00000080"/>
+            <text x="238" y="378" fill="#fff" font-size="10" text-anchor="middle">3s</text>
+            <rect x="160" y="410" width="48" height="48" rx="12" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="184" y="439" fill="#a78bfa" font-size="14" text-anchor="middle">🛡</text>
+            <rect x="214" y="410" width="48" height="48" rx="12" fill="#a78bfa20" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="238" y="439" fill="#a78bfa" font-size="14" text-anchor="middle">💫</text>
+            <!-- Ultimate button (larger, top-right of skill cluster) -->
+            <rect x="110" y="370" width="42" height="42" rx="21" fill="#fbbf2420" stroke="#fbbf24" stroke-width="2"/>
+            <text x="131" y="396" fill="#fbbf24" font-size="16" text-anchor="middle">⚡</text>
+            <text x="131" y="418" fill="#fbbf2480" font-size="5" text-anchor="middle">궁극기</text>
+            <!-- Consumable (top area, quick access) -->
+            <rect x="110" y="420" width="42" height="42" rx="8" fill="#34d39915" stroke="#34d39960" stroke-width="0.5"/>
+            <text x="131" y="446" fill="#34d399" font-size="12" text-anchor="middle">🧪</text>
+            <text x="131" y="460" fill="#34d39960" font-size="5" text-anchor="middle">x5</text>
+            <!-- Labels -->
+            <text x="195" y="345" fill="#a78bfa" font-size="6" text-anchor="middle">▼ 스킬 버튼 (터치)</text>
+            <text x="135" y="470" fill="#a78bfa80" font-size="5" text-anchor="middle">조이스틱(좌) + 스킬(우) 분리 배치 — 엄지 도달 범위</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 스킬바',
@@ -1555,7 +2057,8 @@ const COMPONENTS = {
             ]
         },
         relatedLaws: ['postel-law', 'teslers-law', 'progressive-disclosure', 'feedback-principle'],
-        screenWireframe: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        screenWireframe: {
+            pc: `<svg viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="480" height="270" rx="4" fill="#12131a"/>
             <text x="240" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">GAME SCREEN — Chat UI Layout</text>
             <rect x="10" y="24" width="460" height="236" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
@@ -1587,6 +2090,55 @@ const COMPONENTS = {
             <text x="198" y="240" fill="#34d399" font-size="10" text-anchor="middle">↵</text>
             <text x="107" y="116" fill="#34d399" font-size="6" text-anchor="middle">▼ 채팅 창</text>
         </svg>`,
+            mobile: `<svg viewBox="0 0 270 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="270" height="480" rx="4" fill="#12131a"/>
+            <text x="135" y="18" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">MOBILE GAME SCREEN — Chat</text>
+            <rect x="8" y="24" width="254" height="448" rx="3" stroke="#2a2b35" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Status bar area (top notch) -->
+            <rect x="100" y="4" width="70" height="12" rx="6" fill="#1e1f2e"/>
+            <!-- HUD context (top) -->
+            <rect x="16" y="34" width="80" height="10" rx="4" fill="#ef444430"/>
+            <!-- Minimap placeholder (top-right) -->
+            <rect x="200" y="34" width="52" height="52" rx="4" stroke="#ffffff15" stroke-width="0.5"/>
+            <!-- Chat Window (bottom half, full-width bottom sheet) -->
+            <rect x="8" y="220" width="254" height="250" rx="6" fill="#0a0b14e0" stroke="#34d399" stroke-width="2"/>
+            <!-- Channel tabs (horizontal swipe) -->
+            <rect x="12" y="224" width="48" height="20" rx="4" fill="#34d39930"/>
+            <text x="36" y="238" fill="#34d399" font-size="7" text-anchor="middle">전체</text>
+            <rect x="64" y="224" width="48" height="20" rx="4"/>
+            <text x="88" y="238" fill="#6b7280" font-size="7" text-anchor="middle">파티</text>
+            <rect x="116" y="224" width="48" height="20" rx="4"/>
+            <text x="140" y="238" fill="#6b7280" font-size="7" text-anchor="middle">길드</text>
+            <rect x="168" y="224" width="56" height="20" rx="4"/>
+            <text x="196" y="238" fill="#6b7280" font-size="7" text-anchor="middle">귓속말</text>
+            <!-- Chat messages (scrollable area) -->
+            <text x="18" y="264" fill="#34d399" font-size="6">[전체] 용사A: 파티 구합니다</text>
+            <text x="18" y="280" fill="#fbbf24" font-size="6">[시스템] 이벤트가 시작되었습니다!</text>
+            <text x="18" y="296" fill="#60a5fa" font-size="6">[파티] 마법사B: 힐 부탁드려요</text>
+            <text x="18" y="312" fill="#34d399" font-size="6">[전체] 전사C: 보스 어디인가요?</text>
+            <text x="18" y="328" fill="#f472b6" font-size="6">[길드] 길마D: 공성전 20시 집합!</text>
+            <text x="18" y="344" fill="#34d399" font-size="6">[전체] 궁수E: gg</text>
+            <!-- Quick message presets (thumb zone) -->
+            <rect x="12" y="360" width="246" height="30" rx="4" stroke="#34d39930" stroke-width="0.5"/>
+            <rect x="18" y="366" width="52" height="18" rx="9" fill="#34d39920"/>
+            <text x="44" y="378" fill="#34d399" font-size="5" text-anchor="middle">gg</text>
+            <rect x="76" y="366" width="64" height="18" rx="9" fill="#34d39920"/>
+            <text x="108" y="378" fill="#34d399" font-size="5" text-anchor="middle">파티 구해요</text>
+            <rect x="146" y="366" width="52" height="18" rx="9" fill="#34d39920"/>
+            <text x="172" y="378" fill="#34d399" font-size="5" text-anchor="middle">힐 부탁</text>
+            <rect x="204" y="366" width="48" height="18" rx="9" fill="#34d39920"/>
+            <text x="228" y="378" fill="#34d399" font-size="5" text-anchor="middle">감사!</text>
+            <!-- Input area (above virtual keyboard zone) -->
+            <rect x="12" y="398" width="200" height="32" rx="6" fill="#ffffff08" stroke="#34d39960" stroke-width="0.5"/>
+            <text x="26" y="418" fill="#6b728060" font-size="7">메시지 입력...</text>
+            <rect x="218" y="398" width="40" height="32" rx="6" fill="#34d39930"/>
+            <text x="238" y="418" fill="#34d399" font-size="12" text-anchor="middle">↵</text>
+            <!-- Virtual keyboard zone indicator -->
+            <rect x="8" y="440" width="254" height="28" rx="3" stroke="#ffffff08" stroke-width="0.5" stroke-dasharray="4"/>
+            <text x="135" y="458" fill="#ffffff15" font-size="6" text-anchor="middle">가상 키보드 영역</text>
+            <text x="135" y="214" fill="#34d399" font-size="6" text-anchor="middle">▼ 채팅 창 (하단 시트)</text>
+        </svg>`,
+        },
         platforms: {
             pc: {
                 title: 'PC 채팅',

@@ -473,29 +473,27 @@
             ${comp.screenWireframe ? `
             <div class="screen-wireframe-section">
                 <h2 class="section-title">게임 화면 배치</h2>
-                <div class="wireframe-area screen-wireframe">
-                    <div class="wireframe-svg">${comp.screenWireframe}</div>
+                <div class="genre-tabs" id="genreTabs">
+                    ${platforms.map((p, i) => `
+                        <button class="genre-tab ${i === 0 ? 'active' : ''}" data-genre="${p}">${platformIcons[p]} ${platformNames[p]}</button>
+                    `).join('')}
                 </div>
-            </div>` : ''}
-
-            <div class="genre-tabs" id="genreTabs">
                 ${platforms.map((p, i) => `
-                    <button class="genre-tab ${i === 0 ? 'active' : ''}" data-genre="${p}">${platformIcons[p]} ${platformNames[p]}</button>
-                `).join('')}
-            </div>
-
-            ${platforms.map((p, i) => `
-                <div class="genre-content ${i === 0 ? 'active' : ''}" data-genre-content="${p}">
-                    <div class="comp-description">
-                        <h3>${comp.platforms[p].title}</h3>
-                        <p>${comp.platforms[p].description}</p>
-                        ${comp.platforms[p].features ? `
-                        <ul>
-                            ${comp.platforms[p].features.map(f => '<li>' + f + '</li>').join('')}
-                        </ul>` : ''}
+                    <div class="genre-content ${i === 0 ? 'active' : ''}" data-genre-content="${p}">
+                        <div class="wireframe-area screen-wireframe ${p === 'mobile' ? 'mobile-wireframe' : ''}">
+                            <div class="wireframe-svg">${typeof comp.screenWireframe === 'string' ? comp.screenWireframe : comp.screenWireframe[p]}</div>
+                        </div>
+                        <div class="comp-description">
+                            <h3>${comp.platforms[p].title}</h3>
+                            <p>${comp.platforms[p].description}</p>
+                            ${comp.platforms[p].features ? `
+                            <ul>
+                                ${comp.platforms[p].features.map(f => '<li>' + f + '</li>').join('')}
+                            </ul>` : ''}
+                        </div>
                     </div>
-                </div>
-            `).join('')}
+                `).join('')}
+            </div>` : ''}
 
             <div class="demo-section standalone-demo">
                 <div class="section-label"><span class="dot" style="background:var(--success)"></span> 인터랙티브 데모</div>
